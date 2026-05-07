@@ -1,56 +1,40 @@
 ---
-layout: page
-permalink: /tags/
-title: Tags
-subtitle: Browse this website by tag.
+layout: default
+title: "Tags"
+description: "Tag cloud from all the posts"
+permalink: /tags
+sitemap: false
 ---
 
-# Tags
-Click on each line to get to the relevant archive section.
+<div class="tags-page">
+  <h1 class="tags-page-header">
+    Tags
+  </h1>
 
-<div class='list-group'>
-  {% assign tags_list = site.tags %}
+  {% assign my_tags = site.collections | where: "label", "my_tags" | first %}
 
-  {% if tags_list.first[0] == null %}
-    {% for tag in tags_list %}
-      <a href="/tags#{{ tag }}-ref" class='list-group-item'>
-        {{ tag }} <span class='badge'>{{ site.tags[tag].size }}</span>
-      </a>
-    {% endfor %}
-  {% else %}
-    {% for tag in tags_list %}
-      <a href="/tags#{{ tag[0] }}-ref" class='list-group-item'>
-        {{ tag[0] }} <span class='badge'>{{ tag[1].size }}</span>
-      </a>
-    {% endfor %}
-  {% endif %}
+  {% assign sorted_tags = site.tags | sort %}
 
-  {% assign tags_list = nil %}
-</div>
+  {% for tag in sorted_tags %}
 
-<hr>
+    {% assign tag_slug = tag | first %}
+    {% assign upcase_tag_slug = tag_slug | upcase %}
+    {% assign no_of_posts = tag | last | size %}
 
-# Table of content
-Click on each post title to view it.
-
-{% for tag in site.tags %}
-  <h2 class='tag-header' id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-  <ul>
-    {% assign pages_list = tag[1] %}
-
-    {% for node in pages_list %}
-      {% if node.title != null %}
-        {% if group == null or group == node.group %}
-          {% if page.url == node.url %}
-          <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
-          {% else %}
-          <li><a href="{{node.url}}">{{node.title}}</a></li>
-          {% endif %}
+      {% for my_tag in my_tags.docs %}
+        {% if tag_slug == my_tag.slug %}
+          {% assign tag_name = my_tag.name %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+      {% assign upcase_tag_name = tag_name | upcase %}
 
-    {% assign pages_list = nil %}
-    {% assign group = nil %}
-  </ul>
-{% endfor %}
+    {% if upcase_tag_slug != "PROJECT" %}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="{{ 'tag/' | relative_url }}{{ tag_slug }}" title="See all posts by {{ upcase_tag_name }} tag"
+      style="font-size: {{ no_of_posts  |  times: 15 | plus: 120  }}%">
+        <span>{{ upcase_tag_name }}<small>({{ no_of_posts }})</small></span>
+      </a>
+    {% endif %}
+
+  {% endfor %}
+</div>
