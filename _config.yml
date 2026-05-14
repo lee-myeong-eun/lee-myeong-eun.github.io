@@ -1,13 +1,15 @@
 title: Business Frontpage
 description: A business home page starter template for Bootstrap 4 featuring marketing boxes and a full width image header.
 
-# disabled because we are using a custom domain
-#baseurl: /business-frontpage 
+# baseurl은 커스텀 도메인 아니면 비워두는 게 안전
+baseurl: ""
 
-color-scheme: "mediumseagreen" # the scheme can be any HEX code like "#00aa55"
+# 메인 컬러 (HEX 추천)
+color-scheme: "#2563eb"
 
+# 🔥 핵심 수정 (이게 문제였던 부분)
 sass:
-  sass_dir: /assets/css/_sass
+  sass_dir: _sass
   style: compressed
 
 include:
