@@ -1,14 +1,128 @@
-/* Add your custom styles here */
-// .btn-primary{
-//     background-color: #1d4367;
-//     border-color: #1d4367;
-//     color: #ffc00f;
-//     &:hover{
-//         background-color: #ffc00f;
-//         border-color: #ffc00f;
-//         color: #1d4367;
-//     }
-// }
-// .bg-primary{
-//     background-color: #1d4367 !important
-// }
+/* ===========================
+   Portfolio Dark Theme
+   =========================== */
+
+/* --- Global Body --- */
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* --- Navbar --- */
+.navbar.bg-dark {
+  background-color: #0a0f1e !important;
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-link:hover {
+  color: #94a3b8 !important;
+  transition: color 0.2s ease;
+}
+
+/* --- Header (Hero) --- */
+header.bg-primary {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  border-bottom: 1px solid #334155;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  color: #f1f5f9;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #475569;
+    border-color: #64748b;
+    color: #ffffff;
+  }
+}
+
+/* --- Cards --- */
+.card {
+  background-color: #1e293b;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
+.card-body {
+  color: #cbd5e1;
+}
+
+.card-title {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.card-footer {
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+}
+
+/* --- Sidebar / Content areas --- */
+.bg-light,
+.sidebar {
+  background-color: #1e293b !important;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #cbd5e1;
+}
+
+/* --- Dividers --- */
+hr {
+  border-color: #334155;
+}
+
+/* --- Footer --- */
+footer.bg-dark {
+  background-color: #0a0f1e !important;
+  border-top: 1px solid #1e293b;
+  color: #64748b;
+}
+
+/* --- Links --- */
+a {
+  color: #94a3b8;
+  &:hover {
+    color: #e2e8f0;
+    text-decoration: none;
+  }
+}
+
+/* --- Text utilities --- */
+p {
+  color: #94a3b8;
+  line-height: 1.75;
+}
+
+.lead {
+  color: #94a3b8;
+}
+
+.text-white-50 {
+  color: #94a3b8 !important;
+}
