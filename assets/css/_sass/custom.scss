@@ -1,32 +1,95 @@
-/* --- 명은님의 둥글둥글하고 센스있는 커스텀 스타일 --- */
+/* --- 명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 --- */
 
+/* --- 글로벌 다크 배경 및 둥근 폰트 --- */
 body {
-    /* 둥근 폰트 적용 */
+    background-color: #0f172a !important; /* 딥 다크 네이비 */
+    color: #e2e8f0 !important; /* 소프트 화이트 */
     font-family: 'Nunito', sans-serif !important;
 }
 
-/* 모든 카드에 둥근 모서리 적용 */
-.card {
-    border-radius: 15px !important;
-    overflow: hidden;
+/* --- 상단 바 (Navbar) --- */
+.navbar.bg-dark {
+    background-color: #0a0f1e !important;
+    border-bottom: 1px solid #1e293b;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
-/* 버튼들을 둥글게 */
+.navbar-brand, .nav-link {
+    color: #e2e8f0 !important;
+    font-weight: 600;
+}
+
+/* --- 히어로 섹션 (Header) --- */
+header.bg-primary {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-bottom: 1px solid #334155;
+}
+
+/* --- 본문 제목 및 텍스트 --- */
+h1, h2, h3, h4, h5, h6 {
+    color: #f1f5f9 !important;
+}
+
+p, li {
+    color: #94a3b8 !important; /* 가독성 좋은 그레이 */
+}
+
+hr {
+    border-color: #334155 !important;
+}
+
+/* --- 카드 (둥근 모서리 + 다크 스타일) --- */
+.card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #f1f5f9 !important;
+}
+
+.card-text {
+    color: #94a3b8 !important;
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* --- 버튼 (둥근 스타일) --- */
 .btn {
     border-radius: 30px !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     font-weight: 600 !important;
+    transition: all 0.2s ease;
 }
 
-/* 내비게이션 바 살짝 둥글게 (상단바) */
-.navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+.btn-primary {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
 }
 
-/* 카드 이미지 둥글게 처리 */
-.card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+.btn-primary:hover {
+    background-color: #475569 !important;
+    border-color: #64748b !important;
+}
+
+/* --- 사이드바 및 기타 레이아웃 --- */
+.bg-light {
+    background-color: #1e293b !important;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    color: #94a3b8 !important;
 }
