@@ -1,128 +1,32 @@
-/* ===========================
-   Portfolio Dark Theme
-   =========================== */
+/* --- 명은님의 둥글둥글하고 센스있는 커스텀 스타일 --- */
 
-/* --- Global Body --- */
 body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+    /* 둥근 폰트 적용 */
+    font-family: 'Nunito', sans-serif !important;
 }
 
-/* --- Navbar --- */
-.navbar.bg-dark {
-  background-color: #0a0f1e !important;
-  border-bottom: 1px solid #1e293b;
-}
-
-.navbar-brand,
-.nav-link {
-  color: #e2e8f0 !important;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.nav-link:hover {
-  color: #94a3b8 !important;
-  transition: color 0.2s ease;
-}
-
-/* --- Header (Hero) --- */
-header.bg-primary {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-  border-bottom: 1px solid #334155;
-}
-
-/* --- Headings --- */
-h1, h2, h3, h4, h5, h6 {
-  color: #f1f5f9;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-/* --- Buttons --- */
-.btn-primary {
-  background-color: #334155;
-  border-color: #475569;
-  color: #f1f5f9;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: #475569;
-    border-color: #64748b;
-    color: #ffffff;
-  }
-}
-
-/* --- Cards --- */
+/* 모든 카드에 둥근 모서리 적용 */
 .card {
-  background-color: #1e293b;
-  border: 1px solid #334155 !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-  border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
-  }
+    border-radius: 15px !important;
+    overflow: hidden;
 }
 
-.card-body {
-  color: #cbd5e1;
+/* 버튼들을 둥글게 */
+.btn {
+    border-radius: 30px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-weight: 600 !important;
 }
 
-.card-title {
-  color: #f1f5f9;
-  font-weight: 600;
+/* 내비게이션 바 살짝 둥글게 (상단바) */
+.navbar {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
-.card-footer {
-  background-color: #1e293b;
-  border-top: 1px solid #334155;
-}
-
-/* --- Sidebar / Content areas --- */
-.bg-light,
-.sidebar {
-  background-color: #1e293b !important;
-  border: 1px solid #334155;
-  border-radius: 8px;
-  color: #cbd5e1;
-}
-
-/* --- Dividers --- */
-hr {
-  border-color: #334155;
-}
-
-/* --- Footer --- */
-footer.bg-dark {
-  background-color: #0a0f1e !important;
-  border-top: 1px solid #1e293b;
-  color: #64748b;
-}
-
-/* --- Links --- */
-a {
-  color: #94a3b8;
-  &:hover {
-    color: #e2e8f0;
-    text-decoration: none;
-  }
-}
-
-/* --- Text utilities --- */
-p {
-  color: #94a3b8;
-  line-height: 1.75;
-}
-
-.lead {
-  color: #94a3b8;
-}
-
-.text-white-50 {
-  color: #94a3b8 !important;
+/* 카드 이미지 둥글게 처리 */
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
