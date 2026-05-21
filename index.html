@@ -13,16 +13,7 @@ layout: default
   </p>
   <a class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg" href="{{ site.baseurl }}/about/">저에 대해 더 궁금하시다면? &raquo;</a>
 </div>
-<!-- Bento Box Grid Section -->
-<div class="bento-grid mb-5">
-  
-  <!-- 프로젝트 1 (Wide Card) -->
-  <div class="bento-card bento-wide reveal delay-1">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/github_project.png" class="bento-image" alt="GitHub Project">
-        <h3 class="bento-title">GitHub 학습 기록 & 과제</h3>
-        <p class="bento-desc">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
+<canvas id="noise" class="noise"></canvas>
 <!-- Projects Section (3 Columns) -->
 <div class="row mb-5">
   <!-- 프로젝트 1 -->
@@ -34,16 +25,9 @@ layout: default
         <p class="card-text flex-grow-1">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
         <a href="https://github.com/lee-myeong-eun" class="btn btn-outline-light mt-3">코드 보러가기 &rarr;</a>
       </div>
-      <a href="https://github.com/lee-myeong-eun" class="btn btn-outline-dark mt-3">코드 보러가기 &rarr;</a>
     </div>
   </div>
-  <!-- 프로젝트 2 (Tall Card) -->
-  <div class="bento-card bento-tall reveal delay-2">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="bento-image" alt="BLE Safety">
-        <h3 class="bento-title">BLE기반 작업자 안전 모니터링</h3>
-        <p class="bento-desc">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
+<div class="portfolio-container">
   <!-- 프로젝트 2 -->
   <div class="col-md-4 mb-4 reveal delay-2">
     <div class="card h-100 card-wood">
@@ -53,16 +37,12 @@ layout: default
         <p class="card-text flex-grow-1">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
         <a href="#" class="btn btn-outline-light mt-3">상세 내용 &rarr;</a>
       </div>
-      <a href="#" class="btn btn-outline-dark mt-3">상세 내용 &rarr;</a>
     </div>
   </div>
-  <!-- 프로젝트 3 (Square Card) -->
-  <div class="bento-card reveal delay-3">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="bento-image" alt="Fire Evacuation">
-        <h3 class="bento-title">화재 대피 유도 시스템</h3>
-        <p class="bento-desc">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
+    <!-- Intro -->
+    <div class="intro-section">
+        <div class="intro-words">
+            <h1>반도체 장비 소프트웨어의 미래를 설계하는 <br><span class="digital">이명은</span>입니다.</h1>
   <!-- 프로젝트 3 -->
   <div class="col-md-4 mb-4 reveal delay-3">
     <div class="card h-100 card-wood">
@@ -72,22 +52,23 @@ layout: default
         <p class="card-text flex-grow-1">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
         <a href="#" class="btn btn-outline-light mt-3">상세 내용 &rarr;</a>
       </div>
-      <a href="#" class="btn btn-outline-dark mt-3">상세 내용 &rarr;</a>
+            <div class="hasque-status">
+                <div class="previous-experience">
+                    <p><b>Contact</b></p>
+                    <p class="status-description"><a href="mailto:auddms1995@naver.com">auddms1995@naver.com</a><br>010-4077-6322</p>
+                </div>
+                <div class="location">
+                    <p><b>Location</b></p>
+                    <p class="status-description">South Korea<br>(Open to Relocate)</p>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
 <!-- Tech Stack & Contact Row -->
 <div class="row mb-5">
   <!-- 작은 카드: 기술 스택 요약 -->
-  <div class="bento-card reveal delay-1">
-    <div class="card-glass h-100 p-4">
-      <h3 class="bento-title"><i class="fa fa-code text-accent"></i> Tech Stack</h3>
-      <div class="d-flex flex-wrap gap-2 mt-3">
-        <span class="badge badge-primary p-2">C/C++</span>
-        <span class="badge badge-primary p-2">C#</span>
-        <span class="badge badge-primary p-2">Python</span>
-        <span class="badge badge-primary p-2">PLC</span>
-        <span class="badge badge-primary p-2">SECS/GEM</span>
   <div class="col-md-5 mb-4 reveal delay-1">
     <div class="card h-100 card-wood p-4">
       <h3 class="card-title font-weight-bold text-accent"><i class="fa fa-code"></i> Tech Stack</h3>
@@ -98,33 +79,141 @@ layout: default
         <span class="badge badge-light p-2 mr-1 mb-1 text-dark">PLC</span>
         <span class="badge badge-light p-2 mr-1 mb-1 text-dark">SECS/GEM</span>
       </div>
-      <a href="{{ site.baseurl }}/skills/" class="text-accent mt-3 d-inline-block">전체 기술 스택 보기 &rarr;</a>
       <a href="{{ site.baseurl }}/skills/" class="text-white mt-auto d-inline-block">전체 기술 스택 보기 &rarr;</a>
     </div>
   </div>
+    <!-- Projects -->
+    <div class="projects">
+        
+        <div class="small-box-wrapper animate-box">
+            <a href="https://github.com/lee-myeong-eun" target="_blank">
+            <div class="small-box box-container">
+                <img src="{{ site.baseurl }}/assets/img/github_project.png" class="project-img" alt="GitHub Project">
+            </div>
+            <div class="title-description">
+                <p class="job"><b>GitHub 학습 기록 & 과제</b></p>
+                <p class="work-description">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
+            </div>
+            </a>
+        </div>
   <!-- Contact Info Card (사이드바 대체) -->
-  <div class="bento-card bento-wide reveal delay-2">
-    <div class="card-glass h-100 p-4 contact-card">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <h2 class="font-weight-bold mb-2">Let's Connect!</h2>
-          <p class="text-muted mb-0">새로운 기회와 흥미로운 프로젝트 제안을 언제나 환영합니다.</p>
   <div class="col-md-7 mb-4 reveal delay-2">
     <div class="card h-100 card-wood p-4">
       <div class="row align-items-center h-100">
         <div class="col-lg-6 mb-3 mb-lg-0">
           <h2 class="font-weight-bold mb-2 text-accent">Let's Connect!</h2>
           <p class="text-muted-wood mb-0">새로운 기회와 흥미로운 프로젝트 제안을 언제나 환영합니다.</p>
+        <div class="big-box-wrapper section-1 animate-box">
+            <a href="#" target="_blank">
+            <div class="big-box box-container">
+                <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="project-img" alt="BLE Safety">
+            </div>
+            <div class="title-description">
+                <p class="job"><b>BLE기반 작업자 안전 모니터링</b></p>
+                <p class="work-description">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
+            </div>
+            </a>
         </div>
-        <div class="col-md-6">
         <div class="col-lg-6">
           <ul class="list-unstyled mb-0">
             <li class="mb-2"><i class="fa fa-phone mr-2 text-accent"></i> 010-4077-6322</li>
             <li class="mb-2"><i class="fa fa-envelope mr-2 text-accent"></i> <a href="mailto:auddms1995@naver.com" class="text-white">auddms1995@naver.com</a></li>
             <li><i class="fa fa-map-marker mr-2 text-accent"></i> South Korea (Open to Relocate)</li>
           </ul>
+        <div class="row2">
+            <div class="big-box-wrapper animate-box">
+                <a href="#" target="_blank">
+                <div class="big-box box-container">
+                    <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="project-img" alt="Fire Evacuation">
+                </div>
+                <div class="title-description">
+                    <p class="job"><b>화재 대피 유도 시스템</b></p>
+                    <p class="work-description">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
+                </div>
+                </a>
+            </div>
+            
+            <div class="small-box-wrapper section-2 animate-box">
+                <a href="{{ site.baseurl }}/about/">
+                <div class="small-box box-container about-box">
+                    <span>More About Me &rarr;</span>
+                </div>
+                <div class="title-description">
+                    <p class="job"><b>About Me</b></p>
+                    <p class="work-description">저에 대해 더 자세히 알아보세요.</p>
+                </div>
+                </a>
+            </div>
         </div>
       </div>
     </div>
   </div>
+    <!-- Experiments / Tech Stack -->
+    <div class="experiments animate-box">
+        <div class="list">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="list-item">C / C++ <div class="number"> 01</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">C# (.NET) <div class="number"> 02</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">Python <div class="number"> 03</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">PLC (XG5000) <div class="number"> 04</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">MCU (Arduino/STM32) <div class="number"> 05</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">SECS / GEM <div class="number"> 06</div> </div>
+        </div>
+    </div>
+</div>
+<script>
+// Noise Background
+const canvas = document.getElementById('noise');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+function drawNoise() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+        const color = Math.random() * 255;
+        data[i] = color;
+        data[i + 1] = color;
+        data[i + 2] = color;
+        data[i + 3] = 15; // very subtle noise
+    }
+    ctx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(drawNoise);
+}
+drawNoise();
+setTimeout(() => canvas.classList.add('noise-animate'), 0);
+// Intersection Observer for Animations
+document.addEventListener('DOMContentLoaded', function () {
+  const animateBoxes = document.querySelectorAll('.animate-box');
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  animateBoxes.forEach(box => observer.observe(box));
+  // Hover effect for list items
+  const listItems = document.querySelectorAll('.list-item');
+  listItems.forEach(item => {
+    item.addEventListener('mouseover', function () {
+      listItems.forEach(otherItem => {
+        if (otherItem !== item) otherItem.classList.add('dim-all');
+      });
+      item.classList.add('highlight-item');
+    });
+    item.addEventListener('mouseout', function () {
+      listItems.forEach(otherItem => otherItem.classList.remove('dim-all'));
+      item.classList.remove('highlight-item');
+    });
+  });
+});
+</script>
 </div>
