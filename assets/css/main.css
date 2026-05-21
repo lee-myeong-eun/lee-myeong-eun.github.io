@@ -8,20 +8,45 @@
 /* Import compiled Bootstrap via CDN in head.html instead to prevent 404 compile errors */
 
 /* ==========================================================================
-   명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 (딥 다크 네이비 테마)
+   명은님의 둥글둥글하고 센스있는 네온 다크 테마 커스텀 스타일 (업그레이드 버전)
    ========================================================================== */
 
 /* --- 글로벌 다크 배경 및 둥근 폰트 --- */
 body {
-    background-color: #0f172a !important; /* 딥 다크 네이비 */
+    background-color: #0b0f19 !important; /* 더 깊고 고급스러운 다크 네이비 */
     color: #e2e8f0 !important; /* 소프트 화이트 */
     font-family: 'Nunito', sans-serif !important;
+    overflow-x: hidden;
 }
+
+/* --- 화면 진입 애니메이션 (Fade-in & Slide-up) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
 
 /* --- 상단 바 (Navbar) --- */
 .navbar.bg-dark {
-    background-color: #0a0f1e !important;
-    border-bottom: 1px solid #1e293b;
+    background-color: rgba(10, 15, 25, 0.8) !important;
+    backdrop-filter: blur(12px); /* 글래스모피즘 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
 }
@@ -29,12 +54,69 @@ body {
 .navbar-brand, .nav-link {
     color: #e2e8f0 !important;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* --- 히어로 섹션 (Header) --- */
+.nav-link:hover {
+    color: #38bdf8 !important; /* 청록 네온 블루 호버 */
+}
+
+/* --- 히어로 섹션 (Header Banner) --- */
 header.bg-primary {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    border-bottom: 1px solid #334155;
+    background: radial-gradient(circle at 10% 20%, rgba(30, 27, 75, 0.95) 0%, rgba(11, 15, 25, 1) 80%), 
+                linear-gradient(135deg, #1e1b4b 0%, #0369a1 50%, #4c1d95 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 배경 뒤편에 은은하게 퍼지는 빛 효과 */
+header.bg-primary::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+header.bg-primary::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 20%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* 그라디언트 텍스트 */
+.text-gradient {
+    background: linear-gradient(90deg, #38bdf8, #818cf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+/* 슬로건 뱃지 */
+.tech-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 50px;
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* --- 본문 제목 및 텍스트 --- */
@@ -47,60 +129,91 @@ p, li {
 }
 
 hr {
-    border-color: #334155 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* --- 카드 (둥근 모서리 + 다크 스타일) --- */
+/* --- 웰컴 박스 글래스모피즘 --- */
+.welcome-box {
+    background: rgba(22, 30, 47, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 20px !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* --- 카드 (둥근 모서리 + 네온 호버 효과) --- */
 .card {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 15px !important;
+    background-color: #161e2f !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 18px !important;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(56, 189, 248, 0.4) !important; /* 호버 시 청록빛 테두리 */
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15) !important; /* 은은한 청록 글로우 */
 }
 
 .card-title {
     color: #f1f5f9 !important;
+    font-weight: 700;
 }
 
 .card-text {
     color: #94a3b8 !important;
 }
 
-.card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+/* 카드 이미지 줌 효과 */
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
 }
 
-/* --- 버튼 (둥근 스타일) --- */
+.card-img-top {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08) !important; /* 호버 시 이미지 줌 인 */
+}
+
+/* --- 버튼 (글로우 및 역동적 모션) --- */
 .btn {
     border-radius: 30px !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     font-weight: 600 !important;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn-primary {
-    background-color: #334155 !important;
-    border-color: #475569 !important;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    border: none !important;
     color: #f1f5f9 !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
 }
 
 .btn-primary:hover {
-    background-color: #475569 !important;
-    border-color: #64748b !important;
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%) !important;
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5) !important;
+    transform: translateY(-2px);
 }
 
-/* --- 사이드바 및 기타 레이아웃 --- */
-.bg-light {
-    background-color: #1e293b !important;
-    border: 1px solid #334155;
-    border-radius: 15px;
-    color: #94a3b8 !important;
+/* --- 사이드바 입체 카드화 --- */
+.sidebar-box {
+    background-color: #161e2f !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    transition: border-color 0.3s ease;
+}
+
+.sidebar-box:hover {
+    border-color: rgba(139, 92, 246, 0.3) !important; /* 바이올렛 테두리 호버 */
 }
