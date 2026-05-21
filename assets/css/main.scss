@@ -1,482 +1,272 @@
 ---
+layout: default
 ---
-@charset "utf-8";
-/* --- 명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 --- */
-/* --- Minimalist Theme (Hasque.com style) --- */
-$theme-colors: (
-  "primary": {{site.color-scheme}}
-);
-/* 폰트 및 글로벌 스타일 */
-$font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-base: $font-family-sans-serif;
-$headings-font-family: "Nunito", sans-serif;
-// Width of the content area
-$content-width: 800px;
-$on-palm: 600px;
-$on-laptop: 800px;
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/close";
-@import "bootstrap/toasts";
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-@import "bootstrap/carousel";
-@import "bootstrap/spinners";
-@import "bootstrap/utilities";
-@import "bootstrap/print";
-@import "style";
-/* --- 리얼 우드톤 (Dark Wood Tone) 커스텀 스타일 --- */
-:root {
-    --bg-main: #3e2723; /* 짙은 갈색 바탕 (Dark Espresso Wood) */
-    --bg-card: #4e342e; /* 카드 배경 (Lighter Brown Wood) */
-    --accent-1: #ffb74d; /* 주황빛 포인트 (Warm Orange Wood) */
-    --accent-2: #81c784; /* 부드러운 그린 포인트 (Soft Green) */
-    --text-main: #efebe9; /* 밝은 베이지 텍스트 (Off-white) */
-    --text-muted: #bcaaa4; /* 약간 어두운 베이지 (Muted Beige) */
-    --bg-main: #f5f5f5; /* Light grey/white background */
-    --text-main: #111111;
-    --text-muted: #666666;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --hover-bg: #e0e0e0;
-}
-body {
-    background-color: var(--bg-main) !important;
-    color: var(--text-main) !important;
-    font-family: 'Nunito', sans-serif;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-/* Navbar Minimalist Override */
-.navbar.bg-dark {
-    background-color: rgba(62, 39, 35, 0.95) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    background-color: transparent !important;
-    border-bottom: none !important;
-    backdrop-filter: none;
-    padding-top: 2rem;
-}
-.navbar-brand, .nav-link {
-    color: var(--text-main) !important;
-    font-weight: 500 !important;
-}
-.navbar-brand {
-    font-weight: 800;
-    color: var(--accent-1) !important;
-    font-weight: 800 !important;
-}
-header.bg-primary {
-    background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-/* Noise Canvas */
-.noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-.card, .card-wood {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 16px !important;
-    overflow: hidden;
-    color: var(--text-main) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-.noise-animate {
-    opacity: 0.4;
-}
-.card:hover, .card-wood:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 183, 77, 0.3) !important;
-/* Container */
-.portfolio-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    z-index: 10;
-}
-.wood-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-/* Intro Section */
-.intro-section {
-    padding: 8rem 0 6rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 4rem;
-}
-.card-body p {
-    color: var(--text-muted) !important;
-.intro-words h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-    margin-bottom: 3rem;
-    max-width: 800px;
-}
-.text-muted-wood {
-    color: var(--text-muted) !important;
-.intro-words .digital {
-    color: #007aff; /* Subtle blue highlight */
-}
-.btn-primary {
-    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%) !important;
-    border: none !important;
-    color: #fff !important;
-    font-weight: 600;
-    box-shadow: 0 4px 14px 0 rgba(230, 81, 0, 0.4);
-    transition: all 0.3s ease;
-.hasque-status {
-    display: flex;
-    gap: 4rem;
-}
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
-.hasque-status p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-main) !important;
-    font-weight: 700;
-.status-description {
-    color: var(--text-muted);
-    margin-top: 0.25rem !important;
-}
-p, li {
-    color: var(--text-muted) !important;
-    line-height: 1.7;
-.status-description a {
-    color: var(--text-muted);
-    text-decoration: none;
-}
-strong {
-    color: var(--accent-1) !important;
-    font-weight: 700;
-.status-description a:hover {
-    color: var(--text-main);
-    text-decoration: underline;
-}
-a {
-    color: var(--accent-1);
-    transition: color 0.3s ease;
-/* Projects Asymmetric Layout */
-.projects {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 6rem;
-}
-a:hover {
-    color: #ffd54f;
-    text-decoration: none;
-.small-box-wrapper, .big-box-wrapper {
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-hr {
-    border-color: rgba(255, 255, 255, 0.1) !important;
-.animate-box.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* 폼 요소 스타일링 */
-.form-control {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border: 1px solid rgba(139, 90, 43, 0.2) !important;
-    color: var(--text-main) !important;
-.box-container {
-    border-radius: 24px;
-    overflow: hidden;
-    background-color: #eaeaea;
-    margin-bottom: 1.5rem;
-    transition: transform 0.4s ease;
-}
-.form-control:focus {
-    background-color: #ffffff !important;
-    border-color: var(--accent-1) !important;
-    box-shadow: 0 0 0 0.2rem rgba(184, 93, 25, 0.25) !important;
-.small-box-wrapper a, .big-box-wrapper a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-.list-group-item {
-    background-color: var(--bg-card) !important;
-    border-color: rgba(139, 90, 43, 0.1) !important;
-    color: var(--text-muted) !important;
-.small-box-wrapper:hover .box-container, .big-box-wrapper:hover .box-container {
-    transform: scale(0.98);
-}
-.list-group-item strong {
-    color: var(--text-main) !important;
-.project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-/* ==========================================================================
-   MZ Style Portfolio Redesign Styles
-   ========================================================================== */
-/* --- Hero Section --- */
-.hero-section {
-    padding: 6rem 1rem;
-    position: relative;
-    overflow: hidden;
-.small-box {
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-}
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -1px;
-.big-box {
-    width: 100%;
-    height: 600px;
-}
-.gradient-text {
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-.title-description .job {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-}
-.hero-subtitle {
-    font-size: 1.25rem;
-.title-description .work-description {
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1rem;
-    margin: 0;
-    max-width: 80%;
-}
-/* --- Bento Box Grid --- */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
-.row2 {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-/* For larger screens, create specific spans */
-@media (min-width: 768px) {
-    .bento-grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(250px, auto);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lee Myeong Eun | Portfolio</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+</head>
+<body>
+<canvas id="noise" class="noise"></canvas>
+  <!-- Noise background canvas -->
+  <canvas id="noise" class="noise"></canvas>
+<div class="portfolio-container">
+  <div class="portfolio-container">
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="intro-words">
+        <h1>반도체 장비 소프트웨어의 미래를 설계하는 <br><span class="digital">이명은</span>입니다.</h1>
+      </div>
+      <div class="hasque-status">
+        <div class="previous-experience">
+          <p><strong>Contact</strong></p>
+          <p class="status-description"><a href="mailto:auddms1995@naver.com">auddms1995@naver.com</a><br>010-4077-6322</p>
+        </div>
+        <div class="location">
+          <p><strong>Location</strong></p>
+          <p class="status-description">South Korea<br>(Open to Relocate)</p>
+        </div>
+      </div>
+    </section>
+    <!-- Intro -->
+    <div class="intro-section">
+        <div class="intro-words">
+            <h1>반도체 장비 소프트웨어의 미래를 설계하는 <br><span class="digital">이명은</span>입니다.</h1>
+    <!-- Projects Section -->
+    <section class="projects">
+      <div class="small-box-wrapper animate-box">
+        <a href="https://github.com/lee-myeong-eun" target="_blank">
+          <div class="small-box box-container">
+            <img src="{{ site.baseurl }}/assets/img/github_project.png" class="project-img" alt="GitHub Project">
+          </div>
+          <div class="title-description">
+            <p class="job"><strong>GitHub 학습 기록 & 과제</strong></p>
+            <p class="work-description">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
+          </div>
+        </a>
+      </div>
+            <div class="hasque-status">
+                <div class="previous-experience">
+                    <p><b>Contact</b></p>
+                    <p class="status-description"><a href="mailto:auddms1995@naver.com">auddms1995@naver.com</a><br>010-4077-6322</p>
+                </div>
+                <div class="location">
+                    <p><b>Location</b></p>
+                    <p class="status-description">South Korea<br>(Open to Relocate)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="big-box-wrapper section-1 animate-box">
+        <a href="#" target="_blank">
+          <div class="big-box box-container">
+            <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="project-img" alt="BLE Safety">
+          </div>
+          <div class="title-description">
+            <p class="job"><strong>BLE 기반 작업자 안전 모니터링</strong></p>
+            <p class="work-description">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
+          </div>
+        </a>
+      </div>
+    <!-- Projects -->
+    <div class="projects">
+        
+        <div class="small-box-wrapper animate-box">
+            <a href="https://github.com/lee-myeong-eun" target="_blank">
+            <div class="small-box box-container">
+                <img src="{{ site.baseurl }}/assets/img/github_project.png" class="project-img" alt="GitHub Project">
+      <div class="row2">
+        <div class="big-box-wrapper animate-box">
+          <a href="#" target="_blank">
+            <div class="big-box box-container">
+              <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="project-img" alt="Fire Evacuation">
+            </div>
+            <div class="title-description">
+                <p class="job"><b>GitHub 학습 기록 & 과제</b></p>
+                <p class="work-description">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
+              <p class="job"><strong>화재 대피 유도 시스템</strong></p>
+              <p class="work-description">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
+            </div>
+            </a>
+          </a>
+        </div>
+        <div class="big-box-wrapper section-1 animate-box">
+            <a href="#" target="_blank">
+            <div class="big-box box-container">
+                <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="project-img" alt="BLE Safety">
+        <div class="small-box-wrapper section-2 animate-box">
+          <a href="{{ site.baseurl }}/about/">
+            <div class="small-box box-container about-box">
+              <span>More About Me →</span>
+            </div>
+            <div class="title-description">
+                <p class="job"><b>BLE기반 작업자 안전 모니터링</b></p>
+                <p class="work-description">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
+              <p class="job"><strong>About Me</strong></p>
+              <p class="work-description">저에 대해 더 자세히 알아보세요.</p>
+            </div>
+            </a>
+          </a>
+        </div>
+      </div>
+    </section>
+        <div class="row2">
+            <div class="big-box-wrapper animate-box">
+                <a href="#" target="_blank">
+                <div class="big-box box-container">
+                    <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="project-img" alt="Fire Evacuation">
+                </div>
+                <div class="title-description">
+                    <p class="job"><b>화재 대피 유도 시스템</b></p>
+                    <p class="work-description">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
+                </div>
+                </a>
+            </div>
+            
+            <div class="small-box-wrapper section-2 animate-box">
+                <a href="{{ site.baseurl }}/about/">
+                <div class="small-box box-container about-box">
+                    <span>More About Me &rarr;</span>
+                </div>
+                <div class="title-description">
+                    <p class="job"><b>About Me</b></p>
+                    <p class="work-description">저에 대해 더 자세히 알아보세요.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+    <!-- Tech Stack / Experiments Section -->
+    <section class="experiments animate-box">
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="list">
+        <div class="list-item">C / C++ <div class="number">01</div></div>
+        <div class="dividers"></div>
+        <div class="list-item">C# (.NET) <div class="number">02</div></div>
+        <div class="dividers"></div>
+        <div class="list-item">Python <div class="number">03</div></div>
+        <div class="dividers"></div>
+        <div class="list-item">PLC (XG5000) <div class="number">04</div></div>
+        <div class="dividers"></div>
+        <div class="list-item">MCU (Arduino/STM32) <div class="number">05</div></div>
+        <div class="dividers"></div>
+        <div class="list-item">SECS / GEM <div class="number">06</div></div>
+      </div>
+    </section>
+  </div>
+    </div>
+    <!-- Experiments / Tech Stack -->
+    <div class="experiments animate-box">
+        <div class="list">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="list-item">C / C++ <div class="number"> 01</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">C# (.NET) <div class="number"> 02</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">Python <div class="number"> 03</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">PLC (XG5000) <div class="number"> 04</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">MCU (Arduino/STM32) <div class="number"> 05</div> </div>
+            <div class="dividers"></div>
+            <div class="list-item">SECS / GEM <div class="number"> 06</div> </div>
+        </div>
+    </div>
+</div>
+<script>
+// Noise Background
+const canvas = document.getElementById('noise');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+function drawNoise() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+  <!-- Scripts -->
+  <script>
+    // Noise background
+    const canvas = document.getElementById('noise');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    function drawNoise() {
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const color = Math.random() * 255;
+        data[i] = color;
+        data[i + 1] = color;
+        data[i + 2] = color;
+        data[i + 3] = 15; // very subtle noise
+        data[i] = data[i + 1] = data[i + 2] = color;
+        data[i + 3] = 15;
+      }
+      ctx.putImageData(imageData, 0, 0);
+      requestAnimationFrame(drawNoise);
     }
-    
-    .bento-wide {
-        grid-column: span 2;
-    }
-    
-    .bento-tall {
-        grid-row: span 2;
-    }
-.row2 .big-box-wrapper {
-    flex: 2;
+    ctx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(drawNoise);
 }
-.bento-card {
-    position: relative;
-    border-radius: 24px;
-    padding: 2px;
-    background: transparent;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-.row2 .small-box-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-.bento-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    z-index: 10;
-.about-box {
-    background-color: #000 !important;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 500;
-}
-.card-glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(139, 90, 43, 0.15);
-    border-radius: 22px;
-    box-shadow: 0 4px 30px rgba(139, 90, 43, 0.05);
-    transition: all 0.3s ease;
-    overflow: hidden; /* For images */
-/* Experiments / List Section */
-.experiments {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-.bento-card:hover .card-glass {
-    border-color: rgba(184, 93, 25, 0.3);
-    box-shadow: 0 15px 35px rgba(139, 90, 43, 0.1), 0 0 20px rgba(107, 142, 35, 0.1);
-.section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    letter-spacing: -0.02em;
-}
-.bento-bg-gradient {
-    background: linear-gradient(135deg, rgba(184, 93, 25, 0.9) 0%, rgba(107, 142, 35, 0.9) 100%);
-    color: white;
-.list-item {
-    font-size: 2.5rem;
-    font-weight: 600;
-    padding: 1.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.3s ease, color 0.3s ease;
-}
-.bento-bg-gradient .bento-desc {
-    color: rgba(255, 255, 255, 0.8);
-}
-.bento-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-.bento-desc {
-.list-item .number {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-muted);
-}
-.bento-image {
-.dividers {
-    height: 1px;
-    background-color: var(--border-color);
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 16px 16px 0 0;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-    width: calc(100% + 3rem);
-}
-.icon-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: rgba(184, 93, 25, 0.1);
-    color: var(--accent-1);
-.list-item.dim-all {
-    opacity: 0.2;
-}
-.text-accent {
-    color: var(--accent-1) !important;
-.list-item.highlight-item {
-    opacity: 1;
-    color: #007aff;
-}
-/* --- Scroll Reveal Animations --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-/* Responsive */
-@media (max-width: 768px) {
-    .intro-section {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-        padding-top: 4rem;
-    }
-    .intro-words h1 {
-        font-size: 3rem;
-    }
-    .hasque-status {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .row2 {
-        flex-direction: column;
-    }
-    .small-box, .big-box {
-        width: 100%;
-        max-width: none;
-        height: 350px;
-    }
-    .list-item {
-        font-size: 1.8rem;
-    }
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
+drawNoise();
+setTimeout(() => canvas.classList.add('noise-animate'), 0);
+    drawNoise();
+    canvas.classList.add('noise-animate');
+// Intersection Observer for Animations
+document.addEventListener('DOMContentLoaded', function () {
+  const animateBoxes = document.querySelectorAll('.animate-box');
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  animateBoxes.forEach(box => observer.observe(box));
+    // Intersection observer for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const boxes = document.querySelectorAll('.animate-box');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      boxes.forEach(b => observer.observe(b));
+  // Hover effect for list items
+  const listItems = document.querySelectorAll('.list-item');
+  listItems.forEach(item => {
+    item.addEventListener('mouseover', function () {
+      listItems.forEach(otherItem => {
+        if (otherItem !== item) otherItem.classList.add('dim-all');
+      // Hover effect for tech stack list
+      const items = document.querySelectorAll('.list-item');
+      items.forEach(item => {
+        item.addEventListener('mouseover', () => {
+          items.forEach(i => { if (i !== item) i.classList.add('dim-all'); });
+          item.classList.add('highlight-item');
+        });
+        item.addEventListener('mouseout', () => {
+          items.forEach(i => i.classList.remove('dim-all'));
+          item.classList.remove('highlight-item');
+        });
+      });
+      item.classList.add('highlight-item');
+    });
+    item.addEventListener('mouseout', function () {
+      listItems.forEach(otherItem => otherItem.classList.remove('dim-all'));
+      item.classList.remove('highlight-item');
+    });
+  });
+});
+</script>
+  </script>
+</body>
+</html>
+</html>
