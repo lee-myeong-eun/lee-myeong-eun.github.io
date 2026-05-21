@@ -1,14 +1,22 @@
 - title: Home
   link: /
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f
 - title: About Me
   link: /about/
-
+- title: My Skills
 - title: Services
   link: /skills/
+<<<<<<< HEAD
 
 - title: Contact
   link: /contact/
 
+=======
+- title: Contact
+  link: /contact/
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f
 - title: Blog
   link: /blog.html

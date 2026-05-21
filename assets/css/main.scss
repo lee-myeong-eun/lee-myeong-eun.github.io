@@ -1,69 +1,72 @@
 ---
 ---
 @charset "utf-8";
-
 /* --- Minimalist Theme (Hasque.com style) --- */
 
 :root {
-    --bg-main: #f5f5f5;
-    --text-main: #111111;
-    --text-muted: #666666;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --hover-bg: #e0e0e0;
+  --bg-main: #f5f5f5;
+  --text-main: #111111;
+  --text-muted: #666666;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --hover-bg: #e0e0e0;
 }
 .dark-mode {
-    --bg-main: #111111;
-    --text-main: #f5f5f5;
-    --text-muted: #bbbbbb;
-    --border-color: rgba(255,255,255,0.1);
-    --hover-bg: #333333;
+  --bg-main: #111111;
+  --text-main: #f5f5f5;
+  --text-muted: #bbbbbb;
+  --border-color: rgba(255,255,255,0.1);
+  --hover-bg: #333333;
 }
 
 body {
-    background-color: var(--bg-main) !important;
-    color: var(--text-main) !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Navbar Minimalist Override */
 .navbar.bg-dark {
-    background-color: transparent !important;
-    border-bottom: none !important;
-    backdrop-filter: none;
-    padding-top: 2rem;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none;
+  padding-top: 2rem;
 }
 .navbar-brand, .nav-link {
-    color: var(--text-main) !important;
-    font-weight: 500 !important;
+  color: var(--text-main) !important;
+  font-weight: 500 !important;
 }
 .navbar-brand { font-weight: 800 !important; }
 
 /* Noise Canvas */
 .noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 .noise-animate { opacity: 0.4; }
 
 /* Container */
 .portfolio-container {
-    max-width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
     margin: 0 auto;
     padding: 2rem;
     position: relative;
     z-index: 10;
 }
-
 /* Intro Section */
 .intro-section {
     padding: 8rem 0 6rem 0;
@@ -75,13 +78,11 @@ body {
 }
 .intro-words h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 3rem; max-width: 800px; }
 .intro-words .digital { color: #007aff; }
-
 .hasque-status { display: flex; gap: 4rem; }
 .hasque-status p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
 .status-description { color: var(--text-muted); margin-top: 0.25rem !important; }
 .status-description a { color: var(--text-muted); text-decoration: none; }
 .status-description a:hover { color: var(--text-main); text-decoration: underline; }
-
 /* Projects Asymmetric Layout */
 .projects { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 6rem; }
 .small-box-wrapper, .big-box-wrapper { display: flex; flex-direction: column; opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -98,7 +99,6 @@ body {
 .row2 .big-box-wrapper { flex: 2; }
 .row2 .small-box-wrapper { flex: 1; display: flex; justify-content: flex-end; }
 .about-box { background-color: #000 !important; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 500; }
-
 /* Experiments / List Section */
 .experiments { margin-top: 8rem; margin-bottom: 8rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
 .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 3rem; letter-spacing: -0.02em; }
@@ -107,7 +107,6 @@ body {
 .dividers { height: 1px; background-color: var(--border-color); width: 100%; }
 .list-item.dim-all { opacity: 0.2; }
 .list-item.highlight-item { opacity: 1; color: #007aff; }
-
 /* Responsive */
 @media (max-width: 768px) {
   .intro-section { flex-direction: column; align-items: flex-start; gap: 2rem; padding-top: 4rem; }
@@ -117,7 +116,6 @@ body {
   .small-box, .big-box { width: 100%; max-width: none; height: 350px; }
   .list-item { font-size: 1.8rem; }
 }
-
 /* Mobile Footer Tab Bar */
 .mobile-footer-tabs {
   position: fixed;
@@ -148,8 +146,8 @@ body {
 .mobile-footer-tabs .nav-link .label {
   font-size: 0.75rem;
 }
-
 /* Tech Stack list italic */
 .list-item {
   font-style: italic;
 }
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f

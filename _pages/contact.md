@@ -3,11 +3,18 @@ layout: default
 title: Contact
 permalink: /contact/
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f
 <div class="row mb-5">
   <div class="col-md-8">
     <h2>Get In Touch</h2>
     <hr />
+<<<<<<< HEAD
+=======
+    <p>저의 역량에 대해 궁금하신 점이 있거나, 함께 협업할 기회가 있다면 언제든 메시지를 남겨주세요!</p>
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f
     <p>채용 문의, 프로젝트 협업 제안, 또는 기술적인 대화 등 어떤 연락이든 환영합니다! 아래 폼을 작성해 주시거나 우측의 연락처로 직접 연락해 주시면 최대한 빠르게 회신 드리겠습니다.</p>
     
     <div class="well well-sm mt-4">
@@ -36,12 +43,22 @@ permalink: /contact/
         </form>
     </div>
   </div>
+<<<<<<< HEAD
 
   <div class="col-md-4 mt-5 mt-md-0">
     <h3>Contact Info</h3>
     <p><strong>이명은</strong></p>
     <p>새로운 기회를 찾는 주니어 개발자<br>(Open to Relocate)</p>
     <ul class="list-unstyled">
+=======
+  <div class="col-md-4 mt-5 mt-md-0">
+    <h3>Contact Info</h3>
+    <p><strong>이명은</strong></p>
+    <p>반도체융합캠퍼스 반도체장비소프트웨어학과</p>
+    <p>새로운 기회를 찾는 주니어 개발자<br>(Open to Relocate)</p>
+    <ul class="list-unstyled">
+      <li><i class="fa fa-envelope"></i> Email: <a href="mailto:{{ site.email }}">이메일 문의</a></li>
+>>>>>>> 2435a06171c57ce8a30675ff1944f5441b95ed9f
       <li><i class="fa fa-phone"></i> Phone: 010-4077-6322</li>
       <li><i class="fa fa-envelope"></i> Email: <a href="mailto:auddms1995@naver.com">auddms1995@naver.com</a></li>
       <li><i class="fa fa-github"></i> GitHub: <a href="https://github.com/lee-myeong-eun">github.com/lee-myeong-eun</a></li>
