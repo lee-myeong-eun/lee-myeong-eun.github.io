@@ -1,20 +1,52 @@
 ---
 layout: default
-permalink: /services/
+title: My Skills
+title: Services & Skills
+permalink: /skills/
 ---
-
-## Full length services page
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie eu turpis eu semper. Aliquam sed tempor ex. Curabitur pretium auctor tellus. Nulla vel nisl vulputate, ornare sem convallis, mollis eros. Pellentesque in lacus eros. Aliquam non turpis eu ex auctor varius eget vel orci. Aliquam pharetra leo sed risus mattis, at aliquet diam sagittis. Curabitur finibus malesuada ligula, sit amet fermentum ligula cursus nec. Praesent elit dolor, porttitor sit amet egestas a, aliquet sit amet velit. Cras ac dictum urna, at dictum nibh. Etiam ornare eleifend ultrices. Sed non condimentum urna. Sed lacinia ante quis nisl ultrices, nec tempor quam interdum. Duis sagittis fermentum nunc in tincidunt. Maecenas fringilla cursus laoreet.
-
-Etiam convallis purus a ornare facilisis. Sed sodales accumsan mauris, ut congue sapien pretium id. Duis viverra consectetur posuere. Integer feugiat nulla ac elit pretium gravida. Donec laoreet porttitor dolor nec accumsan. Maecenas fringilla felis sodales nisl mattis, id congue sem volutpat. Nam ut dolor a ante iaculis porttitor ultricies et nisl. Maecenas sed sapien ac turpis aliquam elementum. Aliquam at eleifend metus. Curabitur ut fermentum turpis. Nulla tempus rutrum purus, non bibendum ante vulputate at. Nulla vel viverra nulla. Duis libero risus, ultricies non rhoncus at, tristique id velit. Duis ac ex tortor. Curabitur dui metus, ornare eu ornare vel, scelerisque in augue. Aliquam eget consectetur justo, ac hendrerit lectus.
-
-Fusce ullamcorper nisl eros. Mauris sed urna mattis, mattis velit non, dignissim massa. Aenean maximus ligula sed diam tincidunt, sed tempor metus finibus. Morbi ut nisi id sapien viverra malesuada ut ut dui. Mauris ut mollis magna, viverra fermentum metus. Proin ac ipsum quis mauris interdum sagittis. Fusce id massa eu dolor pharetra efficitur a sed nisi. Quisque quis gravida purus. Morbi facilisis sapien et tellus convallis, eu mattis nisl volutpat. Aliquam quis vehicula leo. Phasellus posuere dui orci, eu luctus neque sollicitudin sit amet. Donec nunc massa, posuere quis leo eget, porta dapibus velit. Maecenas quis pulvinar orci.
-
-Nunc varius sit amet ante id laoreet. Integer sapien nisl, accumsan dictum tempor eu, tempus at mi. Duis sit amet tellus elit. Aliquam tincidunt tellus eros, sed placerat ligula aliquam a. Morbi dapibus congue mauris, id dapibus lectus hendrerit at. Aliquam et porttitor metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet elit eu libero facilisis, sit amet vulputate leo rhoncus.
-
-Suspendisse accumsan ipsum nunc, sed fringilla metus hendrerit nec. Nulla gravida ante ac laoreet fermentum. Nunc aliquam nibh diam, id elementum urna convallis et. Duis mattis lacinia pharetra. Mauris ac lorem venenatis, ultricies nisl a, efficitur mauris. Etiam lacinia fermentum lectus, ac blandit nisi bibendum quis. Curabitur sit amet pharetra elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ut tincidunt nulla. Vivamus fermentum sapien semper ex convallis hendrerit. Sed id eleifend justo.
-
-Nunc quam sem, condimentum ut nibh vitae, facilisis laoreet ligula. Vestibulum ultrices sapien at nulla ullamcorper eleifend. Duis quam elit, pulvinar et aliquam a, porttitor sit amet sem. Suspendisse potenti. Maecenas et mollis enim. Morbi vel scelerisque felis. Maecenas ultrices sem eget neque suscipit, eget consequat magna efficitur.
-
-Vestibulum suscipit diam tortor, ut semper dolor elementum pulvinar. Curabitur vitae lacus ut augue viverra venenatis non non libero. Nullam vitae pharetra felis. Integer a turpis non libero posuere dictum eget id massa. Nulla ac lorem dictum, facilisis lectus a, pellentesque nisi. Phasellus sapien enim, rhoncus et mattis eu, facilisis sed est. Maecenas faucibus ultrices varius.
+<div class="row">
+  <div class="col-md-12 mb-5">
+    <h2>Technical Skills</h2>
+    <h2>Services & Technical Skills</h2>
+    <hr />
+    <p>반도체 장비 소프트웨어 개발에 필요한 다양한 기술적 역량을 보유하고 있습니다.</p>
+    <p>다음과 같은 기술과 역량을 바탕으로 반도체 장비 제어 시스템 설계, 임베디드 장치 제어 및 자동화 솔루션 개발 서비스를 제공할 수 있습니다.</p>
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <h4>💻 Programming Languages</h4>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>C / C++</strong>: 임베디드 제어 및 기초 로직 구현</li>
+          <li class="list-group-item"><strong>C# (.NET)</strong>: GUI 기반 장비 제어 및 모니터링 프로그램</li>
+          <li class="list-group-item"><strong>Python</strong>: 데이터 분석 및 간단한 스크립트 작성</li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <h4>🔌 Hardware & Control</h4>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>PLC (XG5000)</strong>: 시퀀스 제어 및 공정 자동화 로직 설계</li>
+          <li class="list-group-item"><strong>MCU (Arduino/STM32)</strong>: 각종 센서 데이터 인터페이스 구현</li>
+          <li class="list-group-item"><strong>Motor Control</strong>: 서보/스텝 모터 정밀 제어</li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>🌐 Communication & Standards</h4>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>SECS/GEM</strong>: 반도체 장비 통신 표준 프로토콜 이해 및 구현</li>
+          <li class="list-group-item"><strong>TCP/IP & Serial</strong>: 소켓 통신 및 시리얼 통신 기초</li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>⚙️ Semiconductor Knowledge</h4>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Process Flow</strong>: 8대 공정 및 장비 구조에 대한 깊은 이해</li>
+          <li class="list-group-item"><strong>Environment</strong>: 클린룸 작업 환경 및 안전 수칙 숙지</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-5">
+      <h3>🛠 Tools I Use</h3>
+      <p>Visual Studio, Visual Studio Code, Git, GitHub, XG5000, AutoCAD 등</p>
+    </div>
+  </div>
+</div>
