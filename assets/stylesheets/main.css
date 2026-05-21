@@ -1,7 +1,7 @@
-@import url("normalize.css");
-@import url("topbar.css");
-@import url("topbar-menu.css");
-@import url("highlight.css"); /* For code highlighting */
+@import url("./normalize.css");
+@import url("./topbar.css");
+@import url("./topbar-menu.css");
+@import url("./highlight.css"); /* For code highlighting */
 
 /*Set some default styles*/
 body {
