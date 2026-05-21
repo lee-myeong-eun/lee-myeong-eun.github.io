@@ -56,7 +56,6 @@ $on-laptop: 800px;
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 @import "style";
-/* --- 다크 모드 강제 적용 --- */
 /* --- 다크 모드 강제 적용 및 2-Tone 포인트 컬러 --- */
 :root {
     --bg-dark: #0f172a;
@@ -67,15 +66,11 @@ $on-laptop: 800px;
     --text-muted: #94a3b8;
 }
 body {
-    background-color: #0f172a !important;
-    color: #e2e8f0 !important;
     background-color: var(--bg-dark) !important;
     color: var(--text-main) !important;
     font-family: 'Nunito', sans-serif;
 }
 .navbar.bg-dark {
-    background-color: #0a0f1e !important;
-    border-bottom: 1px solid #1e293b;
     background-color: rgba(15, 23, 42, 0.95) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -87,19 +82,14 @@ body {
     -webkit-text-fill-color: transparent;
 }
 header.bg-primary {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important;
     border-bottom: 1px solid rgba(99, 102, 241, 0.2);
 }
 .card {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 15px !important;
     background-color: var(--bg-card) !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     border-radius: 16px !important;
     overflow: hidden;
-    color: #f1f5f9 !important;
     color: var(--text-main) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -109,12 +99,9 @@ header.bg-primary {
     border-color: rgba(99, 102, 241, 0.3) !important;
 }
 .card-body p {
-    color: #94a3b8 !important;
     color: var(--text-muted) !important;
 }
 .btn-primary {
-    background-color: #334155 !important;
-    border-color: #475569 !important;
     background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%) !important;
     border: none !important;
     color: #fff !important;
@@ -127,12 +114,10 @@ header.bg-primary {
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #f1f5f9 !important;
     color: var(--text-main) !important;
     font-weight: 700;
 }
 p, li {
-    color: #94a3b8 !important;
     color: var(--text-muted) !important;
     line-height: 1.7;
 }
@@ -149,7 +134,6 @@ a:hover {
     text-decoration: none;
 }
 hr {
-    border-color: #334155 !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 /* 폼 요소 스타일링 */
@@ -171,3 +155,114 @@ hr {
 .list-group-item strong {
     color: var(--text-main) !important;
 }
+/* ==========================================================================
+   MZ Style Portfolio Redesign Styles
+   ========================================================================== */
+/* --- Hero Section --- */
+.hero-section {
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* --- Bento Box Grid --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+/* For larger screens, create specific spans */
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+    }
+    
+    .bento-wide {
+        grid-column: span 2;
+    }
+    
+    .bento-tall {
+        grid-row: span 2;
+    }
+}
+.bento-card {
+    position: relative;
+    border-radius: 24px;
+    padding: 2px; /* For gradient border effect if wanted, or just standard */
+    background: transparent;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.bento-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    z-index: 10;
+}
+.card-glass {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.bento-card:hover .card-glass {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(14, 165, 233, 0.2);
+}
+.bento-bg-gradient {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(14, 165, 233, 0.8) 100%);
+    color: white;
+}
+.bento-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+.bento-desc {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.text-accent {
+    color: var(--accent-2) !important;
+}
+/* --- Scroll Reveal Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
