@@ -1,3 +1,60 @@
+---
+---
+@charset "utf-8";
+/* --- 명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 --- */
+$theme-colors: (
+  "primary": {{site.color-scheme}}
+);
+/* 폰트 및 글로벌 스타일 */
+$font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: "Nunito", sans-serif;
+// Width of the content area
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/toasts";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/spinners";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
 @import "style";
 /* --- 다크 모드 강제 적용 --- */
 /* --- 다크 모드 강제 적용 및 2-Tone 포인트 컬러 --- */
