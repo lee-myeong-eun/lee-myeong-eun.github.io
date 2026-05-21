@@ -1,12 +1,10 @@
 ---
 layout: default
-title: My Skills
 title: Services & Skills
 permalink: /skills/
 ---
 <div class="row">
   <div class="col-md-12 mb-5">
-    <h2>Technical Skills</h2>
     <h2>Services & Technical Skills</h2>
     <hr />
     <p>반도체 장비 소프트웨어 개발에 필요한 다양한 기술적 역량을 보유하고 있습니다.</p>

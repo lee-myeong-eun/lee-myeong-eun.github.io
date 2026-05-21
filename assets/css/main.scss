@@ -56,15 +56,8 @@ $on-laptop: 800px;
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 @import "style";
-/* --- 우드톤 (Wood Tone) 커스텀 스타일 --- */
 /* --- 리얼 우드톤 (Dark Wood Tone) 커스텀 스타일 --- */
 :root {
-    --bg-main: #fcf9f2; /* Warm beige / off-white */
-    --bg-card: #ffffff;
-    --accent-1: #b85d19; /* Terracotta / Dark Wood */
-    --accent-2: #6b8e23; /* Olive / Sage Green */
-    --text-main: #3e2723; /* Espresso Brown */
-    --text-muted: #795548; /* Soft Brown */
     --bg-main: #3e2723; /* 짙은 갈색 바탕 (Dark Espresso Wood) */
     --bg-card: #4e342e; /* 카드 배경 (Lighter Brown Wood) */
     --accent-1: #ffb74d; /* 주황빛 포인트 (Warm Orange Wood) */
@@ -78,8 +71,6 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 .navbar.bg-dark {
-    background-color: rgba(252, 249, 242, 0.95) !important;
-    border-bottom: 1px solid rgba(184, 93, 25, 0.1);
     background-color: rgba(62, 39, 35, 0.95) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -92,26 +83,19 @@ body {
     color: var(--accent-1) !important;
 }
 header.bg-primary {
-    background: linear-gradient(135deg, #fcf9f2 0%, #f5ecd8 100%) !important;
-    border-bottom: 1px solid rgba(184, 93, 25, 0.1);
     background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.card {
 .card, .card-wood {
     background-color: var(--bg-card) !important;
-    border: 1px solid rgba(139, 90, 43, 0.1) !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     border-radius: 16px !important;
     overflow: hidden;
     color: var(--text-main) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card:hover {
 .card:hover, .card-wood:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(184, 93, 25, 0.15), 0 8px 10px -6px rgba(107, 142, 35, 0.15);
-    border-color: rgba(184, 93, 25, 0.2) !important;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 183, 77, 0.3) !important;
 }
@@ -128,18 +112,15 @@ header.bg-primary {
     color: var(--text-muted) !important;
 }
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-1) 0%, #cd853f 100%) !important;
     background: linear-gradient(135deg, #f57c00 0%, #e65100 100%) !important;
     border: none !important;
     color: #fff !important;
     font-weight: 600;
-    box-shadow: 0 4px 14px 0 rgba(184, 93, 25, 0.3);
     box-shadow: 0 4px 14px 0 rgba(230, 81, 0, 0.4);
     transition: all 0.3s ease;
 }
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(184, 93, 25, 0.4);
     box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
 }
 h1, h2, h3, h4, h5, h6 {
@@ -159,28 +140,26 @@ a {
     transition: color 0.3s ease;
 }
 a:hover {
-    color: var(--accent-2);
     color: #ffd54f;
     text-decoration: none;
 }
 hr {
-    border-color: rgba(139, 90, 43, 0.2) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 /* 폼 요소 스타일링 */
 .form-control {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border: 1px solid rgba(139, 90, 43, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     color: var(--text-main) !important;
 }
 .form-control:focus {
-    background-color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
     border-color: var(--accent-1) !important;
-    box-shadow: 0 0 0 0.2rem rgba(184, 93, 25, 0.25) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 183, 77, 0.25) !important;
 }
 .list-group-item {
     background-color: var(--bg-card) !important;
-    border-color: rgba(139, 90, 43, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
     color: var(--text-muted) !important;
 }
 .list-group-item strong {
@@ -247,25 +226,28 @@ hr {
     z-index: 10;
 }
 .card-glass {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(78, 52, 46, 0.75); /* Dark wood glassmorphism */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(139, 90, 43, 0.15);
+    border: 1px solid rgba(255, 183, 77, 0.15); /* Subtle warm orange border */
     border-radius: 22px;
-    box-shadow: 0 4px 30px rgba(139, 90, 43, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     overflow: hidden; /* For images */
 }
 .bento-card:hover .card-glass {
-    border-color: rgba(184, 93, 25, 0.3);
-    box-shadow: 0 15px 35px rgba(139, 90, 43, 0.1), 0 0 20px rgba(107, 142, 35, 0.1);
+    border-color: rgba(255, 183, 77, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 183, 77, 0.2);
 }
 .bento-bg-gradient {
-    background: linear-gradient(135deg, rgba(184, 93, 25, 0.9) 0%, rgba(107, 142, 35, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(245, 124, 0, 0.9) 0%, rgba(129, 199, 132, 0.9) 100%); /* Orange-Green Wood Gradient */
     color: white;
 }
 .bento-bg-gradient .bento-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+.bento-bg-gradient .bento-title {
+    color: white !important;
 }
 .bento-title {
     font-size: 1.5rem;
@@ -291,7 +273,7 @@ hr {
     width: 60px;
     height: 60px;
     border-radius: 16px;
-    background: rgba(184, 93, 25, 0.1);
+    background: rgba(255, 183, 77, 0.1);
     color: var(--accent-1);
 }
 .text-accent {

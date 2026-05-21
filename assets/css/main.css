@@ -6,75 +6,93 @@
 @charset "utf-8";
 
 /* Import compiled Bootstrap (relative to this file) */
-@import "_sass/bootstrap/css/bootstrap.css";
+@import "_sass/bootstrap/css/bootstrap.min.css";
 
-/* Custom theme overrides (from assets/css/_sass/custom.scss) */
-/* --- 명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 --- */
+/* Custom theme overrides (representing Dark Wood theme) */
+:root {
+    --bg-main: #3e2723; /* Dark Espresso Wood */
+    --bg-card: #4e342e; /* Lighter Brown Wood */
+    --accent-1: #ffb74d; /* Warm Orange Wood */
+    --accent-2: #81c784; /* Soft Green */
+    --text-main: #efebe9; /* Off-white */
+    --text-muted: #bcaaa4; /* Muted Beige */
+}
 
 /* --- 글로벌 다크 배경 및 둥근 폰트 --- */
 body {
-    background-color: #0f172a !important; /* 딥 다크 네이비 */
-    color: #e2e8f0 !important; /* 소프트 화이트 */
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
     font-family: 'Nunito', sans-serif !important;
 }
 
 /* --- 상단 바 (Navbar) --- */
 .navbar.bg-dark {
-    background-color: #0a0f1e !important;
-    border-bottom: 1px solid #1e293b;
+    background-color: rgba(62, 39, 35, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
 }
 
+.navbar-brand {
+    font-weight: 800;
+    color: var(--accent-1) !important;
+}
+
 .navbar-brand, .nav-link {
-    color: #e2e8f0 !important;
+    color: var(--text-main) !important;
     font-weight: 600;
 }
 
 /* --- 히어로 섹션 (Header) --- */
 header.bg-primary {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    border-bottom: 1px solid #334155;
+    background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* --- 본문 제목 및 텍스트 --- */
 h1, h2, h3, h4, h5, h6 {
-    color: #f1f5f9 !important;
+    color: var(--text-main) !important;
 }
 
 p, li {
-    color: #94a3b8 !important; /* 가독성 좋은 그레이 */
+    color: var(--text-muted) !important; /* 가독성 좋은 베이지 */
 }
 
 hr {
-    border-color: #334155 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* --- 카드 (둥근 모서리 + 다크 스타일) --- */
-.card {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 15px !important;
+.card, .card-wood {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 0.2s ease;
+    color: var(--text-main) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover, .card-wood:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 183, 77, 0.3) !important;
 }
 
 .card-title {
-    color: #f1f5f9 !important;
+    color: var(--text-main) !important;
 }
 
 .card-text {
-    color: #94a3b8 !important;
+    color: var(--text-muted) !important;
 }
 
-.card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+.card-img-top, .wood-image {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* --- 버튼 (둥근 스타일) --- */
@@ -87,20 +105,21 @@ hr {
 }
 
 .btn-primary {
-    background-color: #334155 !important;
-    border-color: #475569 !important;
-    color: #f1f5f9 !important;
+    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%) !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 14px 0 rgba(230, 81, 0, 0.4);
 }
 
 .btn-primary:hover {
-    background-color: #475569 !important;
-    border-color: #64748b !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
 }
 
 /* --- 사이드바 및 기타 레이아웃 --- */
 .bg-light {
-    background-color: #1e293b !important;
-    border: 1px solid #334155;
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    color: #94a3b8 !important;
+    color: var(--text-muted) !important;
 }
