@@ -5,8 +5,7 @@
 */
 @charset "utf-8";
 
-/* Import compiled Bootstrap (relative to this file) */
-@import "_sass/bootstrap/css/bootstrap.min.css";
+/* Import compiled Bootstrap via CDN in head.html instead to prevent 404 compile errors */
 
 /* ==========================================================================
    명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 (딥 다크 네이비 테마)
