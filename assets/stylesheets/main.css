@@ -1,11 +1,7 @@
----
-layout: null
----
-
-{% include assets/stylesheets/normalize.css %}
-{% include assets/stylesheets/topbar.css %}
-{% include assets/stylesheets/topbar-menu.css %}
-{% include assets/stylesheets/highlight.css %} /* For code highlighting */
+@import url("normalize.css");
+@import url("topbar.css");
+@import url("topbar-menu.css");
+@import url("highlight.css"); /* For code highlighting */
 
 /*Set some default styles*/
 body {
