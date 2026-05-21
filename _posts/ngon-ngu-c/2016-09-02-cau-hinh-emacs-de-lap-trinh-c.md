@@ -27,7 +27,7 @@ Vậy là mở Emacs lên sử dụng thôi (Lưu ý là lần đầu mở lại
 
 `emacs&`
 
-![Emacs]({{ site.url }}{{ site.baseurl }}/assets/images/ngon-ngu-c/emacs.png)
+![Emacs](https://lee-myeong-eun.github.io//assets/images/ngon-ngu-c/emacs.png)
 
 Vừa mở lên C-x C-f tạo file mới (file mã nguồn ngôn ngữ C có đuôi .c nhé), ae thấy ngay cái file browser ngon hơn cái mặc định rồi.
 
@@ -66,7 +66,7 @@ int main(){
 }
 ~~~
 
-![Cấu hình Emacs để lập trình C]({{ site.url }}{{ site.baseurl }}/assets/images/ngon-ngu-c/emacs-start.png)
+![Cấu hình Emacs để lập trình C](https://lee-myeong-eun.github.io//assets/images/ngon-ngu-c/emacs-start.png)
 
 Trên đây là cơ bản cấu hình Emacs cho người mới bắt đầu. Đọc thêm các chức năng khác của bộ cấu hình chúng ta vừa sử dụng tại đây nhé: [http://tuhdo.github.io/c-ide.html](http://tuhdo.github.io/c-ide.html)
 

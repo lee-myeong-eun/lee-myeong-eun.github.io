@@ -12,7 +12,7 @@ permalink: /blog/
 <h2>Lastest posts</h2>
 
 {% for post in site.posts limit:5 %}  
-    <p>&gt;&gt; <span style="font-size: 18px; font-weight: bold;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span></p>
+    <p>&gt;&gt; <span style="font-size: 18px; font-weight: bold;"><a href="/{{ post.url }}">{{ post.title }}</a></span></p>
 {% endfor %}
 
 
@@ -30,7 +30,7 @@ permalink: /blog/
     <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
-        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        <a class="post-title" href="/{{ post.url }}">
       <li>
         {{ post.title }} <br/>
       <small class="post-date">{{ post.date | date_to_string }}</small>

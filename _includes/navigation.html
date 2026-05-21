@@ -3,13 +3,13 @@
   <div class="container d-flex justify-content-between align-items-center">
     <!-- Bootstrap navbar removed; using custom mobile header -->
     <!-- Logo or title -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">Lee Myeong Eun</a>
+    <a class="navbar-brand" href="//">Lee Myeong Eun</a>
     <button id="darkModeToggle" class="btn btn-outline-secondary" aria-label="Toggle dark mode">🌓</button>
   </div>
   <div class="collapse" id="mobileNav">
     <ul class="nav flex-column text-center">
       {% for item in site.data.menu %}
-      <li class="nav-item{% if item.link == page.url %} active{% endif %}"><a class="nav-link" href="{{ site.baseurl }}{{ item.link }}">{{ item.title }}</a></li>
+      <li class="nav-item{% if item.link == page.url %} active{% endif %}"><a class="nav-link" href="/{{ item.link }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </div>

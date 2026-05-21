@@ -21,15 +21,15 @@
   <meta property="og:type" content="website" />
 
   {% if page.id %}
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <meta property="og:url" content="https://lee-myeong-eun.github.io{{ page.url }}" />
+  <link rel="canonical" href="https://lee-myeong-eun.github.io/{{ page.url }}" />
   {% else %}
-  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
-  <link rel="canonical" href="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
+  <meta property="og:url" content="https://lee-myeong-eun.github.io/{{ page.url | remove: '/index.html' | remove: '.html' }}" />
+  <link rel="canonical" href="https://lee-myeong-eun.github.io{{ page.url | remove: '/index.html' | remove: '.html' }}" />
   {% endif %}
 
   {% if page.shareimg %}
   <meta property="og:image" content="{{ page.shareimg }}" />
   {% else %}
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ site.shareimg }}" />
+  <meta property="og:image" content="https://lee-myeong-eun.github.io//{{ site.shareimg }}" />
   {% endif %}

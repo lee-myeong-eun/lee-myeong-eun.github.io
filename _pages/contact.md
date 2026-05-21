@@ -41,7 +41,7 @@ permalink: /contact/
     <p>반도체융합캠퍼스 반도체장비소프트웨어학과</p>
     <p>새로운 기회를 찾는 주니어 개발자<br>(Open to Relocate)</p>
     <ul class="list-unstyled">
-      <li><i class="fa fa-envelope"></i> Email: <a href="mailto:{{ site.email }}">이메일 문의</a></li>
+      <li><i class="fa fa-envelope"></i> Email: <a href="mailto:auddms1995@naver.com">이메일 문의</a></li>
       <li><i class="fa fa-phone"></i> Phone: 010-4077-6322</li>
       <li><i class="fa fa-envelope"></i> Email: <a href="mailto:auddms1995@naver.com">auddms1995@naver.com</a></li>
       <li><i class="fa fa-github"></i> GitHub: <a href="https://github.com/lee-myeong-eun">github.com/lee-myeong-eun</a></li>

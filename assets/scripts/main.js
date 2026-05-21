@@ -20,16 +20,16 @@ $.fn.descendantOf = function(element) {
 $('.menu-nojs').hide();
 
 // Asyn load images
-document.write('<img style="display: none" src="{{ site.url }}{{ site.baseurl }}/assets/images/patterns/dark-fabric.png">');
-document.write('<img style="display: none" src="{{ site.url }}{{ site.baseurl }}/assets/images/patterns/dark-fabric.png">');
+document.write('<img style="display: none" src="https://lee-myeong-eun.github.io//assets/images/patterns/dark-fabric.png">');
+document.write('<img style="display: none" src="https://lee-myeong-eun.github.io//assets/images/patterns/dark-fabric.png">');
 
 // Load theme dark-light
 if (typeof(Storage) !== "undefined") {
     if (sessionStorage.theme == "dark") {
-        $('body').css("background", "url({{ site.url }}{{ site.baseurl }}/assets/images/patterns/dark-fabric.png)");
+        $('body').css("background", "url(https://lee-myeong-eun.github.io//assets/images/patterns/dark-fabric.png)");
         $('input#theme-select').prop("checked", true);
     } else if (sessionStorage.theme == "dark") {
-        $('body').css("background", "url({{ site.url }}{{ site.baseurl }}/assets/images/patterns/dark-fabric.png)");
+        $('body').css("background", "url(https://lee-myeong-eun.github.io//assets/images/patterns/dark-fabric.png)");
         $('input#theme-select').prop("checked", false);
         sessionStorage.theme = "light";
     }
@@ -41,7 +41,7 @@ $(document).ready(function(){
     // Theme selector
     $('input#theme-select').change(function(){
         if ($('input#theme-select').is(':checked')) {
-            $('body').css("background", "url({{ site.url }}{{ site.baseurl }}/assets/images/patterns/dark-fabric.png)");
+            $('body').css("background", "url(https://lee-myeong-eun.github.io//assets/images/patterns/dark-fabric.png)");
             sessionStorage.theme = "dark";
         } else {
             $('body').css("background", "#fafafa");
