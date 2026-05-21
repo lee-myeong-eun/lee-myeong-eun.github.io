@@ -1,44 +1,14 @@
 ---
 layout: default
+title: Contact
 permalink: /contact/
 ---
-
-## Contact us
-
-<div class="row py-4">
-    <div class="col-md-12">
-    <div class="well well-sm">
+<div class="row mb-5">
+  <div class="col-md-8">
+    <h2>Get In Touch</h2>
+    <hr />
+    <p>저의 역량에 대해 궁금하신 점이 있거나, 함께 협업할 기회가 있다면 언제든 메시지를 남겨주세요!</p>
+    <p>채용 문의, 프로젝트 협업 제안, 또는 기술적인 대화 등 어떤 연락이든 환영합니다! 아래 폼을 작성해 주시거나 우측의 연락처로 직접 연락해 주시면 최대한 빠르게 회신 드리겠습니다.</p>
+    
+    <div class="well well-sm mt-4">
         <form class="form-horizontal" action="#" method="post">
-        <fieldset>
-        <!-- Name input-->
-        <div class="form-group">
-            <label class="col-md-3 control-label" for="name">Name</label>
-            <div class="col-md-9">
-            <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-            </div>
-        </div>
-        <!-- Email input-->
-        <div class="form-group">
-            <label class="col-md-3 control-label" for="email">Your E-mail</label>
-            <div class="col-md-9">
-            <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-            </div>
-        </div>
-        <!-- Message body -->
-        <div class="form-group">
-            <label class="col-md-3 control-label" for="message">Your message</label>
-            <div class="col-md-9">
-            <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-            </div>
-        </div>
-        <!-- Form actions -->
-        <div class="form-group">
-            <div class="col-md-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-        </fieldset>
-        </form>
-    </div>
-    </div>
-</div>
