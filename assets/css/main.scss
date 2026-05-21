@@ -338,3 +338,34 @@ hr {
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
+
+/* Clickable Project Card styles */
+.clickable-project-card {
+    cursor: pointer;
+    text-decoration: none !important;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.clickable-project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.clickable-project-card:hover .card-wood {
+    border-color: rgba(255, 183, 77, 0.6) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+}
+
+.clickable-project-card .card-wood {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Card images hover effects */
+.clickable-project-card .card-image-wrap img {
+    transition: transform 0.4s ease;
+}
+
+.clickable-project-card:hover .card-image-wrap img {
+    transform: scale(1.05);
+}
+
