@@ -1,6 +1,6 @@
 /* Auto-generated fallback main.css
    - Imports precompiled Bootstrap CSS located under _sass
-   - Appends custom theme overrides from custom.scss
+   - Appends original deep dark navy custom styles
    NOTE: This is a pragmatic fallback when Sass CLI isn't available locally.
 */
 @charset "utf-8";
@@ -8,91 +8,74 @@
 /* Import compiled Bootstrap (relative to this file) */
 @import "_sass/bootstrap/css/bootstrap.min.css";
 
-/* Custom theme overrides (representing Dark Wood theme) */
-:root {
-    --bg-main: #3e2723; /* Dark Espresso Wood */
-    --bg-card: #4e342e; /* Lighter Brown Wood */
-    --accent-1: #ffb74d; /* Warm Orange Wood */
-    --accent-2: #81c784; /* Soft Green */
-    --text-main: #efebe9; /* Off-white */
-    --text-muted: #bcaaa4; /* Muted Beige */
-}
+/* ==========================================================================
+   명은님의 둥글둥글하고 센스있는 다크 테마 커스텀 스타일 (딥 다크 네이비 테마)
+   ========================================================================== */
 
 /* --- 글로벌 다크 배경 및 둥근 폰트 --- */
 body {
-    background-color: var(--bg-main) !important;
-    color: var(--text-main) !important;
+    background-color: #0f172a !important; /* 딥 다크 네이비 */
+    color: #e2e8f0 !important; /* 소프트 화이트 */
     font-family: 'Nunito', sans-serif !important;
 }
 
 /* --- 상단 바 (Navbar) --- */
 .navbar.bg-dark {
-    background-color: rgba(62, 39, 35, 0.95) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #0a0f1e !important;
+    border-bottom: 1px solid #1e293b;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
 }
 
-.navbar-brand {
-    font-weight: 800;
-    color: var(--accent-1) !important;
-}
-
 .navbar-brand, .nav-link {
-    color: var(--text-main) !important;
+    color: #e2e8f0 !important;
     font-weight: 600;
 }
 
 /* --- 히어로 섹션 (Header) --- */
 header.bg-primary {
-    background: linear-gradient(135deg, #3e2723 0%, #4e342e 100%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-bottom: 1px solid #334155;
 }
 
 /* --- 본문 제목 및 텍스트 --- */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text-main) !important;
+    color: #f1f5f9 !important;
 }
 
 p, li {
-    color: var(--text-muted) !important; /* 가독성 좋은 베이지 */
+    color: #94a3b8 !important; /* 가독성 좋은 그레이 */
 }
 
 hr {
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #334155 !important;
 }
 
 /* --- 카드 (둥근 모서리 + 다크 스타일) --- */
-.card, .card-wood {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 16px !important;
+.card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 15px !important;
     overflow: hidden;
-    color: var(--text-main) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.2s ease;
 }
 
-.card:hover, .card-wood:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 183, 77, 0.3) !important;
 }
 
 .card-title {
-    color: var(--text-main) !important;
+    color: #f1f5f9 !important;
 }
 
 .card-text {
-    color: var(--text-muted) !important;
+    color: #94a3b8 !important;
 }
 
-.card-img-top, .wood-image {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 /* --- 버튼 (둥근 스타일) --- */
@@ -105,227 +88,20 @@ hr {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%) !important;
-    border: none !important;
-    color: #fff !important;
-    box-shadow: 0 4px 14px 0 rgba(230, 81, 0, 0.4);
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
+    background-color: #475569 !important;
+    border-color: #64748b !important;
 }
 
 /* --- 사이드바 및 기타 레이아웃 --- */
 .bg-light {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1e293b !important;
+    border: 1px solid #334155;
     border-radius: 15px;
-    color: var(--text-muted) !important;
+    color: #94a3b8 !important;
 }
-
-/* ==========================================================================
-   MZ Style Portfolio Redesign Styles
-   ========================================================================== */
-/* --- Hero Section --- */
-.hero-section {
-    padding: 6rem 1rem;
-    position: relative;
-    overflow: hidden;
-}
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -1px;
-}
-.gradient-text {
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto;
-}
-/* --- Bento Box Grid v2 (Reference Layout) --- */
-.bento-grid-v2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 1.5rem 0;
-}
-@media (min-width: 768px) {
-    .bento-grid-v2 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .bento-span-1 {
-        grid-column: span 1;
-    }
-    .bento-span-2 {
-        grid-column: span 2;
-    }
-}
-
-.bento-item-v2 {
-    display: flex;
-    flex-direction: column;
-}
-
-.bento-card-v2 {
-    position: relative;
-    border-radius: 32px; /* Smooth rounded corners as in the reference */
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2.5rem;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-@media (min-width: 768px) {
-    .bento-span-1 .bento-card-v2 {
-        aspect-ratio: 3 / 4; /* Portrait aspect ratio for span 1 */
-    }
-    .bento-span-2 .bento-card-v2 {
-        aspect-ratio: 16 / 9; /* Landscape aspect ratio for span 2 */
-    }
-}
-.bento-card-v2:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-/* Vibrantly colored backgrounds matching the reference image */
-.bento-bg-orange-pink {
-    background: linear-gradient(135deg, #ff8a00, #da1b60);
-}
-.bento-bg-blue {
-    background: #2b4cff;
-}
-.bento-bg-cyan {
-    background: #0ea5e9;
-}
-.bento-bg-yellow {
-    background: #eab308;
-}
-
-/* Centered mockup image */
-.bento-mockup {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s ease;
-}
-.bento-card-v2:hover .bento-mockup {
-    transform: scale(1.04);
-}
-
-/* Captain Text underneath cards */
-.bento-caption {
-    margin-top: 1rem;
-    padding: 0 0.5rem;
-    font-size: 0.95rem;
-    color: var(--text-main);
-    line-height: 1.5;
-}
-.bento-caption strong {
-    color: #ffffff !important;
-    font-weight: 700;
-    margin-right: 0.5rem;
-}
-.bento-caption span {
-    color: var(--text-muted);
-}
-
-/* Tech stack inside bento yellow card */
-.bento-tech-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 85%;
-    height: 85%;
-}
-.bento-tech-item {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-.bento-tech-item i {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-}
-.bento-tech-item:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-/* Contact layout under bento */
-.contact-glass-full {
-    background: rgba(78, 52, 46, 0.75);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 183, 77, 0.15);
-    border-radius: 32px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-}
-
-/* --- Scroll Reveal Animations --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-
-/* Clickable Project Card styles */
-.clickable-project-card {
-    cursor: pointer;
-    text-decoration: none !important;
-    display: block;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.clickable-project-card:hover {
-    transform: translateY(-10px) scale(1.03);
-}
-
-.clickable-project-card:hover .card-wood {
-    border-color: rgba(255, 183, 77, 0.6) !important;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-}
-
-.clickable-project-card .card-wood {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Card images hover effects */
-.clickable-project-card .card-image-wrap img {
-    transition: transform 0.4s ease;
-}
-
-.clickable-project-card:hover .card-image-wrap img {
-    transform: scale(1.05);
-}
-
-

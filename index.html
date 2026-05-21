@@ -1,146 +1,74 @@
 ---
 layout: default
 ---
-<!-- Welcome Text (Simple and Stylish Intro) -->
-<div class="text-center mb-5 reveal">
-  <h2 class="font-weight-black mb-3" style="font-weight: 800; color: var(--accent-1);">반도체 장비 소프트웨어 엔지니어</h2>
-  <p class="lead text-white-50 mx-auto" style="max-width: 750px; font-size: 1.15rem; line-height: 1.8;">
-    반도체 장비의 <strong>효율성(Efficiency)</strong>과 현장의 <strong>안전(Safety)</strong>을 개선하는 소프트웨어 전문가입니다.<br>
-    아래 프로젝트 카드를 클릭하시면 상세한 구현 코드와 저장소로 즉시 이동합니다.
-  </p>
+
+<div class="row">
+  <div class="col-md-8 mb-5">
+    <h2>Welcome to My Portfolio!</h2>
+    <hr />
+    <p>
+      안녕하세요! 반도체 장비 소프트웨어의 미래를 설계하는 <strong>이명은</strong>입니다. 
+    </p>
+    <p>
+      저는 반도체 장비의 <strong>효율성(Efficiency)</strong>과 작업자의 <strong>안전(Safety)</strong>을 최우선으로 생각하는 소프트웨어 개발자입니다. 
+      특히 대학교 시절부터 이어온 <strong>임베디드 시스템 및 센서 네트워크 기술</strong>을 바탕으로, 사람을 보호하고 공정을 개선하는 솔루션을 연구합니다.
+    </p>
+    <p>
+      반도체융합캠퍼스 하이테크과정을 통해 실무 역량을 다지며, 장비 제어 전문가로 성장해 나가는 저의 기록들을 확인해 보세요!
+    </p>
+    <a class="btn btn-primary btn-lg" href="{{ site.baseurl }}/about/">저에 대해 더 궁금하시다면? &raquo;</a>
+  </div>
+  {% include sidebar.html %}
 </div>
+<!-- /.row -->
 
-<!-- Horizontal 3-Column Clickable Project Cards -->
-<div class="row mb-5">
-  
-  <!-- Project 1: GitHub 과제 -->
-  <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
-    <a href="https://github.com/lee-myeong-eun" target="_blank" class="clickable-project-card d-block h-100 text-decoration-none">
-      <div class="card-wood h-100 bento-bg-orange-pink d-flex flex-column" style="border: 2px solid rgba(255,255,255,0.1); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-        <div class="card-image-wrap p-3 d-flex align-items-center justify-content-center" style="height: 220px; background: rgba(0,0,0,0.15);">
-          <img src="{{ site.baseurl }}/assets/img/github_project.png" class="img-fluid rounded-lg shadow-sm" alt="GitHub Project" style="max-height: 100%; object-fit: contain;">
-        </div>
-        <div class="card-body p-4 d-flex flex-column flex-grow-1">
-          <h3 class="h5 font-weight-bold text-white mb-2">GitHub 과제 저장소</h3>
-          <p class="card-text text-white-50 mb-4" style="font-size: 0.95rem; line-height: 1.6;">
-            매일의 핵심 학습 내용과 반도체 장비 소프트웨어 학과에서 다룬 실습 과제들을 꼼꼼하게 기록 및 관리하는 공간입니다.
-          </p>
-          <div class="mt-auto text-right text-white font-weight-bold" style="font-size: 0.9rem; letter-spacing: 0.5px;">
-            저장소 방문하기 &rarr;
-          </div>
-        </div>
+<div class="row">
+  <!-- 프로젝트 1: 깃허브 과제 -->
+  <div class="col-md-4 mb-5">
+    <div class="card border-0 shadow h-100">
+      <img class="card-img-top" src="http://placeholder.pics/svg/400x300/111827-111827/1e293b-334155" alt="" />
+      <div class="card-body">
+        <h4 class="card-title">GitHub 학습 기록 & 과제</h4>
+        <p class="card-text">
+          매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.
+        </p>
       </div>
-    </a>
-  </div>
-
-  <!-- Project 2: BLE 기반 안전 관리 시스템 -->
-  <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
-    <!-- URL: 명은님이 원하시는 상세 링크로 수정 가능 -->
-    <a href="https://github.com/lee-myeong-eun" target="_blank" class="clickable-project-card d-block h-100 text-decoration-none">
-      <div class="card-wood h-100 bento-bg-blue d-flex flex-column" style="border: 2px solid rgba(255,255,255,0.1); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-        <div class="card-image-wrap p-3 d-flex align-items-center justify-content-center" style="height: 220px; background: rgba(0,0,0,0.15);">
-          <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="img-fluid rounded-lg shadow-sm" alt="BLE Safety" style="max-height: 100%; object-fit: contain;">
-        </div>
-        <div class="card-body p-4 d-flex flex-column flex-grow-1">
-          <h3 class="h5 font-weight-bold text-white mb-2">BLE 기반 안전 관리 시스템</h3>
-          <p class="card-text text-white-50 mb-4" style="font-size: 0.95rem; line-height: 1.6;">
-            BLE(Bluetooth Low Energy) 비콘과 게이트웨이 통신을 통해 밀폐 또는 위험 구역 내 작업자의 실시간 위치를 추적 관리합니다.
-          </p>
-          <div class="mt-auto text-right text-white font-weight-bold" style="font-size: 0.9rem; letter-spacing: 0.5px;">
-            코드 및 상세 보기 &rarr;
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Project 3: 지능형 화재 대피 시스템 -->
-  <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
-    <!-- URL: 명은님이 원하시는 상세 링크로 수정 가능 -->
-    <a href="https://github.com/lee-myeong-eun" target="_blank" class="clickable-project-card d-block h-100 text-decoration-none">
-      <div class="card-wood h-100 bento-bg-cyan d-flex flex-column" style="border: 2px solid rgba(255,255,255,0.1); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-        <div class="card-image-wrap p-3 d-flex align-items-center justify-content-center" style="height: 220px; background: rgba(0,0,0,0.15);">
-          <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="img-fluid rounded-lg shadow-sm" alt="Fire Evacuation" style="max-height: 100%; object-fit: contain;">
-        </div>
-        <div class="card-body p-4 d-flex flex-column flex-grow-1">
-          <h3 class="h5 font-weight-bold text-white mb-2">지능형 화재 대피 시스템</h3>
-          <p class="card-text text-white-50 mb-4" style="font-size: 0.95rem; line-height: 1.6;">
-            화재 센서 연동 및 대피 경로 탐색 알고리즘을 도입하여 비상 시 현장 생존율을 극대화하는 센서 네트워크 솔루션입니다.
-          </p>
-          <div class="mt-auto text-right text-white font-weight-bold" style="font-size: 0.9rem; letter-spacing: 0.5px;">
-            코드 및 상세 보기 &rarr;
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-</div>
-
-<!-- Tech Stack Grid (Refactored to look gorgeous under the grid) -->
-<div class="card-wood p-5 mb-5 reveal delay-1" style="border: 1px solid rgba(255,255,255,0.08); border-radius: 28px;">
-  <div class="text-center mb-4">
-    <h3 class="font-weight-bold text-white">Technical Core Competency</h3>
-    <p class="text-white-50 mb-0">장비 제어 및 자동화 시스템 설계의 기반 기술 스택</p>
-  </div>
-  <div class="row text-center">
-    <div class="col-6 col-md-3 mb-3 mb-md-0">
-      <div class="p-4" style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
-        <i class="fa fa-code fa-2x mb-3" style="color: var(--accent-1);"></i>
-        <h5 class="text-white mb-1">C / C++</h5>
-        <span class="text-white-50" style="font-size: 0.85rem;">임베디드 및 로직</span>
-      </div>
-    </div>
-    <div class="col-6 col-md-3 mb-3 mb-md-0">
-      <div class="p-4" style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
-        <i class="fa fa-desktop fa-2x mb-3" style="color: var(--accent-1);"></i>
-        <h5 class="text-white mb-1">C# (.NET)</h5>
-        <span class="text-white-50" style="font-size: 0.85rem;">GUI 및 통신</span>
-      </div>
-    </div>
-    <div class="col-6 col-md-3">
-      <div class="p-4" style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
-        <i class="fa fa-cogs fa-2x mb-3" style="color: var(--accent-1);"></i>
-        <h5 class="text-white mb-1">PLC 제어</h5>
-        <span class="text-white-50" style="font-size: 0.85rem;">자동화 시퀀스</span>
-      </div>
-    </div>
-    <div class="col-6 col-md-3">
-      <div class="p-4" style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
-        <i class="fa fa-terminal fa-2x mb-3" style="color: var(--accent-1);"></i>
-        <h5 class="text-white mb-1">Python</h5>
-        <span class="text-white-50" style="font-size: 0.85rem;">분석 및 스크립팅</span>
+      <div class="card-footer bg-transparent border-0">
+        <a href="https://github.com/lee-myeong-eun" class="btn btn-primary btn-block">코드 보러가기</a>
       </div>
     </div>
   </div>
-  <div class="text-center mt-4">
-    <a href="{{ site.baseurl }}/skills/" class="btn btn-outline-light rounded-pill px-4" style="border-color: rgba(255,255,255,0.25);">전체 역량 명세서 보기 &rarr;</a>
-  </div>
-</div>
 
-<!-- Contact Info Card (Full Width Under Bento) -->
-<div class="contact-glass-full p-5 mb-5 reveal delay-2">
-  <div class="row align-items-center">
-    <div class="col-md-6 mb-4 mb-md-0">
-      <h2 class="font-weight-bold mb-3 text-white">Let's Connect!</h2>
-      <p class="text-muted-wood mb-0 font-size-lg" style="font-size: 1.1rem; line-height: 1.6;">
-        새로운 기회와 흥미로운 프로젝트 제안을 언제나 환영합니다.<br/>
-        반도체 공정 및 장비 제어 최적화의 미래를 함께 설계하고 논의하겠습니다.
-      </p>
+  <!-- 프로젝트 2: BLE 기반 안전 모니터링 -->
+  <div class="col-md-4 mb-5">
+    <div class="card border-0 shadow h-100">
+      <img class="card-img-top" src="http://placeholder.pics/svg/400x300/111827-111827/1e293b-334155" alt="" />
+      <div class="card-body">
+        <h4 class="card-title">BLE기반 작업자 안전 모니터링</h4>
+        <p class="card-text">
+          BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.
+        </p>
+      </div>
+      <div class="card-footer bg-transparent border-0">
+        <a href="#" class="btn btn-primary btn-block">상세 내용</a>
+      </div>
     </div>
-    <div class="col-md-6">
-      <ul class="list-unstyled mb-0" style="font-size: 1.1rem;">
-        <li class="mb-3 text-white">
-          <i class="fa fa-phone mr-3 text-accent" style="font-size: 1.2rem;"></i> 010-4077-6322
-        </li>
-        <li class="mb-3">
-          <i class="fa fa-envelope mr-3 text-accent" style="font-size: 1.2rem;"></i> 
-          <a href="mailto:auddms1995@naver.com" class="text-white font-weight-bold">auddms1995@naver.com</a>
-        </li>
-        <li class="text-white">
-          <i class="fa fa-map-marker mr-3 text-accent" style="font-size: 1.2rem;"></i> South Korea (Open to Relocate)
-        </li>
-      </ul>
+  </div>
+
+  <!-- 프로젝트 3: 화재 대피 유도 시스템 -->
+  <div class="col-md-4 mb-5">
+    <div class="card border-0 shadow h-100">
+      <img class="card-img-top" src="http://placeholder.pics/svg/400x300/111827-111827/1e293b-334155" alt="" />
+      <div class="card-body">
+        <h4 class="card-title">화재 대피 유도 시스템</h4>
+        <p class="card-text">
+          위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션 프로젝트입니다.
+        </p>
+      </div>
+      <div class="card-footer bg-transparent border-0">
+        <a href="#" class="btn btn-primary btn-block">상세 내용</a>
+      </div>
     </div>
   </div>
 </div>
+<!-- /.row -->
