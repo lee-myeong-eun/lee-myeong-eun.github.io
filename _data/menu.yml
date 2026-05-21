@@ -1,11 +1,14 @@
 - title: Home
   link: /
 
-- title: About
+- title: About Me
   link: /about/
 
 - title: Services
-  link: "/services/"
+  link: /skills/
 
 - title: Contact
-  link: "/contact/"
+  link: /contact/
+
+- title: Blog
+  link: /blog.html

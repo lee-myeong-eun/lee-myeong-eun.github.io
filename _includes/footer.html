@@ -2,8 +2,32 @@
 <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">
-      Copyright &copy; Your Website 2019
+      Copyright &copy; 이명은 Portfolio 2026
     </p>
   </div>
   <!-- /.container -->
 </footer>
+
+<!-- Scroll Reveal Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const reveals = document.querySelectorAll(".reveal");
+    
+    const revealOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      });
+    }, revealOptions);
+
+    reveals.forEach(reveal => {
+      revealOnScroll.observe(reveal);
+    });
+  });
+</script>

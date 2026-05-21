@@ -1,0 +1,17 @@
+<!-- Mobile Bottom Tab Bar -->
+<nav class="mobile-footer-tabs">
+  <ul class="nav justify-content-around">
+    {% for item in site.data.menu %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ site.baseurl }}{{ item.link }}" aria-label="{{ item.title }}">
+        <!-- Using Font Awesome free icons; fallback to text if icons unavailable -->
+        <span class="icon">
+          {% case item.title %}
+          {% when 'Home' %}<i class="fas fa-home"></i>{% when 'About Me' %}<i class="fas fa-user"></i>{% when 'My Skills' %}<i class="fas fa-tools"></i>{% when 'Services' %}<i class="fas fa-concierge-bell"></i>{% when 'Contact' %}<i class="fas fa-envelope"></i>{% when 'Blog' %}<i class="fas fa-blog"></i>{% else %}<i class="fas fa-circle"></i>{% endcase %}
+        </span>
+        <span class="label">{{ item.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
