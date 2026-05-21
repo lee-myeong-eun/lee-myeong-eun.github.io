@@ -14,79 +14,97 @@ layout: default
   <a class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg" href="{{ site.baseurl }}/about/">저에 대해 더 궁금하시다면? &raquo;</a>
 </div>
 
-<!-- Bento Box Grid Section -->
-<div class="bento-grid mb-5">
+<!-- Bento Box Grid Section (Reference Image Layout) -->
+<div class="bento-grid-v2 mb-5">
   
-  <!-- 프로젝트 1 (Wide Card) -->
-  <div class="bento-card bento-wide reveal delay-1">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/github_project.png" class="bento-image" alt="GitHub Project">
-        <h3 class="bento-title">GitHub 학습 기록 & 과제</h3>
-        <p class="bento-desc">매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</p>
+  <!-- 프로젝트 1 (Span 1 - GitHub / Portrait Card) -->
+  <div class="bento-item-v2 bento-span-1 reveal delay-1">
+    <div class="bento-card-v2 bento-bg-orange-pink">
+      <img src="{{ site.baseurl }}/assets/img/github_project.png" class="bento-mockup" alt="GitHub Project">
+    </div>
+    <div class="bento-caption">
+      <strong>GitHub</strong> <span>매일의 학습 내용과 반도체 소프트웨어 학과에서의 과제들을 꾸준히 기록하고 관리하는 저장소입니다.</span>
+      <div class="mt-2">
+        <a href="https://github.com/lee-myeong-eun" target="_blank" class="text-white font-weight-bold">코드 보러가기 &rarr;</a>
       </div>
-      <a href="https://github.com/lee-myeong-eun" class="btn btn-outline-light mt-3">코드 보러가기 &rarr;</a>
     </div>
   </div>
 
-  <!-- 프로젝트 2 (Tall Card) -->
-  <div class="bento-card bento-tall reveal delay-2">
-    <div class="card-glass h-100 p-4 bento-bg-gradient d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="bento-image" alt="BLE Safety">
-        <h3 class="bento-title text-white">BLE기반 작업자 안전 모니터링</h3>
-        <p class="bento-desc">BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</p>
-      </div>
-      <a href="#" class="btn btn-light mt-3">상세 내용 &rarr;</a>
+  <!-- 프로젝트 2 (Span 2 - BLE Safety / Landscape Card) -->
+  <div class="bento-item-v2 bento-span-2 reveal delay-2">
+    <div class="bento-card-v2 bento-bg-blue">
+      <img src="{{ site.baseurl }}/assets/img/ble_safety.png" class="bento-mockup" alt="BLE Safety">
+    </div>
+    <div class="bento-caption">
+      <strong>BLE Safety</strong> <span>BLE(Bluetooth Low Energy) 기술을 활용하여 산업 현장 내 작업자의 위치와 상태를 실시간으로 관리하는 시스템입니다.</span>
     </div>
   </div>
 
-  <!-- 프로젝트 3 (Square Card) -->
-  <div class="bento-card reveal delay-3">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="bento-image" alt="Fire Evacuation">
-        <h3 class="bento-title">화재 대피 유도 시스템</h3>
-        <p class="bento-desc">위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</p>
-      </div>
-      <a href="#" class="btn btn-outline-light mt-3">상세 내용 &rarr;</a>
+  <!-- 프로젝트 3 (Span 2 - Fire Evacuation / Landscape Card) -->
+  <div class="bento-item-v2 bento-span-2 reveal delay-3">
+    <div class="bento-card-v2 bento-bg-cyan">
+      <img src="{{ site.baseurl }}/assets/img/fire_evac.png" class="bento-mockup" alt="Fire Evacuation">
+    </div>
+    <div class="bento-caption">
+      <strong>Fire Evacuation</strong> <span>위급 상황 발생 시 최적의 대피 경로를 안내하여 인명 피해를 최소화하는 지능형 안전 솔루션입니다.</span>
     </div>
   </div>
 
-  <!-- 작은 카드: 기술 스택 요약 (Square Card) -->
-  <div class="bento-card reveal delay-1">
-    <div class="card-glass h-100 p-4 d-flex flex-column justify-content-between">
-      <div>
-        <h3 class="bento-title"><i class="fa fa-code text-accent"></i> Tech Stack</h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
-          <span class="badge badge-primary p-2 mr-1 mb-1">C/C++</span>
-          <span class="badge badge-primary p-2 mr-1 mb-1">C#</span>
-          <span class="badge badge-primary p-2 mr-1 mb-1">Python</span>
-          <span class="badge badge-primary p-2 mr-1 mb-1">PLC</span>
-          <span class="badge badge-primary p-2 mr-1 mb-1">SECS/GEM</span>
+  <!-- 프로젝트 4 (Span 1 - Tech Stack / Yellow Card) -->
+  <div class="bento-item-v2 bento-span-1 reveal delay-1">
+    <div class="bento-card-v2 bento-bg-yellow">
+      <div class="bento-tech-grid">
+        <div class="bento-tech-item">
+          <i class="fa fa-code"></i>
+          <span>C/C++</span>
         </div>
-      </div>
-      <a href="{{ site.baseurl }}/skills/" class="text-accent mt-3 d-inline-block">전체 기술 스택 보기 &rarr;</a>
-    </div>
-  </div>
-
-  <!-- Contact Info Card (Wide Card) -->
-  <div class="bento-card bento-wide reveal delay-2">
-    <div class="card-glass h-100 p-4 contact-card d-flex flex-column justify-content-between">
-      <div class="row align-items-center h-100">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <h2 class="font-weight-bold mb-2">Let's Connect!</h2>
-          <p class="text-muted mb-0">새로운 기회와 흥미로운 프로젝트 제안을 언제나 환영합니다.</p>
+        <div class="bento-tech-item">
+          <i class="fa fa-desktop"></i>
+          <span>C#</span>
         </div>
-        <div class="col-md-6">
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><i class="fa fa-phone mr-2 text-accent"></i> 010-4077-6322</li>
-            <li class="mb-2"><i class="fa fa-envelope mr-2 text-accent"></i> <a href="mailto:auddms1995@naver.com" class="text-white">auddms1995@naver.com</a></li>
-            <li><i class="fa fa-map-marker mr-2 text-accent"></i> South Korea (Open to Relocate)</li>
-          </ul>
+        <div class="bento-tech-item">
+          <i class="fa fa-cogs"></i>
+          <span>PLC</span>
+        </div>
+        <div class="bento-tech-item">
+          <i class="fa fa-terminal"></i>
+          <span>Python</span>
         </div>
       </div>
     </div>
+    <div class="bento-caption">
+      <strong>Tech Stack</strong> <span>반도체 장비 소프트웨어 개발에 필요한 핵심 프로그래밍 및 제어 기술 역량입니다.</span>
+      <div class="mt-2">
+        <a href="{{ site.baseurl }}/skills/" class="text-white font-weight-bold">전체 기술 스택 보기 &rarr;</a>
+      </div>
+    </div>
   </div>
 
+</div>
+
+<!-- Contact Info Card (Full Width Under Bento) -->
+<div class="contact-glass-full p-5 mb-5 reveal delay-2">
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <h2 class="font-weight-bold mb-3 text-white">Let's Connect!</h2>
+      <p class="text-muted-wood mb-0 font-size-lg" style="font-size: 1.1rem; line-height: 1.6;">
+        새로운 기회와 흥미로운 프로젝트 제안을 언제나 환영합니다.<br/>
+        반도체 공정 및 장비 제어 최적화의 미래를 함께 설계하고 논의하겠습니다.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-unstyled mb-0" style="font-size: 1.1rem;">
+        <li class="mb-3 text-white">
+          <i class="fa fa-phone mr-3 text-accent" style="font-size: 1.2rem;"></i> 010-4077-6322
+        </li>
+        <li class="mb-3">
+          <i class="fa fa-envelope mr-3 text-accent" style="font-size: 1.2rem;"></i> 
+          <a href="mailto:auddms1995@naver.com" class="text-white font-weight-bold">auddms1995@naver.com</a>
+        </li>
+        <li class="text-white">
+          <i class="fa fa-map-marker mr-3 text-accent" style="font-size: 1.2rem;"></i> South Korea (Open to Relocate)
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
