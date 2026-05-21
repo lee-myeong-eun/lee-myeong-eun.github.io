@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby RUBY_VERSION
+ruby "3.3"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -18,8 +18,9 @@ ruby RUBY_VERSION
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.11.0"
-   gem 'jekyll-redirect-from', "~> 0.14.0"
-end
+"""
+If you need plugins beyond the ones already bundled with GitHub Pages,
+declare them here. GitHub Pages already includes jekyll-feed and
+jekyll-redirect-from, so explicit declarations for those can cause
+dependency conflicts with the github-pages gem.
+"""
