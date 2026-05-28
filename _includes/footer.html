@@ -29,3 +29,44 @@
     });
   });
 </script>
+
+<!-- Interactive 3D Card Tilt Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select all cards, welcome boxes, and timeline items
+    const tiltElements = document.querySelectorAll(".card, .welcome-box, .timeline-content");
+    
+    tiltElements.forEach(element => {
+      // Skip forms or parent components containing forms to avoid interference with text selection
+      if (element.querySelector("form")) {
+        return;
+      }
+      
+      element.addEventListener("mousemove", function(e) {
+        const rect = element.getBoundingClientRect();
+        
+        // Calculate cursor position relative to the element
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Get center points
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        
+        // Calculate rotation degrees based on proximity to center (max 8 degrees)
+        const rotateX = (yc - y) / 14; 
+        const rotateY = (x - xc) / 14;
+        
+        // Apply perspective, 3D rotations, and lift offsets
+        element.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        element.style.transition = "transform 0.08s ease, box-shadow 0.08s ease, border-color 0.08s ease";
+      });
+      
+      element.addEventListener("mouseleave", function() {
+        // Smoothly return element back to original position
+        element.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)";
+        element.style.transition = "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease";
+      });
+    });
+  });
+</script>

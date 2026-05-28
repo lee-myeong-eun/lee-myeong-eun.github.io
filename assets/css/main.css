@@ -322,3 +322,66 @@ hr {
     gap: 1.2rem;
 }
 
+/* ==========================================================================
+   초프리미엄 3D 인터랙티브 카드 & 패럴랙스 레이어 (3D Interactive Tilt & Depth)
+   ========================================================================== */
+
+/* 3D 캔버스 설정 */
+.card, .welcome-box, .timeline-content {
+    transform-style: preserve-3d !important;
+    perspective: 1200px !important;
+    will-change: transform, box-shadow;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.5s ease !important;
+}
+
+/* 마우스 호버 시 입체적인 다중 그림자 광원 효과 */
+.card:hover, .welcome-box:hover, .timeline-content:hover {
+    border-color: rgba(56, 189, 248, 0.45) !important;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.65), 
+        0 0 25px rgba(56, 189, 248, 0.22) !important; /* 물리적인 공중 부양 그림자 + 네온 글로우 */
+}
+
+/* 3D 레이어 깊이감 분리 (translateZ) */
+
+/* 1단계: 카드 바디 전체와 이미지 틀 약간 들어올리기 */
+.card-body, .timeline-content, .card-img-wrapper {
+    transform: translateZ(25px) !important;
+    transform-style: preserve-3d !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 2단계: 이미지 자체를 카드 안쪽 깊숙이 배치 후 호버 시 팝업 돌출 */
+.card-img-top {
+    transform: translateZ(0px) scale(1) !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.card:hover .card-img-top {
+    transform: translateZ(40px) scale(1.08) !important; /* 이미지 공중 부양 팝업 */
+}
+
+/* 3단계: 타이틀, 배지 및 버튼을 더욱 극적으로 돌출시키기 */
+.card-title, .welcome-box h3, .timeline-content h4, .timeline-date {
+    transform: translateZ(45px) !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-text, .welcome-box p, .timeline-content p {
+    transform: translateZ(30px) !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-footer, .btn, .tech-badge, .badge {
+    transform: translateZ(55px) !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 폼 인풋 필드나 비활성 영역은 왜곡 방지를 위해 3D 틸트 강도 조절 */
+.dark-input {
+    transform: translateZ(15px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+
