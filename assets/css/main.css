@@ -384,4 +384,80 @@ hr {
     transition: transform 0.3s ease !important;
 }
 
+/* ==========================================================================
+   무한 스크롤링 3D 사이버 공간 그리드 배경 (Futuristic 3D Cyber Space Grid)
+   ========================================================================== */
+
+/* 전체 테마 배경 깊이감 조절 */
+body {
+    position: relative;
+    background: #060913 !important; /* 더욱 깊고 우주적인 우주 암흑 다크 */
+    overflow-x: hidden;
+}
+
+/* 3D 네온 지평선 글로우 오버레이 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 50% 60%, rgba(56, 189, 248, 0.08) 0%, transparent 65%),
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* 3D 투영 무한 격자 그리드 판 */
+.cyber-3d-grid {
+    position: fixed;
+    bottom: -60%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.06) 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.06) 1.5px, transparent 1.5px);
+    background-size: 80px 80px;
+    
+    /* 3D 소실점 투영 및 기울임 */
+    transform: perspective(600px) rotateX(65deg) translateY(0px);
+    transform-origin: center top;
+    
+    /* 무한 스크롤 애니메이션 */
+    animation: gridInfiniteScroll 20s linear infinite;
+    z-index: -2;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,1) 100%);
+}
+
+@keyframes gridInfiniteScroll {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 1600px; /* 세로 스크롤링 */
+    }
+}
+
+/* 3D 글로잉 네온 라이트 라인 (사이버 지평선) */
+.cyber-3d-horizon {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), rgba(167, 139, 250, 0.5), rgba(56, 189, 248, 0.5), transparent);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.35;
+    transform: translateY(-20px);
+}
+
+
 
