@@ -71,7 +71,7 @@ layout: default
         </p>
       </div>
       <div class="card-footer bg-transparent border-0">
-        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#blePptModal">발표 PPT 보기 (슬라이드쇼)</button>
+        <a href="#" class="btn btn-primary btn-block">상세 내용</a>
       </div>
     </div>
   </div>
@@ -95,31 +95,3 @@ layout: default
   </div>
 </div>
 <!-- /.row -->
-
-<!-- BLE Slideshow Modal -->
-<div class="modal fade" id="blePptModal" tabindex="-1" role="dialog" aria-labelledby="blePptModalLabel" aria-hidden="true" style="z-index: 1050;">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content welcome-box border-0 text-white" style="background: rgba(11, 15, 25, 0.95) !important; backdrop-filter: blur(25px) !important; border: 1px solid rgba(56, 189, 248, 0.2) !important;">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title text-gradient" id="blePptModalLabel">📊 BLE 기반 작업자 안전 모니터링 발표 PPT</h5>
-        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 0.8; outline: none;">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body p-3">
-        <!-- MiriCanvas Slideshow Embed -->
-        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
-          <iframe class="embed-responsive-item" src="https://www.miricanvas.com/v/9830a586-5cf2-4bfd-9faf-9d148d9ad7b1?embed" allowfullscreen></iframe>
-        </div>
-        <p class="text-muted small mt-3 mb-0 text-center">
-          💡 슬라이드쇼가 로드되지 않거나 로그인 화면이 표시되는 경우, 미리캔버스 에디터에서 <strong>[공유] ➔ [공개 설정 활성화] ➔ [슬라이드쇼 보기]</strong>로 옵션을 설정해 주셔야 실시간 임베드가 정상적으로 작동합니다.
-        </p>
-      </div>
-      <div class="modal-footer border-0 pt-0">
-        <button type="button" class="btn btn-outline-light btn-sm px-4" data-dismiss="modal" style="border-radius: 20px !important;">닫기</button>
-        <a href="https://www.miricanvas.com/login?redirect=%2Fv2%2Fko%2Fdesign2%2F9830a586-5cf2-4bfd-9faf-9d148d9ad7b1%3Flocation%3Ddesign%26type%3Dcopy_link%26access%3Ddirect" target="_blank" class="btn btn-primary btn-sm px-4" style="border-radius: 20px !important;">미리캔버스 템플릿 보기</a>
-      </div>
-    </div>
-  </div>
-</div>
-
