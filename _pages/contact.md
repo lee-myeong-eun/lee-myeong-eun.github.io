@@ -51,7 +51,7 @@ permalink: /contact/
       <hr />
       <ul class="list-unstyled text-muted small">
         <li class="mb-2"><strong>📞 Phone:</strong> 010-4077-6322</li>
-        <li class="mb-2"><strong>✉️ Email:</strong> <a href="mailto:auddms1995@naver.com" class="text-info">auddms1995@naver.com</a></li>
+        <li class="mb-2"><strong>✉️ Email:</strong> <a href="mailto:myeongeun.kr@gmail.com" class="text-info">myeongeun.kr@gmail.com</a></li>
         <li class="mb-2"><strong>💻 GitHub:</strong> <a href="https://github.com/lee-myeong-eun" target="_blank" class="text-info">github.com/lee-myeong-eun</a></li>
       </ul>
     </div>
