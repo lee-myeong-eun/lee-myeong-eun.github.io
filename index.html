@@ -71,7 +71,7 @@ layout: default
         </p>
       </div>
       <div class="card-footer bg-transparent border-0">
-        <a href="#" class="btn btn-primary btn-block">상세 내용</a>
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#blePptModal">발표 PPT 보기 (슬라이드쇼)</button>
       </div>
     </div>
   </div>
@@ -95,3 +95,31 @@ layout: default
   </div>
 </div>
 <!-- /.row -->
+
+<!-- BLE Slideshow Modal -->
+<div class="modal fade" id="blePptModal" tabindex="-1" role="dialog" aria-labelledby="blePptModalLabel" aria-hidden="true" style="z-index: 1050;">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content welcome-box border-0 text-white" style="background: rgba(11, 15, 25, 0.95) !important; backdrop-filter: blur(25px) !important; border: 1px solid rgba(56, 189, 248, 0.2) !important;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title text-gradient" id="blePptModalLabel">📊 BLE 기반 작업자 안전 모니터링 발표 PPT</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 0.8; outline: none;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-3">
+        <!-- Google Slides Embed -->
+        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+          <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/16zicVw4LLHW-tQiddjgxP1K2JQOi1rvgQQ6OosLRDEU/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <p class="text-muted small mt-3 mb-0 text-center">
+          💡 슬라이드쇼가 로드되지 않거나 권한이 필요하다고 나오는 경우, 구글 프레젠테이션 공유 설정에서 <strong>[링크가 있는 모든 사용자에게 공개]</strong>로 변경되어 있는지 확인해 주세요.
+        </p>
+      </div>
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-outline-light btn-sm px-4" data-dismiss="modal" style="border-radius: 20px !important;">닫기</button>
+        <a href="https://docs.google.com/presentation/d/16zicVw4LLHW-tQiddjgxP1K2JQOi1rvgQQ6OosLRDEU/present" target="_blank" class="btn btn-primary btn-sm px-4" style="border-radius: 20px !important;">프레젠테이션 크게 보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
