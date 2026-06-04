@@ -7,7 +7,7 @@ permalink: /assignments/c-programming/
 <style>
   /* Ensure code blocks have a light, readable color on dark backgrounds */
   pre, code, .highlight pre, .highlight code, pre code {
-    color: #e2e8f0 !important;
+    color: #bae6fd !important;
     background-color: #161b22 !important;
     border-radius: 8px;
   }
