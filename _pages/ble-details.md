@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BLE 기반 작업자 안전 모니터링 상세 분석
+title: BLE 기반 스마트 보호구 감지 시스템 상세 분석
 permalink: /projects/ble-safety/
 ---
 
@@ -10,7 +10,7 @@ permalink: /projects/ble-safety/
     <!-- Header -->
     <div class="animate-fade-in-up delay-100">
       <span class="tech-badge">📶 Capstone Design Project</span>
-      <h2 class="text-gradient">BLE 기반 작업자 안전 모니터링 시스템 (EZ-safe)</h2>
+      <h2 class="text-gradient">BLE 기반 스마트 보호구 감지 시스템 (EZ-safe)</h2>
       <hr />
       <p class="lead text-light font-weight-normal">
         산업 현장의 인명 사고를 예방하기 위해 BLE RSSI 거리 인식 및 센서 데이터 판별 알고리즘을 설계하고 하드웨어 모듈을 직접 제작한 캡스톤 디자인 프로젝트 상세 분석 기록입니다.
@@ -164,7 +164,7 @@ def parse_and_check_safety(raw_string):
     }
 
 # 3. 5회 실시간 모니터링 시뮬레이션 작동
-print("====== EZ-safe 실시간 작업자 안전 모니터링 시스템 ======")
+print("====== EZ-safe 스마트 보호구 착용 감지 시스템 ======")
 results = []
 for _ in range(5):
     raw_data = generate_mock_ble_data()
@@ -184,7 +184,7 @@ df
                 <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
                 <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
               </div>
-              <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">====== EZ-safe 실시간 작업자 안전 모니터링 시스템 ======
+              <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">====== EZ-safe 스마트 보호구 착용 감지 시스템 ======
 [수신 Raw 데이터]: 2,-62,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
 [수신 Raw 데이터]: 2,-69,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
 [수신 Raw 데이터]: 3,-65,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
