@@ -43,7 +43,7 @@ permalink: /projects/ble-safety/
     <div class="row mt-5 animate-fade-in-up delay-200">
       
       <!-- Left Column: Sidebar Project Metadata & TOC -->
-      <div class="col-lg-4 mb-4">
+      <div class="col-lg-5 mb-4">
         <!-- Project Info Box -->
         <div class="card border-0 shadow welcome-box p-3 mb-4" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-info-circle mr-2"></i>프로젝트 정보</h4>
@@ -74,7 +74,7 @@ permalink: /projects/ble-safety/
       </div>
 
       <!-- Right Column: Case Study Content -->
-      <div class="col-lg-8 mb-4">
+      <div class="col-lg-7 mb-4">
         <!-- Section 1 -->
         <div id="section1" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
           <div class="d-flex align-items-center mb-4">
