@@ -28,7 +28,7 @@ permalink: /projects/ble-safety/
           <ul class="list-unstyled small mb-0 text-muted" style="line-height: 2;">
             <li><strong class="text-light">팀 구성:</strong> 최성용, 구민서, 권은지, 이명은</li>
             <li><strong class="text-light">역할 (이명은):</strong> BLE 통신 알고리즘 설계 & 시스템 검증</li>
-            <li><strong class="text-light">개발 기간:</strong> 4월 ~ 6월 (16주)</li>
+            <li><strong class="text-light">개발 기간:</strong> 3월 ~ 6월 (16주)</li>
             <li><strong class="text-light">핵심 기술:</strong> ESP32, BLE, FSR Pressure Sensor, PETG 3D Printing</li>
           </ul>
         </div>
@@ -67,7 +67,7 @@ permalink: /projects/ble-safety/
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
 - **팀원**: 최성용(회로/코딩), 구민서(3D 케이스), 권은지(앱 개발/BLE), 이명은(BLE 로직/테스트)
-- **개발 기간**: 4월 ~ 6월 (총 16주차)
+- **개발 기간**: 3월 ~ 6월 (총 16주차)
 
 ### 1) 배경 및 필요성
 - 공사 현장에서 보호구 미착용으로 인한 추락, 충격 등 인명 사고가 빈번히 발생함.
