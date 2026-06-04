@@ -3,14 +3,14 @@ layout: default
 title: C언어 문제정리
 permalink: /assignments/c-programming/
 ---
-
+`
 ## C언어 문제정리
-
+`
 ### 증감 연산자 사용에 따른 변수 값 변화 확인
-
-`c
+`
+``c
 #include <stdio.h>
-
+`
 int main()
 {
 	int a = 5, b = 3;
@@ -18,18 +18,18 @@ int main()
 	printf("a = %d b = %d\n", --a, b++);
 	printf("a = %d b = %d", a, b);
 }
-
+`
 
 printf("a = % d원 b = % d원 c = % d원 d = % d원 e = % d원 f = % d원 g = % d원 h = % d원\n", --a, b++, c++, d++, e++, f++, g++, h++);
 printf("a = % d원 b = % d원 c = % d원 d = % d원 e = % d원 f = % d원 g = % d원 h = % d원", a, b, c, d, e, f, g, h);
-
 `
-
+`
+`
 ### 화폐 단위별 개수 계산
-
-`c
+`
+``c
 #include <stdio.h>
-
+`
 int main()
 {
 	int money = 127670  , m50000=0, m10000=0, m5000=0, m1000 =0,  m500=0, m100=0  ,m50=0 ,m10=0;
@@ -46,59 +46,59 @@ int main()
 	
 }
 `
-
+`
 ### 두 정수의 곱, 합, 차 계산
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int a;
 	int b;
 	printf("두 정수를 공백으로 구분하여 입력하세요.\n");
 	scanf("%d %d", &a, &b);
-
+`
 	int c1 = a * b;
 	int c2 = a + b;
 	int c3 = a - b;
 	printf("곱: %d\n합: %d\n차: %d", c1, c2, c3);
 }
-
 `
-
+`
+`
 ### 생산장비 사용 시간 계산 (1분 미만 절삭)
 ①입력
 ②계산
 ③출력
-
+`
 1시간 = 60분 = 3600초
 1분 = 60초 = 60분 = 3600초
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int second;
-
+`
 
 	printf("생산장비의 사용 시간: \n");
 	scanf("%d", &second);
-
+`
 	int hour = second / 3600;
 	int minutes = (second % 3600) / 60;
 	
 	printf("시간:%d\n분:%d\n", hour, minutes);
 }
-
 `
-
+`
+`
 ### 두 수의 차이 계산
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -107,13 +107,13 @@ int main()
 	diff = a < b ? b - a : a - b;
 	printf("두 수의 차는: %d\n", diff);
 	printf("두 수의 차는: %d\n", a < b ? b - a : a - b);
-
+`
 }
 `
-
+`
 ### 미성년자 판별
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -125,10 +125,10 @@ int main()
 	printf("결과:%d\n", age >= 18 ? 0 : 1);
 }
 `
-
+`
 ### 두 정수 중 큰 수 찾기
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -141,10 +141,10 @@ int main()
 	else printf("%d", num2);
 }
 `
-
+`
 ### 정수를 입력 받아 "양수","음수","0"을 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -156,10 +156,10 @@ int main()
 	else printf("0");
 }
 `
-
+`
 ### 세 정수를 입력받아서 가장 큰수 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -170,7 +170,7 @@ int main()
 	scanf("%d", &num1);
 	scanf("%d", &num2);
 	scanf("%d", &num3);
-
+`
 	if (num1 > num2 && num1 > num3)
 	printf("%d", num1);
 	else if (num2 > num1 && num2 > num3)
@@ -179,10 +179,10 @@ int main()
 		printf("%d", num3);
 }
 `
-
+`
 ### 정량이 아닌 음료 찾기
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -194,17 +194,17 @@ int main()
 	scanf("%d", &a);
 	scanf("%d", &b);
 	scanf("%d", &c);
-
+`
 	if (a == b)
 		printf("%d", c);
 	else if (b == c)printf("%d", a);
 	else printf("%d", b);
 }
 `
-
+`
 ### 4개 중 무게가 다른 탁구공 찾기
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
@@ -213,12 +213,12 @@ int main()
 	int b;
 	int c;
 	int d;
-
+`
 	scanf("%d", &a);
 	scanf("%d", &b);
 	scanf("%d", &c);
 	scanf("%d", &d);
-
+`
 	if (a == b && a == c)
 	printf("%d", d);
 	else if (a == b && a == d)
@@ -227,16 +227,16 @@ int main()
 	printf("%d", b);
 	else
 	printf("%d", a);
-
+`
 }
 `
-
+`
 ### 50부터 100까지 수 중에서 5의 배수
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	char ch = 'b';
@@ -255,13 +255,13 @@ int main()
 	default:printf("D");
 	}
 `
-
+`
 ### 무한연산 코드
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int i = 0;
@@ -272,13 +272,13 @@ int main()
 	printf("종료 i=%d\n", i);
 } 
 `
-
+`
 ### 50~100 사이의 3의 배수 개수
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int count =0;
@@ -289,13 +289,13 @@ int main()
 		printf("i =%d\n",count);
 	}
 `
-
+`
 ### 1~100까지 합
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int sum = 0;
@@ -304,13 +304,13 @@ int main()
 	printf("i=%d\n", sum);
 }
 `
-
+`
 ### 5개의 정수data를 입력 받아 홀수 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int a = 0;
@@ -322,13 +322,13 @@ int main()
 	}
 }
 `
-
+`
 ### 두 정수 m,n입력받아서 m~n까지 합 
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int M = 0;
@@ -343,31 +343,31 @@ int main()
 	
 }
 `
-
+`
 ### 구구단 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int N = 0;
 	scanf("%d", &N);
-
+`
 	
 	for (int i = 1;  i<= 9; i++)
 	printf("%d*%d=%10d\n", N,i,N*i);
 	
 }
 `
-
+`
 ### 기부금 총액 및 평균 계산
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int N = 0;
@@ -385,24 +385,24 @@ int main()
 	
 }
 `
-
+`
 ### 출하 가능 돼지의 수와 무게 출력 (출하 대상 돼지는 60KG ~ 80KG)
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int weight = 1;  
 	int total = 0;  
 	int count = 0; 
-
+`
 	while ( total <  5000 && weight !=0)
 	{
 		printf("돼지의 무게를 입력하시오: ");
 		scanf_s("%d", &weight);
-
+`
 			while (weight >= 60 && weight <= 80)
 			{
 				total += weight;
@@ -412,17 +412,17 @@ int main()
 	}
 	printf("출하가능한 돼지 수 :%d", count);
 	printf("출하가능한 돼지의 총 무게 :%d", total);
-
-}
-
 `
-
+}
+`
+`
+`
 ### 배열 크기
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int arr[8];
@@ -431,41 +431,41 @@ int main()
 	int length = size / sizeof(int);
 	printf("arr = %p\n", arr);
 	printf("var = %d\n", var);
-
+`
 	printf("배열의 크기:%d \r\n배열의 길이:%d", size, length);
 }
 `
-
+`
 ### 문자 세로로 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 
 int main()
 {
 	
-
+`
 	char str[] = "C Programming for the fisrt time";
 	int slen = sizeof(str) / sizeof(str[0]) - 1;
 	for (int i = 0; i < slen; i++)
 		printf("str[%d] = %c\n",i, str[i]);
 }
 `
-
+`
 ###  <3,6,4,2,8,4,9,1,7 중에 제일 큰 값 찾기>
-
-`c
+`
+``c
 // 1
-
+`
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 
 int main()
 {
-
+`
 	int num[9] = { 3,6,4,2,8,4,9,1,7 };
 	int max = 0;
 	for (int i = 0; i < 9; i++)
@@ -478,17 +478,17 @@ int main()
 	printf("%d", max);
 }
 `
-
-`c
+`
+``c
 // 2
-
+`
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 
 int main()
 {
-
+`
 	int num[9] = { 3,6,4,2,8,4,9,1,7 };
 	int max = 0;
 	for (int i = 0; i < 9; i++)
@@ -501,17 +501,17 @@ int main()
 	}
 	printf("%d", max);
 }
-
 `
-
+`
+`
 ### 임의의 수보다 큰 수의 개수를 구하는 코드
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main()
 {
-
+`
 	int num[9] = { 3,2,4,2,3,2,9,5,7 };
 	int number = 0;
 	int count = 0;
@@ -527,15 +527,15 @@ int main()
 	printf("%d", count);
 }
 `
-
+`
 ### 점수가 다음과 같이 저장
 score = {30,60,40,20,80,40,90,10,70}
 점수별로 석차 출력.
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int score[] = { 30,60,40,20,80,40,90,10,70 };
@@ -549,19 +549,19 @@ int main()
 		}
 	}
 `
-
+`
 ### 5명의 학생의 이름과 점수를 배열에 입력받아서, 학생들의 이름과 석차를 출력.
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 		char name[5][15];
 		int score[5];
 		int rank;
-
+`
 	for (int i = 0; i < 5; i++)
 	{
 		printf("이름이 뭐에요?\n");
@@ -581,34 +581,19 @@ int main()
 	}
 }
 `
-
+`
 ### 두 정수를 입력받아서 변수 Large에는 큰 수를 Small에는 작은 수를 저장하고 출력하는 코드 작성.
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int main()
 {
 	int large;
 	int small;
 	int temp;
-
-	printf("정수를 입력하세요");
-	scanf("%d %d", &large, &small);
-	if (large < small)
-	{
-		temp = small;
-		small = large;
-		large = temp;
-	}
-		printf("\nLarge:%d , Small:%d", large, small);
-}
-
-	int large;
-	int small;
-	int temp;
-
+`
 	printf("정수를 입력하세요");
 	scanf("%d %d", &large, &small);
 	if (large < small)
@@ -620,13 +605,28 @@ int main()
 		printf("\nLarge:%d , Small:%d", large, small);
 }
 `
-
+	int large;
+	int small;
+	int temp;
+`
+	printf("정수를 입력하세요");
+	scanf("%d %d", &large, &small);
+	if (large < small)
+	{
+		temp = small;
+		small = large;
+		large = temp;
+	}
+		printf("\nLarge:%d , Small:%d", large, small);
+}
+`
+`
 ### 사칙연산
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 add()
 {
 	int a, b;
@@ -634,7 +634,7 @@ add()
 	scanf_s("%d %d", &a, &b);
 	printf(" %d + %d = %d\n", a, b, a + b);
 }
-
+`
 sub()
 {
 	int a, b;
@@ -695,13 +695,13 @@ int menu()
 	return select;
 }
 `
-
+`
 ### Switch문을 이용한 메뉴 선택 프로그램
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 main()
 {
 	int select = menu();
@@ -739,22 +739,22 @@ menu()
 	scanf("%d", &select);
 	return select;
 }
-
 `
-
+`
+`
 ### Num_arr = [6,8,2,9,4,7]를 선택정렬 알고리즘을 이용해 오름차순 정렬
-
-`c
+`
+``c
 // 1
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int round;
 int Nums[] = { 6,8,2,9,4,7 };
 int legth = sizeof(Nums) / sizeof(int);
-
+`
 void SelectionSort();
-
+`
 int main(void)
 {
 	printf("정렬 전 배열: ");
@@ -764,11 +764,11 @@ int main(void)
 	printf("\n\n");
 	return 0;
 }
-
+`
 void SelectionSort()
 {
 	int i, j, temp;
-
+`
 	for (i = 0; i < legth - 1; i++)
 	{
 		for (j = i + 1; j < legth; j++)
@@ -787,21 +787,21 @@ void SelectionSort()
 	}
 	printf("\n");
 }
-
 `
-
-`c
+`
+`
+``c
 // 2
-
+`
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+`
 int round;
 int Nums[] = { 6,8,2,9,4,7 };
 int legth = sizeof(Nums) / sizeof(int);
-
+`
 void SelectionSort();
-
+`
 int main(void)
 {
 	printf("정렬 전 배열: ");
@@ -811,11 +811,11 @@ int main(void)
 	printf("\n\n");
 	return 0;
 }
-
+`
 void SelectionSort()
 {
 	int i, j, temp,min_index;
-
+`
 	for (i = 0; i < legth - 1; i++)
 	{
 		min_index = i;
@@ -836,24 +836,24 @@ void SelectionSort()
 	}
 	printf("\n");
 }
-
 `
-
+`
+`
 ### 이름과 과목 A,B의 점수를 입력받아서 총점이 높은 순서대로 (Sort) 출력
-
-`c
+`
+``c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-
+`
 char name[2][15];
 int score[2];
 int subject[2];
 int total[2];
 int legth = sizeof(score) / sizeof(score[0]);  // 학생 수
-
+`
 void SlectionSort();
-
+`
 int main(void)
 {
 	for (int i = 0; i < legth; i++)
@@ -867,14 +867,14 @@ int main(void)
 	SlectionSort();   //정렬함수 호출 (총점 기준으로 내림차순 정렬)
 	return 0;
 }
-
+`
 
 void SlectionSort()
 {
 	int i, j, max;
 	int temp;
 	char tempName[15];
-
+`
 		for (i = 0; i < legth - 1; i++)
 		{
 			max = i;
@@ -885,19 +885,19 @@ void SlectionSort()
 					max = j;
 				}
 			}
-
+`
 		temp = total[i];
 		total[i] = total[max];
 		total[max] = temp;
-
+`
 		temp = score[i];
 		score[i] = score[max];
 		score[max] = temp;
-
+`
 		temp = subject[i];
 		subject[i] = subject[max];
 		subject[max] = temp;
-
+`
 		strcpy(tempName, name[i]);  //name[i]의 값을 tempName에 복사,  (name변수가 있어서 tempName으로 변수 지정)
 		strcpy(name[i], name[max]);
 		strcpy(name[max], tempName);
@@ -908,4 +908,4 @@ void SlectionSort()
 		}
 }
 `
-
+`
