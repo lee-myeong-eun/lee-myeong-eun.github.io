@@ -5,26 +5,24 @@ permalink: /projects/ble-safety/
 ---
 
 <style>
-  /* 글씨 가독성 개선을 위한 스타일 */
+  /* 글씨 가독성(간격) 개선을 위한 스타일 */
   .content-body {
-    color: #f8fafc !important; /* 전체 텍스트를 더 밝은 흰색 계열로 변경 */
-    font-size: 1.05rem; /* 글씨 크기 약간 확대 */
-    word-break: keep-all; /* 단어 단위 줄바꿈으로 가독성 향상 */
+    font-size: 1.05rem; 
+    line-height: 2.2 !important; /* 줄간격을 대폭 넓혀서 답답함을 해소 */
+    word-break: keep-all; 
   }
   .content-body h1, .content-body h2, .content-body h3, .content-body h4 {
-    color: #e0f2fe !important; /* 소제목을 밝은 스카이블루 색상으로 눈에 띄게 */
     font-weight: bold;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-top: 2rem; /* 소제목 위 간격을 넓혀서 문단 구분 명확히 */
+    margin-bottom: 1.2rem;
     padding-bottom: 0.5rem;
+    color: #e2e8f0; /* 소제목은 살짝 밝은 원래 톤으로 유지 */
   }
-  .content-body strong {
-    color: #38bdf8 !important; /* 강조 텍스트(볼드체) 색상을 뚜렷한 파란색으로 포인트 */
-    font-weight: 700;
+  .content-body ul {
+    margin-bottom: 1.8rem; /* 리스트와 다음 문단 사이 간격 확보 */
   }
   .content-body ul li {
-    margin-bottom: 0.6rem; /* 리스트 간격 조절로 읽기 편하게 */
+    margin-bottom: 1rem; /* 리스트 항목 간의 간격을 넓혀서 읽기 편하게 */
   }
 </style>
 
@@ -45,7 +43,7 @@ permalink: /projects/ble-safety/
     <div class="row mt-5 animate-fade-in-up delay-200">
       
       <!-- Left Column: Sidebar Project Metadata & TOC -->
-      <div class="col-lg-3 mb-4">
+      <div class="col-lg-4 mb-4">
         <!-- Project Info Box -->
         <div class="card border-0 shadow welcome-box p-3 mb-4" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-info-circle mr-2"></i>프로젝트 정보</h4>
@@ -76,7 +74,7 @@ permalink: /projects/ble-safety/
       </div>
 
       <!-- Right Column: Case Study Content -->
-      <div class="col-lg-9 mb-4">
+      <div class="col-lg-8 mb-4">
         <!-- Section 1 -->
         <div id="section1" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
           <div class="d-flex align-items-center mb-4">
