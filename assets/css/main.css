@@ -412,3 +412,18 @@ body.light-mode .terminal-output pre {
     color: #0f172a !important;
     border-color: rgba(0,0,0,0.1) !important;
 }
+/* 라이트 모드 텍스트 컬러 (Bootstrap 덮어쓰기) */
+body.light-mode .text-white {
+    color: #0f172a !important;
+}
+body.light-mode .text-white-50 {
+    color: #475569 !important;
+}
+body.light-mode .text-info {
+    color: #0284c7 !important;
+}
+/* 푸터 및 기타 bg-dark 요소 라이트 모드 오버라이드 */
+body.light-mode footer.bg-dark {
+    background-color: rgba(248, 250, 252, 1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
