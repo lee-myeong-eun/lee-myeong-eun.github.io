@@ -2,7 +2,7 @@ import json
 import os
 
 try:
-    with open('C:/Users/user/Desktop/lee-myeong-eun.github.io/BLE.ipynb', encoding='utf-8') as f:
+    with open('C:/Users/user/Desktop/lee-myeong-eun.github.io/BLE1.ipynb', encoding='utf-8') as f:
         d = json.load(f)
 except Exception as e:
     print("Error reading the notebook:", e)
