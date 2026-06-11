@@ -427,3 +427,149 @@ body.light-mode footer.bg-dark {
     background-color: rgba(248, 250, 252, 1) !important;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* ==========================================================================
+   시력보호 모드 (Eye-Care Mode) 오버라이드
+   ========================================================================== */
+body.eyecare-mode {
+    background-color: #fdf6e3 !important; /* 세피아 / 웜톤 배경 */
+    color: #4a4036 !important; /* 따뜻한 다크 브라운 텍스트 */
+}
+
+/* 상단 네비게이션 */
+body.eyecare-mode .navbar.bg-dark {
+    background-color: rgba(253, 246, 227, 0.9) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+body.eyecare-mode .navbar-brand,
+body.eyecare-mode .nav-link {
+    color: #5c4a3d !important;
+}
+body.eyecare-mode .nav-link:hover {
+    color: #b58900 !important;
+}
+
+/* 히어로 섹션 */
+body.eyecare-mode header.bg-primary {
+    background: radial-gradient(circle at 10% 20%, rgba(253, 246, 227, 0.95) 0%, rgba(24df3e0, 1) 80%), 
+                linear-gradient(135deg, #fdf6e3 0%, #faecca 50%, #f4decb 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+body.eyecare-mode .text-light {
+    color: #7b6859 !important;
+}
+
+/* 박스/카드 디자인 */
+body.eyecare-mode .welcome-box,
+body.eyecare-mode .card {
+    background-color: #fffaf0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+}
+body.eyecare-mode .welcome-box h3,
+body.eyecare-mode h2.text-gradient {
+    color: #4a4036 !important;
+}
+body.eyecare-mode .text-gradient {
+    background: linear-gradient(90deg, #d97706, #b45309, #9a3412) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+body.eyecare-mode hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+body.eyecare-mode .text-muted {
+    color: #8c7b6c !important;
+}
+
+/* 버튼 스타일 오버라이드 */
+body.eyecare-mode .btn-outline-light {
+    color: #5c4a3d !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+body.eyecare-mode .btn-outline-light:hover {
+    background-color: #faecca !important;
+    color: #4a4036 !important;
+}
+
+/* 텍스트 컬러 오버라이드 (Bootstrap) */
+body.eyecare-mode .text-white {
+    color: #4a4036 !important;
+}
+body.eyecare-mode .text-white-50 {
+    color: #7b6859 !important;
+}
+body.eyecare-mode .text-info {
+    color: #b58900 !important;
+}
+body.eyecare-mode footer.bg-dark {
+    background-color: rgba(253, 246, 227, 1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 터미널 아웃풋 박스 (코드 블럭) */
+body.eyecare-mode .terminal-header {
+    background-color: #eaddc4 !important;
+    color: #7b6859 !important;
+    border-color: rgba(0,0,0,0.08) !important;
+}
+body.eyecare-mode .terminal-output pre {
+    background-color: #fffaf0 !important;
+    color: #4a4036 !important;
+    border-color: rgba(0,0,0,0.08) !important;
+}
+body.eyecare-mode .content-body {
+    color: #5c4a3d !important;
+}
+
+/* ==========================================================================
+   테마 토글 버튼 스타일 (Segmented Control)
+   ========================================================================== */
+.theme-toggle-group {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+body.light-mode .theme-toggle-group,
+body.eyecare-mode .theme-toggle-group {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn {
+    border: none !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    border-radius: 18px !important;
+    padding: 0.2rem 0.6rem;
+    transition: all 0.2s ease;
+}
+body.light-mode .theme-btn,
+body.eyecare-mode .theme-btn {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.theme-btn:hover {
+    color: #fff !important;
+}
+body.light-mode .theme-btn:hover,
+body.eyecare-mode .theme-btn:hover {
+    color: #000 !important;
+}
+
+/* 활성화된 테마 버튼 */
+.theme-btn.active {
+    background-color: #38bdf8 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+body.light-mode .theme-btn.active {
+    background-color: #0ea5e9 !important;
+    color: #fff !important;
+}
+body.eyecare-mode .theme-btn.active {
+    background-color: #d97706 !important;
+    color: #fff !important;
+}
+
