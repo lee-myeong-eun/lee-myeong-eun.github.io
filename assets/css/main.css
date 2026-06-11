@@ -324,3 +324,91 @@ hr {
 
 
 
+
+/* ==========================================================================
+   라이트 모드 (Light Mode) 오버라이드
+   ========================================================================== */
+body.light-mode {
+    background-color: #f8fafc !important; /* 화이트 그레이 */
+    color: #1e293b !important; /* 차콜 블랙 */
+}
+
+/* 상단 네비게이션 */
+body.light-mode .navbar.bg-dark {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+body.light-mode .navbar-brand,
+body.light-mode .nav-link {
+    color: #334155 !important;
+}
+body.light-mode .nav-link:hover {
+    color: #0284c7 !important;
+}
+
+/* 히어로 섹션 */
+body.light-mode header.bg-primary {
+    background: radial-gradient(circle at 10% 20%, rgba(240, 249, 255, 0.95) 0%, rgba(224, 242, 254, 1) 80%), 
+                linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+body.light-mode .text-light {
+    color: #475569 !important;
+}
+
+/* 박스/카드 디자인 */
+body.light-mode .welcome-box,
+body.light-mode .card {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+}
+body.light-mode .welcome-box h3,
+body.light-mode h2.text-gradient {
+    color: #0f172a !important;
+}
+body.light-mode .text-gradient {
+    background: linear-gradient(90deg, #0ea5e9, #4f46e5, #7c3aed) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+body.light-mode hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+body.light-mode .text-muted {
+    color: #64748b !important;
+}
+
+/* 버튼 스타일 오버라이드 */
+body.light-mode .btn-outline-light {
+    color: #334155 !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+body.light-mode .btn-outline-light:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+/* 목차 및 우측 컨텐츠 박스 백그라운드 오버라이드 */
+body.light-mode .sticky-top.welcome-box {
+    background-color: #f1f5f9 !important;
+}
+body.light-mode .content-body {
+    color: #334155 !important;
+}
+body.light-mode .icon-wrapper {
+    background: rgba(0,0,0,0.03) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* 터미널 아웃풋 박스 (코드 블럭) */
+body.light-mode .terminal-header {
+    background-color: #e2e8f0 !important;
+    color: #475569 !important;
+    border-color: rgba(0,0,0,0.1) !important;
+}
+body.light-mode .terminal-output pre {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    border-color: rgba(0,0,0,0.1) !important;
+}

@@ -17,6 +17,38 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{ site.baseurl }}/assets/vendor/jquery/jquery.min.js"></script>
   <script src="{{ site.baseurl }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const currentTheme = localStorage.getItem("theme");
+
+      // Check if light mode was saved
+      if (currentTheme === "light") {
+        document.body.classList.add("light-mode");
+        themeIcon.classList.remove("fa-sun-o");
+        themeIcon.classList.add("fa-moon-o");
+      }
+
+      toggleBtn.addEventListener("click", function() {
+        document.body.classList.toggle("light-mode");
+        
+        let theme = "dark";
+        if (document.body.classList.contains("light-mode")) {
+          theme = "light";
+          themeIcon.classList.remove("fa-sun-o");
+          themeIcon.classList.add("fa-moon-o");
+        } else {
+          themeIcon.classList.remove("fa-moon-o");
+          themeIcon.classList.add("fa-sun-o");
+        }
+        
+        localStorage.setItem("theme", theme);
+      });
+    });
+  </script>
 </body>
 
 </html>
