@@ -21,7 +21,7 @@ permalink: /assignments/python-basics/
     <div class="row mt-5 animate-fade-in-up delay-200">
       
       <!-- Left Sidebar Index -->
-      <div class="col-lg-3 mb-4">
+      <div class="col-lg-4 mb-4">
         <div class="border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-list-ul mr-2"></i>학습 목차</h4>
           <ul class="list-unstyled small mb-0 pl-1" style="line-height: 2.2;">
@@ -41,7 +41,7 @@ permalink: /assignments/python-basics/
       </div>
 
       <!-- Right Detailed Content -->
-      <div class="col-lg-9 mb-4">
+      <div class="col-lg-8 mb-4">
         <!-- Section: 1. 변수와 수치 연산 -->
         <div id="section1" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
