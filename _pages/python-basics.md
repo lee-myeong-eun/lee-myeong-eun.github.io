@@ -844,10 +844,10 @@ print("\n원래 단어: "+text+"\n바뀐 단어: "+text.replace("python is", "I 
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">원래 단어: python is excellent
-바뀐 단어: python is excellent
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">바뀐 단어:</span> python is excellent
 
-원래 단어: python is excellent
-바뀐 단어: I am excellent</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">원래 단어:</span> python is excellent
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">바뀐 단어:</span> I am excellent</pre>
 </div>
 
 
@@ -956,7 +956,7 @@ print(year+'년 '+month+'월 '+day+'일\n계절 : '+season)
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2022년 01월 14일
-계절 : fall</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">계절 :</span> fall</pre>
 </div>
 
 
@@ -1116,10 +1116,10 @@ print(b[3][3])
 
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>리스트 뎃셈과 곱셈</span>
 
-리스트 덧셈 : 두개의 리스트를 합쳐 하나의 리스트로 만드는 연산 (+는 2개의 리스트를 합치는 기능)
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">리스트 덧셈 :</span> 두개의 리스트를 합쳐 하나의 리스트로 만드는 연산 (+는 2개의 리스트를 합치는 기능)
 - ※ 숫자처럼 계산되는 것 아님
 
-리스트 곱셈 : 리스트를 지정한 횟수만큼 반복하여 새로운 리스트를 만드는 연산 
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">리스트 곱셈 :</span> 리스트를 지정한 횟수만큼 반복하여 새로운 리스트를 만드는 연산 
 - ※ 정수만 곱셈 가능
 
 ```python
@@ -1184,11 +1184,11 @@ print(len(b[3][0]))   # 'python'
 
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>리스트 요소 수정 삭제 및 추가</span>
 
-수정 : 리스트의 요소에 직접 접근하여 수정한다.
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">수정 :</span> 리스트의 요소에 직접 접근하여 수정한다.
 
-삭제 : del 키워드로 요소 삭제한다.
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">삭제 :</span> del 키워드로 요소 삭제한다.
 
-추가 : append() 함수를 사용한다. ( append( x ) 리스트의 맨 마지막에 x를 추가하는 함수)
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">추가 :</span> append() 함수를 사용한다. ( append( x ) 리스트의 맨 마지막에 x를 추가하는 함수)
 
 ```python
 aa = [10, 20, 30, 40, 50]
@@ -1607,15 +1607,15 @@ print("not False: "+str(not b))
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">True and True: True
-True and False: False
-False and True: False
-False and False: False
-True or True: True
-True or False: True
-False or True: True
-False or False: False
-not True: False
-not False: True</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">True and False:</span> False
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False and True:</span> False
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False and False:</span> False
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">True or True:</span> True
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">True or False:</span> True
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False or True:</span> True
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False or False:</span> False
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">not True:</span> False
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">not False:</span> True</pre>
 </div>
 
 
@@ -1758,9 +1758,9 @@ False
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>Q1</span>
 
 홍길동 씨의 과목별 점수는 다음과 같다. 홍길동 씨의 평균 점수를 구해보자.
-- 국어 : 80점
-- 영어 : 75점
-- 수학 : 55점
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">국어 :</span> 80점
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">영어 :</span> 75점
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">수학 :</span> 55점
 
 ```python
 a = 80
@@ -2085,11 +2085,11 @@ print("속도:", "과속" if speed > 60 else "정상")  # 제한속도 60 초과
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">시험 결과: 합격
-숫자 판별: 홀수
-배터리: 충전 필요
-시간: 오후
-로그인: 접속 성공
-속도: 과속</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">숫자 판별:</span> 홀수
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">배터리:</span> 충전 필요
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">시간:</span> 오후
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">로그인:</span> 접속 성공
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">속도:</span> 과속</pre>
 </div>
 
 
@@ -2109,7 +2109,7 @@ print("속도:", "과속" if speed > 60 else "정상")  # 제한속도 60 초과
 
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>기본 구조</span>
 
-- while 조건:
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">while 조건:</span> 
     - 반복 실행 코드
 - → 조건이 True동안 반복, 조건이 False가 되면 종료
 
@@ -2225,7 +2225,7 @@ i=2, j=4, 합=6</pre>
 
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>기본 구조</span>
 
-- for 변수 in 시퀀스:
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">for 변수 in 시퀀스:</span> 
     - 반복 실행 코드
 - → 시퀀스의 각 요소를 변수에 순차적으로 할당하며 반복
 - → 반복이 끝나면 자동 종료
@@ -2422,7 +2422,7 @@ for product, price in zip(products, prices):
 
 값을 받아서 처리하는 함수 (입력값에 따라 결과가 달라짐.)
 
-- def 함수_이름(매개변수):
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">def 함수_이름(매개변수):</span> 
     - 수행할_문장1
     - 수행할_문장2
    - ...
@@ -2559,8 +2559,8 @@ create_user(name="김철수", age=20, city="서울")
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">이름: 김철수
-나이: 20
-도시: 서울</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">나이:</span> 20
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">도시:</span> 서울</pre>
 </div>
 
 
@@ -2594,10 +2594,10 @@ create_profile(  # 함수 호출 시작
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">=== 프로필 ===
-name: 김영희
-age: 30
-job: 개발자
-hobby: 독서</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">name:</span> 김영희
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">age:</span> 30
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">job:</span> 개발자
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">hobby:</span> 독서</pre>
 </div>
 
 
@@ -2709,8 +2709,8 @@ print("함수 밖에서 x (전역 변수):", x)  # 10
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">함수 안에서 x (전역 변수): 10
-함수 안에서 y (지역 변수): 5
-함수 밖에서 x (전역 변수): 10</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">함수 안에서 y (지역 변수):</span> 5
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">함수 밖에서 x (전역 변수):</span> 10</pre>
 </div>
 
 
@@ -2852,11 +2852,11 @@ print(add.__doc__)
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">두 숫자를 더하는 함수
 
-Parameters:
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">Parameters:</span> 
 a (int, float): 첫 번째 숫자
 b (int, float): 두 번째 숫자
 
-Returns:
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">Returns:</span> 
 int, float: 두 숫자의 합</pre>
 </div>
 
@@ -3055,7 +3055,7 @@ f.close()
 
 ### for문과 함께 사용하기
 - 파일 객체는 반복 가능한 객체
-- for line in f : 구조 사용하면 파일을 한 줄씩 순차적으로 읽음.
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">for line in f :</span> 구조 사용하면 파일을 한 줄씩 순차적으로 읽음.
 - readline과 비슷하지만 코드가 더 간결하고, 메모리가 효율적이다.
 
 ```python
@@ -3245,8 +3245,8 @@ today_seoul_weather()
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
   <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">오늘(2026-03-26) 서울 날씨
-- 최고 기온: 14.6°C
-- 최저 기온: 2.3°C</pre>
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">최고 기온:</span> 14.6°C
+- <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">최저 기온:</span> 2.3°C</pre>
 </div>
 
 
@@ -3283,7 +3283,7 @@ print("\n오늘의 명언:",f'"{quote}" — {author}')
    }
 ]
 
-오늘의 명언: "Everybody has talent, but ability takes hard work." — Michael Jordan</pre>
+<span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">오늘의 명언:</span> "Everybody has talent, but ability takes hard work." — Michael Jordan</pre>
 </div>
 
 
