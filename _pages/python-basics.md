@@ -43,7 +43,7 @@ permalink: /assignments/python-basics/
       <!-- Right Detailed Content -->
       <div class="col-lg-9 mb-4">
         <!-- Section: 1. 변수와 수치 연산 -->
-        <div id="section1" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section1" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #38bdf8; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-calculator"></i>
@@ -246,7 +246,7 @@ print(result)          # result의 값을 출력한다.
         </div>
 
         <!-- Section: 2. 문자열(String) 제어 -->
-        <div id="section2" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section2" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #fb7185; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-font"></i>
@@ -964,7 +964,7 @@ print(year+'년 '+month+'월 '+day+'일\n계절 : '+season)
         </div>
 
         <!-- Section: 3. 리스트와 튜플 (List, Tuple) -->
-        <div id="section3" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section3" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #34d399; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-list-ol"></i>
@@ -1493,7 +1493,7 @@ print(t3)
         </div>
 
         <!-- Section: 4. 불과 딕셔너리 (Bool, Dict) -->
-        <div id="section4" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section4" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #a78bfa; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-book-open"></i>
@@ -1806,7 +1806,7 @@ a
         </div>
 
         <!-- Section: 5. 제어문 (If, Loop) -->
-        <div id="section5" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section5" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #fb923c; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-code-fork"></i>
@@ -2388,7 +2388,7 @@ for product, price in zip(products, prices):
         </div>
 
         <!-- Section: 6. 함수와 매개변수 (Functions) -->
-        <div id="section6" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section6" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #2dd4bf; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-cube"></i>
@@ -2865,7 +2865,7 @@ int, float: 두 숫자의 합</pre>
         </div>
 
         <!-- Section: 7. 파일 입출력 & 클래스 실습 -->
-        <div id="section7" class="border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
+        <div id="section7" class="mb-5" style="padding: 1rem 0;">
           <div class="d-flex align-items-center mb-4">
             <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #f472b6; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
               <i class="fa fa-file-text-o"></i>
