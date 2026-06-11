@@ -7,8 +7,8 @@ permalink: /projects/ble-safety/
 <style>
   /* Premium Design System Styles */
   .premium-section {
-    background-color: #161b22;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: 16px;
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -24,11 +24,11 @@ permalink: /projects/ble-safety/
   .section-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: var(--text-heading);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid rgba(255,255,255,0.05);
+    border-bottom: 2px solid var(--border-subtle);
     padding-bottom: 1rem;
   }
   
@@ -45,8 +45,8 @@ permalink: /projects/ble-safety/
   
   /* Overview Cards */
   .overview-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
     border-radius: 12px;
     padding: 1.5rem;
     height: 100%;
@@ -58,7 +58,7 @@ permalink: /projects/ble-safety/
     font-size: 1.1rem;
   }
   .overview-card p {
-    color: #94a3b8;
+    color: var(--text-body);
     line-height: 1.7;
     font-size: 0.95rem;
     margin-bottom: 0;
@@ -66,14 +66,14 @@ permalink: /projects/ble-safety/
 
   /* Troubleshooting Cards */
   .ts-card {
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
+    background: linear-gradient(145deg, var(--bg-glass), var(--bg-input));
     border-left: 4px solid #fb923c;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1rem;
   }
   .ts-title {
-    color: #cbd5e1;
+    color: var(--text-body);
     font-weight: bold;
     margin-bottom: 0.8rem;
   }
@@ -83,8 +83,8 @@ permalink: /projects/ble-safety/
   /* Info List */
   .info-list li {
     padding: 0.8rem 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
-    color: #cbd5e1;
+    border-bottom: 1px dashed var(--border-medium);
+    color: var(--text-body);
     line-height: 1.6;
   }
   .info-list li:last-child {
@@ -100,7 +100,7 @@ permalink: /projects/ble-safety/
 
   /* Highlight text */
   .highlight-text {
-    color: #f1f5f9;
+    color: var(--text-primary);
     background: rgba(56, 189, 248, 0.15);
     padding: 2px 6px;
     border-radius: 4px;
@@ -117,7 +117,7 @@ permalink: /projects/ble-safety/
       <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: rgba(244, 63, 94, 0.1); border-radius: 50%; filter: blur(40px);"></div>
       
       <span class="badge badge-primary px-3 py-2 mb-3" style="font-size: 0.9rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 20px;">📶 Capstone Design Project</span>
-      <h1 class="text-white font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">BLE 기반 공사장 안전장비 실시간 감지 시스템</h1>
+      <h1 class="text-light font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">BLE 기반 공사장 안전장비 실시간 감지 시스템</h1>
       <h4 class="text-muted font-weight-normal mb-4">EZ-safe : 지능형 스마트 안전모 솔루션</h4>
       <div class="d-flex justify-content-center gap-3">
         <span class="text-light mx-3"><i class="fa fa-microchip mr-2 text-info"></i>ESP32 DevKit</span>
@@ -156,7 +156,7 @@ permalink: /projects/ble-safety/
       
       <div class="mt-4 p-4 rounded" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2);">
         <h5 class="text-success mb-3"><i class="fa fa-check-circle mr-2"></i>최종 목표 요약</h5>
-        <ul class="list-unstyled mb-0" style="color: #cbd5e1; line-height: 1.8;">
+        <ul class="list-unstyled mb-0" style="color: var(--text-body); line-height: 1.8;">
           <li><i class="fa fa-angle-right mr-2 text-success"></i>압력 센서(FSR) 및 고휘도 LED, 부저를 활용한 <strong>착용/미착용 실시간 로컬 경고 시스템</strong> 구축</li>
           <li><i class="fa fa-angle-right mr-2 text-success"></i>6축 가속도 자이로 센서(MPU6050)를 통한 <strong>작업자 낙상(Wreck/Fall) 알고리즘</strong> 구현</li>
           <li><i class="fa fa-angle-right mr-2 text-success"></i>저전력 BLE 통신 기반의 안드로이드 애플리케이션 연동 및 실시간 모니터링 구축</li>
@@ -180,7 +180,7 @@ permalink: /projects/ble-safety/
           </ul>
         </div>
         <div class="col-lg-7 mb-4">
-          <div class="p-4 rounded text-center" style="background: #0d1117; border: 1px solid rgba(255,255,255,0.05);">
+          <div class="p-4 rounded text-center" style="background: var(--bg-terminal-header); border: 1px solid var(--border-subtle);">
             <h5 class="text-muted mb-4 small text-uppercase tracking-widest">System Flow</h5>
             <!-- Mermaid Diagram for beautiful flowchart -->
             <div class="mermaid text-center">
@@ -210,7 +210,7 @@ permalink: /projects/ble-safety/
       </h2>
       <p class="text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 및 센서 판별 코어 파트입니다.</p>
       
-      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border-medium);">
 ```cpp
 #include <BLEDevice.h>
 #include <BLEUtils.h>
@@ -308,7 +308,7 @@ void loop() {
       
       <div class="row">
         <div class="col-lg-6 mb-4 text-center">
-          <div class="p-3" style="background: #0d1117; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+          <div class="p-3" style="background: var(--bg-terminal-header); border-radius: 16px; border: 1px solid var(--border-subtle);">
             <img src="{{ site.baseurl }}/assets/img/ez_safe_hw.png" alt="EZ-safe 완제품" class="img-fluid rounded" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
             <p class="text-muted small mt-3 mb-0"><i class="fa fa-search-plus mr-1"></i>안전모 패키징 외관 및 배선 일체화</p>
           </div>
@@ -338,7 +338,7 @@ void loop() {
       
       <div class="row mt-4">
         <div class="col-md-6 mb-4">
-          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(56, 189, 248, 0.2);">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(56, 189, 248, 0.2);">
             <h5 class="text-info mb-3"><i class="fa fa-bar-chart mr-2"></i>테스트 최종 검증</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
               <li class="mb-2">안전모 미착용 시 1초 이내 앱 화면에 <strong><span class="text-danger">UNWORN</span></strong> 적색 경고 팝업 활성화 및 로컬 부저 작동 성공.</li>
@@ -347,7 +347,7 @@ void loop() {
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(167, 139, 250, 0.2);">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(167, 139, 250, 0.2);">
             <h5 class="text-primary mb-3"><i class="fa fa-lightbulb-o mr-2"></i>스마트 건설 인프라의 미래</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
               <li class="mb-2"><strong>중앙 집중형 모니터링:</strong> 관리자 앱 하나로 원격 실시간 모니터링을 지원하여 안전 사각지대 원천 차단.</li>
@@ -365,5 +365,5 @@ void loop() {
 <!-- Initialize Mermaid -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  mermaid.initialize({ startOnLoad: true, theme: (localStorage.getItem('theme') === 'light' ? 'default' : 'dark') });
 </script>

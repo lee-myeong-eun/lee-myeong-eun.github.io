@@ -26,13 +26,11 @@
 
       function applyTheme(theme) {
         // Remove all theme classes
-        document.body.classList.remove("light-mode", "eyecare-mode");
+        document.body.classList.remove("light-mode");
         
         // Add specific theme class if not dark
         if (theme === "light") {
           document.body.classList.add("light-mode");
-        } else if (theme === "eyecare") {
-          document.body.classList.add("eyecare-mode");
         }
         
         // Update button active states

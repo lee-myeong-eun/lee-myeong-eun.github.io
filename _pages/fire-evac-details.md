@@ -7,8 +7,8 @@ permalink: /projects/fire-evac-safety/
 <style>
   /* Premium Design System Styles */
   .premium-section {
-    background-color: #161b22;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: 16px;
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -24,11 +24,11 @@ permalink: /projects/fire-evac-safety/
   .section-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: var(--text-heading);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid rgba(255,255,255,0.05);
+    border-bottom: 2px solid var(--border-subtle);
     padding-bottom: 1rem;
   }
   
@@ -45,8 +45,8 @@ permalink: /projects/fire-evac-safety/
   
   /* Overview Cards */
   .overview-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
     border-radius: 12px;
     padding: 1.5rem;
     height: 100%;
@@ -58,7 +58,7 @@ permalink: /projects/fire-evac-safety/
     font-size: 1.1rem;
   }
   .overview-card p {
-    color: #94a3b8;
+    color: var(--text-body);
     line-height: 1.7;
     font-size: 0.95rem;
     margin-bottom: 0;
@@ -73,7 +73,7 @@ permalink: /projects/fire-evac-safety/
     margin-bottom: 1rem;
   }
   .ts-title {
-    color: #cbd5e1;
+    color: var(--text-body);
     font-weight: bold;
     margin-bottom: 0.8rem;
   }
@@ -83,8 +83,8 @@ permalink: /projects/fire-evac-safety/
   /* Info List */
   .info-list li {
     padding: 0.8rem 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
-    color: #cbd5e1;
+    border-bottom: 1px dashed var(--border-medium);
+    color: var(--text-body);
     line-height: 1.6;
   }
   .info-list li:last-child {
@@ -100,7 +100,7 @@ permalink: /projects/fire-evac-safety/
 
   /* Highlight text */
   .highlight-text {
-    color: #f1f5f9;
+    color: var(--text-primary);
     background: rgba(244, 63, 94, 0.15);
     padding: 2px 6px;
     border-radius: 4px;
@@ -117,7 +117,7 @@ permalink: /projects/fire-evac-safety/
       <div style="position: absolute; bottom: -50px; right: -50px; width: 200px; height: 200px; background: rgba(244, 63, 94, 0.15); border-radius: 50%; filter: blur(40px);"></div>
       
       <span class="badge badge-danger px-3 py-2 mb-3" style="font-size: 0.9rem; background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); border-radius: 20px;">🔥 Safety IoT Project</span>
-      <h1 class="text-white font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">실내 화재 대피 유도 시스템</h1>
+      <h1 class="text-light font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">실내 화재 대피 유도 시스템</h1>
       <h4 class="text-muted font-weight-normal mb-4">SIGNAL_SPEAK : 동적 대피로 안내 솔루션</h4>
       <div class="d-flex justify-content-center gap-3">
         <span class="text-light mx-3"><i class="fa fa-fire mr-2" style="color: #f97316;"></i>Flame Sensor</span>
@@ -156,7 +156,7 @@ permalink: /projects/fire-evac-safety/
       
       <div class="mt-4 p-4 rounded" style="background: rgba(251, 146, 60, 0.05); border: 1px solid rgba(251, 146, 60, 0.2);">
         <h5 class="text-warning mb-3"><i class="fa fa-bullseye mr-2"></i>최종 목표 요약</h5>
-        <ul class="list-unstyled mb-0" style="color: #cbd5e1; line-height: 1.8;">
+        <ul class="list-unstyled mb-0" style="color: var(--text-body); line-height: 1.8;">
           <li><i class="fa fa-angle-right mr-2 text-warning"></i>즉각적으로 위험/안전 구역을 판별하여 <strong>바닥 LED 라인에 동적 애니메이션(파도 효과)</strong> 점등</li>
           <li><i class="fa fa-angle-right mr-2 text-warning"></i>I2C LCD를 통해 화재 발생 위치(방 번호)를 명확한 <strong>텍스트로 표출</strong></li>
           <li><i class="fa fa-angle-right mr-2 text-warning"></i>동시에 <strong>부저 경보</strong>를 발령하여 시스템의 직관성을 극대화</li>
@@ -182,7 +182,7 @@ permalink: /projects/fire-evac-safety/
           </ul>
         </div>
         <div class="col-lg-7 mb-4">
-          <div class="p-4 rounded text-center" style="background: #0d1117; border: 1px solid rgba(255,255,255,0.05);">
+          <div class="p-4 rounded text-center" style="background: var(--bg-terminal-header); border: 1px solid var(--border-subtle);">
             <h5 class="text-muted mb-4 small text-uppercase tracking-widest">Hardware Architecture</h5>
             <!-- Mermaid Diagram for beautiful flowchart -->
             <div class="mermaid text-center">
@@ -217,7 +217,7 @@ permalink: /projects/fire-evac-safety/
       </h2>
       <p class="text-muted mb-3">센서 폴링 및 동적 대피 유도 애니메이션을 처리하는 아두이노 기반 제어 코드입니다.</p>
       
-      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border-medium);">
 ```cpp
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -323,7 +323,7 @@ void triggerFireAlarm() {
       
       <div class="row">
         <div class="col-lg-5 mb-4 text-center">
-          <div class="p-3" style="background: #0d1117; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+          <div class="p-3" style="background: var(--bg-terminal-header); border-radius: 16px; border: 1px solid var(--border-subtle);">
             <!-- Mockup Image placeholder since real image wasn't provided directly in notebook -->
             <div style="background: #1e293b; height: 250px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-direction: column; border: 1px dashed rgba(255,255,255,0.2);">
                <i class="fa fa-building-o" style="font-size: 3rem; color: #475569; margin-bottom: 10px;"></i>
@@ -357,7 +357,7 @@ void triggerFireAlarm() {
       
       <div class="row mt-4">
         <div class="col-md-6 mb-4">
-          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(56, 189, 248, 0.2);">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(56, 189, 248, 0.2);">
             <h5 class="text-info mb-3"><i class="fa fa-check-square-o mr-2"></i>테스트 100% 성공</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
               <li class="mb-2">화재 감지 ➡️ ESP32 ➡️ LED 안내선 ➡️ 경보에 이르는 전체 시나리오 정상 작동 확인.</li>
@@ -366,7 +366,7 @@ void triggerFireAlarm() {
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(16, 185, 129, 0.2);">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(16, 185, 129, 0.2);">
             <h5 class="text-success mb-3"><i class="fa fa-globe mr-2"></i>스마트 빌딩 확장 플랜</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
               <li class="mb-2"><strong>Dijkstra 알고리즘:</strong> 복잡한 실내 구조를 위한 동적 최단 경로 그래프 알고리즘 반영 계획.</li>
@@ -383,5 +383,5 @@ void triggerFireAlarm() {
 <!-- Initialize Mermaid -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  mermaid.initialize({ startOnLoad: true, theme: (localStorage.getItem('theme') === 'light' ? 'default' : 'dark') });
 </script>
