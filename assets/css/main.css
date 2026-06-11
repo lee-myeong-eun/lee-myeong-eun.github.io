@@ -573,3 +573,33 @@ body.eyecare-mode .theme-btn.active {
     color: #fff !important;
 }
 
+
+/* Light Mode Global Text Overrides */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+    color: #0f172a !important;
+}
+body.light-mode p,
+body.light-mode li,
+body.light-mode address {
+    color: #334155 !important;
+}
+
+/* Eyecare Mode Global Text Overrides */
+body.eyecare-mode h1,
+body.eyecare-mode h2,
+body.eyecare-mode h3,
+body.eyecare-mode h4,
+body.eyecare-mode h5,
+body.eyecare-mode h6 {
+    color: #4a4036 !important;
+}
+body.eyecare-mode p,
+body.eyecare-mode li,
+body.eyecare-mode address {
+    color: #5c4a3d !important;
+}
