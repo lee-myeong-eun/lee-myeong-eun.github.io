@@ -35,7 +35,7 @@ permalink: /projects/ble-safety/
       <h2 class="text-gradient">BLE 기반 공사장 안전장비 실시간 감지 시스템 (EZ-safe)</h2>
       <hr />
       <p class="lead text-light font-weight-normal">
-        산업 현장의 인명 사고를 예방하기 위해 BLE RSSI 거리 인식 및 센서 데이터 판별 알고리즘을 설계하고 하드웨어 모듈을 직접 제작한 캡스톤 디자인 프로젝트 상세 분석 기록입니다.
+        산업 현장의 인명 사고를 예방하기 위해 스마트 센서와 무선 통신 알고리즘을 설계하고 하드웨어 모듈을 직접 제작한 캡스톤 디자인 프로젝트 상세 분석 기록입니다.
       </p>
     </div>
 
@@ -48,10 +48,9 @@ permalink: /projects/ble-safety/
         <div class="card border-0 shadow welcome-box p-3 mb-4" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-info-circle mr-2"></i>프로젝트 정보</h4>
           <ul class="list-unstyled small mb-0 text-muted" style="line-height: 2;">
-            <li><strong class="text-light">팀 구성:</strong> 최성용, 구민서, 권은지, 이명은</li>
-            <li><strong class="text-light">역할 (이명은):</strong> BLE 통신 알고리즘 설계 & 시스템 검증</li>
-            <li><strong class="text-light">개발 기간:</strong> 3월 ~ 6월 (16주)</li>
-            <li><strong class="text-light">핵심 기술:</strong> ESP32, BLE, FSR Pressure Sensor, PETG 3D Printing</li>
+            <li><strong class="text-light">소속 및 팀원:</strong> 전자공학과 최성용, 구민서, 권은지, 이명은</li>
+            <li><strong class="text-light">개발 환경:</strong> ESP32 DevKit, C/C++ (Arduino IDE), MIT App Inventor</li>
+            <li><strong class="text-light">핵심 부품:</strong> ESP32, MPU-6050 가속도 자이로, FSR 압력 센서 등</li>
           </ul>
         </div>
 
@@ -61,7 +60,7 @@ permalink: /projects/ble-safety/
           <ul class="list-unstyled small mb-0 pl-1" style="line-height: 2.2;">
             <li><a href="#section1" class="text-info text-hover-glow"><i class="fa fa-flag mr-2" style="color: #38bdf8;"></i>1. 프로젝트 개요</a></li>
             <li><a href="#section2" class="text-info text-hover-glow"><i class="fa fa-sitemap mr-2" style="color: #a78bfa;"></i>2. 시스템 구조 & 알고리즘</a></li>
-            <li><a href="#section3" class="text-info text-hover-glow"><i class="fa fa-code mr-2" style="color: #34d399;"></i>3. 시뮬레이션 시각화</a></li>
+            <li><a href="#section3" class="text-info text-hover-glow"><i class="fa fa-code mr-2" style="color: #34d399;"></i>3. 실시간 모니터링 시뮬레이션</a></li>
             <li><a href="#section4" class="text-info text-hover-glow"><i class="fa fa-wrench mr-2" style="color: #fb923c;"></i>4. 세부 구현 내용</a></li>
             <li><a href="#section5" class="text-info text-hover-glow"><i class="fa fa-camera mr-2" style="color: #fb7185;"></i>5. 완제품 & 패키징</a></li>
             <li><a href="#section6" class="text-info text-hover-glow"><i class="fa fa-bar-chart mr-2" style="color: #f472b6;"></i>6. 결과 분석 & 기대효과</a></li>
@@ -83,21 +82,20 @@ permalink: /projects/ble-safety/
             </div>
             <div>
               <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">1. 프로젝트 개요</h3>
-              <span class="small text-muted">Ez-safe Capstone Design Overview</span>
+              <span class="small text-muted">EZ-safe Capstone Design Overview</span>
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-- **팀원**: 최성용(회로/코딩), 구민서(3D 케이스), 권은지(앱 개발/BLE), 이명은(BLE 로직/테스트)
-- **개발 기간**: 3월 ~ 6월 (총 16주차)
+### 1.1 개발 배경 및 필요성
+- **건설 현장 안전관리의 한계**: 기존의 공사장 안전관리는 주로 관리자의 수동 점검이나 CCTV 모니터링에 의존하고 있어, 사각지대가 발생하거나 작업자의 안전모·안전조끼 미착용 상태를 실시간으로 즉각 적발하여 대응하기 어렵습니다.
+- **중대재해 예방의 중요성**: 소규모 공사장일수록 안전장비 미착용으로 인한 추락, 낙상 등 인명 사고 발생률이 높으며, 사고 발생 시 골든타임을 확보할 수 있는 자동화된 실시간 감지 인프라가 필수적입니다.
+- **솔루션 제안**: 본 프로젝트는 작업자가 착용하는 안전모와 안전조끼에 ESP32 MCU와 다중 센서(압력, 자이로)를 결합하여 착용 여부 및 낙상(Slam) 상태를 실시간 감지하고, BLE(Bluetooth Low Energy) 통신을 통해 관리자 및 작업자 스마트폰 앱으로 즉시 경고를 전송하는 지능형 안전모 시스템을 설계하였습니다.
 
-### 1) 배경 및 필요성
-- 공사 현장에서 보호구 미착용으로 인한 추락, 충격 등 인명 사고가 빈번히 발생함.
-- 기존의 CCTV 모니터링이나 수동 점검 방식은 실시간 확인이 어렵고 즉각적인 대응에 한계가 있음.
-
-### 2) 프로젝트 목표
-- **ESP32**와 다양한 센서(압력, 기울기)를 결합하여 안전모 및 안전조끼의 착용 상태를 실시간 감지.
-- **BLE(Bluetooth Low Energy) 통신**의 RSSI(신호 세기) 기반 거리 인식을 통해 미착용 및 이탈 시 즉각적인 경고 시스템 구현.
+### 1.2 프로젝트 최종 목표
+- 압력 센서(FSR) 및 고휘도 LED, 부저를 활용한 안전장비 착용/미착용 실시간 로컬 경고 시스템 구축.
+- 6축 가속도 자이로 센서(MPU6050)를 통한 작업자 낙상(Wreck/Fall) 알고리즘 구현.
+- 저전력 BLE 통신 기반의 안드로이드 애플리케이션 연동 및 다중 작업자 실시간 모니터링 시뮬레이션.
           </div>
         </div>
 
@@ -114,13 +112,21 @@ permalink: /projects/ble-safety/
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-본 시스템은 **송신기(작업자 장비) -> 수신기(중계기) -> 스마트폰 앱(App Inventor)** 구조로 동작합니다.
+### 2.1 시스템 구조도 (System Architecture)
+전체 시스템은 디바이스 노드(안전모/안전조끼) - 무선 통신 레이어(BLE) - 모니터링 애플리케이션(App)의 3-Tier 아키텍처로 구성됩니다.
 
-1. **RSSI 측정**: 무선 신호 세기를 기반으로 작업자가 일정 거리 이상 이탈했는지 확인합니다.
-   - RSSI $\ge$ -30 dBm: 강한 신호 (가까움)
-   - RSSI $\le$ -60 dBm: 약한 신호 (멀어짐 / 미착용 의심)
-2. **센서 데이터 수집**: 안전모 내부의 압력 센서와 기울기 센서 값을 측정하여 실제 착용 여부 및 낙상(이상 상태)을 감지합니다.
-3. **경고 출력**: 조건 만족 시 현장 부저(Buzzer) 경고음 발생 및 스마트폰 앱으로 실시간 데이터 전송.
+```
+[안전모 노드: ESP32 + FSR 압력 + MPU6050 자이로] 
+                       │
+             (BLE 저전력 무선 통신)
+                       ▼
+[모니터링 앱: MIT App Inventor 기반 안드로이드 UI] ──> [실시간 알림 및 경고 팝업]
+```
+
+### 2.2 핵심 알고리즘 흐름도
+1. **초기화**: ESP32 가동 후 I2C 통신(MPU6050) 및 BLE 가속도 서비스 비콘을 브로드캐스팅합니다.
+2. **착용 감지 단계**: 안전모 내부 정수리에 배치된 압력 센서(FSR)의 아날로그 데이터가 설정 임계값(Threshold)을 넘지 못하면 미착용으로 판단, 로컬 부저 경보와 동시에 BLE로 Unworn 데이터를 전송합니다.
+3. **낙상 감지 알고리즘**: MPU6050의 3축 가속도 벡터 합성값($\sqrt{x^2+y^2+z^2}$)의 급격한 변동(자유낙하 및 충격 임계값 초과)과 임계 시간 이상의 기울기 변화를 분석하여 낙상 발생 여부를 최종 판별합니다.
           </div>
         </div>
 
@@ -132,96 +138,104 @@ permalink: /projects/ble-safety/
             </div>
             <div>
               <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">3. 실시간 모니터링 시뮬레이션</h3>
-              <span class="small text-muted">Python Simulated BLE Receiver Core Code</span>
+              <span class="small text-muted">BLE Receiver Core Code</span>
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-            <p class="small text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 문자열 스트림 패킷을 파싱하여 실시간으로 작업자의 안전/이탈/위험 상황을 추론하고 경고 버저 출력을 결정하는 수신기 제어 핵심 파이썬 알고리즘 모형입니다.</p>
-```python
-import time
-import pandas as pd
-import random
+            <p class="small text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 코어 파트입니다.</p>
+```cpp
+#include <BLEDevice.h>
+#include <BLEUtils.h>
+#include <BLEServer.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
 
-# 1. ESP32로부터 들어오는 가상의 BLE 데이터 스트림 생성 함수
-def generate_mock_ble_data():
-    # 데이터 포맷: "작업자번호,RSSI,압력센서값,기울기센서값"
-    # 압력 1: 착용, 0: 미착용 / 기울기 1: 정상, 0: 낙상(기울어짐)
-    worker_id = random.choice([1, 2, 3])
-    rssi = random.randint(-70, -25)
-    pressure = random.choice([0, 1, 1, 1]) # 착용 확률 높게 설정
-    tilt = random.choice([0, 1, 1, 1, 1, 1]) # 낙상 확률 낮게 설정
-    
-    return f"{worker_id},{rssi},{pressure},{tilt}"
+// UUID 정의 (App Inventor 연동 규격)
+#define SERVICE_UUID        "4fafc201-75d5-4b36-91e2-575e0d0d3b14"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
-# 2. 수신 데이터 파싱 및 실시간 상태 판별 함수
-def parse_and_check_safety(raw_string):
-    tokens = raw_string.split(',')
-    worker_id = tokens[0]
-    rssi = int(tokens[1])
-    pressure = int(tokens[2])
-    tilt = int(tokens[3])
-    
-    status = "정상 착용"
-    alert = False
-    
-    # 위험 조건 검사 (로직 반영)
-    if pressure == 0:
-        status = "안전모 미착용!"
-        alert = True
-    elif rssi <= -60:
-        status = "작업장 이탈 위험 (신호 약함)"
-        alert = True
-    elif tilt == 0:
-        status =  "낙상 발생 의심!"
-        alert = True
-        
-    return {
-        "작업자 ID": worker_id,
-        "RSSI (dBm)": rssi,
-        "착용 여부": "착용" if pressure == 1 else "미착용",
-        "자세 상태": "정상" if tilt == 1 else "기울어짐(낙상)",
-        "최종 상태": status,
-        "부저 알림 작동": "ON" if alert else "OFF"
+#define FSR_PIN             34  // 압력 센서 아날로그 핀
+#define BUZZER_PIN          25  // 경고 부저
+#define LED_PIN             26  // 경고 LED
+
+Adafruit_MPU6050 mpu;
+BLECharacteristic *pCharacteristic;
+bool deviceConnected = false;
+
+class MyServerCallbacks: public BLEServerCallbacks {
+    void onConnect(BLEServer* pServer) { deviceConnected = true; };
+    void onDisconnect(BLEServer* pServer) { deviceConnected = false; }
+};
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(BUZZER_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
+
+  // MPU6050 자이로 센서 초기화 (I2C)
+  if (!mpu.begin()) {
+    Serial.println("Failed to find MPU6050 chip");
+  }
+  mpu.setHighPassFilter(MPU6050_HIGHPASS_0_5HZ);
+
+  // BLE 장치 서버 설정
+  BLEDevice::init("EZ-Safe_Helmet_01");
+  BLEServer *pServer = BLEDevice::createServer();
+  pServer->setCallbacks(new MyServerCallbacks());
+  
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+  pCharacteristic = pService->createCharacteristic(
+                      CHARACTERISTIC_UUID,
+                      BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY
+                    );
+                    
+  pService->start();
+  pServer->getAdvertising()->start();
+}
+
+void loop() {
+  int fsrValue = analogRead(FSR_PIN);
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+
+  // 3축 가속도 벡터 합성값 계산
+  float totalAccel = sqrt(a.acceleration.x * a.acceleration.x + 
+                          a.acceleration.y * a.acceleration.y + 
+                          a.acceleration.z * a.acceleration.z);
+
+  String statusPayload = "SAFE";
+
+  // Case 1: 안전모 미착용 판별 (임계값 미달)
+  if (fsrValue < 500) { 
+    statusPayload = "UNWORN";
+    digitalWrite(LED_PIN, HIGH);
+    tone(BUZZER_PIN, 800);
+  } 
+  // Case 2: 낙상 사고 감지 (가속도 임계값 초과 비정상 거동)
+  else if (totalAccel > 25.0 || totalAccel < 2.0) { 
+    delay(500); // 일시적 노이즈 방지 윈도우
+    mpu.getEvent(&a, &g, &temp);
+    if (abs(a.acceleration.z) < 5.0) { // 충격 후 누워있는 상태 체크
+      statusPayload = "FALL";
+      digitalWrite(LED_PIN, HIGH);
+      tone(BUZZER_PIN, 1200);
     }
+  } else {
+    digitalWrite(LED_PIN, LOW);
+    noTone(BUZZER_PIN);
+  }
 
-# 3. 5회 실시간 모니터링 시뮬레이션 작동
-print("====== EZ-safe 공사장 안전장비 실시간 감지 시스템 ======")
-results = []
-for _ in range(5):
-    raw_data = generate_mock_ble_data()
-    parsed_info = parse_and_check_safety(raw_data)
-    results.append(parsed_info)
-    print(f"[수신 Raw 데이터]: {raw_data} -> [판단]: {parsed_info['최종 상태']} (부저: {parsed_info['부저 알림 작동']})")
-    time.sleep(0.5)
-
-# 결과를 DataFrame으로 변환하여 주피터 상에서 깔끔하게 표로 출력
-df = pd.DataFrame(results)
-df
+  // BLE 데이터 송신을 통한 실시간 앱 모니터링 시뮬레이션
+  if (deviceConnected) {
+    pCharacteristic->setValue(statusPayload.c_str());
+    pCharacteristic->notify();
+    Serial.println("Sent Status: " + statusPayload);
+  }
+  delay(100);
+}
 ```
-
-            <!-- Output Console Box -->
-            <div class="terminal-output mt-3 mb-2" style="box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-              <div class="terminal-header d-flex align-items-center justify-content-between px-3 py-2" style="background-color: #0d1117; border-radius: 8px 8px 0 0; border: 1px solid rgba(255,255,255,0.05); border-bottom: none; font-size: 0.8rem; color: #8b949e;">
-                <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
-                <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
-              </div>
-              <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">====== EZ-safe 공사장 안전장비 실시간 감지 시스템 ======
-[수신 Raw 데이터]: 2,-62,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
-[수신 Raw 데이터]: 2,-69,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
-[수신 Raw 데이터]: 3,-65,1,1 -> [판단]: 작업장 이탈 위험 (신호 약함) (부저: ON)
-[수신 Raw 데이터]: 1,-48,1,1 -> [판단]: 정상 착용 (부저: OFF)
-[수신 Raw 데이터]: 2,-53,0,0 -> [판단]: 안전모 미착용! (부저: ON)
-
-[DataFrame 테이블 출력 결과]
-작업자 ID | RSSI (dBm) | 착용 여부 | 자세 상태 | 최종 상태 | 부저 알림 작동
--------|------------|-------|-------|-------|---------
-2 | -62 | 착용 | 정상 | 작업장 이탈 위험 (신호 약함) | ON
-2 | -69 | 착용 | 정상 | 작업장 이탈 위험 (신호 약함) | ON
-3 | -65 | 착용 | 정상 | 작업장 이탈 위험 (신호 약함) | ON
-1 | -48 | 착용 | 정상 | 정상 착용 | OFF
-2 | -53 | 미착용 | 기울어짐(낙상) | 안전모 미착용! | ON</pre>
-            </div>
           </div>
         </div>
 
@@ -238,15 +252,17 @@ df
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-### 1) 하드웨어 구성 (HW BOM)
-- **컨트롤러**: ESP32 개발 보드 (내장 BLE 모듈 활용)
-- **센서류**: 압전 센서(FSR RA12P)를 통한 착용 압력 감지, 기울기 센서를 통한 낙상 감지
-- **전원 및 출력**: 3.7V 리튬 배터리, TP4056 충전 모듈, MT3608 승압 컨버터, 3V 능동 부저
-- **외관 케이스**: 현장 환경을 고려해 높은 강도, 내열성, 내습성, 유연성을 가진 **PETG 필라멘트**를 사용하여 3D 프린팅 설계 및 제작
+1. **BLE 신호 감쇠 및 앱 연동 데이터 누락 현상**
+   - **문제**: 공사장 환경을 모사한 거리 테스트 시, 장애물이나 배터리 전압 강하로 인해 BLE Advertising 패킷이 유실되거나 앱 화면이 간헐적으로 멈추는 현상이 발생함.
+   - **해결**: 통신 패킷 전송 방식을 효율화하고 MIT App Inventor 단의 타이머 클럭 주기를 ESP32 폴링 주기와 동기화(100ms)시켜 데이터 버퍼 오버플로우를 해결함.
 
-### 2) 소프트웨어 및 앱 개발
-- **ESP32 코딩**: 센서 입력값 판별 ➡️ 문자열 형태 변환 ➡️ BLE 통신 송출 로직 설계
-- **앱 인벤터(App Inventor)**: BLE로 중계기 데이터를 받아 스플릿/파싱하여 각 작업자의 착용 상태를 UI에 실시간 시각화 구현
+2. **리튬이온 배터리 정격 전압(3.7V)과 회로 승압 구조 최적화**
+   - **문제**: 18650 리튬이온 배터리(3.7V) 구동 시, 가속도 센서와 고휘도 LED 소자가 요구하는 안정적인 전압 레벨 유지 불능으로 인한 오작동 확인.
+   - **해결**: MT3608 DC-DC 승압 부스터 스텝업 컨버터를 설계 단에 추가 배치하여 전체 센서 보드 로직에 안정적인 5V 전원을 유지하고, TP4056 충전 모듈을 연동하여 휴대성과 안전성을 동시 확보함.
+
+3. **압력 센서(FSR) 아날로그 전압 분배기(Voltage Divider) 노이즈**
+   - **문제**: 작업자가 안전모를 착용했음에도 신호 기준값(Float 상태)이 흔들려 오작동 경보음이 발생하는 현상 발생.
+   - **해결**: 하드웨어 회로 내에 10kΩ 풀다운 막대 저항을 결선하여 전압 분배 회로를 확립함으로써, 완벽한 디지털 로직 레벨 변환을 유도함.
           </div>
         </div>
 
@@ -258,7 +274,7 @@ df
             </div>
             <div>
               <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">5. 최종 완제품 및 하드웨어 패키징</h3>
-              <span class="small text-muted">EZ-safe 3D Packaging Enclosure</span>
+              <span class="small text-muted">EZ-safe Packaging Enclosure</span>
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
@@ -268,21 +284,16 @@ df
               <div class="img-wrapper d-inline-block shadow" style="border-radius: 12px; overflow: hidden; border: 2px solid rgba(56, 189, 248, 0.2); max-width: 100%;">
                 <img src="{{ site.baseurl }}/assets/img/ez_safe_hw.png" alt="EZ-safe 최종 완제품" class="img-fluid" style="max-height: 450px;" />
               </div>
-              <p class="text-muted small mt-2"><i class="fa fa-info-circle mr-1"></i>3D 프린팅(PETG) 케이스 제작 및 기판 회로도 전원 절연 처리 완료</p>
+              <p class="text-muted small mt-2"><i class="fa fa-info-circle mr-1"></i>안전모 패키징 외관 및 배선 일체화 처리 완료</p>
             </div>
-실제 산업 현장에서 사용할 수 있도록 내구성과 실용성을 고려하여 하드웨어를 최종 패키징하였습니다.
 
+### 5.1 하드웨어 컴팩트 패키징 및 내장화
+- **외관 및 안전성 개선**: 실제 작업용 백색 안전모 내부에 센서 부품들이 직접 노출될 경우 작업자의 이물감 유발 및 두피 부상 위험이 있었습니다.
+- **패키징 보완**: 하드웨어 모듈 회로를 전용 소형 기판(FR-4)에 땜납 처리하여 고정하고, 배선 꼬임 방지를 위해 점퍼 와이어 라인을 일체화했습니다. 최종적으로 배터리, MCU, 컨버터 회로 전반을 헬멧 외부에 안정적으로 마운팅할 수 있는 보호 인클로저 구조로 마감하여 실용성을 극대화하였습니다.
 
-
-
-
-### 🛠️ 하드웨어 패키징의 주요 특징
-1. **현장 맞춤형 3D 케이스 설계**: 
-   - 공사 현장의 거친 환경을 고려하여 내열성, 내습성, 그리고 충격 유연성이 뛰어난 **PETG 필라멘트**를 채택하여 케이스를 직접 출력 및 가공했습니다.
-   - 안전모의 곡률과 구조를 반영하여 작업자의 착용감에 방해가 되지 않도록 컴팩트하게 설계했습니다.
-2. **안정적인 전원 및 출력부 통합**:
-   - 내부에는 3.7V 리튬 배터리와 함께 전압 강하를 방지하는 **MT3608 승압 컨버터**를 내장하여 능동 부저가 항상 일정한 광량/음량으로 경고를 보낼 수 있도록 회로를 안정화했습니다.
-   - 기판 후면은 **절연 처리**를 통해 현장 조립 중 발생할 수 있는 쇼트(Short) 오작동을 원천 차단했습니다.
+### 5.2 프로젝트 예산 및 파트리스트 (BOM)
+- **총 소요 예산**: RISE 사업단 일반형 캡스톤디자인 과제비 지원 (총 171,120원 규모)
+- **핵심 부품 사양**: ESP32 Wi-Fi+Bluetooth 일체형 개발보드, MPU-6050 6축 가속도 자이로 센서, FSR RA12P 압력 힘 센서, TP4056 배터리 충전 모듈, MT3608 승압 컨버터, 18650 보호회로 내장 리튬배터리, 고휘도 3색 LED 및 액티브 능동 부저.
           </div>
         </div>
 
@@ -299,13 +310,14 @@ df
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
           <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-### 1) 테스트 결과
-- 실전 시연을 통해 짧은 반응 속도와 안정적인 작동성 검증 완료.
-- 수동 점검 방식 대비 자동화 시스템 구축으로 휴먼 에러 차단 가능.
-- 아두이노 및 기성 센서 기반으로 제작되어 기존 고가 시스템 대비 **저전력/저비용**으로 즉시 도입 가능함.
+### 6.1 프로젝트 최종 결과 분석
+- 실제 완제품 안전모 착용 테스트 결과, 안전모 미착용 시 1초 이내로 스마트폰 모니터링 앱 화면에 **UNWORN** 적색 경고 팝업이 활성화되었으며 안전모 외부 LED/부저가 정상 작동하였습니다.
+- 안전모를 착용한 채 강한 물리적 충격과 측면 기울임(낙상 모사)을 인가했을 때 가속도 합성 벡터 연산을 통해 정확히 관리자 앱으로 **FALL** 긴급 SOS 알림이 전송됨을 검증하였습니다.
 
-### 2) 향후 발전 방향
-- 현재 구축된 BLE 인프라에 추가로 **GPS 및 RFID** 모듈을 연동한다면 단순 착용 감지를 넘어 **정밀 위치 기반 관제 시스템**으로 확장 가능함.
+### 6.2 기대효과 및 향후 개선 과제
+- **스마트 건설 현장 인프라 혁신**: 현장 관리자가 수많은 작업자의 안전 장구 착용 현황을 관리 동선 낭비 없이 중앙 앱 하나로 원격 실시간 모니터링할 수 있어 안전 사각지대를 원천 차단합니다.
+- **향후 고도화 계획**: 다중 노드 네트워킹: 현재 1:1 BLE 매핑 방식을 넘어, BLE Mesh 네트워킹 기술을 소프트웨어에 추가 반영하여 현장 내 수십 명의 안전모 데이터를 동시 수집하는 게이트웨이 구조로 고도화할 예정입니다.
+- **GPS 위치 추적 연동**: 스마트폰의 GPS 센서 데이터와 임베디드 장치를 연동하여 낙상 사고 발생 시 요구조자의 정확한 현장 내 위치 좌표를 구조대에 즉각 전송하는 원스톱 방재 시스템으로 확장이 가능합니다.
           </div>
         </div>
 
