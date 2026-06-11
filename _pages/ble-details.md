@@ -112,9 +112,9 @@ permalink: /projects/ble-safety/
   <div class="col-md-12 mb-5">
     
     <!-- Hero Banner -->
-    <div class="animate-fade-in-up delay-100 mb-5 text-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 4rem 2rem; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: relative; overflow: hidden;">
-      <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(56, 189, 248, 0.1); border-radius: 50%; filter: blur(40px);"></div>
-      <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: rgba(244, 63, 94, 0.1); border-radius: 50%; filter: blur(40px);"></div>
+    <div class="animate-fade-in-up delay-100 mb-5 text-center" style="background: linear-gradient(135deg, var(--hero-grad-linear-1) 0%, var(--hero-grad-linear-3) 100%); padding: 4rem 2rem; border-radius: 20px; border: 1px solid var(--border-accent); box-shadow: 0 20px 40px var(--shadow-main); position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--badge-bg); border-radius: 50%; filter: blur(40px);"></div>
+      <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: var(--badge-bg); border-radius: 50%; filter: blur(40px);"></div>
       
       <span class="badge badge-primary px-3 py-2 mb-3" style="font-size: 0.9rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 20px;">📶 Capstone Design Project</span>
       <h1 class="text-light font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">BLE 기반 공사장 안전장비 실시간 감지 시스템</h1>
@@ -129,7 +129,7 @@ permalink: /projects/ble-safety/
     <!-- 1. 프로젝트 개요 -->
     <div class="premium-section animate-fade-in-up delay-200" id="section-overview">
       <h2 class="section-title">
-        <div class="icon-box" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8;"><i class="fa fa-flag"></i></div>
+        <div class="icon-box" style="background: var(--badge-bg); color: #38bdf8;"><i class="fa fa-flag"></i></div>
         1. 프로젝트 배경 및 목표
       </h2>
       
@@ -347,7 +347,7 @@ void loop() {
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(167, 139, 250, 0.2);">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid var(--border-accent);">
             <h5 class="text-primary mb-3"><i class="fa fa-lightbulb-o mr-2"></i>스마트 건설 인프라의 미래</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
               <li class="mb-2"><strong>중앙 집중형 모니터링:</strong> 관리자 앱 하나로 원격 실시간 모니터링을 지원하여 안전 사각지대 원천 차단.</li>

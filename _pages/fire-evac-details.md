@@ -18,7 +18,7 @@ permalink: /projects/fire-evac-safety/
   .premium-section:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    border-color: rgba(244, 63, 94, 0.2);
+    border-color: var(--border-accent);
   }
   
   .section-title {
@@ -112,11 +112,11 @@ permalink: /projects/fire-evac-safety/
   <div class="col-md-12 mb-5">
     
     <!-- Hero Banner -->
-    <div class="animate-fade-in-up delay-100 mb-5 text-center" style="background: linear-gradient(135deg, #1e0b16 0%, #4a0404 100%); padding: 4rem 2rem; border-radius: 20px; border: 1px solid rgba(244, 63, 94, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: relative; overflow: hidden;">
+    <div class="animate-fade-in-up delay-100 mb-5 text-center" style="background: linear-gradient(135deg, var(--hero-grad-linear-1) 0%, var(--hero-grad-linear-3) 100%); padding: 4rem 2rem; border-radius: 20px; border: 1px solid var(--border-accent); box-shadow: 0 20px 40px var(--shadow-main); position: relative; overflow: hidden;">
       <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(251, 146, 60, 0.15); border-radius: 50%; filter: blur(40px);"></div>
       <div style="position: absolute; bottom: -50px; right: -50px; width: 200px; height: 200px; background: rgba(244, 63, 94, 0.15); border-radius: 50%; filter: blur(40px);"></div>
       
-      <span class="badge badge-danger px-3 py-2 mb-3" style="font-size: 0.9rem; background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); border-radius: 20px;">🔥 Safety IoT Project</span>
+      <span class="badge badge-danger px-3 py-2 mb-3" style="font-size: 0.9rem; background: var(--border-accent); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); border-radius: 20px;">🔥 Safety IoT Project</span>
       <h1 class="text-light font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">실내 화재 대피 유도 시스템</h1>
       <h4 class="text-muted font-weight-normal mb-4">SIGNAL_SPEAK : 동적 대피로 안내 솔루션</h4>
       <div class="d-flex justify-content-center gap-3">
@@ -129,7 +129,7 @@ permalink: /projects/fire-evac-safety/
     <!-- 1. 프로젝트 개요 -->
     <div class="premium-section animate-fade-in-up delay-200" id="section-overview">
       <h2 class="section-title">
-        <div class="icon-box" style="background: rgba(244, 63, 94, 0.1); color: #f43f5e;"><i class="fa fa-flag"></i></div>
+        <div class="icon-box" style="background: var(--badge-bg); color: #f43f5e;"><i class="fa fa-flag"></i></div>
         1. 프로젝트 배경 및 목표
       </h2>
       
