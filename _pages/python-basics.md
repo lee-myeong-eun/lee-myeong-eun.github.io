@@ -22,7 +22,7 @@ permalink: /assignments/python-basics/
       
       <!-- Left Sidebar Index -->
       <div class="col-lg-4 mb-4">
-        <div class="border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
+        <div class="border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) ;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-list-ul mr-2"></i>학습 목차</h4>
           <ul class="list-unstyled small mb-0 pl-1" style="line-height: 2.2;">
             <li><a href="#section1" class="text-info text-hover-glow" style="transition: all 0.2s;"><i class="fa fa-calculator mr-2" style="color: #38bdf8; width: 16px; text-align: center;"></i>1. 변수와 수치 연산</a></li>
@@ -106,7 +106,7 @@ print(b)     # 변수 b의 값 출력
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">안녕하세요.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">안녕하세요.
 5
 15
 25</pre>
@@ -149,7 +149,7 @@ print(type(y))  # 변수 y의 자료형을 확인하고 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">50
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">50
 3.1415
 <class 'int'>
 <class 'float'></pre>
@@ -229,7 +229,7 @@ print(result)          # result의 값을 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">15
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">15
 5
 50
 2.0
@@ -286,7 +286,7 @@ print(a)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">나는 생각"했"다"." '집 가고 싶다...'</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">나는 생각"했"다"." '집 가고 싶다...'</pre>
 </div>
 
 
@@ -322,7 +322,7 @@ print(greeting4)  # greeting4 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">greeting1, 선생님이 말했다."항상 긍정적으로 생각하라"
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">greeting1, 선생님이 말했다."항상 긍정적으로 생각하라"
 
 greeting2, 친구가 말했다. '포기하지 말자'
 
@@ -381,7 +381,7 @@ print(c)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">선생님은 말했다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">선생님은 말했다.
 '최선을 다하라'
 115	23	4516
 1	31255	456</pre>
@@ -430,7 +430,7 @@ print("*" * 50)  # '*' 50개를 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">Hello World
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">Hello World
 Hello Hello Hello Hello Hello 
 WorldWorldWorld
 **************************************************</pre>
@@ -483,7 +483,7 @@ print(new_word)      # new_word를 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">h
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">h
 h
  
 w
@@ -540,7 +540,7 @@ print(sentence[6:8])            # 슬라이싱: 6번부터 7번까지 가져오�
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">world
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">world
 world
 world
 hello
@@ -601,7 +601,7 @@ print("저는 %s개의 %s고구마가 있습니다." %(number, fruit))
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">고구마 3 개가 있습니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">고구마 3 개가 있습니다.
 제 이름은 이명은 입니다.
 고구마 5 개가 있습니다.
 저는 5개의 고구마가 있습니다.
@@ -651,7 +651,7 @@ print(len(text))      # text 변수의 길이를 구해서 출력한다.
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">i love	python.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">i love	python.
 14</pre>
 </div>
 
@@ -676,7 +676,7 @@ print(text.count('a'))      # 문자열에 문자가 존재하지 않으면, 0�
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1
 0</pre>
 </div>
 
@@ -700,7 +700,7 @@ print(','.join(text))
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">p,y,t,h,o,n, ,i,s, ,v,e,r,y, ,n,i,c,e</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">p,y,t,h,o,n, ,i,s, ,v,e,r,y, ,n,i,c,e</pre>
 </div>
 
 
@@ -724,7 +724,7 @@ print(text2.upper())
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">PYTHON IS NICE
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">PYTHON IS NICE
 PYTHON IS GOOD</pre>
 </div>
 
@@ -746,7 +746,7 @@ print(text2.lower())
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">python is nice
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">python is nice
 python is good</pre>
 </div>
 
@@ -779,7 +779,7 @@ print(text.rstrip())
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">bye  
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">bye  
 bye
 bye  
   bye</pre>
@@ -806,7 +806,7 @@ print(text1.split(','))    # 구분자를 ','로 직접 지정
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">['python', 'is', 'excellent']
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">['python', 'is', 'excellent']
 ['a', 'b', 'c', 'd', 'e']</pre>
 </div>
 
@@ -828,7 +828,7 @@ a. replace("a:b:c:d", "a#b#c#d")
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">'a#b#c#d'</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">'a#b#c#d'</pre>
 </div>
 
 
@@ -843,7 +843,7 @@ print("\n원래 단어: "+text+"\n바뀐 단어: "+text.replace("python is", "I 
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">원래 단어: python is excellent
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">원래 단어: python is excellent
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">바뀐 단어:</span> python is excellent
 
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">원래 단어:</span> python is excellent
@@ -870,7 +870,7 @@ print(a + b)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2.0</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">2.0</pre>
 </div>
 
 
@@ -896,7 +896,7 @@ print(f"{username}님, 5년 후 나이는 {future_age}세이고, 키는 {height_
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">이명은 님, 5년 후 나이는 29세이고, 키는 160.0cm입니다.</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">이명은 님, 5년 후 나이는 29세이고, 키는 160.0cm입니다.</pre>
 </div>
 
 
@@ -919,7 +919,7 @@ print(a**2)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">16
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">16
 16</pre>
 </div>
 
@@ -955,7 +955,7 @@ print(year+'년 '+month+'월 '+day+'일\n계절 : '+season)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2022년 01월 14일
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">2022년 01월 14일
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">계절 :</span> fall</pre>
 </div>
 
@@ -1006,7 +1006,7 @@ print(c)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[]
 [3, '이명은', -0.5, '안녕']
 [3, '이명은', -0.5, '안녕']</pre>
 </div>
@@ -1053,7 +1053,7 @@ print(c[3][1][0])
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">a[0]: 1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">a[0]: 1
 a[1]: 고구마
 a[2]: -0.5
 a[3]: 맛있다
@@ -1081,7 +1081,7 @@ print(c[3][0][3])
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">h</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">h</pre>
 </div>
 
 
@@ -1108,7 +1108,7 @@ print(b[3][3])
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3]
 ['python', 'is', 'nice']
 ['a', 'b', 'c', 'd']</pre>
 </div>
@@ -1140,7 +1140,7 @@ print(b*4)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3, 4, 5, 6]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3, 4, 5, 6]
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 [4, 5, 6, 4, 5, 6, 4, 5, 6, 4, 5, 6]</pre>
 </div>
@@ -1176,7 +1176,7 @@ print(len(b[3][0]))   # 'python'
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">4
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">4
 4
 6</pre>
 </div>
@@ -1215,7 +1215,7 @@ print(a)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[2, 3, 4, [5, 6, 7, 8]]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[2, 3, 4, [5, 6, 7, 8]]
 [2, 3, 4, 35]
 [2, 4, 35]
 [2, 4]
@@ -1249,7 +1249,7 @@ print(b)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3, 4, 5, 6, 7]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3, 4, 5, 6, 7]
 [1, 2, 3, 4, 5, 6, 7]
 ['d', 'x', 'c', 'a', 'm', 'b']
 ['a', 'b', 'c', 'd', 'm', 'x']</pre>
@@ -1280,7 +1280,7 @@ print(b)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[10, 20, 30, 40, 50]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[10, 20, 30, 40, 50]
 [50, 40, 30, 20, 10]
 ['h', 'e', 'l', 'l', 'o']
 ['o', 'l', 'l', 'e', 'h']</pre>
@@ -1310,7 +1310,7 @@ print(a.index(5))  # 5는 여러 개 있지만 가장 앞의 0번 인덱스 반�
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">2
 0</pre>
 </div>
 
@@ -1334,7 +1334,7 @@ print(a)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[10, 20, 30, 40, 50]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[10, 20, 30, 40, 50]
 [10, 15, 20, 30, 40, 50]</pre>
 </div>
 
@@ -1368,7 +1368,7 @@ a
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3, 4, 5]</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3, 4, 5]</pre>
 </div>
 
 
@@ -1394,7 +1394,7 @@ print(a)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3, 1, 4, 5]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3, 1, 4, 5]
 [2, 3, 1, 4, 5]
 [2, 1, 4, 5]
 [2, 1, 4, 5]</pre>
@@ -1421,7 +1421,7 @@ print(b)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[10, 20, 30, 40, 50]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[10, 20, 30, 40, 50]
 [10, 30, 40, 50]
 20</pre>
 </div>
@@ -1444,7 +1444,7 @@ print(a.count(5))  # 리스트 안에 있는 요소 5의 개수를 세서 출력
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[5, 1, 3, 5, 7, 5, 9, 2, 5]
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[5, 1, 3, 5, 7, 5, 9, 2, 5]
 4</pre>
 </div>
 
@@ -1483,7 +1483,7 @@ print(t3)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">(1, 2, 3, ('python', 'is', 'nice', ('a', 'b', 'c')))
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">(1, 2, 3, ('python', 'is', 'nice', ('a', 'b', 'c')))
 (2,)
 (1, 2, 3)</pre>
 </div>
@@ -1524,7 +1524,7 @@ print(b)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;"><class 'bool'>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;"><class 'bool'>
 <class 'bool'>
 True
 False</pre>
@@ -1559,7 +1559,7 @@ print("x>=y: "+str(x >= y))       # 1 >= 2?
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">x==y: False
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">x==y: False
 x!=y: True
 x>y: False
 x<y: True
@@ -1606,7 +1606,7 @@ print("not False: "+str(not b))
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">True and True: True
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">True and True: True
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">True and False:</span> False
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False and True:</span> False
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">False and False:</span> False
@@ -1640,7 +1640,7 @@ print(dic1)  # dic1 출력
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">{'cat': '고양이', 'dog': '강아지', 'bird': '새'}
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">{'cat': '고양이', 'dog': '강아지', 'bird': '새'}
 {1: 'hello', 2: [10, 20, 30], '3': 100}</pre>
 </div>
 
@@ -1698,7 +1698,7 @@ print(test_dic)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">{'a': 100, 'b': 200}
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">{'a': 100, 'b': 200}
 {'a': 100, 'b': 200, 'c': 300}
 {'a': 100, 'c': 300}
 100
@@ -1744,7 +1744,7 @@ print(dic)             # {}
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">dict_keys(['cat', 'dog', 'bird'])
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">dict_keys(['cat', 'dog', 'bird'])
 dict_values(['고양이', '강아지', '새'])
 dict_items([('cat', '고양이'), ('dog', '강아지'), ('bird', '새')])
 강아지
@@ -1774,7 +1774,7 @@ print((a + b + c) / 3)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">70.0</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">70.0</pre>
 </div>
 
 
@@ -1798,7 +1798,7 @@ a
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[5, 4, 3, 2, 1]</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[5, 4, 3, 2, 1]</pre>
 </div>
 
 
@@ -1853,7 +1853,7 @@ else:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">양수입니다</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">양수입니다</pre>
 </div>
 
 
@@ -1896,7 +1896,7 @@ if "apple" in fruits:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">사과가 있다.</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">사과가 있다.</pre>
 </div>
 
 
@@ -1913,7 +1913,7 @@ for i in range(10):
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1 있음
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1 있음
 3 있음
 5 있음
 7 있음
@@ -1937,7 +1937,7 @@ if "grape" not in fruits:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">포도는 없다.</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">포도는 없다.</pre>
 </div>
 
 
@@ -1957,7 +1957,7 @@ else:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">주문 완료!</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">주문 완료!</pre>
 </div>
 
 
@@ -1986,7 +1986,7 @@ elif score >= 90:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">C</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">C</pre>
 </div>
 
 
@@ -2009,7 +2009,7 @@ elif x > 3:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">조건1</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">조건1</pre>
 </div>
 
 
@@ -2055,7 +2055,7 @@ print(result)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">양수</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">양수</pre>
 </div>
 
 
@@ -2084,7 +2084,7 @@ print("속도:", "과속" if speed > 60 else "정상")  # 제한속도 60 초과
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">시험 결과: 합격
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">시험 결과: 합격
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">숫자 판별:</span> 홀수
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">배터리:</span> 충전 필요
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">시간:</span> 오후
@@ -2127,7 +2127,7 @@ while i <= 5:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1
 2
 3
 4
@@ -2153,7 +2153,7 @@ else:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1
 2
 3
 4
@@ -2181,7 +2181,7 @@ else:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1
 2
 3
 반복 강제 종료</pre>
@@ -2204,7 +2204,7 @@ while i <= 2:  # i는 1~2 반복
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">i=1, j=1, 합=2
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">i=1, j=1, 합=2
 i=1, j=2, 합=3
 i=1, j=3, 합=4
 i=1, j=4, 합=5
@@ -2244,7 +2244,7 @@ for fruit in fruits:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">사과
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">사과
 바나나
 체리</pre>
 </div>
@@ -2267,7 +2267,7 @@ for num in numbers:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1은 홀수
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1은 홀수
 2은 짝수
 3은 홀수
 4은 짝수
@@ -2289,7 +2289,7 @@ else:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1
 2
 3
 반복 정상 종료</pre>
@@ -2314,7 +2314,7 @@ for score in scores:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1번 학생 축하합니다! 합격입니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1번 학생 축하합니다! 합격입니다.
 3번 학생 축하합니다! 합격입니다.
 5번 학생 축하합니다! 합격입니다.</pre>
 </div>
@@ -2337,7 +2337,7 @@ print("1부터 20까지 합:", total)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1부터 20까지 합: 210</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1부터 20까지 합: 210</pre>
 </div>
 
 
@@ -2356,7 +2356,7 @@ for idx, fruit in enumerate(fruits, start=1):  # start=1: 인덱스 1부터 시�
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1번째 과일은 사과입니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1번째 과일은 사과입니다.
 2번째 과일은 바나나입니다.
 3번째 과일은 체리입니다.</pre>
 </div>
@@ -2378,7 +2378,7 @@ for product, price in zip(products, prices):
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">사과의 가격은 1000원입니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">사과의 가격은 1000원입니다.
 바나나의 가격은 1500원입니다.
 체리의 가격은 2000원입니다.</pre>
 </div>
@@ -2442,7 +2442,7 @@ print(result)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">안녕하세요, 명은님!</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">안녕하세요, 명은님!</pre>
 </div>
 
 
@@ -2464,7 +2464,7 @@ add(3, 4)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">3 + 4 = 7</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">3 + 4 = 7</pre>
 </div>
 
 
@@ -2488,7 +2488,7 @@ say_hello()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">안녕하세요!</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">안녕하세요!</pre>
 </div>
 
 
@@ -2514,7 +2514,7 @@ info(a=1, b=2, c=3)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">{'a': 1}
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">{'a': 1}
 {'a': 1, 'b': 2, 'c': 3}</pre>
 </div>
 
@@ -2535,7 +2535,7 @@ info(name="김철수", age=25)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">name 김철수
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">name 김철수
 age 25</pre>
 </div>
 
@@ -2558,7 +2558,7 @@ create_user(name="김철수", age=20, city="서울")
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">이름: 김철수
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">이름: 김철수
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">나이:</span> 20
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">도시:</span> 서울</pre>
 </div>
@@ -2593,7 +2593,7 @@ create_profile(  # 함수 호출 시작
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">=== 프로필 ===
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">=== 프로필 ===
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">name:</span> 김영희
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">age:</span> 30
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">job:</span> 개발자
@@ -2665,7 +2665,7 @@ say_myself("김철용", 27, False)# man에 False 명시
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">나의 이름은 김철수 입니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">나의 이름은 김철수 입니다.
 나이는 27살입니다.
 남자입니다.
 나의 이름은 김철수 입니다.
@@ -2708,7 +2708,7 @@ print("함수 밖에서 x (전역 변수):", x)  # 10
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">함수 안에서 x (전역 변수): 10
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">함수 안에서 x (전역 변수): 10
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">함수 안에서 y (지역 변수):</span> 5
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">함수 밖에서 x (전역 변수):</span> 10</pre>
 </div>
@@ -2738,7 +2738,7 @@ print(a)         # 출력: 2
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">2</pre>
 </div>
 
 
@@ -2763,7 +2763,7 @@ print(a)           # 출력: 2
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">2</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">2</pre>
 </div>
 
 
@@ -2787,7 +2787,7 @@ print(a)  # 출력: [1, 2, 3, 4]
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">[1, 2, 3, 4]</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">[1, 2, 3, 4]</pre>
 </div>
 
 
@@ -2850,7 +2850,7 @@ print(add.__doc__)
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">두 숫자를 더하는 함수
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">두 숫자를 더하는 함수
 
 <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">Parameters:</span> 
 a (int, float): 첫 번째 숫자
@@ -2941,7 +2941,7 @@ for i in range(1,11):
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">1번째 줄입니다.
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">1번째 줄입니다.
 
 문자열 파일에 쓰기
 2번째 줄입니다.
@@ -3011,7 +3011,7 @@ f.close()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3047,7 +3047,7 @@ f.close()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3076,7 +3076,7 @@ f.close()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3094,7 +3094,7 @@ with open("test.txt", 'r') as f:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3133,7 +3133,7 @@ with open("test.txt", "r") as f:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3158,7 +3158,7 @@ with open("test.txt", "r") as f:
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">첫 번째 줄
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">첫 번째 줄
 두 번째 줄
 세 번째 줄</pre>
 </div>
@@ -3200,7 +3200,7 @@ routine()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">오늘의 고양이 사진:</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">오늘의 고양이 사진:</pre>
 </div>
 
 
@@ -3244,7 +3244,7 @@ today_seoul_weather()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">오늘(2026-03-26) 서울 날씨
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">오늘(2026-03-26) 서울 날씨
 - <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">최고 기온:</span> 14.6°C
 - <span style="color: #38bdf8; font-weight: bold; word-break: keep-all; display: inline-block;">최저 기온:</span> 2.3°C</pre>
 </div>
@@ -3274,7 +3274,7 @@ print("\n오늘의 명언:",f'"{quote}" — {author}')
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">=== JSON 데이터 ===
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">=== JSON 데이터 ===
 [
    {
       "q": "Everybody has talent, but ability takes hard work.",
@@ -3311,7 +3311,7 @@ morning_routine_time()
     <span><i class="fa fa-terminal mr-2"></i>Execution Output</span>
     <span class="badge badge-success" style="padding: 3px 6px; font-weight: 600; border-radius: 4px;">Success</span>
   </div>
-  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 !important;">현재 시각: 2026-03-26 15:41:43.237803</pre>
+  <pre class="p-3 m-0 small" style="background-color: #161b22; border-radius: 0 0 8px 8px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Fira Code', 'Courier New', monospace; overflow-x: auto; white-space: pre-wrap; line-height: 1.5; color: #a3e635 ;">현재 시각: 2026-03-26 15:41:43.237803</pre>
 </div>
 
 

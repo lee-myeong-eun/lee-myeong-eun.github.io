@@ -22,7 +22,7 @@ permalink: /assignments/c-sharp-basics/
       
       <!-- Left Sidebar Index -->
       <div class="col-lg-4 mb-4">
-        <div class="border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
+        <div class="border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) ;">
           <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-list-ul mr-2"></i>학습 목차</h4>
           <ul class="list-unstyled small mb-0 pl-1" style="line-height: 2.2;">
             <li><a href="#section1" class="text-info text-hover-glow" style="transition: all 0.2s;"><i class="fa fa-terminal mr-2" style="color: #38bdf8; width: 16px; text-align: center;"></i>1. C# 프로그램의 기본 규칙 및 표준 출력</a></li>

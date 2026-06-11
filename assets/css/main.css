@@ -407,7 +407,7 @@ body.light-mode .terminal-header {
     color: #475569 !important;
     border-color: rgba(0,0,0,0.1) !important;
 }
-body.light-mode .terminal-output pre {
+body.light-mode pre.small {
     background-color: #f8fafc !important;
     color: #0f172a !important;
     border-color: rgba(0,0,0,0.1) !important;
@@ -513,7 +513,7 @@ body.eyecare-mode .terminal-header {
     color: #7b6859 !important;
     border-color: rgba(0,0,0,0.08) !important;
 }
-body.eyecare-mode .terminal-output pre {
+body.eyecare-mode pre.small {
     background-color: #fffaf0 !important;
     color: #4a4036 !important;
     border-color: rgba(0,0,0,0.08) !important;

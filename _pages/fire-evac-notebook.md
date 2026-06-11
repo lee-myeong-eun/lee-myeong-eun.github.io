@@ -7,12 +7,12 @@ permalink: /projects/fire-evac-notebook/
 <style>
   /* Ensure code blocks have a light, readable color on dark backgrounds */
   pre, code, .highlight pre, .highlight code, pre code {
-    color: #bae6fd !important;
-    background-color: #161b22 !important;
+    color: #bae6fd ;
+    background-color: #161b22 ;
     border-radius: 8px;
   }
   .highlight {
-    background-color: #161b22 !important;
+    background-color: #161b22 ;
     border-radius: 8px;
     padding: 15px;
   }
