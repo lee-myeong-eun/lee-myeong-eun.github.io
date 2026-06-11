@@ -5,145 +5,212 @@ permalink: /projects/ble-safety/
 ---
 
 <style>
-  /* 글씨 가독성(간격) 개선을 위한 스타일 */
-  .content-body {
-    font-size: 1.05rem; 
-    line-height: 2.2 !important; /* 줄간격을 대폭 넓혀서 답답함을 해소 */
-    word-break: keep-all; 
+  /* Premium Design System Styles */
+  .premium-section {
+    background-color: #161b22;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .content-body h1, .content-body h2, .content-body h3, .content-body h4 {
+  .premium-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border-color: rgba(56, 189, 248, 0.2);
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    padding-bottom: 1rem;
+  }
+  
+  .icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.3rem;
+  }
+  
+  /* Overview Cards */
+  .overview-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+  }
+  .overview-card h5 {
+    color: #38bdf8;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .overview-card p {
+    color: #94a3b8;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* Troubleshooting Cards */
+  .ts-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
+    border-left: 4px solid #fb923c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .ts-title {
+    color: #cbd5e1;
     font-weight: bold;
-    margin-top: 2rem; /* 소제목 위 간격을 넓혀서 문단 구분 명확히 */
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    color: #e2e8f0; /* 소제목은 살짝 밝은 원래 톤으로 유지 */
+    margin-bottom: 0.8rem;
   }
-  .content-body ul {
-    margin-bottom: 1.8rem; /* 리스트와 다음 문단 사이 간격 확보 */
+  .ts-problem { color: #f87171; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .ts-solution { color: #34d399; font-size: 0.9rem; margin-bottom: 0; }
+
+  /* Info List */
+  .info-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    color: #cbd5e1;
+    line-height: 1.6;
   }
-  .content-body ul li {
-    margin-bottom: 1rem; /* 리스트 항목 간의 간격을 넓혀서 읽기 편하게 */
+  .info-list li:last-child {
+    border-bottom: none;
+  }
+  .info-label {
+    color: #a78bfa;
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 100px;
+    display: inline-block;
+  }
+
+  /* Highlight text */
+  .highlight-text {
+    color: #f1f5f9;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
   }
 </style>
 
 <div class="row">
   <div class="col-md-12 mb-5">
     
-    <!-- Header -->
-    <div class="animate-fade-in-up delay-100">
-      <span class="tech-badge">📶 Capstone Design Project</span>
-      <h2 class="text-gradient">BLE 기반 공사장 안전장비 실시간 감지 시스템 (EZ-safe)</h2>
-      <hr />
-      <p class="lead text-light font-weight-normal">
-        산업 현장의 인명 사고를 예방하기 위해 스마트 센서와 무선 통신 알고리즘을 설계하고 하드웨어 모듈을 직접 제작한 캡스톤 디자인 프로젝트 상세 분석 기록입니다.
-      </p>
+    <!-- Hero Banner -->
+    <div class="animate-fade-in-up delay-100 mb-5 text-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 4rem 2rem; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(56, 189, 248, 0.1); border-radius: 50%; filter: blur(40px);"></div>
+      <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: rgba(244, 63, 94, 0.1); border-radius: 50%; filter: blur(40px);"></div>
+      
+      <span class="badge badge-primary px-3 py-2 mb-3" style="font-size: 0.9rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 20px;">📶 Capstone Design Project</span>
+      <h1 class="text-white font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">BLE 기반 공사장 안전장비 실시간 감지 시스템</h1>
+      <h4 class="text-muted font-weight-normal mb-4">EZ-safe : 지능형 스마트 안전모 솔루션</h4>
+      <div class="d-flex justify-content-center gap-3">
+        <span class="text-light mx-3"><i class="fa fa-microchip mr-2 text-info"></i>ESP32 DevKit</span>
+        <span class="text-light mx-3"><i class="fa fa-bluetooth mr-2 text-primary"></i>BLE 통신</span>
+        <span class="text-light mx-3"><i class="fa fa-mobile mr-2 text-success"></i>App Inventor</span>
+      </div>
     </div>
 
-    <!-- Contents Grid -->
-    <div class="row mt-5 animate-fade-in-up delay-200">
+    <!-- 1. 프로젝트 개요 -->
+    <div class="premium-section animate-fade-in-up delay-200" id="section-overview">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8;"><i class="fa fa-flag"></i></div>
+        1. 프로젝트 배경 및 목표
+      </h2>
       
-      <!-- Left Column: Sidebar Project Metadata & TOC -->
-      <div class="col-lg-5 mb-4">
-        <!-- Project Info Box -->
-        <div class="card border-0 shadow welcome-box p-3 mb-4" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
-          <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-info-circle mr-2"></i>프로젝트 정보</h4>
-          <ul class="list-unstyled small mb-0 text-muted" style="line-height: 2;">
-            <li><strong class="text-light">소속 및 팀원:</strong> 전자공학과 최성용, 구민서, 권은지, 이명은</li>
-            <li><strong class="text-light">개발 환경:</strong> ESP32 DevKit, C/C++ (Arduino IDE), MIT App Inventor</li>
-            <li><strong class="text-light">핵심 부품:</strong> ESP32, MPU-6050 가속도 자이로, FSR 압력 센서 등</li>
-          </ul>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="overview-card">
+            <h5><i class="fa fa-warning mr-2"></i>건설 현장의 한계</h5>
+            <p>기존 안전관리는 수동 점검이나 CCTV 모니터링에 의존하여 사각지대가 발생하고, 안전모·조끼 미착용을 실시간으로 적발하여 즉각 대응하기가 매우 어렵습니다.</p>
+          </div>
         </div>
-
-        <!-- Sticky TOC -->
-        <div class="card border-0 shadow welcome-box p-3 sticky-top" style="top: 100px; z-index: 10; background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important;">
-          <h4 class="text-gradient mb-3" style="font-size: 1.1rem;"><i class="fa fa-list-ul mr-2"></i>분석 목차</h4>
-          <ul class="list-unstyled small mb-0 pl-1" style="line-height: 2.2;">
-            <li><a href="#section1" class="text-info text-hover-glow"><i class="fa fa-flag mr-2" style="color: #38bdf8;"></i>1. 프로젝트 개요</a></li>
-            <li><a href="#section2" class="text-info text-hover-glow"><i class="fa fa-sitemap mr-2" style="color: #a78bfa;"></i>2. 시스템 구조 & 알고리즘</a></li>
-            <li><a href="#section3" class="text-info text-hover-glow"><i class="fa fa-code mr-2" style="color: #34d399;"></i>3. 실시간 모니터링 시뮬레이션</a></li>
-            <li><a href="#section4" class="text-info text-hover-glow"><i class="fa fa-wrench mr-2" style="color: #fb923c;"></i>4. 세부 구현 내용</a></li>
-            <li><a href="#section5" class="text-info text-hover-glow"><i class="fa fa-camera mr-2" style="color: #fb7185;"></i>5. 완제품 & 패키징</a></li>
-            <li><a href="#section6" class="text-info text-hover-glow"><i class="fa fa-bar-chart mr-2" style="color: #f472b6;"></i>6. 결과 분석 & 기대효과</a></li>
-          </ul>
-          <hr class="my-3" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <a href="{{ site.baseurl }}/" class="btn btn-outline-light btn-sm btn-block text-hover-glow">
-            <i class="fa fa-home mr-1"></i>홈으로 돌아가기
-          </a>
+        <div class="col-md-4 mb-3">
+          <div class="overview-card">
+            <h5><i class="fa fa-heartbeat mr-2"></i>중대재해 예방</h5>
+            <p>소규모 공사장일수록 안전장비 미착용에 의한 추락, 낙상 사고 발생률이 높습니다. 사고 발생 시 <span class="highlight-text">골든타임을 확보</span>할 수 있는 자동화 인프라가 필수적입니다.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="overview-card">
+            <h5><i class="fa fa-lightbulb-o mr-2"></i>솔루션 제안 (EZ-safe)</h5>
+            <p>안전모에 다중 센서를 결합해 착용 여부 및 낙상(Slam)을 실시간 감지하고, <span class="highlight-text">BLE(저전력 블루투스)</span>를 통해 스마트폰 앱으로 즉시 경고를 전송합니다.</p>
+          </div>
         </div>
       </div>
+      
+      <div class="mt-4 p-4 rounded" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2);">
+        <h5 class="text-success mb-3"><i class="fa fa-check-circle mr-2"></i>최종 목표 요약</h5>
+        <ul class="list-unstyled mb-0" style="color: #cbd5e1; line-height: 1.8;">
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>압력 센서(FSR) 및 고휘도 LED, 부저를 활용한 <strong>착용/미착용 실시간 로컬 경고 시스템</strong> 구축</li>
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>6축 가속도 자이로 센서(MPU6050)를 통한 <strong>작업자 낙상(Wreck/Fall) 알고리즘</strong> 구현</li>
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>저전력 BLE 통신 기반의 안드로이드 애플리케이션 연동 및 실시간 모니터링 구축</li>
+        </ul>
+      </div>
+    </div>
 
-      <!-- Right Column: Case Study Content -->
-      <div class="col-lg-7 mb-4">
-        <!-- Section 1 -->
-        <div id="section1" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #38bdf8; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-flag"></i>
+    <!-- 2. 시스템 구조도 -->
+    <div class="premium-section animate-fade-in-up delay-300" id="section-architecture">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(167, 139, 250, 0.1); color: #a78bfa;"><i class="fa fa-sitemap"></i></div>
+        2. 시스템 아키텍처 및 알고리즘
+      </h2>
+      
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4">
+          <ul class="info-list list-unstyled mb-0">
+            <li><span class="info-label">1. 초기화</span>ESP32 가동 후 I2C 통신(MPU6050) 및 BLE 가속도 서비스 비콘 브로드캐스팅</li>
+            <li><span class="info-label">2. 착용 감지</span>안전모 정수리의 압력 센서(FSR) 데이터가 임계값 미달 시 <span class="text-danger">Unworn(미착용)</span> 전송 및 경보</li>
+            <li><span class="info-label">3. 낙상 감지</span>3축 가속도 벡터 합성값($\sqrt{x^2+y^2+z^2}$)의 변동 및 기울기를 분석하여 <span class="text-danger">Fall(낙상)</span> 판별</li>
+          </ul>
+        </div>
+        <div class="col-lg-7 mb-4">
+          <div class="p-4 rounded text-center" style="background: #0d1117; border: 1px solid rgba(255,255,255,0.05);">
+            <h5 class="text-muted mb-4 small text-uppercase tracking-widest">System Flow</h5>
+            <!-- Mermaid Diagram for beautiful flowchart -->
+            <div class="mermaid text-center">
+              graph TD
+                A["👷 안전모 노드<br><small>(ESP32 + FSR + MPU6050)</small>"]:::node
+                B(("📡 BLE 무선 통신<br><small>(저전력 비콘)</small>")):::ble
+                C["📱 모니터링 앱<br><small>(App Inventor UI)</small>"]:::app
+                
+                A -->|센서 데이터 송출| B
+                B -->|실시간 파싱| C
+                C -.->|경고 팝업 발생| C
+                
+                classDef node fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+                classDef ble fill:#312e81,stroke:#a78bfa,stroke-width:2px,color:#f8fafc;
+                classDef app fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
             </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">1. 프로젝트 개요</h3>
-              <span class="small text-muted">EZ-safe Capstone Design Overview</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-### 1.1 개발 배경 및 필요성
-- **건설 현장 안전관리의 한계**: 기존의 공사장 안전관리는 주로 관리자의 수동 점검이나 CCTV 모니터링에 의존하고 있어, 사각지대가 발생하거나 작업자의 안전모·안전조끼 미착용 상태를 실시간으로 즉각 적발하여 대응하기 어렵습니다.
-- **중대재해 예방의 중요성**: 소규모 공사장일수록 안전장비 미착용으로 인한 추락, 낙상 등 인명 사고 발생률이 높으며, 사고 발생 시 골든타임을 확보할 수 있는 자동화된 실시간 감지 인프라가 필수적입니다.
-- **솔루션 제안**: 본 프로젝트는 작업자가 착용하는 안전모와 안전조끼에 ESP32 MCU와 다중 센서(압력, 자이로)를 결합하여 착용 여부 및 낙상(Slam) 상태를 실시간 감지하고, BLE(Bluetooth Low Energy) 통신을 통해 관리자 및 작업자 스마트폰 앱으로 즉시 경고를 전송하는 지능형 안전모 시스템을 설계하였습니다.
-
-### 1.2 프로젝트 최종 목표
-- 압력 센서(FSR) 및 고휘도 LED, 부저를 활용한 안전장비 착용/미착용 실시간 로컬 경고 시스템 구축.
-- 6축 가속도 자이로 센서(MPU6050)를 통한 작업자 낙상(Wreck/Fall) 알고리즘 구현.
-- 저전력 BLE 통신 기반의 안드로이드 애플리케이션 연동 및 다중 작업자 실시간 모니터링 시뮬레이션.
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Section 2 -->
-        <div id="section2" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #a78bfa; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-sitemap"></i>
-            </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">2. 시스템 구조도 및 알고리즘</h3>
-              <span class="small text-muted">EZ-safe Architecture & Flow Logic</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-### 2.1 시스템 구조도 (System Architecture)
-전체 시스템은 디바이스 노드(안전모/안전조끼) - 무선 통신 레이어(BLE) - 모니터링 애플리케이션(App)의 3-Tier 아키텍처로 구성됩니다.
-
-```
-[안전모 노드: ESP32 + FSR 압력 + MPU6050 자이로] 
-                       │
-             (BLE 저전력 무선 통신)
-                       ▼
-[모니터링 앱: MIT App Inventor 기반 안드로이드 UI] ──> [실시간 알림 및 경고 팝업]
-```
-
-### 2.2 핵심 알고리즘 흐름도
-1. **초기화**: ESP32 가동 후 I2C 통신(MPU6050) 및 BLE 가속도 서비스 비콘을 브로드캐스팅합니다.
-2. **착용 감지 단계**: 안전모 내부 정수리에 배치된 압력 센서(FSR)의 아날로그 데이터가 설정 임계값(Threshold)을 넘지 못하면 미착용으로 판단, 로컬 부저 경보와 동시에 BLE로 Unworn 데이터를 전송합니다.
-3. **낙상 감지 알고리즘**: MPU6050의 3축 가속도 벡터 합성값($\sqrt{x^2+y^2+z^2}$)의 급격한 변동(자유낙하 및 충격 임계값 초과)과 임계 시간 이상의 기울기 변화를 분석하여 낙상 발생 여부를 최종 판별합니다.
-          </div>
-        </div>
-
-        <!-- Section 3 -->
-        <div id="section3" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #34d399; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-code"></i>
-            </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">3. 실시간 모니터링 시뮬레이션</h3>
-              <span class="small text-muted">BLE Receiver Core Code</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-            <p class="small text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 코어 파트입니다.</p>
+    <!-- 3. 핵심 시뮬레이션 코드 -->
+    <div class="premium-section animate-fade-in-up delay-400" id="section-code">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(52, 211, 153, 0.1); color: #34d399;"><i class="fa fa-code"></i></div>
+        3. 실시간 모니터링 시뮬레이션 (Core Code)
+      </h2>
+      <p class="text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 및 센서 판별 코어 파트입니다.</p>
+      
+      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
 ```cpp
 #include <BLEDevice.h>
 #include <BLEUtils.h>
@@ -164,36 +231,7 @@ Adafruit_MPU6050 mpu;
 BLECharacteristic *pCharacteristic;
 bool deviceConnected = false;
 
-class MyServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) { deviceConnected = true; };
-    void onDisconnect(BLEServer* pServer) { deviceConnected = false; }
-};
-
-void setup() {
-  Serial.begin(115200);
-  pinMode(BUZZER_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
-
-  // MPU6050 자이로 센서 초기화 (I2C)
-  if (!mpu.begin()) {
-    Serial.println("Failed to find MPU6050 chip");
-  }
-  mpu.setHighPassFilter(MPU6050_HIGHPASS_0_5HZ);
-
-  // BLE 장치 서버 설정
-  BLEDevice::init("EZ-Safe_Helmet_01");
-  BLEServer *pServer = BLEDevice::createServer();
-  pServer->setCallbacks(new MyServerCallbacks());
-  
-  BLEService *pService = pServer->createService(SERVICE_UUID);
-  pCharacteristic = pService->createCharacteristic(
-                      CHARACTERISTIC_UUID,
-                      BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY
-                    );
-                    
-  pService->start();
-  pServer->getAdvertising()->start();
-}
+// ... (초기화 코드 생략) ...
 
 void loop() {
   int fsrValue = analogRead(FSR_PIN);
@@ -201,10 +239,7 @@ void loop() {
   mpu.getEvent(&a, &g, &temp);
 
   // 3축 가속도 벡터 합성값 계산
-  float totalAccel = sqrt(a.acceleration.x * a.acceleration.x + 
-                          a.acceleration.y * a.acceleration.y + 
-                          a.acceleration.z * a.acceleration.z);
-
+  float totalAccel = sqrt(pow(a.acceleration.x, 2) + pow(a.acceleration.y, 2) + pow(a.acceleration.z, 2));
   String statusPayload = "SAFE";
 
   // Case 1: 안전모 미착용 판별 (임계값 미달)
@@ -227,101 +262,108 @@ void loop() {
     noTone(BUZZER_PIN);
   }
 
-  // BLE 데이터 송신을 통한 실시간 앱 모니터링 시뮬레이션
+  // BLE 데이터 송신
   if (deviceConnected) {
     pCharacteristic->setValue(statusPayload.c_str());
     pCharacteristic->notify();
-    Serial.println("Sent Status: " + statusPayload);
   }
   delay(100);
 }
 ```
-          </div>
-        </div>
-
-        <!-- Section 4 -->
-        <div id="section4" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #fb923c; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-wrench"></i>
-            </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">4. 세부 구현 내용</h3>
-              <span class="small text-muted">Hardware BOM & Software Architecture</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-1. **BLE 신호 감쇠 및 앱 연동 데이터 누락 현상**
-   - **문제**: 공사장 환경을 모사한 거리 테스트 시, 장애물이나 배터리 전압 강하로 인해 BLE Advertising 패킷이 유실되거나 앱 화면이 간헐적으로 멈추는 현상이 발생함.
-   - **해결**: 통신 패킷 전송 방식을 효율화하고 MIT App Inventor 단의 타이머 클럭 주기를 ESP32 폴링 주기와 동기화(100ms)시켜 데이터 버퍼 오버플로우를 해결함.
-
-2. **리튬이온 배터리 정격 전압(3.7V)과 회로 승압 구조 최적화**
-   - **문제**: 18650 리튬이온 배터리(3.7V) 구동 시, 가속도 센서와 고휘도 LED 소자가 요구하는 안정적인 전압 레벨 유지 불능으로 인한 오작동 확인.
-   - **해결**: MT3608 DC-DC 승압 부스터 스텝업 컨버터를 설계 단에 추가 배치하여 전체 센서 보드 로직에 안정적인 5V 전원을 유지하고, TP4056 충전 모듈을 연동하여 휴대성과 안전성을 동시 확보함.
-
-3. **압력 센서(FSR) 아날로그 전압 분배기(Voltage Divider) 노이즈**
-   - **문제**: 작업자가 안전모를 착용했음에도 신호 기준값(Float 상태)이 흔들려 오작동 경보음이 발생하는 현상 발생.
-   - **해결**: 하드웨어 회로 내에 10kΩ 풀다운 막대 저항을 결선하여 전압 분배 회로를 확립함으로써, 완벽한 디지털 로직 레벨 변환을 유도함.
-          </div>
-        </div>
-
-        <!-- Section 5 -->
-        <div id="section5" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #fb7185; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-camera"></i>
-            </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">5. 최종 완제품 및 하드웨어 패키징</h3>
-              <span class="small text-muted">EZ-safe Packaging Enclosure</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-            <!-- Centered beautiful device display image -->
-            <div class="text-center mb-4">
-              <div class="img-wrapper d-inline-block shadow" style="border-radius: 12px; overflow: hidden; border: 2px solid rgba(56, 189, 248, 0.2); max-width: 100%;">
-                <img src="{{ site.baseurl }}/assets/img/ez_safe_hw.png" alt="EZ-safe 최종 완제품" class="img-fluid" style="max-height: 450px;" />
-              </div>
-              <p class="text-muted small mt-2"><i class="fa fa-info-circle mr-1"></i>안전모 패키징 외관 및 배선 일체화 처리 완료</p>
-            </div>
-
-### 5.1 하드웨어 컴팩트 패키징 및 내장화
-- **외관 및 안전성 개선**: 실제 작업용 백색 안전모 내부에 센서 부품들이 직접 노출될 경우 작업자의 이물감 유발 및 두피 부상 위험이 있었습니다.
-- **패키징 보완**: 하드웨어 모듈 회로를 전용 소형 기판(FR-4)에 땜납 처리하여 고정하고, 배선 꼬임 방지를 위해 점퍼 와이어 라인을 일체화했습니다. 최종적으로 배터리, MCU, 컨버터 회로 전반을 헬멧 외부에 안정적으로 마운팅할 수 있는 보호 인클로저 구조로 마감하여 실용성을 극대화하였습니다.
-
-### 5.2 프로젝트 예산 및 파트리스트 (BOM)
-- **총 소요 예산**: RISE 사업단 일반형 캡스톤디자인 과제비 지원 (총 171,120원 규모)
-- **핵심 부품 사양**: ESP32 Wi-Fi+Bluetooth 일체형 개발보드, MPU-6050 6축 가속도 자이로 센서, FSR RA12P 압력 힘 센서, TP4056 배터리 충전 모듈, MT3608 승압 컨버터, 18650 보호회로 내장 리튬배터리, 고휘도 3색 LED 및 액티브 능동 부저.
-          </div>
-        </div>
-
-        <!-- Section 6 -->
-        <div id="section6" class="card border-0 shadow welcome-box p-4 mb-5" style="background-color: #161e2f; border: 1px solid rgba(255,255,255,0.05) !important; border-radius: 12px;">
-          <div class="d-flex align-items-center mb-4">
-            <div class="icon-wrapper mr-3" style="font-size: 1.8rem; color: #f472b6; background: rgba(255,255,255,0.02); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa fa-bar-chart"></i>
-            </div>
-            <div>
-              <h3 class="mb-0 text-gradient font-weight-bold" style="font-size: 1.4rem;">6. 결과 분석 및 기대효과</h3>
-              <span class="small text-muted">Test Evaluation & Future Extensions</span>
-            </div>
-          </div>
-          <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
-### 6.1 프로젝트 최종 결과 분석
-- 실제 완제품 안전모 착용 테스트 결과, 안전모 미착용 시 1초 이내로 스마트폰 모니터링 앱 화면에 **UNWORN** 적색 경고 팝업이 활성화되었으며 안전모 외부 LED/부저가 정상 작동하였습니다.
-- 안전모를 착용한 채 강한 물리적 충격과 측면 기울임(낙상 모사)을 인가했을 때 가속도 합성 벡터 연산을 통해 정확히 관리자 앱으로 **FALL** 긴급 SOS 알림이 전송됨을 검증하였습니다.
-
-### 6.2 기대효과 및 향후 개선 과제
-- **스마트 건설 현장 인프라 혁신**: 현장 관리자가 수많은 작업자의 안전 장구 착용 현황을 관리 동선 낭비 없이 중앙 앱 하나로 원격 실시간 모니터링할 수 있어 안전 사각지대를 원천 차단합니다.
-- **향후 고도화 계획**: 다중 노드 네트워킹: 현재 1:1 BLE 매핑 방식을 넘어, BLE Mesh 네트워킹 기술을 소프트웨어에 추가 반영하여 현장 내 수십 명의 안전모 데이터를 동시 수집하는 게이트웨이 구조로 고도화할 예정입니다.
-- **GPS 위치 추적 연동**: 스마트폰의 GPS 센서 데이터와 임베디드 장치를 연동하여 낙상 사고 발생 시 요구조자의 정확한 현장 내 위치 좌표를 구조대에 즉각 전송하는 원스톱 방재 시스템으로 확장이 가능합니다.
-          </div>
-        </div>
-
       </div>
     </div>
+
+    <!-- 4. 세부 구현 내용 (트러블슈팅) -->
+    <div class="premium-section animate-fade-in-up delay-500" id="section-troubleshoot">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(251, 146, 60, 0.1); color: #fb923c;"><i class="fa fa-wrench"></i></div>
+        4. 개발 트러블슈팅 (Troubleshooting)
+      </h2>
+      
+      <div class="ts-card">
+        <div class="ts-title"><i class="fa fa-bug mr-2"></i>Issue 1: BLE 신호 감쇠 및 데이터 누락 현상</div>
+        <p class="ts-problem"><strong>문제:</strong> 공사장 환경 모사 테스트 시, 장애물이나 전압 강하로 인해 BLE 패킷이 유실되거나 앱 화면이 멈추는 현상 발생.</p>
+        <p class="ts-solution"><strong>해결:</strong> 통신 패킷 전송 방식을 효율화하고 MIT App Inventor의 타이머 클럭 주기를 ESP32 폴링 주기와 동기화(100ms)하여 버퍼 오버플로우를 해결함.</p>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-title"><i class="fa fa-bolt mr-2"></i>Issue 2: 리튬 배터리 정격 전압과 승압 최적화</div>
+        <p class="ts-problem"><strong>문제:</strong> 18650 배터리(3.7V) 구동 시 가속도 센서와 고휘도 LED가 요구하는 안정적인 전압 유지가 불가능하여 오작동 발생.</p>
+        <p class="ts-solution"><strong>해결:</strong> MT3608 DC-DC 승압 부스터 컨버터를 추가 배치하여 5V 전원을 안정적으로 유지하고, TP4056 모듈을 연동해 휴대성과 충전 안정성을 동시 확보함.</p>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-title"><i class="fa fa-wave-square mr-2"></i>Issue 3: 압력 센서 아날로그 전압 노이즈</div>
+        <p class="ts-problem"><strong>문제:</strong> 안전모를 착용했음에도 신호 기준값이 흔들려 오작동 경보음이 무작위로 발생함 (Float 상태).</p>
+        <p class="ts-solution"><strong>해결:</strong> 하드웨어 회로 내에 10kΩ 풀다운 저항을 결선해 전압 분배 회로를 확립, 완벽한 디지털 로직 레벨 변환을 유도함.</p>
+      </div>
+    </div>
+
+    <!-- 5. 완제품 패키징 -->
+    <div class="premium-section animate-fade-in-up delay-600" id="section-hardware">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(251, 113, 133, 0.1); color: #fb7185;"><i class="fa fa-camera"></i></div>
+        5. 최종 완제품 및 패키징
+      </h2>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4 text-center">
+          <div class="p-3" style="background: #0d1117; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+            <img src="{{ site.baseurl }}/assets/img/ez_safe_hw.png" alt="EZ-safe 완제품" class="img-fluid rounded" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+            <p class="text-muted small mt-3 mb-0"><i class="fa fa-search-plus mr-1"></i>안전모 패키징 외관 및 배선 일체화</p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4 d-flex flex-column justify-content-center">
+          <h4 class="text-light mb-3" style="font-size: 1.2rem;">컴팩트 패키징 및 내장화 설계</h4>
+          <p class="text-muted" style="line-height: 1.8;">
+            실제 작업용 안전모 내부에 부품이 노출될 경우 <strong>작업자의 이물감 유발 및 두피 부상 위험</strong>이 존재했습니다. 이를 방지하기 위해 회로를 전용 소형 기판(FR-4)에 납땜 고정하고 점퍼 라인을 일체화했습니다. 최종적으로 헬멧 외부에 마운팅 가능한 <span class="highlight-text">보호 인클로저 구조</span>로 마감하여 실용성을 극대화했습니다.
+          </p>
+          
+          <div class="mt-3 p-3 rounded" style="background: rgba(255,255,255,0.02); border-left: 3px solid #fb7185;">
+            <strong class="d-block text-light mb-2">핵심 파트 리스트 (BOM)</strong>
+            <p class="small text-muted mb-0" style="line-height: 1.6;">
+              ESP32 Wi-Fi+BLE 보드, MPU-6050 6축 센서, FSR RA12P 압력 센서, TP4056 충전 모듈, MT3608 승압 컨버터, 18650 리튬배터리, 고휘도 3색 LED 및 액티브 능동 부저. (총 17만원 규모 예산)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 결과 분석 및 기대효과 -->
+    <div class="premium-section animate-fade-in-up delay-700 mb-0" id="section-results">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(244, 114, 182, 0.1); color: #f472b6;"><i class="fa fa-rocket"></i></div>
+        6. 결과 검증 및 향후 기대효과
+      </h2>
+      
+      <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(56, 189, 248, 0.2);">
+            <h5 class="text-info mb-3"><i class="fa fa-bar-chart mr-2"></i>테스트 최종 검증</h5>
+            <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
+              <li class="mb-2">안전모 미착용 시 1초 이내 앱 화면에 <strong><span class="text-danger">UNWORN</span></strong> 적색 경고 팝업 활성화 및 로컬 부저 작동 성공.</li>
+              <li>강한 충격과 측면 기울임(낙상 모사) 인가 시 가속도 합성 벡터 연산을 통해 관리자에게 <strong><span class="text-danger">FALL</span></strong> 긴급 SOS 알림 전송 검증 완료.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.8)); border: 1px solid rgba(167, 139, 250, 0.2);">
+            <h5 class="text-primary mb-3"><i class="fa fa-lightbulb-o mr-2"></i>스마트 건설 인프라의 미래</h5>
+            <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
+              <li class="mb-2"><strong>중앙 집중형 모니터링:</strong> 관리자 앱 하나로 원격 실시간 모니터링을 지원하여 안전 사각지대 원천 차단.</li>
+              <li class="mb-2"><strong>BLE Mesh 확장:</strong> 1:1 통신을 넘어 다중 노드 네트워킹을 통한 대규모 인력 동시 모니터링 게이트웨이 구축 예정.</li>
+              <li><strong>GPS 연동:</strong> 스마트폰 GPS 데이터 융합으로 낙상 시 정확한 위치 좌표를 전송하는 방재 시스템 고도화 가능.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!-- Initialize Mermaid -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+</script>
