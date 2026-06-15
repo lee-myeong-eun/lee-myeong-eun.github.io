@@ -10,15 +10,14 @@
   <!-- Page Content -->
   <div class="container mb-5 position-relative">
     {% if page.url contains '/assignments/' and page.url != '/assignments/' %}
-    <!-- 스크롤을 따라다니는 상단 우측 닫기(Close) 버튼 -->
-    <div style="position: sticky; top: 100px; z-index: 1020; text-align: right; height: 0; transform: translateY(-10px);">
+    <!-- 스크롤을 따라다니며 코드와 겹치지 않는 닫기(Close) 툴바 -->
+    <div style="position: sticky; top: 0; z-index: 1020; display: flex; justify-content: flex-end; padding: 15px 0; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); margin-bottom: 2rem; margin-top: -1rem;">
       <a href="{{ site.baseurl }}/assignments/" class="btn btn-sm btn-outline-secondary shadow-sm" 
-         style="font-weight: 600; border-radius: 6px; padding: 0.3rem 0.8rem; background: var(--bg-nav); backdrop-filter: blur(10px);"
+         style="font-weight: 600; border-radius: 6px; padding: 0.35rem 0.9rem; background: var(--bg-card);"
          title="과제 아카이브로 돌아가기">
         Close <i class="fa fa-times ml-1"></i>
       </a>
     </div>
-    <div class="mt-4"></div>
     {% endif %}
     {{ content }}
   </div>
