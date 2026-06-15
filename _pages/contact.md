@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: Contact
 permalink: /contact/
@@ -43,7 +43,7 @@ permalink: /contact/
       <address class="text-muted small">
         <strong>🏫 교육 기관</strong>
         <br />한국폴리텍대학 반도체융합캠퍼스
-        <br />반도체장비소프트웨어학과 하이테크과정
+        <br />반도체장비소프트웨어과 하이테크
         <br /><br />
         <strong>📍 희망 근무 지역</strong>
         <br />South Korea (Open to Relocate / 전국 및 글로벌 근무)
