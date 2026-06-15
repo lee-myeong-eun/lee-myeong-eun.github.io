@@ -227,7 +227,7 @@ void loop() {
 
 [최종 완제품 사진]
 
-![image.png](attachment:image.png)
+![EZ-safe 완제품]({{ site.baseurl }}/assets/img/ez_safe_hw.png)
 
 
 하드웨어 패키징의 주요 특징
