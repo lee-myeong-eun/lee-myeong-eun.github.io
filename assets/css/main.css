@@ -469,3 +469,87 @@ footer.bg-dark {
     box-shadow: 0 2px 5px var(--shadow-main);
 }
 
+
+/* ==========================================================================
+   Jupyter Notebook / Markdown Code Styling (Light & Dark Mode)
+   ========================================================================== */
+/* 코드 블록 전체 디자인 및 글씨 크기 증가 */
+pre, .highlight, .jp-CodeCell, .jp-OutputArea-output pre {
+    background-color: var(--bg-terminal) !important;
+    color: var(--text-heading) !important;
+    font-size: 1.05rem !important; /* 글씨 크기 증가 */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    line-height: 1.6 !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border-subtle) !important;
+    padding: 1rem !important;
+    overflow-x: auto !important;
+    box-shadow: 0 4px 15px var(--shadow-main) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 인라인 코드 스타일 */
+code {
+    background-color: var(--bg-input) !important;
+    color: var(--text-accent) !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 6px !important;
+    font-size: 0.95em !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+pre code {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 출력 결과(output)의 텍스트 색상도 테마에 맞게 조정 */
+.output_subarea pre, .jp-OutputArea pre {
+    background-color: transparent !important;
+    color: var(--text-body) !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* 노트북 테이블 디자인 깔끔하게 */
+.dataframe, table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    color: var(--text-body);
+}
+.dataframe th, .dataframe td, table th, table td {
+    border: 1px solid var(--border-medium) !important;
+    padding: 0.75rem !important;
+    text-align: left !important;
+}
+.dataframe th, table th {
+    background-color: var(--bg-terminal-header) !important;
+    color: var(--text-heading) !important;
+    font-weight: bold !important;
+}
+
+/* nbconvert 기본 클래스 색상 오버라이드 (가독성 개선) */
+/* 문맥에 따라 다크/라이트 모두에서 잘 보이도록 주요 문법 하이라이팅 재설정 */
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { 
+    color: var(--text-accent) !important; 
+    font-weight: bold;
+}
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd { 
+    color: #10b981 !important; /* 문자열: 초록색 계열 */
+}
+.highlight .c, .highlight .c1, .highlight .cm { 
+    color: var(--text-muted) !important; 
+    font-style: italic;
+}
+.highlight .m, .highlight .mi, .highlight .mf { 
+    color: #f59e0b !important; /* 숫자: 주황색 계열 */
+}
+.highlight .nf, .highlight .na, .highlight .nc {
+    color: #8b5cf6 !important; /* 함수/클래스: 보라색 계열 */
+}
+.highlight .o, .highlight .ow, .highlight .p {
+    color: var(--text-heading) !important; /* 연산자 및 기호 */
+}
