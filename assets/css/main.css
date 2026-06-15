@@ -553,3 +553,53 @@ pre code {
 .highlight .o, .highlight .ow, .highlight .p {
     color: var(--text-heading) !important; /* 연산자 및 기호 */
 }
+
+/* ==========================================================================
+   Scikit-learn HTML Output & Pandas Dataframe Overrides
+   ========================================================================== */
+/* Scikit-learn Estimator 파이프라인 블록 테마 연동 */
+.sk-global {
+    --sklearn-color-text: var(--text-body) !important;
+    --sklearn-color-text-muted: var(--text-muted) !important;
+    --sklearn-color-line: var(--border-medium) !important;
+    --sklearn-color-unfitted-level-0: var(--bg-card) !important;
+    --sklearn-color-unfitted-level-1: var(--bg-main) !important;
+    --sklearn-color-unfitted-level-2: var(--bg-input) !important;
+    --sklearn-color-unfitted-level-3: var(--text-accent) !important;
+    
+    --sklearn-color-fitted-level-0: var(--bg-card) !important;
+    --sklearn-color-fitted-level-1: var(--bg-main) !important;
+    --sklearn-color-fitted-level-2: var(--bg-input) !important;
+    --sklearn-color-fitted-level-3: var(--text-accent) !important;
+    
+    --sklearn-color-text-on-default-background: var(--text-heading) !important;
+    --sklearn-color-background: var(--bg-terminal) !important;
+    --sklearn-color-border-box: var(--border-subtle) !important;
+    --sklearn-color-icon: var(--text-muted) !important;
+}
+
+/* Scikit-learn 배경색 강제 투명화 및 테두리 수정 */
+.sk-estimator, .sk-estimator.fitted, .sk-parallel, .sk-serial, .sk-toggleable__content {
+    background-color: var(--bg-terminal) !important;
+    border-color: var(--border-subtle) !important;
+}
+
+.sk-estimator:hover, .sk-estimator.fitted:hover, .sk-toggleable__control:checked ~ label.sk-toggleable__label {
+    background-color: var(--bg-input-focus) !important;
+}
+
+.sk-top-container.sk-global {
+    background-color: transparent !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border-subtle) !important;
+}
+
+/* 추가적으로 Jupyter 노트북 아웃풋 텍스트 에러메시지(Stderr) 등도 테마에 맞게 */
+.output_stderr {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    font-size: 0.95rem !important;
+}
