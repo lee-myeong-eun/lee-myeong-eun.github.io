@@ -1,0 +1,782 @@
+---
+layout: none
+permalink: /ezsafe-simulator/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ-safe Simulator</title>
+    <!-- 폰트 및 아이콘 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --panel-bg: #1e1e1e;
+            --border-neon: #3b82f6;
+            --border-neon-glow: rgba(59, 130, 246, 0.4);
+            --danger-color: #ef4444;
+            --danger-glow: rgba(239, 68, 68, 0.5);
+            --success-color: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.5);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --slot-bg: #27272a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            user-select: none;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .simulator-container {
+            display: flex;
+            width: 95vw;
+            height: 90vh;
+            max-width: 1400px;
+            background: rgba(18, 18, 18, 0.95);
+            border: 2px solid var(--border-neon);
+            border-radius: 20px;
+            box-shadow: 0 0 30px var(--border-neon-glow);
+            padding: 20px;
+            gap: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* 공통 헤더 스타일 */
+        .panel-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--border-neon);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--border-neon-glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            padding-bottom: 10px;
+        }
+
+        /* 좌측 스마트 슬롯 영역 */
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .workers-container {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .worker-profile {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .worker-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .equipment-slots {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .slot {
+            width: 80px;
+            height: 80px;
+            background-color: var(--slot-bg);
+            border: 2px dashed #475569;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #475569;
+            transition: all 0.3s;
+        }
+        
+        .slot.drag-over {
+            border-color: var(--border-neon);
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--border-neon);
+        }
+
+        .slot.filled {
+            border-style: solid;
+            border-color: var(--success-color);
+            color: var(--success-color);
+            background-color: rgba(16, 185, 129, 0.1);
+            box-shadow: 0 0 15px var(--success-glow);
+        }
+
+        .slot-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .worker-status {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger-color);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            text-shadow: 0 0 5px var(--danger-glow);
+        }
+        
+        .worker-status.stable {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            text-shadow: 0 0 5px var(--success-glow);
+        }
+
+        .inventory-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .inventory-title {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .inventory-items {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .draggable-item {
+            width: 60px;
+            height: 60px;
+            background: #1f2937;
+            border: 1px solid #4b5563;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #e2e8f0;
+            cursor: grab;
+            transition: transform 0.2s, opacity 0.2s;
+            position: relative;
+        }
+
+        .draggable-item:active {
+            cursor: grabbing;
+        }
+        
+        .draggable-item.dragging {
+            opacity: 0.5;
+        }
+
+        .item-mac {
+            position: absolute;
+            bottom: 2px;
+            font-size: 0.5rem;
+            color: #9ca3af;
+            font-family: monospace;
+        }
+
+        /* 에러 팝업 */
+        .error-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 20px var(--danger-glow);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .error-popup.show {
+            opacity: 1;
+        }
+
+        /* 우측 관제 레이더 영역 */
+        .right-panel {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            background: var(--panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .radar-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(0,0,0,0.5) 100%);
+            border-radius: 12px;
+            border: 2px solid #333;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .radar-container.danger {
+            border-color: var(--danger-color);
+            box-shadow: inset 0 0 50px var(--danger-glow);
+            animation: radar-danger-flash 1s infinite alternate;
+        }
+
+        @keyframes radar-danger-flash {
+            0% { box-shadow: inset 0 0 20px var(--danger-glow); }
+            100% { box-shadow: inset 0 0 60px var(--danger-glow); border-color: #f87171; }
+        }
+
+        .radar-circle {
+            position: absolute;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .radar-circle:nth-child(1) { width: 100px; height: 100px; }
+        .radar-circle:nth-child(2) { width: 250px; height: 250px; }
+        .radar-circle:nth-child(3) { width: 400px; height: 400px; }
+        .radar-circle:nth-child(4) { width: 550px; height: 550px; border-color: rgba(239, 68, 68, 0.3); border-style: dashed; } /* 위험 구역 경계 */
+
+        .receiver-esp32 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: var(--border-neon);
+            text-shadow: 0 0 15px var(--border-neon-glow);
+            z-index: 10;
+        }
+        
+        .receiver-label {
+            position: absolute;
+            top: calc(50% + 25px);
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            color: var(--border-neon);
+            font-family: 'Orbitron', sans-serif;
+            background: rgba(0,0,0,0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .worker-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #eab308;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .worker-dot:hover {
+            transform: scale(1.2);
+        }
+
+        .worker-dot.danger {
+            background-color: var(--danger-color);
+            box-shadow: 0 0 15px var(--danger-glow);
+        }
+
+        /* RSSI 표시 패널 */
+        .rssi-panel {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--border-neon);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            z-index: 30;
+        }
+
+        .rssi-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--success-color);
+            text-shadow: 0 0 10px var(--success-glow);
+        }
+
+        .rssi-value.danger {
+            color: var(--danger-color);
+            text-shadow: 0 0 10px var(--danger-glow);
+        }
+
+        .data-filter-text {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-family: monospace;
+            animation: blink-text 1.5s infinite;
+        }
+
+        @keyframes blink-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .radar-warning-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--danger-color);
+            text-shadow: 0 0 15px var(--danger-glow);
+            background: rgba(0,0,0,0.8);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--danger-color);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 30;
+        }
+
+        .radar-warning-text.show {
+            opacity: 1;
+            animation: pulse-warning 0.5s infinite alternate;
+        }
+
+        @keyframes pulse-warning {
+            from { transform: translateX(-50%) scale(1); }
+            to { transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* 부저(파동) 효과 */
+        .buzzer-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--danger-color);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 15;
+        }
+
+        .buzzer-wave.active {
+            animation: buzzer-ripple 1s linear infinite;
+        }
+
+        @keyframes buzzer-ripple {
+            0% {
+                width: 24px;
+                height: 24px;
+                opacity: 1;
+                border-width: 4px;
+            }
+            100% {
+                width: 150px;
+                height: 150px;
+                opacity: 0;
+                border-width: 1px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="simulator-container">
+        
+        <!-- 좌측 영역: 안전장비 착용 (Smart Slot) -->
+        <div class="left-panel">
+            <div class="panel-header">
+                <i class="fas fa-hard-hat"></i>
+                <span>Smart Slot Control</span>
+            </div>
+
+            <div class="workers-container">
+                <!-- 작업자 1 -->
+                <div class="worker-profile">
+                    <div class="worker-title">Worker 1</div>
+                    <div class="equipment-slots">
+                        <div>
+                            <div class="slot" data-worker="1" data-type="helmet" id="slot-w1-helmet">
+                                <i class="fas fa-user-secret" style="opacity: 0.3;"></i>
+                            </div>
+                            <div class="slot-label">Helmet (W1)</div>
+                        </div>
+                        <div>
+                            <div class="slot" data-worker="1" data-type="vest" id="slot-w1-vest">
+                                <i class="fas fa-tshirt" style="opacity: 0.3;"></i>
+                            </div>
+                            <div class="slot-label">Vest (W1)</div>
+                        </div>
+                    </div>
+                    <div class="worker-status" id="status-w1">[WARNING: 미착용]</div>
+                </div>
+
+                <!-- 작업자 2 -->
+                <div class="worker-profile">
+                    <div class="worker-title">Worker 2</div>
+                    <div class="equipment-slots">
+                        <div>
+                            <div class="slot" data-worker="2" data-type="helmet" id="slot-w2-helmet">
+                                <i class="fas fa-user-secret" style="opacity: 0.3;"></i>
+                            </div>
+                            <div class="slot-label">Helmet (W2)</div>
+                        </div>
+                        <div>
+                            <div class="slot" data-worker="2" data-type="vest" id="slot-w2-vest">
+                                <i class="fas fa-tshirt" style="opacity: 0.3;"></i>
+                            </div>
+                            <div class="slot-label">Vest (W2)</div>
+                        </div>
+                    </div>
+                    <div class="worker-status" id="status-w2">[WARNING: 미착용]</div>
+                </div>
+            </div>
+
+            <!-- 인벤토리 -->
+            <div class="inventory-section">
+                <div class="inventory-title"><i class="fas fa-box-open"></i> Equipment Inventory</div>
+                <div class="inventory-items" id="inventory">
+                    <div class="draggable-item" draggable="true" data-worker="1" data-type="helmet" id="item-w1-helmet">
+                        <i class="fas fa-hard-hat" style="color: #f59e0b;"></i>
+                        <span class="item-mac">A1:B2:C3</span>
+                    </div>
+                    <div class="draggable-item" draggable="true" data-worker="1" data-type="vest" id="item-w1-vest">
+                        <i class="fas fa-vest" style="color: #f59e0b;"></i>
+                        <span class="item-mac">D4:E5:F6</span>
+                    </div>
+                    <div class="draggable-item" draggable="true" data-worker="2" data-type="helmet" id="item-w2-helmet">
+                        <i class="fas fa-hard-hat" style="color: #3b82f6;"></i>
+                        <span class="item-mac">9A:8B:7C</span>
+                    </div>
+                    <div class="draggable-item" draggable="true" data-worker="2" data-type="vest" id="item-w2-vest">
+                        <i class="fas fa-vest" style="color: #3b82f6;"></i>
+                        <span class="item-mac">6D:5E:4F</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-popup" id="error-popup">[ERROR: 불일치 장비 (MAC Address Conflict)]</div>
+        </div>
+
+        <!-- 우측 영역: 거리 및 신호 세기 (Radar) -->
+        <div class="right-panel">
+            <div class="panel-header">
+                <i class="fas fa-satellite-dish"></i>
+                <span>BLE Radar Monitor</span>
+            </div>
+
+            <div class="radar-container" id="radar-container">
+                <div class="data-filter-text">Data Filtering... (10-point average)</div>
+                <div class="radar-warning-text" id="radar-warning">[WARNING: 작업 구역 이탈]</div>
+
+                <div class="radar-circle"></div>
+                <div class="radar-circle"></div>
+                <div class="radar-circle"></div>
+                <div class="radar-circle"></div> <!-- 위험 경계선 -->
+
+                <div class="receiver-esp32"><i class="fas fa-broadcast-tower"></i></div>
+                <div class="receiver-label">ESP32 Receiver</div>
+
+                <div class="worker-dot" id="radar-worker" style="left: 60%; top: 50%;">W1</div>
+                
+                <div class="buzzer-wave" id="buzzer-wave"></div>
+            </div>
+
+            <div class="rssi-panel">
+                <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Current RSSI (W1)</div>
+                <div class="rssi-value" id="rssi-display">-45 dBm</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /* =========================================
+           1. Left Panel: Drag and Drop Logic
+           ========================================= */
+        const draggables = document.querySelectorAll('.draggable-item');
+        const slots = document.querySelectorAll('.slot');
+        const errorPopup = document.getElementById('error-popup');
+        
+        let workerEquipStatus = {
+            '1': { helmet: false, vest: false },
+            '2': { helmet: false, vest: false }
+        };
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', (e) => {
+                draggable.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', draggable.id);
+                // 고스트 이미지 설정 (선택적)
+            });
+
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('dragging');
+            });
+        });
+
+        slots.forEach(slot => {
+            slot.addEventListener('dragover', (e) => {
+                e.preventDefault(); // 드롭 허용
+                // 이미 채워진 슬롯은 시각적 피드백 X
+                if (!slot.classList.contains('filled')) {
+                    slot.classList.add('drag-over');
+                }
+            });
+
+            slot.addEventListener('dragleave', () => {
+                slot.classList.remove('drag-over');
+            });
+
+            slot.addEventListener('drop', (e) => {
+                e.preventDefault();
+                slot.classList.remove('drag-over');
+                
+                if (slot.classList.contains('filled')) return;
+
+                const draggedId = e.dataTransfer.getData('text/plain');
+                const draggedElement = document.getElementById(draggedId);
+                
+                if(!draggedElement) return;
+
+                const itemWorker = draggedElement.getAttribute('data-worker');
+                const itemType = draggedElement.getAttribute('data-type');
+                
+                const slotWorker = slot.getAttribute('data-worker');
+                const slotType = slot.getAttribute('data-type');
+
+                // 타입 일치 및 작업자 MAC 일치 확인
+                if (itemType === slotType && itemWorker === slotWorker) {
+                    // 성공 처리
+                    slot.innerHTML = draggedElement.innerHTML; // 아이콘 복사
+                    slot.classList.add('filled');
+                    draggedElement.style.display = 'none'; // 인벤토리에서 숨김
+                    
+                    workerEquipStatus[slotWorker][slotType] = true;
+                    updateWorkerStatus(slotWorker);
+                } else {
+                    // 실패 (Bounce back 및 에러)
+                    showErrorPopup();
+                }
+            });
+        });
+
+        function updateWorkerStatus(workerId) {
+            const statusEl = document.getElementById(`status-w${workerId}`);
+            if (workerEquipStatus[workerId].helmet && workerEquipStatus[workerId].vest) {
+                statusEl.textContent = '[STABLE: 착용 완료]';
+                statusEl.classList.add('stable');
+            }
+        }
+
+        function showErrorPopup() {
+            errorPopup.classList.add('show');
+            setTimeout(() => {
+                errorPopup.classList.remove('show');
+            }, 1500);
+        }
+
+        /* =========================================
+           2. Right Panel: Radar Distance Logic
+           ========================================= */
+        const radarContainer = document.getElementById('radar-container');
+        const radarWorker = document.getElementById('radar-worker');
+        const rssiDisplay = document.getElementById('rssi-display');
+        const radarWarning = document.getElementById('radar-warning');
+        const buzzerWave = document.getElementById('buzzer-wave');
+
+        let isDraggingRadar = false;
+
+        radarWorker.addEventListener('mousedown', () => {
+            isDraggingRadar = true;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDraggingRadar = false;
+        });
+
+        radarContainer.addEventListener('mousemove', (e) => {
+            if (!isDraggingRadar) return;
+
+            const rect = radarContainer.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            // 경계 제한
+            x = Math.max(12, Math.min(x, rect.width - 12));
+            y = Math.max(12, Math.min(y, rect.height - 12));
+
+            radarWorker.style.left = `${x}px`;
+            radarWorker.style.top = `${y}px`;
+
+            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
+        });
+
+        // Touch support
+        radarWorker.addEventListener('touchstart', (e) => {
+            isDraggingRadar = true;
+        }, {passive: true});
+
+        document.addEventListener('touchend', () => {
+            isDraggingRadar = false;
+        });
+
+        radarContainer.addEventListener('touchmove', (e) => {
+            if (!isDraggingRadar) return;
+            e.preventDefault(); // prevent scrolling
+            const touch = e.touches[0];
+            const rect = radarContainer.getBoundingClientRect();
+            let x = touch.clientX - rect.left;
+            let y = touch.clientY - rect.top;
+
+            x = Math.max(12, Math.min(x, rect.width - 12));
+            y = Math.max(12, Math.min(y, rect.height - 12));
+
+            radarWorker.style.left = `${x}px`;
+            radarWorker.style.top = `${y}px`;
+
+            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
+        }, {passive: false});
+
+        function calculateRSSI(x, y, centerX, centerY) {
+            // 거리 계산
+            const dx = x - centerX;
+            const dy = y - centerY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // 최대 감지 거리 기준 (컨테이너 절반 정도를 최대 거리로 산정)
+            const maxDist = Math.min(centerX, centerY); 
+            
+            // RSSI 매핑: 가까우면 -30, 멀면 -75
+            // distance가 0일때 -30, maxDist일때 -75
+            let rssi = -30 - (distance / maxDist) * 45;
+            rssi = Math.round(rssi);
+
+            // 하한선 설정
+            if(rssi < -80) rssi = -80;
+            if(rssi > -30) rssi = -30;
+
+            updateRadarUI(rssi, centerX, centerY);
+        }
+
+        function updateRadarUI(rssi, centerX, centerY) {
+            rssiDisplay.textContent = `${rssi} dBm`;
+
+            if (rssi <= -60) {
+                // 위험 상태
+                rssiDisplay.classList.add('danger');
+                radarContainer.classList.add('danger');
+                radarWorker.classList.add('danger');
+                radarWarning.classList.add('show');
+                
+                // 부저 위치 업데이트 및 활성화
+                buzzerWave.style.left = radarWorker.style.left;
+                buzzerWave.style.top = radarWorker.style.top;
+                buzzerWave.classList.add('active');
+            } else {
+                // 안전 상태
+                rssiDisplay.classList.remove('danger');
+                radarContainer.classList.remove('danger');
+                radarWorker.classList.remove('danger');
+                radarWarning.classList.remove('show');
+                buzzerWave.classList.remove('active');
+            }
+        }
+
+        // 초기 RSSI 계산 (시작 위치 기준)
+        window.addEventListener('load', () => {
+            const rect = radarContainer.getBoundingClientRect();
+            const workerRect = radarWorker.getBoundingClientRect();
+            
+            const x = workerRect.left - rect.left + workerRect.width/2;
+            const y = workerRect.top - rect.top + workerRect.height/2;
+            
+            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
+        });
+
+    </script>
+</body>
+</html>
