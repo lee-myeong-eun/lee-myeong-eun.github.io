@@ -97,6 +97,7 @@ layout: default
           <a href="{{ site.baseurl }}/projects/fire-evac-safety/" class="btn btn-primary flex-grow-1" style="font-size: 0.85rem; border-radius: 8px !important; padding: 8px 12px;">디자인 뷰</a>
           <a href="{{ site.baseurl }}/projects/fire-evac-notebook/" class="btn btn-success flex-grow-1" style="font-size: 0.85rem; border-radius: 8px !important; padding: 8px 12px;">노트북 뷰</a>
         </div>
+        <button type="button" class="btn btn-outline-info w-100" data-toggle="modal" data-target="#firePptModal" style="border-radius: 8px !important; font-size: 0.85rem; padding: 8px 12px;"><i class="fa fa-file-powerpoint-o"></i> 발표 PPT</button>
       </div>
     </div>
   </div>
@@ -125,6 +126,33 @@ layout: default
       <div class="modal-footer border-0 pt-0">
         <button type="button" class="btn btn-outline-light btn-sm px-4" data-dismiss="modal" style="border-radius: 20px !important;">닫기</button>
         <a href="https://docs.google.com/presentation/d/16zicVw4LLHW-tQiddjgxP1K2JQOi1rvgQQ6OosLRDEU/present" target="_blank" class="btn btn-primary btn-sm px-4" style="border-radius: 20px !important;">프레젠테이션 크게 보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fire Evac PDF Modal -->
+<div class="modal fade" id="firePptModal" tabindex="-1" role="dialog" aria-labelledby="firePptModalLabel" aria-hidden="true" style="z-index: 1050;">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content welcome-box border-0 text-white" style="background: rgba(11, 15, 25, 0.95) !important; backdrop-filter: blur(25px) !important; border: 1px solid rgba(56, 189, 248, 0.2) !important;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title text-gradient" id="firePptModalLabel">📊 화재 대피 유도 시스템 발표 PPT</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 0.8; outline: none;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-3">
+        <!-- PDF Embed -->
+        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+          <iframe class="embed-responsive-item" src="{{ site.baseurl }}/assets/pdf/fire_evac_system.pdf" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <p class="text-muted small mt-3 mb-0 text-center">
+          💡 슬라이드쇼가 로드되지 않거나 권한이 필요하다고 나오는 경우, 브라우저 환경을 확인하거나 <a href="{{ site.baseurl }}/assets/pdf/fire_evac_system.pdf" download class="text-info">여기를 클릭하여 다운로드</a>해 주세요.
+        </p>
+      </div>
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-outline-light btn-sm px-4" data-dismiss="modal" style="border-radius: 20px !important;">닫기</button>
+        <a href="{{ site.baseurl }}/assets/pdf/fire_evac_system.pdf" target="_blank" class="btn btn-primary btn-sm px-4" style="border-radius: 20px !important;">프레젠테이션 크게 보기</a>
       </div>
     </div>
   </div>
