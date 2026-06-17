@@ -547,7 +547,7 @@ permalink: /ezsafe-simulator/
                             <div class="slot-label">Vest (W1)</div>
                         </div>
                     </div>
-                    <div class="worker-status" id="status-w1">[WARNING: 미착용]</div>
+                    <div class="worker-status" id="status-w1">[WARNING: 안전모, 조끼 미착용]</div>
                 </div>
 
                 <!-- 작업자 2 -->
@@ -567,7 +567,7 @@ permalink: /ezsafe-simulator/
                             <div class="slot-label">Vest (W2)</div>
                         </div>
                     </div>
-                    <div class="worker-status" id="status-w2">[WARNING: 미착용]</div>
+                    <div class="worker-status" id="status-w2">[WARNING: 안전모, 조끼 미착용]</div>
                 </div>
             </div>
 
@@ -736,11 +736,22 @@ permalink: /ezsafe-simulator/
 
         function updateWorkerStatus(workerId) {
             const statusEl = document.getElementById(`status-w${workerId}`);
-            if (workerEquipStatus[workerId].helmet && workerEquipStatus[workerId].vest) {
+            const hasHelmet = workerEquipStatus[workerId].helmet;
+            const hasVest = workerEquipStatus[workerId].vest;
+
+            if (hasHelmet && hasVest) {
                 statusEl.textContent = '[STABLE: 착용 완료]';
                 statusEl.classList.add('stable');
             } else {
-                statusEl.textContent = '[WARNING: 미착용]';
+                let missingMsg = '';
+                if (!hasHelmet && !hasVest) {
+                    missingMsg = '안전모, 조끼 미착용';
+                } else if (!hasHelmet) {
+                    missingMsg = '안전모 미착용';
+                } else if (!hasVest) {
+                    missingMsg = '조끼 미착용';
+                }
+                statusEl.textContent = `[WARNING: ${missingMsg}]`;
                 statusEl.classList.remove('stable');
             }
         }
