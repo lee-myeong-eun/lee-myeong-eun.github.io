@@ -130,8 +130,13 @@ permalink: /ezsafe-simulator/
             font-size: 2rem;
             color: #475569;
             transition: all 0.3s;
+            cursor: default;
         }
         
+        .slot.filled {
+            cursor: pointer;
+        }
+
         .slot.drag-over {
             border-color: var(--border-neon);
             background-color: rgba(59, 130, 246, 0.1);
@@ -144,6 +149,12 @@ permalink: /ezsafe-simulator/
             color: var(--success-color);
             background-color: rgba(16, 185, 129, 0.1);
             box-shadow: 0 0 15px var(--success-glow);
+        }
+        
+        .slot.filled:hover {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+            border-color: var(--danger-color);
+            color: var(--danger-color);
         }
 
         .slot-label {
@@ -330,14 +341,12 @@ permalink: /ezsafe-simulator/
             position: absolute;
             width: 24px;
             height: 24px;
-            background-color: #eab308;
             border-radius: 50%;
             top: 50%;
             left: 50%;
             margin-top: -12px;
             margin-left: -12px;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
             z-index: 20;
             display: flex;
             align-items: center;
@@ -347,14 +356,24 @@ permalink: /ezsafe-simulator/
             font-weight: bold;
             transition: background-color 0.3s, box-shadow 0.3s;
         }
+        
+        #radar-worker-w1 {
+            background-color: #eab308;
+            box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
+        }
+        
+        #radar-worker-w2 {
+            background-color: #3b82f6;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+        }
 
         .worker-dot:hover {
             transform: scale(1.2);
         }
 
         .worker-dot.danger {
-            background-color: var(--danger-color);
-            box-shadow: 0 0 15px var(--danger-glow);
+            background-color: var(--danger-color) !important;
+            box-shadow: 0 0 15px var(--danger-glow) !important;
         }
 
         /* RSSI 표시 패널 */
@@ -368,10 +387,18 @@ permalink: /ezsafe-simulator/
             border-radius: 10px;
             font-family: 'Orbitron', sans-serif;
             z-index: 30;
+            display: flex;
+            gap: 20px;
+        }
+
+        .rssi-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .rssi-value {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--success-color);
             text-shadow: 0 0 10px var(--success-glow);
@@ -414,6 +441,8 @@ permalink: /ezsafe-simulator/
             opacity: 0;
             transition: opacity 0.3s;
             z-index: 30;
+            text-align: center;
+            pointer-events: none;
         }
 
         .radar-warning-text.show {
@@ -429,8 +458,6 @@ permalink: /ezsafe-simulator/
         /* 부저(파동) 효과 */
         .buzzer-wave {
             position: absolute;
-            top: 50%;
-            left: 50%;
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -479,13 +506,13 @@ permalink: /ezsafe-simulator/
                     <div class="worker-title">Worker 1</div>
                     <div class="equipment-slots">
                         <div>
-                            <div class="slot" data-worker="1" data-type="helmet" id="slot-w1-helmet">
+                            <div class="slot" data-worker="1" data-type="helmet" id="slot-w1-helmet" title="클릭하여 해제">
                                 <i class="fas fa-user-secret" style="opacity: 0.3;"></i>
                             </div>
                             <div class="slot-label">Helmet (W1)</div>
                         </div>
                         <div>
-                            <div class="slot" data-worker="1" data-type="vest" id="slot-w1-vest">
+                            <div class="slot" data-worker="1" data-type="vest" id="slot-w1-vest" title="클릭하여 해제">
                                 <i class="fas fa-tshirt" style="opacity: 0.3;"></i>
                             </div>
                             <div class="slot-label">Vest (W1)</div>
@@ -499,13 +526,13 @@ permalink: /ezsafe-simulator/
                     <div class="worker-title">Worker 2</div>
                     <div class="equipment-slots">
                         <div>
-                            <div class="slot" data-worker="2" data-type="helmet" id="slot-w2-helmet">
+                            <div class="slot" data-worker="2" data-type="helmet" id="slot-w2-helmet" title="클릭하여 해제">
                                 <i class="fas fa-user-secret" style="opacity: 0.3;"></i>
                             </div>
                             <div class="slot-label">Helmet (W2)</div>
                         </div>
                         <div>
-                            <div class="slot" data-worker="2" data-type="vest" id="slot-w2-vest">
+                            <div class="slot" data-worker="2" data-type="vest" id="slot-w2-vest" title="클릭하여 해제">
                                 <i class="fas fa-tshirt" style="opacity: 0.3;"></i>
                             </div>
                             <div class="slot-label">Vest (W2)</div>
@@ -550,7 +577,7 @@ permalink: /ezsafe-simulator/
 
             <div class="radar-container" id="radar-container">
                 <div class="data-filter-text">Data Filtering... (10-point average)</div>
-                <div class="radar-warning-text" id="radar-warning">[WARNING: 작업 구역 이탈]</div>
+                <div class="radar-warning-text" id="radar-warning"></div>
 
                 <div class="radar-circle"></div>
                 <div class="radar-circle"></div>
@@ -560,14 +587,23 @@ permalink: /ezsafe-simulator/
                 <div class="receiver-esp32"><i class="fas fa-broadcast-tower"></i></div>
                 <div class="receiver-label">ESP32 Receiver</div>
 
-                <div class="worker-dot" id="radar-worker" style="left: 60%; top: 50%;">W1</div>
+                <div class="worker-dot" id="radar-worker-w1" style="left: 60%; top: 50%;">W1</div>
+                <div class="worker-dot" id="radar-worker-w2" style="left: 40%; top: 40%;">W2</div>
                 
-                <div class="buzzer-wave" id="buzzer-wave"></div>
+                <div class="buzzer-wave" id="buzzer-wave-w1"></div>
+                <div class="buzzer-wave" id="buzzer-wave-w2"></div>
             </div>
 
             <div class="rssi-panel">
-                <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Current RSSI (W1)</div>
-                <div class="rssi-value" id="rssi-display">-45 dBm</div>
+                <div class="rssi-box">
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">RSSI (W1)</div>
+                    <div class="rssi-value" id="rssi-display-w1">-45 dBm</div>
+                </div>
+                <div style="width: 1px; background: #333;"></div>
+                <div class="rssi-box">
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">RSSI (W2)</div>
+                    <div class="rssi-value" id="rssi-display-w2">-45 dBm</div>
+                </div>
             </div>
         </div>
 
@@ -575,7 +611,7 @@ permalink: /ezsafe-simulator/
 
     <script>
         /* =========================================
-           1. Left Panel: Drag and Drop Logic
+           1. Left Panel: Drag and Drop & Unequip
            ========================================= */
         const draggables = document.querySelectorAll('.draggable-item');
         const slots = document.querySelectorAll('.slot');
@@ -590,7 +626,6 @@ permalink: /ezsafe-simulator/
             draggable.addEventListener('dragstart', (e) => {
                 draggable.classList.add('dragging');
                 e.dataTransfer.setData('text/plain', draggable.id);
-                // 고스트 이미지 설정 (선택적)
             });
 
             draggable.addEventListener('dragend', () => {
@@ -601,7 +636,6 @@ permalink: /ezsafe-simulator/
         slots.forEach(slot => {
             slot.addEventListener('dragover', (e) => {
                 e.preventDefault(); // 드롭 허용
-                // 이미 채워진 슬롯은 시각적 피드백 X
                 if (!slot.classList.contains('filled')) {
                     slot.classList.add('drag-over');
                 }
@@ -633,6 +667,7 @@ permalink: /ezsafe-simulator/
                     // 성공 처리
                     slot.innerHTML = draggedElement.innerHTML; // 아이콘 복사
                     slot.classList.add('filled');
+                    slot.setAttribute('data-equipped-id', draggedId);
                     draggedElement.style.display = 'none'; // 인벤토리에서 숨김
                     
                     workerEquipStatus[slotWorker][slotType] = true;
@@ -642,6 +677,32 @@ permalink: /ezsafe-simulator/
                     showErrorPopup();
                 }
             });
+
+            // 장비 해제 로직 (클릭 시)
+            slot.addEventListener('click', () => {
+                if (slot.classList.contains('filled')) {
+                    const equippedId = slot.getAttribute('data-equipped-id');
+                    const equippedItem = document.getElementById(equippedId);
+                    
+                    // 인벤토리에 다시 표시
+                    if (equippedItem) equippedItem.style.display = 'flex';
+                    
+                    // 슬롯 초기화
+                    slot.classList.remove('filled');
+                    slot.removeAttribute('data-equipped-id');
+                    
+                    const type = slot.getAttribute('data-type');
+                    if (type === 'helmet') {
+                        slot.innerHTML = '<i class="fas fa-user-secret" style="opacity: 0.3;"></i>';
+                    } else {
+                        slot.innerHTML = '<i class="fas fa-tshirt" style="opacity: 0.3;"></i>';
+                    }
+
+                    const workerId = slot.getAttribute('data-worker');
+                    workerEquipStatus[workerId][type] = false;
+                    updateWorkerStatus(workerId);
+                }
+            });
         });
 
         function updateWorkerStatus(workerId) {
@@ -649,6 +710,9 @@ permalink: /ezsafe-simulator/
             if (workerEquipStatus[workerId].helmet && workerEquipStatus[workerId].vest) {
                 statusEl.textContent = '[STABLE: 착용 완료]';
                 statusEl.classList.add('stable');
+            } else {
+                statusEl.textContent = '[WARNING: 미착용]';
+                statusEl.classList.remove('stable');
             }
         }
 
@@ -660,121 +724,124 @@ permalink: /ezsafe-simulator/
         }
 
         /* =========================================
-           2. Right Panel: Radar Distance Logic
+           2. Right Panel: Radar Distance Logic (W1 & W2)
            ========================================= */
         const radarContainer = document.getElementById('radar-container');
-        const radarWorker = document.getElementById('radar-worker');
-        const rssiDisplay = document.getElementById('rssi-display');
+        const radarWorkerW1 = document.getElementById('radar-worker-w1');
+        const radarWorkerW2 = document.getElementById('radar-worker-w2');
+        const rssiDisplayW1 = document.getElementById('rssi-display-w1');
+        const rssiDisplayW2 = document.getElementById('rssi-display-w2');
         const radarWarning = document.getElementById('radar-warning');
-        const buzzerWave = document.getElementById('buzzer-wave');
+        const buzzerWaveW1 = document.getElementById('buzzer-wave-w1');
+        const buzzerWaveW2 = document.getElementById('buzzer-wave-w2');
 
-        let isDraggingRadar = false;
+        let activeDot = null;
 
-        radarWorker.addEventListener('mousedown', () => {
-            isDraggingRadar = true;
+        [radarWorkerW1, radarWorkerW2].forEach(dot => {
+            dot.addEventListener('mousedown', () => { activeDot = dot; });
+            dot.addEventListener('touchstart', (e) => { activeDot = dot; }, {passive: true});
         });
 
-        document.addEventListener('mouseup', () => {
-            isDraggingRadar = false;
-        });
+        document.addEventListener('mouseup', () => { activeDot = null; });
+        document.addEventListener('touchend', () => { activeDot = null; });
 
-        radarContainer.addEventListener('mousemove', (e) => {
-            if (!isDraggingRadar) return;
+        function handleRadarMove(clientX, clientY, rect) {
+            if (!activeDot) return;
 
-            const rect = radarContainer.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
+            let x = clientX - rect.left;
+            let y = clientY - rect.top;
 
-            // 경계 제한
             x = Math.max(12, Math.min(x, rect.width - 12));
             y = Math.max(12, Math.min(y, rect.height - 12));
 
-            radarWorker.style.left = `${x}px`;
-            radarWorker.style.top = `${y}px`;
+            activeDot.style.left = `${x}px`;
+            activeDot.style.top = `${y}px`;
 
-            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
-        });
+            const workerId = activeDot.id.includes('w1') ? '1' : '2';
+            calculateRSSI(x, y, rect.width / 2, rect.height / 2, workerId);
+        }
 
-        // Touch support
-        radarWorker.addEventListener('touchstart', (e) => {
-            isDraggingRadar = true;
-        }, {passive: true});
-
-        document.addEventListener('touchend', () => {
-            isDraggingRadar = false;
+        radarContainer.addEventListener('mousemove', (e) => {
+            if(activeDot) handleRadarMove(e.clientX, e.clientY, radarContainer.getBoundingClientRect());
         });
 
         radarContainer.addEventListener('touchmove', (e) => {
-            if (!isDraggingRadar) return;
+            if (!activeDot) return;
             e.preventDefault(); // prevent scrolling
             const touch = e.touches[0];
-            const rect = radarContainer.getBoundingClientRect();
-            let x = touch.clientX - rect.left;
-            let y = touch.clientY - rect.top;
-
-            x = Math.max(12, Math.min(x, rect.width - 12));
-            y = Math.max(12, Math.min(y, rect.height - 12));
-
-            radarWorker.style.left = `${x}px`;
-            radarWorker.style.top = `${y}px`;
-
-            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
+            handleRadarMove(touch.clientX, touch.clientY, radarContainer.getBoundingClientRect());
         }, {passive: false});
 
-        function calculateRSSI(x, y, centerX, centerY) {
-            // 거리 계산
+        function calculateRSSI(x, y, centerX, centerY, workerId) {
             const dx = x - centerX;
             const dy = y - centerY;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            // 최대 감지 거리 기준 (컨테이너 절반 정도를 최대 거리로 산정)
             const maxDist = Math.min(centerX, centerY); 
             
-            // RSSI 매핑: 가까우면 -30, 멀면 -75
-            // distance가 0일때 -30, maxDist일때 -75
             let rssi = -30 - (distance / maxDist) * 45;
             rssi = Math.round(rssi);
 
-            // 하한선 설정
             if(rssi < -80) rssi = -80;
             if(rssi > -30) rssi = -30;
 
-            updateRadarUI(rssi, centerX, centerY);
+            updateRadarUI(rssi, workerId);
         }
 
-        function updateRadarUI(rssi, centerX, centerY) {
-            rssiDisplay.textContent = `${rssi} dBm`;
+        let isW1Danger = false;
+        let isW2Danger = false;
 
-            if (rssi <= -60) {
-                // 위험 상태
-                rssiDisplay.classList.add('danger');
+        function updateRadarUI(rssi, workerId) {
+            const display = workerId === '1' ? rssiDisplayW1 : rssiDisplayW2;
+            const dot = workerId === '1' ? radarWorkerW1 : radarWorkerW2;
+            const wave = workerId === '1' ? buzzerWaveW1 : buzzerWaveW2;
+            
+            display.textContent = `${rssi} dBm`;
+
+            const isDanger = rssi <= -60;
+            if(workerId === '1') isW1Danger = isDanger;
+            else isW2Danger = isDanger;
+
+            if (isDanger) {
+                display.classList.add('danger');
+                dot.classList.add('danger');
+                
+                wave.style.left = dot.style.left;
+                wave.style.top = dot.style.top;
+                wave.classList.add('active');
+            } else {
+                display.classList.remove('danger');
+                dot.classList.remove('danger');
+                wave.classList.remove('active');
+            }
+
+            // 전체 컨테이너 및 텍스트 경고 업데이트
+            if (isW1Danger || isW2Danger) {
                 radarContainer.classList.add('danger');
-                radarWorker.classList.add('danger');
                 radarWarning.classList.add('show');
                 
-                // 부저 위치 업데이트 및 활성화
-                buzzerWave.style.left = radarWorker.style.left;
-                buzzerWave.style.top = radarWorker.style.top;
-                buzzerWave.classList.add('active');
+                if (isW1Danger && isW2Danger) radarWarning.textContent = '[WARNING: W1, W2 작업 구역 이탈]';
+                else if (isW1Danger) radarWarning.textContent = '[WARNING: W1 작업 구역 이탈]';
+                else radarWarning.textContent = '[WARNING: W2 작업 구역 이탈]';
             } else {
-                // 안전 상태
-                rssiDisplay.classList.remove('danger');
                 radarContainer.classList.remove('danger');
-                radarWorker.classList.remove('danger');
                 radarWarning.classList.remove('show');
-                buzzerWave.classList.remove('active');
             }
         }
 
-        // 초기 RSSI 계산 (시작 위치 기준)
+        // 초기 RSSI 계산
         window.addEventListener('load', () => {
             const rect = radarContainer.getBoundingClientRect();
-            const workerRect = radarWorker.getBoundingClientRect();
             
-            const x = workerRect.left - rect.left + workerRect.width/2;
-            const y = workerRect.top - rect.top + workerRect.height/2;
-            
-            calculateRSSI(x, y, rect.width / 2, rect.height / 2);
+            const w1Rect = radarWorkerW1.getBoundingClientRect();
+            const x1 = w1Rect.left - rect.left + w1Rect.width/2;
+            const y1 = w1Rect.top - rect.top + w1Rect.height/2;
+            calculateRSSI(x1, y1, rect.width / 2, rect.height / 2, '1');
+
+            const w2Rect = radarWorkerW2.getBoundingClientRect();
+            const x2 = w2Rect.left - rect.left + w2Rect.width/2;
+            const y2 = w2Rect.top - rect.top + w2Rect.height/2;
+            calculateRSSI(x2, y2, rect.width / 2, rect.height / 2, '2');
         });
 
     </script>
