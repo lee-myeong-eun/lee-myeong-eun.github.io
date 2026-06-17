@@ -54,7 +54,7 @@ permalink: /assignments/python-basics/
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### Python 기초 문법과 자료형 실습 포트폴리오
 
 <br><span style="color: #38bdf8;"><i class="fa fa-check mr-2"></i>파이썬(Python)</span>
@@ -257,7 +257,7 @@ print(result)          # result의 값을 출력한다.
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### 문자열 자료형(str)
 문자들의 집합, 따옴표( ' ', " " )로 표현 가능한 데이터 형식
 - 인덱싱, 슬라이싱 가능
@@ -975,7 +975,7 @@ print(year+'년 '+month+'월 '+day+'일\n계절 : '+season)
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### 리스트 자료형(list)
 모든 종류의 자료형을 자유로게 묶어서 사용할 수 있는 자료형의 묶음.
  - list = [3, "이명은", -0.5, '안녕']
@@ -1504,7 +1504,7 @@ print(t3)
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### 불 자료형(BOOL)
 True(참), False(거짓)의 값만을 갖는 자료형.
 
@@ -1817,7 +1817,7 @@ a
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### if문 (조건문)
 조건이 참(True)일 때만 특정 코드르 실행하는 문장
 - 조건식은 True or False로 판단
@@ -2399,7 +2399,7 @@ for product, price in zip(products, prices):
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### 함수
 입력값(input)을 받아 처리를 수행한 후 출력값(output)을 내보내는 것
 
@@ -2876,7 +2876,7 @@ int, float: 두 숫자의 합</pre>
             </div>
           </div>
           <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.08);" />
-          <div class="content-body" style="line-height: 1.8; color: #cbd5e1;">
+          <div class="content-body" style="line-height: 1.8; color: inherit;">
 ### 파일 입출력
 프로그램이 파일에 데이터를 저장(출력)하거나 파일에서 데이터를 읽어오는(입력)작업
 

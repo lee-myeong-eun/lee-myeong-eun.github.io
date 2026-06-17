@@ -11,7 +11,7 @@ permalink: /contact/
       <p>저의 역량에 대해 궁금하신 점이 있거나, 채용 및 협업 관련 제안이 있으시다면 언제든 편하게 메시지를 남겨주세요!</p>
       <p class="text-muted small">아래 폼을 작성해 주시면 확인 후 입력해주신 메일 주소로 신속하게 회신해 드리겠습니다.</p>
       
-      <form class="mt-4" action="https://formspree.io/f/your_form_id" method="post">
+      <form class="mt-4" action="https://formsubmit.co/myeongeun.kr@gmail.com" method="post">
         <!-- Name input-->
         <div class="form-group mb-4">
             <label class="font-weight-bold text-light small" for="name">✍️ 성함 (Name)</label>
