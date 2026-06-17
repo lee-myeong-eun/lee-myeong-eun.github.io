@@ -41,7 +41,7 @@ permalink: /assignments/python-basics/
       </div>
 
       <!-- Right Detailed Content -->
-      <div class="col-lg-8 mb-4">
+      <div class="col-lg-8 mb-4" markdown="1">
 
 <div id="section1"></div>
 
