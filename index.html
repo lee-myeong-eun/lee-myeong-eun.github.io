@@ -142,9 +142,48 @@ layout: default
         </button>
       </div>
       <div class="modal-body p-3">
-        <!-- PDF Embed -->
-        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
-          <iframe class="embed-responsive-item" src="{{ site.baseurl }}/assets/pdf/fire_evac_system.pdf" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <!-- PDF Slideshow Carousel -->
+        <div id="firePptCarousel" class="carousel slide embed-responsive embed-responsive-16by9" data-ride="carousel" data-interval="false" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+          <div class="carousel-inner h-100 bg-dark">
+            <div class="carousel-item active h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_1.png" style="object-fit: contain;" alt="Slide 1">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_2.png" style="object-fit: contain;" alt="Slide 2">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_3.png" style="object-fit: contain;" alt="Slide 3">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_4.png" style="object-fit: contain;" alt="Slide 4">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_5.png" style="object-fit: contain;" alt="Slide 5">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_6.png" style="object-fit: contain;" alt="Slide 6">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_7.png" style="object-fit: contain;" alt="Slide 7">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_8.png" style="object-fit: contain;" alt="Slide 8">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_9.png" style="object-fit: contain;" alt="Slide 9">
+            </div>
+            <div class="carousel-item h-100">
+              <img class="d-block w-100 h-100" src="{{ site.baseurl }}/assets/pdf/fire_evac/slide_10.png" style="object-fit: contain;" alt="Slide 10">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#firePptCarousel" role="button" data-slide="prev" style="width: 8%; background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 30px; height: 30px;"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#firePptCarousel" role="button" data-slide="next" style="width: 8%; background: linear-gradient(270deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="width: 30px; height: 30px;"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
         <p class="text-muted small mt-3 mb-0 text-center">
           💡 슬라이드쇼가 로드되지 않거나 권한이 필요하다고 나오는 경우, 브라우저 환경을 확인하거나 <a href="{{ site.baseurl }}/assets/pdf/fire_evac_system.pdf" download class="text-info">여기를 클릭하여 다운로드</a>해 주세요.
