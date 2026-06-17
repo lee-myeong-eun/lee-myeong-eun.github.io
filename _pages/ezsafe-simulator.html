@@ -45,6 +45,33 @@ permalink: /ezsafe-simulator/
             background-size: 30px 30px;
         }
 
+        .global-close-btn {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .global-close-btn:hover {
+            background: var(--danger-color);
+            color: white;
+            border-color: var(--danger-color);
+            box-shadow: 0 0 15px var(--danger-glow);
+            transform: rotate(90deg);
+        }
+
         .simulator-container {
             display: flex;
             width: 95vw;
@@ -491,6 +518,8 @@ permalink: /ezsafe-simulator/
 </head>
 <body>
 
+    <button class="global-close-btn" onclick="closeSimulator()" title="시뮬레이터 닫기"><i class="fas fa-times"></i></button>
+
     <div class="simulator-container">
         
         <!-- 좌측 영역: 안전장비 착용 (Smart Slot) -->
@@ -843,6 +872,15 @@ permalink: /ezsafe-simulator/
             const y2 = w2Rect.top - rect.top + w2Rect.height/2;
             calculateRSSI(x2, y2, rect.width / 2, rect.height / 2, '2');
         });
+
+        // 닫기 로직
+        function closeSimulator() {
+            if (window.opener) {
+                window.close(); // 새 창(탭)으로 열렸을 경우
+            } else {
+                window.location.href = '{{ site.baseurl }}/'; // 직접 주소로 들어온 경우 메인으로 이동
+            }
+        }
 
     </script>
 </body>
