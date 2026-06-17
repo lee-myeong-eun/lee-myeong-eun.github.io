@@ -1,0 +1,475 @@
+---
+layout: none
+permalink: /fire-simulator/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Evacuation Simulator</title>
+    <!-- 폰트 및 아이콘 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0f1e;
+            --panel-bg: #111827;
+            --border-neon: #38bdf8;
+            --fire-color: #ef4444;
+            --path-color: #10b981;
+            --wall-color: #1f2937;
+            --cell-bg: rgba(56, 189, 248, 0.05);
+            --text-main: #f1f5f9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* 메인 컨테이너 (LCD 사이즈 호환) */
+        .simulator-container {
+            display: flex;
+            width: 95vw;
+            height: 90vh;
+            max-width: 1400px;
+            background: linear-gradient(135deg, rgba(16,24,39,0.9) 0%, rgba(10,15,30,0.9) 100%);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.1);
+            padding: 30px;
+            gap: 30px;
+            box-sizing: border-box;
+        }
+
+        /* 좌측 미로 영역 */
+        .maze-section {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--border-neon);
+            border-radius: 15px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.1), 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .maze-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--border-neon);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--border-neon);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .maze-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            gap: 4px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cell {
+            background-color: var(--cell-bg);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .cell:hover {
+            background-color: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 10px var(--border-neon);
+        }
+
+        .cell.wall {
+            background-color: var(--wall-color);
+            border-color: #374151;
+            cursor: not-allowed;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .cell.start {
+            background-color: #3b82f6;
+            color: white;
+            box-shadow: 0 0 15px #3b82f6;
+            cursor: not-allowed;
+        }
+
+        .cell.exit {
+            background-color: #eab308;
+            color: white;
+            box-shadow: 0 0 15px #eab308;
+            cursor: not-allowed;
+        }
+
+        .cell.fire {
+            background-color: var(--fire-color);
+            box-shadow: 0 0 20px var(--fire-color), inset 0 0 10px rgba(255,255,255,0.5);
+            animation: pulse-fire 1s infinite alternate;
+        }
+
+        .cell.path {
+            background-color: var(--path-color);
+            box-shadow: 0 0 15px var(--path-color);
+        }
+
+        @keyframes pulse-fire {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* 우측 대시보드 영역 */
+        .dashboard-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .status-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #9ca3af;
+        }
+
+        .status-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .status-stable {
+            color: #10b981;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        .status-warning {
+            color: var(--fire-color);
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        .info-text {
+            margin-top: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        
+        .info-text h3 {
+            color: var(--border-neon);
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+        
+        .btn-reset {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--border-neon);
+            color: var(--border-neon);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-reset:hover {
+            background: var(--border-neon);
+            color: #000;
+            box-shadow: 0 0 15px var(--border-neon);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="simulator-container">
+        <!-- 맵 영역 -->
+        <div class="maze-section">
+            <div class="maze-header">
+                <div><i class="fa fa-map-marked-alt mr-2"></i> FIRE EVACUATION MAP</div>
+                <div style="font-size: 1rem; font-family: 'Nunito'; color: #9ca3af;"><i class="fa fa-mouse-pointer"></i> 통로 클릭 시 화재 발생</div>
+            </div>
+            <div class="maze-grid" id="maze-grid">
+                <!-- JS가 셀을 생성합니다 -->
+            </div>
+        </div>
+
+        <!-- 대시보드 영역 -->
+        <div class="dashboard-section">
+            <div class="panel" style="flex: 1;">
+                <div class="status-box mb-4">
+                    <div class="status-title">SYSTEM STATUS</div>
+                    <div class="status-value status-stable" id="sys-status">STABLE</div>
+                </div>
+
+                <div class="info-text">
+                    <h3>Interactive</h3>
+                    <p>현재 센서 모니터링이 정상 작동 중입니다.</p>
+                    <p id="system-msg" style="color: #38bdf8;">안전한 대피 경로가 확보되어 있습니다.</p>
+                    <p style="font-size: 0.85rem; color: #64748b; margin-top: 20px;">
+                        * 화재 발생 시 실시간으로 최적 우회 경로를 탐색하여 LED 패널에 점등합니다.
+                    </p>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-color" style="background: #3b82f6;"></div> 현재 위치 (Start)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: #eab308;"></div> 비상구 (Exit)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: var(--wall-color); border: 1px solid #374151;"></div> 벽 (Wall)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: var(--path-color); box-shadow: 0 0 10px var(--path-color);"></div> 유도 경로 (LED Path)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: var(--fire-color); box-shadow: 0 0 10px var(--fire-color);"></div> 화재 감지 (Fire)</div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-reset" onclick="resetSimulator()">SYSTEM RESET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const GRID_SIZE = 12;
+        const gridElement = document.getElementById('maze-grid');
+        const sysStatus = document.getElementById('sys-status');
+        const sysMsg = document.getElementById('system-msg');
+        
+        // 0: path, 1: wall
+        let baseMap = [
+            [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+            [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0],
+            [0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+            [0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1],
+            [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+            [1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+            [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1],
+            [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+        ];
+
+        let fireMap = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(false));
+        
+        const startPos = {r: 0, c: 0};
+        const exitPos = {r: 11, c: 11};
+        let currentPath = [];
+
+        function initGrid() {
+            gridElement.innerHTML = '';
+            for (let r = 0; r < GRID_SIZE; r++) {
+                for (let c = 0; c < GRID_SIZE; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.dataset.r = r;
+                    cell.dataset.c = c;
+                    
+                    if (r === startPos.r && c === startPos.c) {
+                        cell.classList.add('start');
+                        cell.innerHTML = '<i class="fas fa-male"></i>';
+                    } else if (r === exitPos.r && c === exitPos.c) {
+                        cell.classList.add('exit');
+                        cell.innerHTML = '<i class="fas fa-door-open"></i>';
+                    } else if (baseMap[r][c] === 1) {
+                        cell.classList.add('wall');
+                    }
+
+                    cell.addEventListener('click', () => handleCellClick(r, c));
+                    gridElement.appendChild(cell);
+                }
+            }
+        }
+
+        function handleCellClick(r, c) {
+            // 출발점, 도착점, 벽은 클릭 무시
+            if ((r === startPos.r && c === startPos.c) || 
+                (r === exitPos.r && c === exitPos.c) || 
+                baseMap[r][c] === 1) {
+                return;
+            }
+
+            fireMap[r][c] = !fireMap[r][c]; // 토글
+            updateUI();
+            calculatePath();
+        }
+
+        function updateUI() {
+            let hasFire = false;
+            for (let r = 0; r < GRID_SIZE; r++) {
+                for (let c = 0; c < GRID_SIZE; c++) {
+                    const cell = getCell(r, c);
+                    // 클래스 초기화 (기본 요소 유지)
+                    cell.classList.remove('fire', 'path');
+                    
+                    if (fireMap[r][c]) {
+                        cell.classList.add('fire');
+                        cell.innerHTML = '<i class="fas fa-fire"></i>';
+                        hasFire = true;
+                    } else if (baseMap[r][c] !== 1 && !(r === startPos.r && c === startPos.c) && !(r === exitPos.r && c === exitPos.c)) {
+                        cell.innerHTML = '';
+                    }
+                }
+            }
+
+            if (hasFire) {
+                sysStatus.textContent = 'WARNING';
+                sysStatus.className = 'status-value status-warning';
+                sysMsg.textContent = '화재가 감지되었습니다. 우회 경로를 안내합니다.';
+                sysMsg.style.color = 'var(--fire-color)';
+            } else {
+                sysStatus.textContent = 'STABLE';
+                sysStatus.className = 'status-value status-stable';
+                sysMsg.textContent = '안전한 대피 경로가 확보되어 있습니다.';
+                sysMsg.style.color = '#38bdf8';
+            }
+        }
+
+        function getCell(r, c) {
+            return gridElement.children[r * GRID_SIZE + c];
+        }
+
+        function calculatePath() {
+            // BFS Pathfinding
+            const dr = [-1, 1, 0, 0];
+            const dc = [0, 0, -1, 1];
+            
+            let queue = [{r: startPos.r, c: startPos.c, path: []}];
+            let visited = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(false));
+            visited[startPos.r][startPos.c] = true;
+            
+            let foundPath = null;
+
+            while(queue.length > 0) {
+                let curr = queue.shift();
+                
+                if (curr.r === exitPos.r && curr.c === exitPos.c) {
+                    foundPath = curr.path;
+                    break;
+                }
+                
+                for(let i=0; i<4; i++) {
+                    let nr = curr.r + dr[i];
+                    let nc = curr.c + dc[i];
+                    
+                    if (nr >= 0 && nr < GRID_SIZE && nc >= 0 && nc < GRID_SIZE) {
+                        if (!visited[nr][nc] && baseMap[nr][nc] === 0 && !fireMap[nr][nc]) {
+                            visited[nr][nc] = true;
+                            queue.push({
+                                r: nr, 
+                                c: nc, 
+                                path: [...curr.path, {r: nr, c: nc}]
+                            });
+                        }
+                    }
+                }
+            }
+
+            currentPath = foundPath;
+            drawPath();
+        }
+
+        function drawPath() {
+            if (!currentPath) {
+                sysMsg.textContent = '경고: 대피 경로가 모두 차단되었습니다!';
+                return;
+            }
+
+            // 도착점은 패스 칠하지 않음
+            currentPath.forEach((node, index) => {
+                if (node.r === exitPos.r && node.c === exitPos.c) return;
+                
+                setTimeout(() => {
+                    // 불이 난 곳이 아니면 경로 표시
+                    if (!fireMap[node.r][node.c]) {
+                        getCell(node.r, node.c).classList.add('path');
+                    }
+                }, index * 50); // 실제 LED가 차르륵 켜지는 효과 50ms 간격
+            });
+        }
+
+        function resetSimulator() {
+            fireMap = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(false));
+            updateUI();
+            calculatePath();
+        }
+
+        // Initialize
+        initGrid();
+        calculatePath(); // 처음 켰을 때 기본 경로 탐색
+    </script>
+</body>
+</html>
