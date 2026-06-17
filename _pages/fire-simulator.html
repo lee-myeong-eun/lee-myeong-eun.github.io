@@ -160,16 +160,25 @@ permalink: /fire-simulator/
             animation: pulse-fire 1s infinite alternate;
         }
 
-        .zone.blue-flow {
+        .evac-path {
+            fill: none;
             stroke: var(--path-color);
-            filter: drop-shadow(0 0 12px var(--path-color));
-            fill: rgba(59, 130, 246, 0.05);
-            stroke-dasharray: 20, 15;
-            animation: flow-path 1s linear infinite;
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 10px var(--path-color));
+            stroke-dasharray: 10, 10;
+            animation: flow-line 0.8s linear infinite;
+            opacity: 1;
+            transition: opacity 0.3s;
+            pointer-events: none;
         }
 
-        @keyframes flow-path {
-            from { stroke-dashoffset: 35; }
+        .evac-path.hidden {
+            opacity: 0;
+            animation: none;
+        }
+
+        @keyframes flow-line {
+            from { stroke-dashoffset: 20; }
             to { stroke-dashoffset: 0; }
         }
 
@@ -329,25 +338,24 @@ permalink: /fire-simulator/
             
             <div class="plan-container">
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <!-- Evacuation Path (Hidden by default) -->
+                    <path id="evac-path" class="evac-path hidden" d="M 15 72.5 L 95 72.5" />
+
                     <!-- Corridor -->
-                    <rect id="zone-corridor" class="zone idle" x="10" y="10" width="30" height="70" onclick="triggerFire('corridor')" />
-                    <text class="zone-label" x="12" y="15">CORRIDOR</text>
+                    <rect id="zone-corridor" class="zone idle" x="10" y="60" width="80" height="25" onclick="triggerFire('corridor')" />
+                    <text class="zone-label" x="12" y="64">CORRIDOR</text>
                     
                     <!-- Room 1 -->
-                    <rect id="zone-room1" class="zone idle" x="45" y="10" width="45" height="20" onclick="triggerFire('room1')" />
-                    <text class="zone-label" x="47" y="15">ROOM 1</text>
+                    <rect id="zone-room1" class="zone idle" x="10" y="10" width="35" height="40" onclick="triggerFire('room1')" />
+                    <text class="zone-label" x="12" y="14">ROOM 1</text>
 
                     <!-- Room 2 -->
-                    <rect id="zone-room2" class="zone idle" x="45" y="35" width="45" height="20" onclick="triggerFire('room2')" />
-                    <text class="zone-label" x="47" y="40">ROOM 2</text>
-
-                    <!-- Room 3 -->
-                    <rect id="zone-room3" class="zone idle" x="45" y="60" width="45" height="20" onclick="triggerFire('room3')" />
-                    <text class="zone-label" x="47" y="65">ROOM 3</text>
+                    <rect id="zone-room2" class="zone idle" x="55" y="10" width="35" height="40" onclick="triggerFire('room2')" />
+                    <text class="zone-label" x="57" y="14">ROOM 2</text>
 
                     <!-- Exit -->
-                    <rect id="zone-exit" x="10" y="85" width="30" height="10" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="2" style="transition: all 0.3s;" />
-                    <text id="text-exit" class="exit-sign" x="12" y="92" style="transition: all 0.3s;">EXIT</text>
+                    <rect id="zone-exit" x="90" y="60" width="10" height="25" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="2" style="transition: all 0.3s;" />
+                    <text id="text-exit" class="exit-sign" x="85" y="73" style="transition: all 0.3s;">EXIT ➔</text>
                 </svg>
             </div>
         </div>
@@ -444,7 +452,7 @@ permalink: /fire-simulator/
             playBuzzer();
 
             // Reset all to green first
-            const zones = ['corridor', 'room1', 'room2', 'room3'];
+            const zones = ['corridor', 'room1', 'room2'];
             zones.forEach(z => {
                 const el = document.getElementById(`zone-${z}`);
                 el.className.baseVal = 'zone green'; // SVG 클래스 제어
@@ -469,7 +477,6 @@ permalink: /fire-simulator/
             const zoneNames = {
                 'room1': '1번방 화재 감지',
                 'room2': '2번방 화재 감지',
-                'room3': '3번방 화재 감지',
                 'corridor': '복도 화재 감지'
             };
 
@@ -478,11 +485,17 @@ permalink: /fire-simulator/
             // Pathfinding Logic
             if (zoneId === 'corridor') {
                 lcdSub.textContent = 'WARNING: 주 대피로 차단!';
-                // 복도가 불타면 대피 경로 없음. 방들은 안전(초록)하게 대기.
+                document.getElementById('evac-path').classList.add('hidden');
             } else {
                 lcdSub.textContent = '안전 경로로 대피하세요';
-                // 방에서 불이 났으므로, 다른 안전한 방들 -> 복도 -> 출구 로의 경로가 파란색으로 흐름
-                document.getElementById('zone-corridor').className.baseVal = 'zone blue-flow';
+                const pathEl = document.getElementById('evac-path');
+                pathEl.classList.remove('hidden');
+                
+                if (zoneId === 'room1') {
+                    pathEl.setAttribute('d', 'M 72.5 30 L 72.5 72.5 L 95 72.5');
+                } else if (zoneId === 'room2') {
+                    pathEl.setAttribute('d', 'M 27.5 30 L 27.5 72.5 L 95 72.5');
+                }
             }
         }
 
@@ -490,11 +503,12 @@ permalink: /fire-simulator/
             isFireActive = false;
             
             // Reset SVG classes
-            const zones = ['corridor', 'room1', 'room2', 'room3'];
+            const zones = ['corridor', 'room1', 'room2'];
             zones.forEach(z => {
                 const el = document.getElementById(`zone-${z}`);
                 el.className.baseVal = 'zone idle';
             });
+            document.getElementById('evac-path').classList.add('hidden');
             document.getElementById('zone-exit').style.stroke = 'rgba(255,255,255,0.2)';
             document.getElementById('zone-exit').style.filter = 'none';
             document.getElementById('zone-exit').style.fill = 'transparent';
