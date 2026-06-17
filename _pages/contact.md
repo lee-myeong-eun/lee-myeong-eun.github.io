@@ -22,7 +22,7 @@ permalink: /contact/
         <!-- Email input-->
         <div class="form-group mb-4">
             <label class="font-weight-bold text-light small" for="email">✉️ 회신 이메일 (E-mail)</label>
-            <input id="email" name="email" type="email" placeholder="name@example.com" class="form-control dark-input" required>
+            <input id="email" name="email" type="email" placeholder="답장 받으실 본인의 이메일을 입력해 주세요 (예: name@example.com)" class="form-control dark-input" required>
         </div>
         <!-- Message body -->
         <div class="form-group mb-4">
