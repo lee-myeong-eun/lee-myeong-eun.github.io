@@ -128,35 +128,41 @@ permalink: /fire-simulator/
         }
 
         .zone {
-            fill: rgba(31, 41, 55, 0.6);
-            stroke-width: 4px;
-            stroke: rgba(255, 255, 255, 0.1);
-            transition: stroke 0.3s, fill 0.3s;
+            fill: transparent;
+            stroke-width: 2px;
+            stroke: rgba(255, 255, 255, 0.2);
+            transition: stroke 0.3s, fill 0.3s, filter 0.3s;
             cursor: pointer;
         }
 
         .zone:hover {
-            fill: rgba(56, 189, 248, 0.1);
-            stroke: rgba(56, 189, 248, 0.5);
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: rgba(255, 255, 255, 0.05);
         }
 
         /* LED States */
+        .zone.idle {
+            stroke: rgba(255, 255, 255, 0.2);
+            filter: none;
+            fill: transparent;
+        }
+
         .zone.green {
             stroke: var(--safe-color);
-            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+            filter: drop-shadow(0 0 10px var(--safe-color));
             fill: rgba(16, 185, 129, 0.05);
         }
 
         .zone.red {
             stroke: var(--fire-color);
-            filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8));
-            fill: rgba(239, 68, 68, 0.2);
+            filter: drop-shadow(0 0 15px var(--fire-color));
+            fill: rgba(239, 68, 68, 0.1);
             animation: pulse-fire 1s infinite alternate;
         }
 
         .zone.blue-flow {
             stroke: var(--path-color);
-            filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8));
+            filter: drop-shadow(0 0 12px var(--path-color));
             fill: rgba(59, 130, 246, 0.05);
             stroke-dasharray: 20, 15;
             animation: flow-path 1s linear infinite;
@@ -174,12 +180,9 @@ permalink: /fire-simulator/
 
         .zone-label {
             font-family: 'Orbitron', sans-serif;
-            fill: #94a3b8;
-            font-size: 1.2rem;
-            font-weight: bold;
+            fill: rgba(255,255,255,0.4);
+            font-size: 3px;
             pointer-events: none;
-            text-anchor: middle;
-            dominant-baseline: middle;
         }
         
         .zone.red + .zone-label {
@@ -188,13 +191,10 @@ permalink: /fire-simulator/
         }
 
         .exit-sign {
-            fill: var(--safe-color);
+            fill: rgba(255,255,255,0.4);
             font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            text-anchor: middle;
-            dominant-baseline: middle;
-            filter: drop-shadow(0 0 10px var(--safe-color));
+            font-size: 4px;
+            pointer-events: none;
         }
 
         /* 우측 대시보드 영역 */
@@ -330,24 +330,24 @@ permalink: /fire-simulator/
             <div class="plan-container">
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none">
                     <!-- Corridor -->
-                    <rect id="zone-corridor" class="zone green" x="10" y="10" width="30" height="70" onclick="triggerFire('corridor')" />
-                    <text class="zone-label" x="25" y="45">CORRIDOR</text>
+                    <rect id="zone-corridor" class="zone idle" x="10" y="10" width="30" height="70" onclick="triggerFire('corridor')" />
+                    <text class="zone-label" x="12" y="15">CORRIDOR</text>
                     
                     <!-- Room 1 -->
-                    <rect id="zone-room1" class="zone green" x="45" y="10" width="45" height="20" onclick="triggerFire('room1')" />
-                    <text class="zone-label" x="67.5" y="20">ROOM 1</text>
+                    <rect id="zone-room1" class="zone idle" x="45" y="10" width="45" height="20" onclick="triggerFire('room1')" />
+                    <text class="zone-label" x="47" y="15">ROOM 1</text>
 
                     <!-- Room 2 -->
-                    <rect id="zone-room2" class="zone green" x="45" y="35" width="45" height="20" onclick="triggerFire('room2')" />
-                    <text class="zone-label" x="67.5" y="45">ROOM 2</text>
+                    <rect id="zone-room2" class="zone idle" x="45" y="35" width="45" height="20" onclick="triggerFire('room2')" />
+                    <text class="zone-label" x="47" y="40">ROOM 2</text>
 
                     <!-- Room 3 -->
-                    <rect id="zone-room3" class="zone green" x="45" y="60" width="45" height="20" onclick="triggerFire('room3')" />
-                    <text class="zone-label" x="67.5" y="70">ROOM 3</text>
+                    <rect id="zone-room3" class="zone idle" x="45" y="60" width="45" height="20" onclick="triggerFire('room3')" />
+                    <text class="zone-label" x="47" y="65">ROOM 3</text>
 
                     <!-- Exit -->
-                    <rect x="10" y="85" width="30" height="10" fill="rgba(16, 185, 129, 0.2)" stroke="var(--safe-color)" stroke-width="2" />
-                    <text class="exit-sign" x="25" y="90">EXIT</text>
+                    <rect id="zone-exit" x="10" y="85" width="30" height="10" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="2" style="transition: all 0.3s;" />
+                    <text id="text-exit" class="exit-sign" x="12" y="92" style="transition: all 0.3s;">EXIT</text>
                 </svg>
             </div>
         </div>
@@ -450,6 +450,13 @@ permalink: /fire-simulator/
                 el.className.baseVal = 'zone green'; // SVG 클래스 제어
             });
 
+            // Set exit active
+            document.getElementById('zone-exit').style.stroke = 'var(--safe-color)';
+            document.getElementById('zone-exit').style.filter = 'drop-shadow(0 0 10px var(--safe-color))';
+            document.getElementById('zone-exit').style.fill = 'rgba(16, 185, 129, 0.1)';
+            document.getElementById('text-exit').style.fill = 'var(--safe-color)';
+            document.getElementById('text-exit').style.filter = 'drop-shadow(0 0 5px var(--safe-color))';
+
             // Set Fire Zone
             const fireZoneEl = document.getElementById(`zone-${zoneId}`);
             fireZoneEl.className.baseVal = 'zone red';
@@ -486,8 +493,13 @@ permalink: /fire-simulator/
             const zones = ['corridor', 'room1', 'room2', 'room3'];
             zones.forEach(z => {
                 const el = document.getElementById(`zone-${z}`);
-                el.className.baseVal = 'zone green';
+                el.className.baseVal = 'zone idle';
             });
+            document.getElementById('zone-exit').style.stroke = 'rgba(255,255,255,0.2)';
+            document.getElementById('zone-exit').style.filter = 'none';
+            document.getElementById('zone-exit').style.fill = 'transparent';
+            document.getElementById('text-exit').style.fill = 'rgba(255,255,255,0.4)';
+            document.getElementById('text-exit').style.filter = 'none';
 
             // Reset LCD
             const lcdText = document.getElementById('lcd-display');
