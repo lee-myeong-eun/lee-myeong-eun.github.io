@@ -12,7 +12,7 @@ permalink: /contact/
       <p class="text-muted small">아래 폼을 작성해 주시면 확인 후 입력해주신 메일 주소로 신속하게 회신해 드리겠습니다.</p>
       
       <form class="mt-4" action="https://api.web3forms.com/submit" method="post">
-        <input type="hidden" name="access_key" value="1375aae5c410939d449a4d78e5ceaafd">
+        <input type="hidden" name="access_key" value="1375aae5-c410-939d-449a-4d78e5ceaafd">
         <input type="hidden" name="subject" value="[포트폴리오] 새로운 문의가 도착했습니다!">
         <!-- Name input-->
         <div class="form-group mb-4">
