@@ -194,11 +194,11 @@ permalink: /ezsafe-simulator/
         /* Motion Control UI */
         .motion-control {
             margin-top: 10px;
-            display: grid;
-            grid-template-columns: auto 34px 1fr auto;
+            display: flex;
             align-items: center;
+            justify-content: center;
             width: 100%;
-            gap: 6px;
+            gap: 5px;
             font-size: 0.75rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -232,10 +232,9 @@ permalink: /ezsafe-simulator/
         input:checked + .toggle-slider { background-color: var(--success-color); }
         input:checked + .toggle-slider:before { transform: translateX(16px); }
 
-        .motion-state { text-align: left; }
         .motion-state.normal { color: var(--success-color); font-weight: bold; font-size: 0.75rem; }
         .motion-state.stopped { color: var(--danger-color); font-weight: bold; font-size: 0.65rem; letter-spacing: -0.5px; animation: pulse-text 1s infinite alternate; }
-        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; font-size: 0.7rem; letter-spacing: -0.5px; text-align: right; }
+        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; font-size: 0.7rem; letter-spacing: -0.5px; }
         .motion-timer.hidden { display: none; }
 
         .slot-label {
