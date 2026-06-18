@@ -185,6 +185,49 @@ permalink: /ezsafe-simulator/
             color: var(--danger-color);
         }
 
+        /* Motion Control UI */
+        .motion-control {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 10px;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--danger-color);
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 14px; width: 14px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider { background-color: var(--success-color); }
+        input:checked + .toggle-slider:before { transform: translateX(20px); }
+
+        .motion-state.normal { color: var(--success-color); font-weight: bold; }
+        .motion-state.stopped { color: var(--danger-color); font-weight: bold; animation: pulse-text 1s infinite alternate; }
+        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; }
+        .motion-timer.hidden { display: none; }
+
         .slot-label {
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -549,6 +592,15 @@ permalink: /ezsafe-simulator/
                         </div>
                     </div>
                     <div class="worker-status" id="status-w1">[WARNING: 안전모, 조끼 미착용]</div>
+                    <div class="motion-control">
+                        <label>Motion:</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="motion-toggle-w1" checked onchange="toggleMotion('w1', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span id="motion-state-w1" class="motion-state normal">Normal</span>
+                        <div id="motion-timer-w1" class="motion-timer hidden">(10s)</div>
+                    </div>
                 </div>
 
                 <!-- 작업자 2 -->
@@ -569,6 +621,15 @@ permalink: /ezsafe-simulator/
                         </div>
                     </div>
                     <div class="worker-status" id="status-w2">[WARNING: 안전모, 조끼 미착용]</div>
+                    <div class="motion-control">
+                        <label>Motion:</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="motion-toggle-w2" checked onchange="toggleMotion('w2', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span id="motion-state-w2" class="motion-state normal">Normal</span>
+                        <div id="motion-timer-w2" class="motion-timer hidden">(10s)</div>
+                    </div>
                 </div>
             </div>
 
@@ -839,14 +900,18 @@ permalink: /ezsafe-simulator/
             
             display.textContent = `${rssi} dBm`;
 
+            // Distance danger check
             const isDanger = rssi <= -60;
             if(workerId === '1') isW1Danger = isDanger;
             else isW2Danger = isDanger;
 
-            if (isDanger) {
-                display.classList.add('danger');
+            // Merge distance danger and motion danger
+            const isMotionDanger = motionCountdowns[`w${workerId}`] <= 0 && document.getElementById(`motion-toggle-w${workerId}`).checked === false;
+            const combinedDanger = isDanger || isMotionDanger;
+
+            if (combinedDanger) {
+                if (isDanger) display.classList.add('danger');
                 dot.classList.add('danger');
-                
                 wave.style.left = dot.style.left;
                 wave.style.top = dot.style.top;
                 wave.classList.add('active');
