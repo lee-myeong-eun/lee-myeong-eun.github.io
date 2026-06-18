@@ -417,47 +417,28 @@ permalink: /fire-simulator/
             </div>
             
             <div class="plan-container">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <svg viewBox="0 0 100 115" preserveAspectRatio="none">
                     <!-- Evacuation Path (Hidden by default) -->
                     <path id="evac-path-base" class="evac-path-base hidden" d="" />
                     <path id="evac-path-flow" class="evac-path-flow hidden" d="" />
 
-                    <!-- Corridors (Invisible clickable zones) -->
-                    <path id="evac-path-base" class="evac-path-base hidden" d="" />
-                    <path id="evac-path-flow" class="evac-path-flow hidden" d="" />
-
-                    <!-- Corridors (Invisible clickable zones) -->
-                    <rect id="zone-corr-top" class="zone corridor idle" x="15" y="5" width="70" height="10" />
-                    <text class="zone-label" x="50" y="11" text-anchor="middle" style="font-size: 3px;">TOP CORRIDOR</text>
-
-                    <rect id="zone-corr-bottom" class="zone corridor idle" x="15" y="85" width="70" height="10" />
-                    <text class="zone-label" x="50" y="91" text-anchor="middle" style="font-size: 3px;">BOTTOM CORRIDOR</text>
-
-                    <rect id="zone-corr-left" class="zone corridor idle" x="5" y="5" width="10" height="90" />
-                    <text class="zone-label" transform="rotate(-90 10 50)" x="10" y="51" text-anchor="middle" style="font-size: 3px;">LEFT CORRIDOR</text>
-
-                    <rect id="zone-corr-right" class="zone corridor idle" x="85" y="5" width="10" height="90" />
-                    <text class="zone-label" transform="rotate(90 90 50)" x="90" y="49" text-anchor="middle" style="font-size: 3px;">RIGHT CORRIDOR</text>
-
-                    <rect id="zone-corr-mid-h" class="zone corridor idle" x="15" y="45" width="70" height="10" />
-                    <text class="zone-label" x="50" y="51" text-anchor="middle" style="font-size: 3px;">CENTER HORIZONTAL</text>
-                    
-                    <rect id="zone-corr-mid-v" class="zone corridor idle" x="45" y="15" width="10" height="70" />
-                    <text class="zone-label" transform="rotate(90 50 40)" x="50" y="39" text-anchor="middle" style="font-size: 3px;">CENTER VERTICAL</text>
+                    <!-- Corridor (Main) -->
+                    <rect id="zone-corr" class="zone corridor idle" x="5" y="50" width="90" height="15" />
+                    <text class="zone-label" x="50" y="59" text-anchor="middle" style="font-size: 5px; font-weight: 900;">CORRIDOR (MAIN)</text>
 
                     <!-- Rooms -->
-                    <rect id="zone-room1" class="zone idle" x="15" y="15" width="30" height="30" />
-                    <text class="zone-label" x="20" y="30">ROOM 1</text>
+                    <rect id="zone-room1" class="zone idle" x="5" y="5" width="42" height="45" />
+                    <text class="zone-label" x="26" y="29" text-anchor="middle" style="font-size: 6px; font-weight: 900;">ROOM 1</text>
 
-                    <rect id="zone-room2" class="zone idle" x="55" y="15" width="30" height="30" />
-                    <text class="zone-label" x="60" y="30">ROOM 2</text>
+                    <rect id="zone-room2" class="zone idle" x="53" y="5" width="42" height="45" />
+                    <text class="zone-label" x="74" y="29" text-anchor="middle" style="font-size: 6px; font-weight: 900;">ROOM 2</text>
                     
-                    <rect id="zone-room3" class="zone idle" x="15" y="55" width="30" height="30" />
-                    <text class="zone-label" x="20" y="70">ROOM 3</text>
+                    <rect id="zone-room3" class="zone idle" x="5" y="65" width="42" height="45" />
+                    <text class="zone-label" x="26" y="89" text-anchor="middle" style="font-size: 6px; font-weight: 900;">ROOM 3</text>
 
                     <!-- Exit -->
-                    <rect id="zone-exit" x="85" y="85" width="10" height="10" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
-                    <text id="text-exit" class="exit-sign" x="86" y="92" style="font-size: 3px; transition: all 0.3s;">EXIT ➔</text>
+                    <rect id="zone-exit" x="85" y="90" width="10" height="10" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
+                    <text id="text-exit" class="exit-sign" x="90" y="97" text-anchor="middle" style="font-size: 4px; font-weight: 900; transition: all 0.3s;">EXIT ➔</text>
                 </svg>
             </div>
         </div>
@@ -568,47 +549,20 @@ permalink: /fire-simulator/
         }
 
         const zonesDef = {
-            'room1': {x: 15, y: 15, w: 30, h: 30},
-            'room2': {x: 55, y: 15, w: 30, h: 30},
-            'room3': {x: 15, y: 55, w: 30, h: 30},
-            'corr-top': {x: 15, y: 5, w: 70, h: 10},
-            'corr-bottom': {x: 15, y: 85, w: 70, h: 10},
-            'corr-left': {x: 5, y: 5, w: 10, h: 90},
-            'corr-right': {x: 85, y: 5, w: 10, h: 90},
-            'corr-mid-h': {x: 15, y: 45, w: 70, h: 10},
-            'corr-mid-v': {x: 45, y: 15, w: 10, h: 70}
+            'room1': {x: 5, y: 5, w: 42, h: 45},
+            'room2': {x: 53, y: 5, w: 42, h: 45},
+            'room3': {x: 5, y: 65, w: 42, h: 45},
+            'corr': {x: 5, y: 50, w: 90, h: 15}
         };
 
         const NODES = {
-            '10,10': ['30,10', '10,30'],
-            '30,10': ['10,10', '50,10', '30,30'],
-            '50,10': ['30,10', '70,10', '50,30'],
-            '70,10': ['50,10', '90,10', '70,30'],
-            '90,10': ['70,10', '90,30'],
-            
-            '10,30': ['10,10', '10,50', '30,30'],
-            '30,30': ['30,10', '30,50', '10,30', '50,30'],
-            '50,30': ['50,10', '50,50', '30,30', '70,30'],
-            '70,30': ['70,10', '70,50', '50,30', '90,30'],
-            '90,30': ['90,10', '90,50', '70,30'],
-            
-            '10,50': ['10,30', '10,70', '30,50'],
-            '30,50': ['30,30', '30,70', '10,50', '50,50'],
-            '50,50': ['50,30', '50,70', '30,50', '70,50'],
-            '70,50': ['70,30', '70,70', '50,50', '90,50'],
-            '90,50': ['90,30', '90,70', '70,50'],
-            
-            '10,70': ['10,50', '10,90', '30,70'],
-            '30,70': ['30,50', '30,90', '10,70', '50,70'],
-            '50,70': ['50,50', '50,90', '30,70', '70,70'],
-            '70,70': ['70,50', '70,90', '50,70', '90,70'],
-            '90,70': ['90,50', '90,90', '70,70'],
-
-            '10,90': ['10,70', '30,90'],
-            '30,90': ['10,90', '50,90', '30,70'],
-            '50,90': ['30,90', '70,90', '50,70'],
-            '70,90': ['50,90', '90,90', '70,70'],
-            '90,90': ['70,90', '90,70']
+            '26,27': ['26,57'],
+            '74,27': ['74,57'],
+            '26,87': ['26,57'],
+            '26,57': ['26,27', '26,87', '74,57'],
+            '74,57': ['74,27', '26,57', '90,57'],
+            '90,57': ['74,57', '90,95'],
+            '90,95': ['90,57']
         };
 
         function isNodeInZone(nx, ny, zoneId) {
@@ -669,7 +623,7 @@ permalink: /fire-simulator/
             if(sensorId === 'room1') targetZones = ['room1'];
             if(sensorId === 'room2') targetZones = ['room2'];
             if(sensorId === 'room3') targetZones = ['room3'];
-            if(sensorId === 'corr') targetZones = ['corr-mid-h', 'corr-mid-v'];
+            if(sensorId === 'corr') targetZones = ['corr'];
 
             if (val >= THRESHOLD) {
                 slider.classList.add('danger');
@@ -684,8 +638,7 @@ permalink: /fire-simulator/
 
         function recalculateState() {
             const allZones = [
-                'corr-top', 'corr-bottom', 'corr-left', 'corr-right', 'corr-mid-h', 'corr-mid-v',
-                'room1', 'room2', 'room3'
+                'corr', 'room1', 'room2', 'room3'
             ];
             
             let hasAnyFire = activeFireZones.size > 0;
@@ -729,15 +682,15 @@ permalink: /fire-simulator/
 
                 let dPath = "";
                 const rooms = [
-                    {id: 'room1', node: '30,30'},
-                    {id: 'room2', node: '70,30'},
-                    {id: 'room3', node: '30,70'}
+                    {id: 'room1', node: '26,27'},
+                    {id: 'room2', node: '74,27'},
+                    {id: 'room3', node: '26,87'}
                 ];
 
                 let allBlocked = true;
                 rooms.forEach(room => {
                     if(activeFireZones.has(room.id)) return;
-                    const path = findShortestPath(room.node, '90,90');
+                    const path = findShortestPath(room.node, '90,95');
                     if(path) {
                         allBlocked = false;
                         let pathString = `M ${path[0].replace(',', ' ')}`;
