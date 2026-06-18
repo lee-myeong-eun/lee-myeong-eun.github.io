@@ -130,11 +130,11 @@ permalink: /fire-simulator/
 
         .zone {
             fill: transparent;
-            stroke-width: 0.5px;
-            stroke: rgba(255, 255, 255, 0.15);
+            stroke-width: 0.3px;
+            stroke: rgba(255, 255, 255, 0.2);
             transition: stroke 0.3s, fill 0.3s, filter 0.3s;
             cursor: pointer;
-            rx: 2px;
+            rx: 1px;
         }
 
         .zone:hover {
@@ -145,23 +145,47 @@ permalink: /fire-simulator/
 
         /* LED States */
         .zone.idle {
-            stroke: rgba(255, 255, 255, 0.15);
+            stroke: rgba(255, 255, 255, 0.2);
             filter: none;
             fill: transparent;
         }
 
         .zone.green {
             stroke: var(--safe-color);
-            stroke-width: 1px;
-            filter: drop-shadow(0 0 10px var(--safe-color));
+            stroke-width: 0.5px;
+            filter: drop-shadow(0 0 8px var(--safe-color));
             fill: rgba(16, 185, 129, 0.05);
         }
 
         .zone.red {
             stroke: var(--fire-color);
-            stroke-width: 1.5px;
-            filter: drop-shadow(0 0 15px var(--fire-color));
+            stroke-width: 1px;
+            filter: drop-shadow(0 0 12px var(--fire-color));
             fill: rgba(239, 68, 68, 0.1);
+            animation: pulse-fire 1s infinite alternate;
+        }
+
+        .zone.corridor {
+            stroke: none !important;
+        }
+        
+        .zone.corridor:hover {
+            stroke: none !important;
+            fill: rgba(255, 255, 255, 0.05);
+        }
+        
+        .zone.corridor.idle {
+            fill: transparent;
+        }
+        
+        .zone.corridor.green {
+            fill: rgba(16, 185, 129, 0.05);
+            filter: none;
+        }
+        
+        .zone.corridor.red {
+            fill: rgba(239, 68, 68, 0.15);
+            filter: drop-shadow(0 0 10px var(--fire-color));
             animation: pulse-fire 1s infinite alternate;
         }
 
@@ -361,12 +385,12 @@ permalink: /fire-simulator/
                     <path id="evac-path-flow" class="evac-path-flow hidden" d="" />
 
                     <!-- Corridors (Clickable to trigger fire) -->
-                    <rect id="zone-corr-top" class="zone idle" x="15" y="5" width="70" height="10" onclick="triggerFire('corr-top')" />
-                    <rect id="zone-corr-bottom" class="zone idle" x="15" y="85" width="70" height="10" onclick="triggerFire('corr-bottom')" />
-                    <rect id="zone-corr-left" class="zone idle" x="5" y="5" width="10" height="90" onclick="triggerFire('corr-left')" />
-                    <rect id="zone-corr-right" class="zone idle" x="85" y="5" width="10" height="90" onclick="triggerFire('corr-right')" />
-                    <rect id="zone-corr-mid-h" class="zone idle" x="15" y="45" width="70" height="10" onclick="triggerFire('corr-mid-h')" />
-                    <rect id="zone-corr-mid-v" class="zone idle" x="45" y="15" width="10" height="70" onclick="triggerFire('corr-mid-v')" />
+                    <rect id="zone-corr-top" class="zone corridor idle" x="15" y="5" width="70" height="10" onclick="triggerFire('corr-top')" />
+                    <rect id="zone-corr-bottom" class="zone corridor idle" x="15" y="85" width="70" height="10" onclick="triggerFire('corr-bottom')" />
+                    <rect id="zone-corr-left" class="zone corridor idle" x="5" y="5" width="10" height="90" onclick="triggerFire('corr-left')" />
+                    <rect id="zone-corr-right" class="zone corridor idle" x="85" y="5" width="10" height="90" onclick="triggerFire('corr-right')" />
+                    <rect id="zone-corr-mid-h" class="zone corridor idle" x="15" y="45" width="70" height="10" onclick="triggerFire('corr-mid-h')" />
+                    <rect id="zone-corr-mid-v" class="zone corridor idle" x="45" y="15" width="10" height="70" onclick="triggerFire('corr-mid-v')" />
 
                     <!-- Rooms -->
                     <rect id="zone-room1" class="zone idle" x="15" y="15" width="30" height="30" onclick="triggerFire('room1')" />
@@ -545,7 +569,9 @@ permalink: /fire-simulator/
             
             zones.forEach(z => {
                 const el = document.getElementById(`zone-${z}`);
-                if (el) el.className.baseVal = 'zone green';
+                if (el) {
+                    el.className.baseVal = z.startsWith('corr') ? 'zone corridor green' : 'zone green';
+                }
             });
 
             // Set exit active
@@ -557,7 +583,7 @@ permalink: /fire-simulator/
 
             // Set Fire Zone
             const fireZoneEl = document.getElementById(`zone-${zoneId}`);
-            fireZoneEl.className.baseVal = 'zone red';
+            fireZoneEl.className.baseVal = zoneId.startsWith('corr') ? 'zone corridor red' : 'zone red';
 
             // LCD Text Mapping
             const lcdText = document.getElementById('lcd-display');
@@ -625,7 +651,9 @@ permalink: /fire-simulator/
             ];
             zones.forEach(z => {
                 const el = document.getElementById(`zone-${z}`);
-                if (el) el.className.baseVal = 'zone idle';
+                if (el) {
+                    el.className.baseVal = z.startsWith('corr') ? 'zone corridor idle' : 'zone idle';
+                }
             });
             document.getElementById('evac-path-base').classList.add('hidden');
             document.getElementById('evac-path-flow').classList.add('hidden');
