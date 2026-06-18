@@ -10,7 +10,7 @@
     display: flex; align-items: center; gap: 10px;
   }
   .in-page-search .input-group {
-    width: 380px;
+    width: 250px;
   }
   .in-page-search input {
     background: var(--bg-card, #fff);
@@ -88,12 +88,7 @@
             <button class="btn btn-outline-secondary" type="button" id="pageSearchClear" style="border-left: 0;"><i class="fa fa-times"></i></button>
           </div>
         </div>
-
-        <button class="btn btn-sm btn-primary shadow-sm" id="pageSearchSubmit" title="Search / Next" style="background-color: #3b82f6; border-color: #3b82f6; border-radius: 6px; padding: 0.35rem 0.8rem; margin-left: 5px;">
-          <i class="fa fa-arrow-right"></i>
-        </button>
-
-        <span id="pageSearchResultCount" style="margin-left: 5px;"></span>
+        <span id="pageSearchResultCount"></span>
         <div style="display:flex; gap: 4px;">
           <button class="btn search-nav-btn shadow-sm" id="pageSearchPrev" title="Previous"><i class="fa fa-chevron-up"></i></button>
           <button class="btn search-nav-btn shadow-sm" id="pageSearchNext" title="Next"><i class="fa fa-chevron-down"></i></button>
@@ -121,7 +116,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const searchInput = document.getElementById("pageSearchInput");
-      const submitBtn = document.getElementById("pageSearchSubmit");
       const clearBtn = document.getElementById("pageSearchClear");
       const prevBtn = document.getElementById("pageSearchPrev");
       const nextBtn = document.getElementById("pageSearchNext");
@@ -195,15 +189,6 @@
             currentIndex = (currentIndex + 1) % results.length;
             updateNav();
           }
-        }
-      });
-
-      submitBtn.addEventListener("click", function() {
-        if(results.length > 0) {
-          currentIndex = (currentIndex + 1) % results.length;
-          updateNav();
-        } else {
-          performSearch();
         }
       });
 
