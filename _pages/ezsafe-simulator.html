@@ -682,10 +682,10 @@ permalink: /ezsafe-simulator/
                     <div class="motion-control">
                         <label>Motion:</label>
                         <label class="toggle-switch">
-                            <input type="checkbox" id="motion-toggle-w1" checked onchange="toggleMotion('w1', this.checked)">
+                            <input type="checkbox" id="motion-toggle-w1" onchange="toggleMotion('w1', this.checked)">
                             <span class="toggle-slider"></span>
                         </label>
-                        <span id="motion-state-w1" class="motion-state normal">Normal</span>
+                        <span id="motion-state-w1" class="motion-state" style="color: #64748b;">OFF</span>
                         <div id="motion-timer-w1" class="motion-timer hidden">(10s)</div>
                     </div>
                 </div>
@@ -711,10 +711,10 @@ permalink: /ezsafe-simulator/
                     <div class="motion-control">
                         <label>Motion:</label>
                         <label class="toggle-switch">
-                            <input type="checkbox" id="motion-toggle-w2" checked onchange="toggleMotion('w2', this.checked)">
+                            <input type="checkbox" id="motion-toggle-w2" onchange="toggleMotion('w2', this.checked)">
                             <span class="toggle-slider"></span>
                         </label>
-                        <span id="motion-state-w2" class="motion-state normal">Normal</span>
+                        <span id="motion-state-w2" class="motion-state" style="color: #64748b;">OFF</span>
                         <div id="motion-timer-w2" class="motion-timer hidden">(10s)</div>
                     </div>
                 </div>
@@ -1044,7 +1044,7 @@ permalink: /ezsafe-simulator/
         /* =========================================
            4. Motion Detection Logic (Tracking actual movement)
            ========================================= */
-        const motionActive = { '1': true, '2': true };
+        const motionActive = { '1': false, '2': false };
         const motionCountdowns = { '1': 10, '2': 10 };
         const motionIntervals = { '1': null, '2': null };
         let audioCtx = null;
