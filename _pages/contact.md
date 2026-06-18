@@ -14,6 +14,8 @@ permalink: /contact/
       <form class="mt-4" action="https://formsubmit.co/myeongeun.kr@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="[포트폴리오] 새로운 문의가 도착했습니다!">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://lee-myeong-eun.github.io/contact/">
+        <input type="hidden" name="_captcha" value="false">
         <!-- Name input-->
         <div class="form-group mb-4">
             <label class="font-weight-bold text-light small" for="name">✍️ 성함 (Name)</label>
