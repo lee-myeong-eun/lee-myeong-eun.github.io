@@ -446,9 +446,12 @@ permalink: /fire-simulator/
                     <rect id="zone-corr" class="zone corridor idle" x="5" y="65" width="90" height="20" />
                     <text class="zone-label" x="50" y="76" text-anchor="middle" style="font-size: 4px; font-weight: 500;">CORRIDOR (MAIN)</text>
 
-                    <!-- Exit -->
-                    <rect id="zone-exit" x="85" y="92" width="10" height="8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
-                    <text id="text-exit" class="exit-sign" x="90" y="97.5" text-anchor="middle" style="font-size: 3px; font-weight: 500; transition: all 0.3s;">EXIT ➔</text>
+                    <!-- Exits -->
+                    <rect id="zone-exit-left" x="5" y="92" width="10" height="8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
+                    <text id="text-exit-left" class="exit-sign" x="10" y="97.5" text-anchor="middle" style="font-size: 3px; font-weight: 500; transition: all 0.3s;">⬅ EXIT</text>
+
+                    <rect id="zone-exit-right" x="85" y="92" width="10" height="8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
+                    <text id="text-exit-right" class="exit-sign" x="90" y="97.5" text-anchor="middle" style="font-size: 3px; font-weight: 500; transition: all 0.3s;">EXIT ➔</text>
                 </svg>
             </div>
         </div>
@@ -584,6 +587,10 @@ permalink: /fire-simulator/
                 if (j < Y.length - 1) addEdge(curr, `${X[i]},${Y[j+1]}`);
             }
         }
+        NODES['10,95'] = [];
+        addEdge('2,90', '10,95');
+        addEdge('18,90', '10,95');
+
         NODES['90,95'] = [];
         addEdge('82,90', '90,95');
         addEdge('98,90', '90,95');
@@ -594,14 +601,15 @@ permalink: /fire-simulator/
             return nx > z.x && nx < z.x + z.w && ny > z.y && ny < z.y + z.h;
         }
 
-        function isNodeInAnyFire(nx, ny) {
+        function isNodeInAnyFire(nx, ny, exemptZone) {
             for(let zone of activeFireZones) {
+                if(zone === exemptZone) continue;
                 if(isNodeInZone(nx, ny, zone)) return true;
             }
             return false;
         }
 
-        function findShortestPath(startNode, endNode) {
+        function findShortestPath(startNode, endNodes, exemptZone) {
             let q = [[startNode]];
             let visited = new Set([startNode]);
 
@@ -609,13 +617,13 @@ permalink: /fire-simulator/
                 let path = q.shift();
                 let curr = path[path.length - 1];
 
-                if(curr === endNode) return path;
+                if(endNodes.includes(curr)) return path;
 
                 let neighbors = NODES[curr] || [];
                 for(let n of neighbors) {
                     let [nx, ny] = n.split(',').map(Number);
                     
-                    if (isNodeInAnyFire(nx, ny)) continue;
+                    if (isNodeInAnyFire(nx, ny, exemptZone)) continue;
                     
                     let inAnyRoom = isNodeInZone(nx, ny, 'room1') || isNodeInZone(nx, ny, 'room2') || isNodeInZone(nx, ny, 'room3');
                     if (inAnyRoom && n !== startNode) continue;
@@ -623,7 +631,7 @@ permalink: /fire-simulator/
                     let [cx, cy] = curr.split(',').map(Number);
                     let mx = (cx + nx) / 2;
                     let my = (cy + ny) / 2;
-                    if (isNodeInAnyFire(mx, my) && curr !== startNode) continue;
+                    if (isNodeInAnyFire(mx, my, exemptZone) && curr !== startNode) continue;
 
                     if(!visited.has(n)) {
                         visited.add(n);
@@ -704,9 +712,13 @@ permalink: /fire-simulator/
                     lcdLoc.textContent = `화재 발생 위치: [${locStr}]`;
                 }
 
-                document.getElementById('zone-exit').style.stroke = 'var(--safe-color)';
-                document.getElementById('zone-exit').style.fill = 'rgba(16, 185, 129, 0.1)';
-                document.getElementById('text-exit').style.fill = 'var(--safe-color)';
+                document.getElementById('zone-exit-left').style.stroke = 'var(--safe-color)';
+                document.getElementById('zone-exit-left').style.fill = 'rgba(16, 185, 129, 0.1)';
+                document.getElementById('text-exit-left').style.fill = 'var(--safe-color)';
+
+                document.getElementById('zone-exit-right').style.stroke = 'var(--safe-color)';
+                document.getElementById('zone-exit-right').style.fill = 'rgba(16, 185, 129, 0.1)';
+                document.getElementById('text-exit-right').style.fill = 'var(--safe-color)';
 
                 pathBase.classList.remove('hidden');
                 pathFlow.classList.remove('hidden');
@@ -724,21 +736,15 @@ permalink: /fire-simulator/
                 let centerCount = 0;
 
                 rooms.forEach(room => {
-                    const path = findShortestPath(room.node, '90,95');
+                    const path = findShortestPath(room.node, ['10,95', '90,95'], room.id);
                     if(path) {
                         allBlocked = false;
                         
-                        // 방향성 분석: 화재 구간(복도 Y=75)을 통과할 때의 X 좌표 기준
-                        let xAtCorridor = 50; 
-                        path.forEach(p => {
-                            let [px, py] = p.split(',').map(Number);
-                            if (py === 75) xAtCorridor = px;
-                        });
+                        // 방향성 분석: 어느 비상구로 탈출했는지 확인
+                        let exitNode = path[path.length - 1];
+                        if (exitNode === '10,95') leftCount++;
+                        else rightCount++;
                         
-                        if (xAtCorridor < 50) leftCount++;
-                        else if (xAtCorridor > 50) rightCount++;
-                        else centerCount++;
-
                         let pathString = `M ${path[0].replace(',', ' ')}`;
                         for(let i=1; i<path.length; i++) {
                             pathString += ` L ${path[i].replace(',', ' ')}`;
@@ -749,10 +755,10 @@ permalink: /fire-simulator/
 
                 if (dPath.trim() !== "") {
                     // 주된 대피 방향 결정
-                    let dominantDir = '중앙';
-                    if (leftCount > rightCount && leftCount >= centerCount) dominantDir = '좌회(좌측)';
-                    else if (rightCount > leftCount && rightCount >= centerCount) dominantDir = '우측(우회)';
-                    else if (leftCount > 0 && rightCount > 0) dominantDir = '양방향(좌/우)';
+                    let dominantDir = '가장 안전한';
+                    if (leftCount > rightCount) dominantDir = '좌측 비상구 및 최단';
+                    else if (rightCount > leftCount) dominantDir = '우측 비상구 및 최단';
+                    else if (leftCount > 0 && rightCount > 0) dominantDir = '양방향(좌/우) 비상구 및 최단';
 
                     lcdSub.textContent = `${dominantDir} 최단 안전 경로로 대피하세요`;
                     pathBase.setAttribute('d', dPath);
@@ -777,9 +783,13 @@ permalink: /fire-simulator/
                 }
                 lcdSub.textContent = 'ALL SENSORS STABLE';
                 
-                document.getElementById('zone-exit').style.stroke = 'rgba(255,255,255,0.2)';
-                document.getElementById('zone-exit').style.fill = 'transparent';
-                document.getElementById('text-exit').style.fill = 'rgba(255,255,255,0.4)';
+                document.getElementById('zone-exit-left').style.stroke = 'rgba(255,255,255,0.2)';
+                document.getElementById('zone-exit-left').style.fill = 'transparent';
+                document.getElementById('text-exit-left').style.fill = 'rgba(255,255,255,0.4)';
+
+                document.getElementById('zone-exit-right').style.stroke = 'rgba(255,255,255,0.2)';
+                document.getElementById('zone-exit-right').style.fill = 'transparent';
+                document.getElementById('text-exit-right').style.fill = 'rgba(255,255,255,0.4)';
                 
                 pathBase.classList.add('hidden');
                 pathFlow.classList.add('hidden');
