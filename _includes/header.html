@@ -5,31 +5,31 @@
   {% assign header_badge = '⚡ Semiconductor & SW Expert' %}
   {% assign header_title = '이명은의 Portfolio' %}
   {% assign header_icon = '👨‍💻' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%)' %}
+  {% assign banner_class = 'banner-home' %}
   {% assign header_subtitle = '반도체융합캠퍼스 | 반도체장비소프트웨어과 | 하이테크<br />반도체 공정 장비에 지능을 불어넣는 <strong>소프트웨어 전문가</strong>로 진화 중입니다.' %}
 {% elsif current_title contains 'about' or current_url contains 'about' %}
   {% assign header_badge = '🌱 Growth & Philosophy' %}
   {% assign header_title = 'About Me' %}
   {% assign header_icon = '🚀' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(46, 16, 101, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%)' %}
+  {% assign banner_class = 'banner-about' %}
   {% assign header_subtitle = '단순한 코더를 넘어, 하드웨어와 소통하며 최적의 제어 로직을 설계하는 엔지니어로 성장하는 과정입니다.' %}
 {% elsif current_title contains 'skills' or current_url contains 'skills' %}
   {% assign header_badge = '🛠️ Tech Stack & Expertise' %}
   {% assign header_title = 'My Skills' %}
   {% assign header_icon = '💻' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(8, 145, 178, 0.85) 100%)' %}
+  {% assign banner_class = 'banner-skills' %}
   {% assign header_subtitle = 'C/C++, Python부터 Web 프론트엔드 및 하드웨어 제어까지, 제가 보유한 기술 역량과 숙련도를 소개합니다.' %}
 {% elsif current_title contains 'assignment' or current_title contains 'study' or current_url contains 'assignment' %}
   {% assign header_badge = '📚 Learning Archive' %}
   {% assign header_title = 'Study & Assignments' %}
   {% assign header_icon = '📚' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(2, 44, 34, 0.95) 0%, rgba(5, 150, 105, 0.85) 100%)' %}
+  {% assign banner_class = 'banner-study' %}
   {% assign header_subtitle = '학교 수업과 개인 프로젝트를 통해 치열하게 고민하고 구현해 낸 코드와 결과물들의 기록입니다.' %}
 {% elsif current_title contains 'contact' or current_url contains 'contact' %}
   {% assign header_badge = "📬 Let's Connect" %}
   {% assign header_title = 'Contact' %}
   {% assign header_icon = '💬' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(88, 28, 50, 0.85) 100%)' %}
+  {% assign banner_class = 'banner-contact' %}
   {% assign header_subtitle = '새로운 기회와 성장을 위한 소통을 환영합니다. 아래 폼을 통해 언제든 편하게 연락해 주세요.' %}
 {% else %}
   {% assign header_badge = '🔍 Project Details' %}
@@ -39,27 +39,48 @@
     {% assign header_title = 'Project Document' %}
   {% endif %}
   {% assign header_icon = '💡' %}
-  {% assign header_gradient = 'linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(71, 85, 105, 0.85) 100%)' %}
+  {% assign banner_class = 'banner-default' %}
   {% assign header_subtitle = '상세 구현 내용 및 코드를 확인하실 수 있습니다.' %}
 {% endif %}
 
 <style>
   .dynamic-header {
-    background: {{ header_gradient }} !important;
     animation: bannerFadeIn 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border-medium);
   }
+
+  /* --- Dynamic Gradients for Dark Mode (Default) --- */
+  .banner-home { background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%); }
+  .banner-about { background: linear-gradient(135deg, rgba(46, 16, 101, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%); }
+  .banner-skills { background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(8, 145, 178, 0.85) 100%); }
+  .banner-study { background: linear-gradient(135deg, rgba(2, 44, 34, 0.95) 0%, rgba(5, 150, 105, 0.85) 100%); }
+  /* Brighter, warmer contact in dark mode */
+  .banner-contact { background: linear-gradient(135deg, rgba(159, 18, 57, 0.85) 0%, rgba(154, 52, 18, 0.85) 100%); }
+  .banner-default { background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(71, 85, 105, 0.85) 100%); }
+
+  /* --- Dynamic Gradients for Light Mode --- */
+  body.light-mode .banner-home { background: linear-gradient(135deg, rgba(219, 234, 254, 1) 0%, rgba(191, 219, 254, 1) 100%); }
+  body.light-mode .banner-about { background: linear-gradient(135deg, rgba(233, 213, 255, 1) 0%, rgba(191, 219, 254, 1) 100%); }
+  body.light-mode .banner-skills { background: linear-gradient(135deg, rgba(224, 242, 254, 1) 0%, rgba(167, 243, 208, 1) 100%); }
+  body.light-mode .banner-study { background: linear-gradient(135deg, rgba(209, 250, 229, 1) 0%, rgba(167, 243, 208, 1) 100%); }
+  /* Very cheerful and warm contact in light mode */
+  body.light-mode .banner-contact { background: linear-gradient(135deg, rgba(254, 202, 202, 1) 0%, rgba(253, 186, 116, 1) 100%); }
+  body.light-mode .banner-default { background: linear-gradient(135deg, rgba(241, 245, 249, 1) 0%, rgba(226, 232, 240, 1) 100%); }
+
 
   /* Subtle background glow effect */
   .dynamic-header::before {
     content: '';
     position: absolute;
     top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 60%);
     animation: slowSpin 30s linear infinite;
     pointer-events: none;
+  }
+  body.light-mode .dynamic-header::before {
+    background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 60%);
   }
 
   @keyframes bannerFadeIn {
@@ -86,22 +107,57 @@
     margin-left: 8px;
     vertical-align: middle;
   }
+
+  /* Glassmorphism Panel for Ultimate Legibility */
+  .header-glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-medium);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px var(--shadow-main);
+    display: inline-block;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  /* Typography responding to Light/Dark Mode automatically */
+  .header-glass-panel .banner-title {
+    color: var(--text-heading);
+    text-shadow: 0 2px 5px var(--shadow-main);
+  }
+  .header-glass-panel .banner-subtitle {
+    color: var(--text-body);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+  }
+
+  /* Remove heavy text shadows in light mode to prevent blurry/dirty look */
+  body.light-mode .header-glass-panel .banner-title {
+    text-shadow: none;
+  }
 </style>
 
 <!-- Header -->
-<header class="py-5 mb-5 dynamic-header">
+<header class="py-5 mb-5 dynamic-header {{ banner_class }}">
   <div class="container h-100 position-relative" style="z-index: 1;">
     <div class="row h-100 align-items-center">
-      <div class="col-lg-12">
-        <!-- Premium Tech Badge -->
-        <span class="tech-badge" style="box-shadow: 0 4px 15px rgba(0,0,0,0.3);">{{ header_badge }}</span>
-        <h1 class="display-4 text-white mt-3 mb-3" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-          <span class="text-gradient">{{ header_title }}</span>
-          <span class="glow-icon">{{ header_icon }}</span>
-        </h1>
-        <p class="lead mb-4 text-white" style="font-weight: 400; letter-spacing: 0.5px; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.4);">
-          {{ header_subtitle }}
-        </p>
+      <div class="col-lg-12 text-center text-lg-left">
+        <div class="header-glass-panel">
+          <!-- Premium Tech Badge -->
+          <span class="tech-badge mb-3 d-inline-block" style="box-shadow: 0 4px 15px var(--shadow-card);">{{ header_badge }}</span>
+          
+          <h1 class="display-4 mt-2 mb-3 banner-title">
+            <span class="text-gradient">{{ header_title }}</span>
+            <span class="glow-icon">{{ header_icon }}</span>
+          </h1>
+          
+          <p class="lead mb-0 banner-subtitle">
+            {{ header_subtitle }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
