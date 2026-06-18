@@ -130,32 +130,36 @@ permalink: /fire-simulator/
 
         .zone {
             fill: transparent;
-            stroke-width: 2px;
-            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 0.5px;
+            stroke: rgba(255, 255, 255, 0.15);
             transition: stroke 0.3s, fill 0.3s, filter 0.3s;
             cursor: pointer;
+            rx: 2px;
         }
 
         .zone:hover {
-            stroke: rgba(255, 255, 255, 0.6);
-            fill: rgba(255, 255, 255, 0.05);
+            stroke: rgba(56, 189, 248, 0.8);
+            fill: rgba(56, 189, 248, 0.05);
+            filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.4));
         }
 
         /* LED States */
         .zone.idle {
-            stroke: rgba(255, 255, 255, 0.2);
+            stroke: rgba(255, 255, 255, 0.15);
             filter: none;
             fill: transparent;
         }
 
         .zone.green {
             stroke: var(--safe-color);
+            stroke-width: 1px;
             filter: drop-shadow(0 0 10px var(--safe-color));
             fill: rgba(16, 185, 129, 0.05);
         }
 
         .zone.red {
             stroke: var(--fire-color);
+            stroke-width: 1.5px;
             filter: drop-shadow(0 0 15px var(--fire-color));
             fill: rgba(239, 68, 68, 0.1);
             animation: pulse-fire 1s infinite alternate;
@@ -164,22 +168,26 @@ permalink: /fire-simulator/
         .evac-path-base {
             fill: none;
             stroke: var(--path-color);
-            stroke-width: 1.5px;
-            opacity: 0.4;
+            stroke-width: 0.8px;
+            opacity: 0.3;
             pointer-events: none;
             transition: opacity 0.3s;
+            stroke-linejoin: round;
+            stroke-linecap: round;
         }
 
         .evac-path-flow {
             fill: none;
-            stroke: var(--path-color);
-            stroke-width: 3px;
-            filter: drop-shadow(0 0 10px var(--path-color));
-            stroke-dasharray: 20, 30;
-            animation: flow-line-smooth 1s linear infinite;
+            stroke: #60a5fa;
+            stroke-width: 1.5px;
+            filter: drop-shadow(0 0 10px #3b82f6) drop-shadow(0 0 20px #60a5fa);
+            stroke-dasharray: 25, 40;
+            animation: flow-line-smooth 1.5s linear infinite;
             opacity: 1;
             transition: opacity 0.3s;
             pointer-events: none;
+            stroke-linejoin: round;
+            stroke-linecap: round;
         }
 
         .evac-path-base.hidden, .evac-path-flow.hidden {
@@ -501,8 +509,8 @@ permalink: /fire-simulator/
             pathFlow.classList.remove('hidden');
 
             if (zoneId === 'corridor') {
-                lcdSub.textContent = 'WARNING: 주의하여 신속히 대피하세요!';
-                const d = 'M 27.5 30 L 27.5 72.5 L 95 72.5 M 72.5 30 L 72.5 72.5 L 95 72.5';
+                lcdSub.textContent = 'WARNING: 바깥쪽 우회로로 신속히 대피하세요!';
+                const d = 'M 27.5 30 L 27.5 5 L 95 5 L 95 72.5 M 72.5 30 L 72.5 5 L 95 5 L 95 72.5';
                 pathBase.setAttribute('d', d);
                 pathFlow.setAttribute('d', d);
             } else {
