@@ -700,10 +700,26 @@ permalink: /fire-simulator/
                 ];
 
                 let allBlocked = true;
+                let leftCount = 0;
+                let rightCount = 0;
+                let centerCount = 0;
+
                 rooms.forEach(room => {
                     const path = findShortestPath(room.node, '90,95');
                     if(path) {
                         allBlocked = false;
+                        
+                        // 방향성 분석: 화재 구간(복도 Y=75)을 통과할 때의 X 좌표 기준
+                        let xAtCorridor = 50; 
+                        path.forEach(p => {
+                            let [px, py] = p.split(',').map(Number);
+                            if (py === 75) xAtCorridor = px;
+                        });
+                        
+                        if (xAtCorridor < 50) leftCount++;
+                        else if (xAtCorridor > 50) rightCount++;
+                        else centerCount++;
+
                         let pathString = `M ${path[0].replace(',', ' ')}`;
                         for(let i=1; i<path.length; i++) {
                             pathString += ` L ${path[i].replace(',', ' ')}`;
@@ -713,7 +729,13 @@ permalink: /fire-simulator/
                 });
 
                 if (dPath.trim() !== "") {
-                    lcdSub.textContent = '가장 안전한 우회 경로로 대피하세요';
+                    // 주된 대피 방향 결정
+                    let dominantDir = '중앙';
+                    if (leftCount > rightCount && leftCount >= centerCount) dominantDir = '좌회(좌측)';
+                    else if (rightCount > leftCount && rightCount >= centerCount) dominantDir = '우측(우회)';
+                    else if (leftCount > 0 && rightCount > 0) dominantDir = '양방향(좌/우)';
+
+                    lcdSub.textContent = `${dominantDir} 최단 안전 경로로 대피하세요`;
                     pathBase.setAttribute('d', dPath);
                     pathFlow.setAttribute('d', dPath);
                 } else {
