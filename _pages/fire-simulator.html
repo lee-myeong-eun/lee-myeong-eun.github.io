@@ -423,22 +423,22 @@ permalink: /fire-simulator/
                     <path id="evac-path-flow" class="evac-path-flow hidden" d="" />
 
                     <!-- Rooms (Top 3) -->
-                    <rect id="zone-room1" class="zone idle" x="10" y="15" width="20" height="30" />
-                    <text class="zone-label" x="20" y="31" text-anchor="middle" style="font-size: 3px; font-weight: 500;">ROOM 1</text>
+                    <rect id="zone-room1" class="zone idle" x="5" y="10" width="26" height="40" />
+                    <text class="zone-label" x="18" y="31" text-anchor="middle" style="font-size: 4px; font-weight: 500;">ROOM 1</text>
 
-                    <rect id="zone-room2" class="zone idle" x="40" y="15" width="20" height="30" />
-                    <text class="zone-label" x="50" y="31" text-anchor="middle" style="font-size: 3px; font-weight: 500;">ROOM 2</text>
+                    <rect id="zone-room2" class="zone idle" x="37" y="10" width="26" height="40" />
+                    <text class="zone-label" x="50" y="31" text-anchor="middle" style="font-size: 4px; font-weight: 500;">ROOM 2</text>
                     
-                    <rect id="zone-room3" class="zone idle" x="70" y="15" width="20" height="30" />
-                    <text class="zone-label" x="80" y="31" text-anchor="middle" style="font-size: 3px; font-weight: 500;">ROOM 3</text>
+                    <rect id="zone-room3" class="zone idle" x="69" y="10" width="26" height="40" />
+                    <text class="zone-label" x="82" y="31" text-anchor="middle" style="font-size: 4px; font-weight: 500;">ROOM 3</text>
 
                     <!-- Corridor (Bottom) -->
-                    <rect id="zone-corr" class="zone corridor idle" x="10" y="75" width="80" height="15" />
-                    <text class="zone-label" x="50" y="83.5" text-anchor="middle" style="font-size: 3px; font-weight: 500;">CORRIDOR (MAIN)</text>
+                    <rect id="zone-corr" class="zone corridor idle" x="5" y="65" width="90" height="20" />
+                    <text class="zone-label" x="50" y="76" text-anchor="middle" style="font-size: 4px; font-weight: 500;">CORRIDOR (MAIN)</text>
 
                     <!-- Exit -->
                     <rect id="zone-exit" x="85" y="92" width="10" height="8" fill="transparent" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" style="transition: all 0.3s;" />
-                    <text id="text-exit" class="exit-sign" x="90" y="97" text-anchor="middle" style="font-size: 2.5px; font-weight: 500; transition: all 0.3s;">EXIT ➔</text>
+                    <text id="text-exit" class="exit-sign" x="90" y="97.5" text-anchor="middle" style="font-size: 3px; font-weight: 500; transition: all 0.3s;">EXIT ➔</text>
                 </svg>
             </div>
         </div>
@@ -549,30 +549,39 @@ permalink: /fire-simulator/
         }
 
         const zonesDef = {
-            'room1': {x: 10, y: 15, w: 20, h: 30},
-            'room2': {x: 40, y: 15, w: 20, h: 30},
-            'room3': {x: 70, y: 15, w: 20, h: 30},
-            'corr': {x: 10, y: 75, w: 80, h: 15}
+            'room1': {x: 5, y: 10, w: 26, h: 40},
+            'room2': {x: 37, y: 10, w: 26, h: 40},
+            'room3': {x: 69, y: 10, w: 26, h: 40},
+            'corr': {x: 5, y: 65, w: 90, h: 20}
         };
 
         const NODES = {
-            '20,30': ['20,50'],
-            '50,30': ['50,50'],
-            '80,30': ['80,50'],
-            '20,50': ['20,30', '20,62'],
-            '50,50': ['50,30', '50,62'],
-            '80,50': ['80,30', '80,62'],
-            '20,62': ['20,50', '20,70', '50,62'],
-            '50,62': ['50,50', '50,70', '20,62', '80,62'],
-            '80,62': ['80,50', '80,70', '50,62'],
-            '20,70': ['20,62', '20,82', '50,70'],
-            '50,70': ['50,62', '50,82', '20,70', '80,70'],
-            '80,70': ['80,62', '80,82', '50,70'],
-            '20,82': ['20,70', '50,82'],
-            '50,82': ['50,70', '20,82', '80,82'],
-            '80,82': ['80,70', '50,82', '90,82'],
-            '90,82': ['80,82', '90,95'],
-            '90,95': ['90,82']
+            '18,30': ['18,55'],
+            '50,30': ['50,55'],
+            '82,30': ['82,55'],
+            
+            '18,55': ['18,30', '18,58'],
+            '50,55': ['50,30', '50,58'],
+            '82,55': ['82,30', '82,58'],
+            
+            '2,58': ['18,58', '2,90'],
+            '18,58': ['2,58', '18,55', '50,58', '18,75'],
+            '50,58': ['18,58', '50,55', '82,58', '50,75'],
+            '82,58': ['50,58', '82,55', '98,58', '82,75'],
+            '98,58': ['82,58', '98,90'],
+            
+            '18,75': ['18,58', '50,75', '18,90'],
+            '50,75': ['18,75', '82,75', '50,58', '50,90'],
+            '82,75': ['50,75', '82,58', '82,90'],
+            
+            '2,90': ['2,58', '18,90'],
+            '18,90': ['2,90', '18,75', '50,90'],
+            '50,90': ['18,90', '50,75', '82,90'],
+            '82,90': ['50,90', '82,75', '90,90'],
+            '90,90': ['82,90', '98,90', '90,95'],
+            '98,90': ['90,90', '98,58'],
+            
+            '90,95': ['90,90']
         };
 
         function isNodeInZone(nx, ny, zoneId) {
@@ -692,9 +701,9 @@ permalink: /fire-simulator/
 
                 let dPath = "";
                 const rooms = [
-                    {id: 'room1', node: '20,30'},
+                    {id: 'room1', node: '18,30'},
                     {id: 'room2', node: '50,30'},
-                    {id: 'room3', node: '80,30'}
+                    {id: 'room3', node: '82,30'}
                 ];
 
                 let allBlocked = true;
