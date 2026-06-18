@@ -861,6 +861,9 @@ permalink: /ezsafe-simulator/
 
             const workerId = activeDot.id.includes('w1') ? '1' : '2';
             calculateRSSI(x, y, rect.width / 2, rect.height / 2, workerId);
+            
+            // Motion Tracking Reset
+            resetMotionTimer(workerId);
         }
 
         radarContainer.addEventListener('mousemove', (e) => {
@@ -895,8 +898,6 @@ permalink: /ezsafe-simulator/
 
         function updateRadarUI(rssi, workerId) {
             const display = workerId === '1' ? rssiDisplayW1 : rssiDisplayW2;
-            const dot = workerId === '1' ? radarWorkerW1 : radarWorkerW2;
-            const wave = workerId === '1' ? buzzerWaveW1 : buzzerWaveW2;
             
             display.textContent = `${rssi} dBm`;
 
@@ -905,33 +906,175 @@ permalink: /ezsafe-simulator/
             if(workerId === '1') isW1Danger = isDanger;
             else isW2Danger = isDanger;
 
-            // Merge distance danger and motion danger
-            const isMotionDanger = motionCountdowns[`w${workerId}`] <= 0 && document.getElementById(`motion-toggle-w${workerId}`).checked === false;
-            const combinedDanger = isDanger || isMotionDanger;
+            if (isDanger) display.classList.add('danger');
+            else display.classList.remove('danger');
 
-            if (combinedDanger) {
-                if (isDanger) display.classList.add('danger');
-                dot.classList.add('danger');
-                wave.style.left = dot.style.left;
-                wave.style.top = dot.style.top;
-                wave.classList.add('active');
+            checkGlobalAlarm();
+        }
+
+        /* =========================================
+           4. Motion Detection Logic (Tracking actual movement)
+           ========================================= */
+        const motionActive = { '1': true, '2': true };
+        const motionCountdowns = { '1': 10, '2': 10 };
+        const motionIntervals = { '1': null, '2': null };
+        let audioCtx = null;
+        let buzzerInterval = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playBuzzerSound() {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.type = 'square';
+            osc.frequency.value = 1000;
+            
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.start();
+            
+            const now = audioCtx.currentTime;
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.setValueAtTime(0, now + 0.2);
+            gain.gain.setValueAtTime(0.1, now + 0.4);
+            gain.gain.setValueAtTime(0, now + 0.6);
+            
+            osc.stop(now + 0.7);
+        }
+
+        function toggleMotion(workerId, isActive) {
+            initAudio();
+            const wId = workerId.replace('w', '');
+            motionActive[wId] = isActive;
+            
+            const stateText = document.getElementById(`motion-state-${workerId}`);
+            const timerText = document.getElementById(`motion-timer-${workerId}`);
+            
+            if (isActive) {
+                stateText.textContent = 'ON';
+                stateText.className = 'motion-state normal';
+                timerText.classList.remove('hidden');
+                resetMotionTimer(wId);
             } else {
-                display.classList.remove('danger');
-                dot.classList.remove('danger');
-                wave.classList.remove('active');
+                stateText.textContent = 'OFF';
+                stateText.className = 'motion-state';
+                stateText.style.color = '#64748b';
+                timerText.classList.add('hidden');
+                
+                clearInterval(motionIntervals[wId]);
+                motionIntervals[wId] = null;
+                motionCountdowns[wId] = 10;
+                checkGlobalAlarm(); // Clear any alarms if it was just turned off
+            }
+        }
+
+        function resetMotionTimer(wId) {
+            if (!motionActive[wId]) return;
+            
+            clearInterval(motionIntervals[wId]);
+            motionCountdowns[wId] = 10;
+            
+            const timerText = document.getElementById(`motion-timer-w${wId}`);
+            timerText.textContent = `(${motionCountdowns[wId]}s)`;
+            timerText.style.color = '#f59e0b';
+            
+            // If it was in alarm state, clear the alarm UI
+            checkGlobalAlarm();
+            
+            motionIntervals[wId] = setInterval(() => {
+                motionCountdowns[wId]--;
+                if (motionCountdowns[wId] > 0) {
+                    timerText.textContent = `(${motionCountdowns[wId]}s)`;
+                } else {
+                    clearInterval(motionIntervals[wId]);
+                    timerText.textContent = '(EMERGENCY)';
+                    timerText.style.color = 'var(--danger-color)';
+                    checkGlobalAlarm();
+                }
+            }, 1000);
+        }
+
+        function checkGlobalAlarm() {
+            const w1MotionDanger = motionActive['1'] && motionCountdowns['1'] <= 0;
+            const w2MotionDanger = motionActive['2'] && motionCountdowns['2'] <= 0;
+            
+            const w1Alarm = isW1Danger || w1MotionDanger;
+            const w2Alarm = isW2Danger || w2MotionDanger;
+
+            const dotW1 = document.getElementById('radar-worker-w1');
+            const waveW1 = document.getElementById('buzzer-wave-w1');
+            const dotW2 = document.getElementById('radar-worker-w2');
+            const waveW2 = document.getElementById('buzzer-wave-w2');
+
+            // Apply Individual DOT/WAVE Danger styles
+            if (w1Alarm) {
+                dotW1.classList.add('danger');
+                waveW1.style.left = dotW1.style.left;
+                waveW1.style.top = dotW1.style.top;
+                waveW1.classList.add('active');
+            } else {
+                dotW1.classList.remove('danger');
+                waveW1.classList.remove('active');
             }
 
-            // 전체 컨테이너 및 텍스트 경고 업데이트
-            if (isW1Danger || isW2Danger) {
+            if (w2Alarm) {
+                dotW2.classList.add('danger');
+                waveW2.style.left = dotW2.style.left;
+                waveW2.style.top = dotW2.style.top;
+                waveW2.classList.add('active');
+            } else {
+                dotW2.classList.remove('danger');
+                waveW2.classList.remove('active');
+            }
+            
+            // Apply Global Banner and Sound
+            if (w1Alarm || w2Alarm) {
                 radarContainer.classList.add('danger');
                 radarWarning.classList.add('show');
                 
-                if (isW1Danger && isW2Danger) radarWarning.textContent = '[WARNING: W1, W2 작업 구역 이탈]';
-                else if (isW1Danger) radarWarning.textContent = '[WARNING: W1 작업 구역 이탈]';
-                else radarWarning.textContent = '[WARNING: W2 작업 구역 이탈]';
+                let distMsg = '';
+                if (isW1Danger && isW2Danger) distMsg = '[WARNING: W1, W2 작업 구역 이탈]';
+                else if (isW1Danger) distMsg = '[WARNING: W1 작업 구역 이탈]';
+                else if (isW2Danger) distMsg = '[WARNING: W2 작업 구역 이탈]';
+                
+                let motionMsg = '';
+                if (w1MotionDanger && w2MotionDanger) motionMsg = '[EMERGENCY: W1, W2 움직임 없음]';
+                else if (w1MotionDanger) motionMsg = '[EMERGENCY: W1 움직임 없음]';
+                else if (w2MotionDanger) motionMsg = '[EMERGENCY: W2 움직임 없음]';
+
+                if (distMsg && motionMsg) {
+                    radarWarning.innerHTML = distMsg + '<br>' + motionMsg;
+                } else if (motionMsg) {
+                    radarWarning.textContent = motionMsg;
+                } else if (distMsg) {
+                    radarWarning.textContent = distMsg;
+                }
+                
+                if (w1MotionDanger || w2MotionDanger) {
+                    if (!buzzerInterval) {
+                        playBuzzerSound();
+                        buzzerInterval = setInterval(playBuzzerSound, 1000);
+                    }
+                } else {
+                    if (buzzerInterval) {
+                        clearInterval(buzzerInterval);
+                        buzzerInterval = null;
+                    }
+                }
             } else {
                 radarContainer.classList.remove('danger');
                 radarWarning.classList.remove('show');
+                if (buzzerInterval) {
+                    clearInterval(buzzerInterval);
+                    buzzerInterval = null;
+                }
             }
         }
 
