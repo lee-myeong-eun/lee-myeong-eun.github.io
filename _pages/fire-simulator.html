@@ -161,25 +161,34 @@ permalink: /fire-simulator/
             animation: pulse-fire 1s infinite alternate;
         }
 
-        .evac-path {
+        .evac-path-base {
+            fill: none;
+            stroke: var(--path-color);
+            stroke-width: 1.5px;
+            opacity: 0.4;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .evac-path-flow {
             fill: none;
             stroke: var(--path-color);
             stroke-width: 3px;
             filter: drop-shadow(0 0 10px var(--path-color));
-            stroke-dasharray: 10, 10;
-            animation: flow-line 0.8s linear infinite;
+            stroke-dasharray: 20, 30;
+            animation: flow-line-smooth 1s linear infinite;
             opacity: 1;
             transition: opacity 0.3s;
             pointer-events: none;
         }
 
-        .evac-path.hidden {
+        .evac-path-base.hidden, .evac-path-flow.hidden {
             opacity: 0;
             animation: none;
         }
 
-        @keyframes flow-line {
-            from { stroke-dashoffset: 20; }
+        @keyframes flow-line-smooth {
+            from { stroke-dashoffset: 50; }
             to { stroke-dashoffset: 0; }
         }
 
@@ -340,7 +349,8 @@ permalink: /fire-simulator/
             <div class="plan-container">
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none">
                     <!-- Evacuation Path (Hidden by default) -->
-                    <path id="evac-path" class="evac-path hidden" d="M 15 72.5 L 95 72.5" />
+                    <path id="evac-path-base" class="evac-path-base hidden" d="" />
+                    <path id="evac-path-flow" class="evac-path-flow hidden" d="" />
 
                     <!-- Corridor -->
                     <rect id="zone-corridor" class="zone idle" x="10" y="60" width="80" height="25" onclick="triggerFire('corridor')" />
@@ -484,18 +494,27 @@ permalink: /fire-simulator/
             lcdText.textContent = zoneNames[zoneId];
 
             // Pathfinding Logic
+            const pathBase = document.getElementById('evac-path-base');
+            const pathFlow = document.getElementById('evac-path-flow');
+            
+            pathBase.classList.remove('hidden');
+            pathFlow.classList.remove('hidden');
+
             if (zoneId === 'corridor') {
-                lcdSub.textContent = 'WARNING: 주 대피로 차단!';
-                document.getElementById('evac-path').classList.add('hidden');
+                lcdSub.textContent = 'WARNING: 주의하여 신속히 대피하세요!';
+                const d = 'M 27.5 30 L 27.5 72.5 L 95 72.5 M 72.5 30 L 72.5 72.5 L 95 72.5';
+                pathBase.setAttribute('d', d);
+                pathFlow.setAttribute('d', d);
             } else {
                 lcdSub.textContent = '안전 경로로 대피하세요';
-                const pathEl = document.getElementById('evac-path');
-                pathEl.classList.remove('hidden');
-                
                 if (zoneId === 'room1') {
-                    pathEl.setAttribute('d', 'M 72.5 30 L 72.5 72.5 L 95 72.5');
+                    const d = 'M 72.5 30 L 72.5 72.5 L 95 72.5';
+                    pathBase.setAttribute('d', d);
+                    pathFlow.setAttribute('d', d);
                 } else if (zoneId === 'room2') {
-                    pathEl.setAttribute('d', 'M 27.5 30 L 27.5 72.5 L 95 72.5');
+                    const d = 'M 27.5 30 L 27.5 72.5 L 95 72.5';
+                    pathBase.setAttribute('d', d);
+                    pathFlow.setAttribute('d', d);
                 }
             }
         }
@@ -509,7 +528,8 @@ permalink: /fire-simulator/
                 const el = document.getElementById(`zone-${z}`);
                 el.className.baseVal = 'zone idle';
             });
-            document.getElementById('evac-path').classList.add('hidden');
+            document.getElementById('evac-path-base').classList.add('hidden');
+            document.getElementById('evac-path-flow').classList.add('hidden');
             document.getElementById('zone-exit').style.stroke = 'rgba(255,255,255,0.2)';
             document.getElementById('zone-exit').style.filter = 'none';
             document.getElementById('zone-exit').style.fill = 'transparent';
