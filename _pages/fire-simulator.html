@@ -427,7 +427,7 @@ permalink: /fire-simulator/
 
     <script>
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        let isFireActive = false;
+        let activeFireZone = null;
 
         function closeSimulator() {
             if (window.opener) {
@@ -464,8 +464,8 @@ permalink: /fire-simulator/
         }
 
         function triggerFire(zoneId) {
-            if (isFireActive) return; // 한 번 불나면 리셋 전까지 블록
-            isFireActive = true;
+            if (activeFireZone === zoneId) return; // 이미 해당 구역 화재중이면 무시
+            activeFireZone = zoneId;
 
             // Audio Alert
             playBuzzer();
@@ -528,7 +528,7 @@ permalink: /fire-simulator/
         }
 
         function resetSystem() {
-            isFireActive = false;
+            activeFireZone = null;
             
             // Reset SVG classes
             const zones = ['corridor', 'room1', 'room2'];
