@@ -196,8 +196,10 @@ permalink: /ezsafe-simulator/
             margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
+            justify-content: center;
+            width: 100%;
+            gap: 5px;
+            font-size: 0.8rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 8px;
@@ -230,9 +232,9 @@ permalink: /ezsafe-simulator/
         input:checked + .toggle-slider { background-color: var(--success-color); }
         input:checked + .toggle-slider:before { transform: translateX(20px); }
 
-        .motion-state.normal { color: var(--success-color); font-weight: bold; }
-        .motion-state.stopped { color: var(--danger-color); font-weight: bold; animation: pulse-text 1s infinite alternate; }
-        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; }
+        .motion-state.normal { color: var(--success-color); font-weight: bold; font-size: 0.8rem; }
+        .motion-state.stopped { color: var(--danger-color); font-weight: bold; font-size: 0.75rem; letter-spacing: -0.5px; animation: pulse-text 1s infinite alternate; }
+        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; font-size: 0.75rem; letter-spacing: -0.5px; }
         .motion-timer.hidden { display: none; }
 
         .slot-label {
