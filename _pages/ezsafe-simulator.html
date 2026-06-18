@@ -75,7 +75,7 @@ permalink: /ezsafe-simulator/
         .simulator-container {
             display: flex;
             width: 95vw;
-            max-width: 1600px;
+            max-width: 1700px;
             aspect-ratio: 16 / 9;
             max-height: 90vh;
             background: rgba(18, 18, 18, 0.95);
@@ -105,7 +105,7 @@ permalink: /ezsafe-simulator/
         /* 중앙 스마트 슬롯 영역 (원래 좌측) */
         .left-panel {
             flex: 1;
-            max-width: 380px;
+            max-width: 410px;
             display: flex;
             flex-direction: column;
             background: var(--panel-bg);
@@ -240,7 +240,7 @@ permalink: /ezsafe-simulator/
             margin-top: auto;
             width: 100%;
             text-align: center;
-            padding: 15px;
+            padding: 20px 10px;
             border-radius: 8px;
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
@@ -251,8 +251,12 @@ permalink: /ezsafe-simulator/
             text-shadow: 0 0 5px var(--danger-glow);
             white-space: pre-wrap;
             word-break: keep-all;
-            line-height: 1.4;
+            line-height: 1.5;
             box-sizing: border-box;
+            min-height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .worker-status.stable {
@@ -511,16 +515,17 @@ permalink: /ezsafe-simulator/
             color: var(--danger-color);
             text-shadow: 0 0 15px var(--danger-glow);
             background: rgba(0,0,0,0.8);
-            padding: 15px 30px;
-            border-radius: 8px;
-            border: 1px solid var(--danger-color);
+            padding: 20px 40px;
+            border-radius: 12px;
+            border: 2px solid var(--danger-color);
             opacity: 0;
             transition: opacity 0.3s;
             z-index: 30;
             text-align: center;
             pointer-events: none;
-            width: 85%;
-            max-width: 600px;
+            width: max-content;
+            max-width: 90%;
+            min-width: 400px;
             white-space: pre-wrap;
             word-break: keep-all;
             line-height: 1.4;
@@ -572,7 +577,7 @@ permalink: /ezsafe-simulator/
         /* 스마트폰 UI 스타일 */
         .phone-panel {
             flex: 1;
-            max-width: 380px;
+            max-width: 410px;
             background: #000;
             border: 12px solid #27272a;
             border-radius: 40px;
