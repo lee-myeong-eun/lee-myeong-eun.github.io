@@ -10,7 +10,7 @@
     display: flex; align-items: center; gap: 10px;
   }
   .in-page-search .input-group {
-    width: 250px;
+    width: 380px;
   }
   .in-page-search input {
     background: var(--bg-card, #fff);
@@ -83,11 +83,12 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-search"></i></span>
           </div>
-          <input type="text" id="pageSearchInput" class="form-control shadow-sm" placeholder="Search in page...">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="pageSearchClear" style="border-left: 0;"><i class="fa fa-times"></i></button>
-          </div>
+          <input type="text" id="pageSearchInput" class="form-control shadow-sm" placeholder="Search in page..." style="border-top-right-radius: 6px; border-bottom-right-radius: 6px;">
         </div>
+        
+        <button class="btn btn-sm shadow-sm" id="pageSearchAction" title="Search / Next" style="background-color: #3b82f6; border-color: #3b82f6; color: white; border-radius: 6px; padding: 0.35rem 0.8rem; margin-left: 8px;">
+          <i class="fa fa-arrow-right"></i>
+        </button>
         <span id="pageSearchResultCount"></span>
         <div style="display:flex; gap: 4px;">
           <button class="btn search-nav-btn shadow-sm" id="pageSearchPrev" title="Previous"><i class="fa fa-chevron-up"></i></button>
@@ -116,7 +117,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const searchInput = document.getElementById("pageSearchInput");
-      const clearBtn = document.getElementById("pageSearchClear");
+      const actionBtn = document.getElementById("pageSearchAction");
       const prevBtn = document.getElementById("pageSearchPrev");
       const nextBtn = document.getElementById("pageSearchNext");
       const countLabel = document.getElementById("pageSearchResultCount");
@@ -192,10 +193,13 @@
         }
       });
 
-      clearBtn.addEventListener("click", function() {
-        searchInput.value = "";
-        performSearch();
-        searchInput.focus();
+      actionBtn.addEventListener("click", function() {
+        if(results.length > 0) {
+          currentIndex = (currentIndex + 1) % results.length;
+          updateNav();
+        } else {
+          performSearch();
+        }
       });
 
       prevBtn.addEventListener("click", function() {
