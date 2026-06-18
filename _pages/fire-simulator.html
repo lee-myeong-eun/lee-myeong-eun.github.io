@@ -612,7 +612,7 @@ permalink: /fire-simulator/
                     let [cx, cy] = curr.split(',').map(Number);
                     let mx = (cx + nx) / 2;
                     let my = (cy + ny) / 2;
-                    if (isNodeInAnyFire(mx, my)) continue;
+                    if (isNodeInAnyFire(mx, my) && curr !== startNode) continue;
 
                     if(!visited.has(n)) {
                         visited.add(n);
@@ -701,7 +701,6 @@ permalink: /fire-simulator/
 
                 let allBlocked = true;
                 rooms.forEach(room => {
-                    if(activeFireZones.has(room.id)) return;
                     const path = findShortestPath(room.node, '90,95');
                     if(path) {
                         allBlocked = false;
