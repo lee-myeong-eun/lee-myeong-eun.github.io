@@ -86,6 +86,7 @@ permalink: /ezsafe-simulator/
             gap: 30px;
             box-sizing: border-box;
             position: relative;
+            overflow: hidden;
         }
 
         /* 공통 헤더 스타일 */
@@ -113,6 +114,8 @@ permalink: /ezsafe-simulator/
             border-radius: 15px;
             padding: 20px;
             position: relative;
+            min-height: 0;
+            overflow: hidden;
         }
 
         .workers-container {
@@ -130,6 +133,8 @@ permalink: /ezsafe-simulator/
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 0;
+            overflow: hidden;
         }
 
         .worker-title {
@@ -255,10 +260,15 @@ permalink: /ezsafe-simulator/
             line-height: 1.3;
             box-sizing: border-box;
             min-height: 50px;
+            max-height: 65px;
+            overflow-y: auto;
+            scrollbar-width: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
+        .worker-status::-webkit-scrollbar { display: none; }
         
         .worker-status.stable {
             background: rgba(16, 185, 129, 0.1);
@@ -353,6 +363,7 @@ permalink: /ezsafe-simulator/
             border-radius: 15px;
             padding: 20px;
             position: relative;
+            min-height: 0;
             overflow: hidden;
         }
 
@@ -470,6 +481,7 @@ permalink: /ezsafe-simulator/
             z-index: 30;
             display: flex;
             gap: 20px;
+            white-space: nowrap;
         }
 
         .rssi-box {
@@ -588,6 +600,7 @@ permalink: /ezsafe-simulator/
             position: relative;
             box-shadow: 0 0 20px rgba(0,0,0,0.8);
             box-sizing: border-box;
+            min-height: 0;
             overflow: hidden;
         }
         
