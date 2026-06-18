@@ -1,4 +1,5 @@
-{% assign current_url = page.url | default: '/' %}
+{% assign current_url = page.url | default: '/' | downcase %}
+{% assign current_title = page.title | downcase | default: '' %}
 
 {% if current_url == '/' or current_url == '/index.html' %}
   {% assign header_badge = '⚡ Semiconductor & SW Expert' %}
@@ -6,25 +7,25 @@
   {% assign header_icon = '👨‍💻' %}
   {% assign header_gradient = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%)' %}
   {% assign header_subtitle = '반도체융합캠퍼스 | 반도체장비소프트웨어과 | 하이테크<br />반도체 공정 장비에 지능을 불어넣는 <strong>소프트웨어 전문가</strong>로 진화 중입니다.' %}
-{% elsif current_url contains '/about' %}
+{% elsif current_title contains 'about' or current_url contains 'about' %}
   {% assign header_badge = '🌱 Growth & Philosophy' %}
   {% assign header_title = 'About Me' %}
   {% assign header_icon = '🚀' %}
   {% assign header_gradient = 'linear-gradient(135deg, rgba(46, 16, 101, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%)' %}
   {% assign header_subtitle = '단순한 코더를 넘어, 하드웨어와 소통하며 최적의 제어 로직을 설계하는 엔지니어로 성장하는 과정입니다.' %}
-{% elsif current_url contains '/skills' %}
+{% elsif current_title contains 'skills' or current_url contains 'skills' %}
   {% assign header_badge = '🛠️ Tech Stack & Expertise' %}
   {% assign header_title = 'My Skills' %}
   {% assign header_icon = '💻' %}
   {% assign header_gradient = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(8, 145, 178, 0.85) 100%)' %}
   {% assign header_subtitle = 'C/C++, Python부터 Web 프론트엔드 및 하드웨어 제어까지, 제가 보유한 기술 역량과 숙련도를 소개합니다.' %}
-{% elsif current_url == '/assignments/' %}
+{% elsif current_title contains 'assignment' or current_title contains 'study' or current_url contains 'assignment' %}
   {% assign header_badge = '📚 Learning Archive' %}
   {% assign header_title = 'Study & Assignments' %}
-  {% assign header_icon = '📝' %}
+  {% assign header_icon = '📚' %}
   {% assign header_gradient = 'linear-gradient(135deg, rgba(2, 44, 34, 0.95) 0%, rgba(5, 150, 105, 0.85) 100%)' %}
   {% assign header_subtitle = '학교 수업과 개인 프로젝트를 통해 치열하게 고민하고 구현해 낸 코드와 결과물들의 기록입니다.' %}
-{% elsif current_url contains '/contact' %}
+{% elsif current_title contains 'contact' or current_url contains 'contact' %}
   {% assign header_badge = "📬 Let's Connect" %}
   {% assign header_title = 'Contact Me' %}
   {% assign header_icon = '💬' %}
