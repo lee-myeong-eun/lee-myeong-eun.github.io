@@ -123,7 +123,7 @@
       
       if(!searchInput) return;
 
-      const contentArea = document.querySelector(".container");
+      const contentArea = document.querySelector(".container.mb-5.position-relative");
       const marker = new Mark(contentArea);
       
       let results = [];
@@ -161,7 +161,7 @@
             if (keyword.length > 0) {
               marker.mark(keyword, {
                 separateWordSearch: false,
-                exclude: [".in-page-search *", ".btn *", "script", "style"],
+                exclude: [".in-page-search", ".in-page-search *", ".btn", ".btn *", "script", "style", "nav"],
                 done: function() {
                   results = Array.from(contentArea.querySelectorAll("mark"));
                   if(results.length > 0) {
