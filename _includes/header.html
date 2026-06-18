@@ -1,17 +1,50 @@
+{% assign current_url = page.url | default: '/' %}
+{% assign header_badge = '⚡ Semiconductor & SW Expert' %}
+{% assign header_title = '이명은의 Portfolio 👨‍💻' %}
+{% assign header_subtitle = '반도체융합캠퍼스 | 반도체장비소프트웨어과 | 하이테크<br />반도체 공정 장비에 지능을 불어넣는 <strong>소프트웨어 전문가</strong>로 진화 중입니다.' %}
+
+{% if current_url == '/' or current_url == '/index.html' %}
+  {% assign header_badge = '⚡ Semiconductor & SW Expert' %}
+  {% assign header_title = '이명은의 Portfolio 👨‍💻' %}
+  {% assign header_subtitle = '반도체융합캠퍼스 | 반도체장비소프트웨어과 | 하이테크<br />반도체 공정 장비에 지능을 불어넣는 <strong>소프트웨어 전문가</strong>로 진화 중입니다.' %}
+{% elsif current_url contains '/about' %}
+  {% assign header_badge = '🌱 Growth & Philosophy' %}
+  {% assign header_title = 'About Me 🚀' %}
+  {% assign header_subtitle = '단순한 코더를 넘어, 하드웨어와 소통하며 최적의 제어 로직을 설계하는 엔지니어로 성장하는 과정입니다.' %}
+{% elsif current_url contains '/skills' %}
+  {% assign header_badge = '🛠️ Tech Stack & Expertise' %}
+  {% assign header_title = 'My Skills 💻' %}
+  {% assign header_subtitle = 'C/C++, Python부터 Web 프론트엔드 및 하드웨어 제어까지, 제가 보유한 기술 역량과 숙련도를 소개합니다.' %}
+{% elsif current_url == '/assignments/' %}
+  {% assign header_badge = '📚 Learning Archive' %}
+  {% assign header_title = 'Study & Assignments 📝' %}
+  {% assign header_subtitle = '학교 수업과 개인 프로젝트를 통해 치열하게 고민하고 구현해 낸 코드와 결과물들의 기록입니다.' %}
+{% elsif current_url contains '/contact' %}
+  {% assign header_badge = "📬 Let's Connect" %}
+  {% assign header_title = 'Contact Me 🤝' %}
+  {% assign header_subtitle = '새로운 기회와 성장을 위한 소통을 환영합니다. 아래 폼을 통해 언제든 편하게 연락해 주세요.' %}
+{% else %}
+  {% assign header_badge = '🔍 Project Details' %}
+  {% if page.title %}
+    {% assign header_title = page.title %}
+  {% else %}
+    {% assign header_title = 'Project Document' %}
+  {% endif %}
+  {% assign header_subtitle = '상세 구현 내용 및 코드를 확인하실 수 있습니다.' %}
+{% endif %}
+
 <!-- Header -->
 <header class="bg-primary py-5 mb-5 animate-fade-in-up">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-lg-12">
         <!-- Premium Tech Badge -->
-        <span class="tech-badge">⚡ Semiconductor & SW Expert</span>
+        <span class="tech-badge">{{ header_badge }}</span>
         <h1 class="display-4 text-white mt-2 mb-3">
-          <span class="text-gradient">이명은의 Portfolio</span> 👨‍💻
+          <span class="text-gradient">{{ header_title }}</span>
         </h1>
         <p class="lead mb-4 text-white-50">
-          반도체융합캠퍼스 | 반도체장비소프트웨어과 | 하이테크
-          <br />
-          반도체 공정 장비에 지능을 불어넣는 <strong>소프트웨어 전문가</strong>로 진화 중입니다.
+          {{ header_subtitle }}
         </p>
       </div>
     </div>
