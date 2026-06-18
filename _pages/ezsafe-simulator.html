@@ -74,8 +74,8 @@ permalink: /ezsafe-simulator/
 
         .simulator-container {
             display: flex;
-            width: 95vw;
-            max-width: 1600px;
+            width: 98vw;
+            max-width: 1800px;
             aspect-ratio: 16 / 9;
             max-height: 90vh;
             background: rgba(18, 18, 18, 0.95);
@@ -102,10 +102,9 @@ permalink: /ezsafe-simulator/
             padding-bottom: 10px;
         }
 
-        /* 우측 스마트 슬롯 영역 (원래 좌측) */
+        /* 중앙 스마트 슬롯 영역 (원래 좌측) */
         .left-panel {
-            flex: 1;
-            max-width: 380px;
+            flex: 1.5;
             display: flex;
             flex-direction: column;
             background: var(--panel-bg);
@@ -334,9 +333,10 @@ permalink: /ezsafe-simulator/
             opacity: 1;
         }
 
-        /* 중앙 관제 레이더 영역 (원래 우측) */
+        /* 우측 관제 레이더 영역 (원래 우측) */
         .right-panel {
-            flex: 1.8;
+            flex: 1.2;
+            min-width: 400px;
             display: flex;
             flex-direction: column;
             background: var(--panel-bg);
