@@ -347,6 +347,16 @@ permalink: /fire-simulator/
             z-index: 2;
         }
 
+        .lcd-location {
+            font-family: 'Orbitron', 'Nunito', sans-serif;
+            font-size: 1.1rem;
+            color: #fca5a5;
+            margin-top: 8px;
+            text-align: center;
+            z-index: 2;
+            font-weight: 700;
+        }
+
         @keyframes blink {
             50% { opacity: 0.2; }
         }
@@ -448,6 +458,7 @@ permalink: /fire-simulator/
             
             <div class="lcd-panel">
                 <div class="lcd-text" id="lcd-display">SYSTEM NORMAL</div>
+                <div class="lcd-location" id="lcd-location" style="display: none;"></div>
                 <div class="lcd-subtext" id="lcd-sub">ALL SENSORS STABLE</div>
             </div>
 
@@ -685,6 +696,14 @@ permalink: /fire-simulator/
                 lcdText.classList.add('danger');
                 lcdText.textContent = `화재 감지! (${activeFireZones.size}개 구역)`;
                 
+                const zoneNames = { 'room1': 'ROOM 1', 'room2': 'ROOM 2', 'room3': 'ROOM 3', 'corr': 'CORRIDOR(MAIN)' };
+                const locStr = Array.from(activeFireZones).map(z => zoneNames[z]).join(', ');
+                const lcdLoc = document.getElementById('lcd-location');
+                if(lcdLoc) {
+                    lcdLoc.style.display = 'block';
+                    lcdLoc.textContent = `화재 발생 위치: [${locStr}]`;
+                }
+
                 document.getElementById('zone-exit').style.stroke = 'var(--safe-color)';
                 document.getElementById('zone-exit').style.fill = 'rgba(16, 185, 129, 0.1)';
                 document.getElementById('text-exit').style.fill = 'var(--safe-color)';
@@ -751,6 +770,11 @@ permalink: /fire-simulator/
             } else {
                 lcdText.classList.remove('danger');
                 lcdText.textContent = 'SYSTEM NORMAL';
+                const lcdLoc = document.getElementById('lcd-location');
+                if(lcdLoc) {
+                    lcdLoc.style.display = 'none';
+                    lcdLoc.textContent = '';
+                }
                 lcdSub.textContent = 'ALL SENSORS STABLE';
                 
                 document.getElementById('zone-exit').style.stroke = 'rgba(255,255,255,0.2)';
