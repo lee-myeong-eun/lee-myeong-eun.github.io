@@ -800,8 +800,9 @@ permalink: /ezsafe-simulator/
             const statusEl = document.getElementById(`status-w${workerId}`);
             const hasHelmet = workerEquipStatus[workerId].helmet;
             const hasVest = workerEquipStatus[workerId].vest;
+            const isEquipped = hasHelmet && hasVest;
 
-            if (hasHelmet && hasVest) {
+            if (isEquipped) {
                 statusEl.textContent = '[STABLE: 착용 완료]';
                 statusEl.classList.add('stable');
             } else {
@@ -815,6 +816,21 @@ permalink: /ezsafe-simulator/
                 }
                 statusEl.textContent = `[WARNING: ${missingMsg}]`;
                 statusEl.classList.remove('stable');
+            }
+            
+            if (motionCountdowns[workerId] <= 0) {
+                const timerText = document.getElementById(`motion-timer-w${workerId}`);
+                if (isEquipped && motionActive[workerId]) {
+                    timerText.textContent = '(EMERGENCY)';
+                    timerText.style.color = 'var(--danger-color)';
+                } else if (motionActive[workerId]) {
+                    timerText.textContent = '(IGNORED)';
+                    timerText.style.color = '#64748b';
+                }
+            }
+            
+            if (typeof checkGlobalAlarm === 'function') {
+                checkGlobalAlarm();
             }
         }
 
@@ -994,16 +1010,26 @@ permalink: /ezsafe-simulator/
                     timerText.textContent = `(${motionCountdowns[wId]}s)`;
                 } else {
                     clearInterval(motionIntervals[wId]);
-                    timerText.textContent = '(EMERGENCY)';
-                    timerText.style.color = 'var(--danger-color)';
+                    
+                    const isEquipped = workerEquipStatus[wId].helmet && workerEquipStatus[wId].vest;
+                    if (isEquipped) {
+                        timerText.textContent = '(EMERGENCY)';
+                        timerText.style.color = 'var(--danger-color)';
+                    } else {
+                        timerText.textContent = '(IGNORED)';
+                        timerText.style.color = '#64748b';
+                    }
                     checkGlobalAlarm();
                 }
             }, 1000);
         }
 
         function checkGlobalAlarm() {
-            const w1MotionDanger = motionActive['1'] && motionCountdowns['1'] <= 0;
-            const w2MotionDanger = motionActive['2'] && motionCountdowns['2'] <= 0;
+            const w1Equipped = workerEquipStatus['1'].helmet && workerEquipStatus['1'].vest;
+            const w2Equipped = workerEquipStatus['2'].helmet && workerEquipStatus['2'].vest;
+
+            const w1MotionDanger = w1Equipped && motionActive['1'] && motionCountdowns['1'] <= 0;
+            const w2MotionDanger = w2Equipped && motionActive['2'] && motionCountdowns['2'] <= 0;
             
             const w1Alarm = isW1Danger || w1MotionDanger;
             const w2Alarm = isW2Danger || w2MotionDanger;
