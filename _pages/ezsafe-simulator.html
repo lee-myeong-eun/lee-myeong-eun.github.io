@@ -194,12 +194,12 @@ permalink: /ezsafe-simulator/
         /* Motion Control UI */
         .motion-control {
             margin-top: 10px;
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 34px 1fr auto;
             align-items: center;
-            justify-content: center;
             width: 100%;
-            gap: 5px;
-            font-size: 0.8rem;
+            gap: 6px;
+            font-size: 0.75rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 8px;
@@ -208,8 +208,8 @@ permalink: /ezsafe-simulator/
         .toggle-switch {
             position: relative;
             display: inline-block;
-            width: 40px;
-            height: 20px;
+            width: 34px;
+            height: 18px;
         }
         .toggle-switch input { opacity: 0; width: 0; height: 0; }
         .toggle-slider {
@@ -223,18 +223,19 @@ permalink: /ezsafe-simulator/
         .toggle-slider:before {
             position: absolute;
             content: "";
-            height: 14px; width: 14px;
+            height: 12px; width: 12px;
             left: 3px; bottom: 3px;
             background-color: white;
             transition: .4s;
             border-radius: 50%;
         }
         input:checked + .toggle-slider { background-color: var(--success-color); }
-        input:checked + .toggle-slider:before { transform: translateX(20px); }
+        input:checked + .toggle-slider:before { transform: translateX(16px); }
 
-        .motion-state.normal { color: var(--success-color); font-weight: bold; font-size: 0.8rem; }
-        .motion-state.stopped { color: var(--danger-color); font-weight: bold; font-size: 0.75rem; letter-spacing: -0.5px; animation: pulse-text 1s infinite alternate; }
-        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; font-size: 0.75rem; letter-spacing: -0.5px; }
+        .motion-state { text-align: left; }
+        .motion-state.normal { color: var(--success-color); font-weight: bold; font-size: 0.75rem; }
+        .motion-state.stopped { color: var(--danger-color); font-weight: bold; font-size: 0.65rem; letter-spacing: -0.5px; animation: pulse-text 1s infinite alternate; }
+        .motion-timer { font-family: 'Orbitron', monospace; color: #f59e0b; font-weight: bold; font-size: 0.7rem; letter-spacing: -0.5px; text-align: right; }
         .motion-timer.hidden { display: none; }
 
         .slot-label {
