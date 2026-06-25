@@ -10,8 +10,8 @@ def convert_ipynb_to_md(ipynb_path, md_path):
     # Add frontmatter
     md_lines.append("---")
     md_lines.append("layout: default")
-    md_lines.append("title: 14. 시험대비(Hist버전)낮은점수")
-    md_lines.append("permalink: /assignments/machine-learning/exam-summary-hist-low/")
+    md_lines.append("title: 13. 시험대비요약(Hist버전)")
+    md_lines.append("permalink: /assignments/machine-learning/exam-summary-hist/")
     md_lines.append("---")
     md_lines.append("")
 
