@@ -120,8 +120,8 @@ permalink: /projects/ble-safety/
       <h1 class="text-light font-weight-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.5px;">BLE 기반 공사장 안전장비 실시간 감지 시스템</h1>
       <h4 class="text-muted font-weight-normal mb-4">EZ-safe : 지능형 스마트 안전모 솔루션</h4>
       <div class="d-flex justify-content-center gap-3">
-        <span class="text-light mx-3"><i class="fa fa-microchip mr-2 text-info"></i>ESP32 DevKit</span>
-        <span class="text-light mx-3"><i class="fa fa-bluetooth mr-2 text-primary"></i>BLE 통신</span>
+        <span class="text-light mx-3"><i class="fa fa-microchip mr-2 text-info"></i>ESP32</span>
+        <span class="text-light mx-3"><i class="fa fa-bluetooth mr-2 text-primary"></i>BLE / RSSI</span>
         <span class="text-light mx-3"><i class="fa fa-mobile mr-2 text-success"></i>App Inventor</span>
       </div>
     </div>
@@ -149,7 +149,7 @@ permalink: /projects/ble-safety/
         <div class="col-md-4 mb-3">
           <div class="overview-card">
             <h5><i class="fa fa-lightbulb-o mr-2"></i>솔루션 제안 (EZ-safe)</h5>
-            <p>안전모에 다중 센서를 결합해 착용 여부 및 낙상(Slam)을 실시간 감지하고, <span class="highlight-text">BLE(저전력 블루투스)</span>를 통해 스마트폰 앱으로 즉시 경고를 전송합니다.</p>
+            <p>ESP32와 <span class="highlight-text">BLE(저전력 블루투스)</span> 통신을 활용해 작업자의 안전 상태를 실시간으로 감지하고, RSSI 신호 세기 측정과 MPU6050 가속도 센서를 통해 착용 상태를 판별하여 모바일 앱으로 즉시 확인할 수 있는 시스템입니다.</p>
           </div>
         </div>
       </div>
@@ -157,9 +157,9 @@ permalink: /projects/ble-safety/
       <div class="mt-4 p-4 rounded" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2);">
         <h5 class="text-success mb-3"><i class="fa fa-check-circle mr-2"></i>최종 목표 요약</h5>
         <ul class="list-unstyled mb-0" style="color: var(--text-body); line-height: 1.8;">
-          <li><i class="fa fa-angle-right mr-2 text-success"></i>압력 센서(FSR) 및 고휘도 LED, 부저를 활용한 <strong>착용/미착용 실시간 로컬 경고 시스템</strong> 구축</li>
-          <li><i class="fa fa-angle-right mr-2 text-success"></i>6축 가속도 자이로 센서(MPU6050)를 통한 <strong>작업자 낙상(Wreck/Fall) 알고리즘</strong> 구현</li>
-          <li><i class="fa fa-angle-right mr-2 text-success"></i>저전력 BLE 통신 기반의 안드로이드 애플리케이션 연동 및 실시간 모니터링 구축</li>
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>BLE 신호를 10회 측정하여 평균 RSSI를 계산하고 <strong>기준값(-55) 기반으로 신호 상태를 판별</strong>하는 시스템 구축</li>
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>MPU6050 가속도 센서를 통한 <strong>작업자 움직임 감지 및 착용불량 판별 알고리즘</strong> 구현</li>
+          <li><i class="fa fa-angle-right mr-2 text-success"></i>Bluetooth Serial 통신 기반의 MIT App Inventor 모바일 앱 연동 및 작업자별 실시간 모니터링 구축</li>
         </ul>
       </div>
     </div>
@@ -174,9 +174,10 @@ permalink: /projects/ble-safety/
       <div class="row align-items-center">
         <div class="col-lg-5 mb-4">
           <ul class="info-list list-unstyled mb-0">
-            <li><span class="info-label">1. 초기화</span>ESP32 가동 후 I2C 통신(MPU6050) 및 BLE 가속도 서비스 비콘 브로드캐스팅</li>
-            <li><span class="info-label">2. 착용 감지</span>안전모 정수리의 압력 센서(FSR) 데이터가 임계값 미달 시 <span class="text-danger">Unworn(미착용)</span> 전송 및 경보</li>
-            <li><span class="info-label">3. 낙상 감지</span>3축 가속도 벡터 합성값($\sqrt{x^2+y^2+z^2}$)의 변동 및 기울기를 분석하여 <span class="text-danger">Fall(낙상)</span> 판별</li>
+            <li><span class="info-label">1. 초기화</span>ESP32 가동 후 BLE 스캔 시작 및 MPU6050 가속도 센서 초기화</li>
+            <li><span class="info-label">2. 신호 측정</span>BLE 신호를 <span class="text-info">10회 측정</span>하고 평균 RSSI 계산, 기준값 <span class="text-danger">-55 이하</span> 시 약한 신호로 판단하여 부저 작동</li>
+            <li><span class="info-label">3. 움직임 감지</span>시작 후 3초간 판정 유예, 초기 가속도값 대비 <span class="text-danger">변화량 0.3 초과</span> 시 움직임 판단, 1분 이상 미감지 시 착용불량 처리</li>
+            <li><span class="info-label">4. 데이터 전달</span>작업자별 MAC 주소 기반 데이터 구분, <span class="text-info">Bluetooth Serial</span>로 모바일 앱에 상태 전달</li>
           </ul>
         </div>
         <div class="col-lg-7 mb-4">
@@ -185,13 +186,13 @@ permalink: /projects/ble-safety/
             <!-- Mermaid Diagram for beautiful flowchart -->
             <div class="mermaid text-center">
               graph TD
-                A["👷 안전모 노드<br><small>(ESP32 + FSR + MPU6050)</small>"]:::node
-                B(("📡 BLE 무선 통신<br><small>(저전력 비콘)</small>")):::ble
-                C["📱 모니터링 앱<br><small>(App Inventor UI)</small>"]:::app
+                A["👷 안전모 노드<br><small>(ESP32 + MPU6050)</small>"]:::node
+                B(("📡 BLE 무선 통신<br><small>(RSSI 신호 측정)</small>")):::ble
+                C["📱 모니터링 앱<br><small>(MIT App Inventor)</small>"]:::app
                 
-                A -->|센서 데이터 송출| B
-                B -->|실시간 파싱| C
-                C -.->|경고 팝업 발생| C
+                A -->|RSSI + 가속도 데이터| B
+                B -->|Bluetooth Serial| C
+                C -.->|작업자별 상태 표시| C
                 
                 classDef node fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
                 classDef ble fill:#312e81,stroke:#a78bfa,stroke-width:2px,color:#f8fafc;
@@ -202,13 +203,58 @@ permalink: /projects/ble-safety/
       </div>
     </div>
 
-    <!-- 3. 핵심 시뮬레이션 코드 -->
+    <!-- 3. 주요 구현 내용 -->
+    <div class="premium-section animate-fade-in-up delay-350" id="section-implementation">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i class="fa fa-list-ol"></i></div>
+        3. 주요 구현 내용
+      </h2>
+      <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.7;">
+        <strong class="text-light">센서 데이터 기반 실시간 안전 상태 판별 시스템:</strong> ESP32와 BLE, MPU6050 가속도 센서를 연동하여 RSSI 신호 세기 및 작업자 움직임을 정밀 측정하고, Bluetooth Serial 통신을 통해 관리자 모바일 앱으로 실시간 모니터링 데이터를 전송합니다.
+      </p>
+      
+      <div class="row">
+        <!-- 1. BLE 신호 세기 기반 감지 -->
+        <div class="col-lg-4 col-md-6 mb-3">
+          <div class="overview-card" style="border-top: 3px solid #10b981;">
+            <h5 style="color: #10b981;"><i class="fa fa-bluetooth-b mr-2"></i>01. BLE 신호 세기 기반 감지</h5>
+            <p>
+              ESP32의 BLE 통신으로 신호를 <strong>총 10회 연속 측정</strong>하여 평균 RSSI 값을 산출합니다. 평균 RSSI가 <strong>기준값 -55 dBm 미만</strong>으로 감쇠될 경우 신호 미약 및 작업 구역 이탈 상태로 판정하고 즉시 부저 경보를 울립니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. MPU6050 기반 작업자 움직임 판별 -->
+        <div class="col-lg-4 col-md-6 mb-3">
+          <div class="overview-card" style="border-top: 3px solid #38bdf8;">
+            <h5 style="color: #38bdf8;"><i class="fa fa-heartbeat mr-2"></i>02. MPU6050 기반 움직임 판별</h5>
+            <p>
+              MPU6050 6축 센서의 X, Y, Z축 가속도 데이터를 수집합니다. 초기 오판정 방지를 위해 시작 후 <strong>3초간 판정을 유예</strong>하며, 가속도 변화량이 <strong>0.3 초과</strong> 시 움직임으로 인정하고, <strong>1분 이상 움직임이 없을 경우</strong> 착용불량 상태로 자동 처리합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. 작업자별 안전 상태 데이터 처리 -->
+        <div class="col-lg-4 col-md-12 mb-3">
+          <div class="overview-card" style="border-top: 3px solid #a855f7;">
+            <h5 style="color: #a855f7;"><i class="fa fa-mobile mr-2"></i>03. 작업자별 상태 데이터 처리</h5>
+            <p>
+              작업자별 <strong>고유 MAC 주소</strong>를 활용해 다중 디바이스 데이터를 안정적으로 구분합니다. 수집된 안전 상태는 <strong>Bluetooth Serial 통신</strong>을 통해 MIT App Inventor로 개발한 스마트폰 앱으로 실시간 전송되어 모니터링 화면에 표시됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 핵심 시뮬레이션 코드 -->
     <div class="premium-section animate-fade-in-up delay-400" id="section-code">
       <h2 class="section-title">
         <div class="icon-box" style="background: rgba(52, 211, 153, 0.1); color: #34d399;"><i class="fa fa-code"></i></div>
-        3. 실시간 모니터링 시뮬레이션 (Core Code)
+        4. 실시간 모니터링 시뮬레이션 (Core Code)
       </h2>
-      <p class="text-muted mb-3">ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 및 센서 판별 코어 파트입니다.</p>
+      <p class="text-muted mb-3" style="font-size: 1.05rem; line-height: 1.7;">
+        <strong class="text-light">센서 데이터 수집 및 상태 판별 제어 로직:</strong> ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 및 MPU6050 센서 데이터를 실시간 처리하고, 착용 상태 및 낙상 위험을 판별하여 Bluetooth 통신으로 전송하는 코어 알고리즘 코드입니다.
+      </p>
       
       <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border-medium);">
 ```cpp
@@ -273,37 +319,76 @@ void loop() {
       </div>
     </div>
 
-    <!-- 4. 세부 구현 내용 (트러블슈팅) -->
+    <!-- 5. 개발 트러블슈팅 -->
     <div class="premium-section animate-fade-in-up delay-500" id="section-troubleshoot">
       <h2 class="section-title">
         <div class="icon-box" style="background: rgba(251, 146, 60, 0.1); color: #fb923c;"><i class="fa fa-wrench"></i></div>
-        4. 개발 트러블슈팅 (Troubleshooting)
+        5. 개발 트러블슈팅 (Troubleshooting)
       </h2>
       
       <div class="ts-card">
-        <div class="ts-title"><i class="fa fa-bug mr-2"></i>Issue 1: BLE 신호 감쇠 및 데이터 누락 현상</div>
-        <p class="ts-problem"><strong>문제:</strong> 공사장 환경 모사 테스트 시, 장애물이나 전압 강하로 인해 BLE 패킷이 유실되거나 앱 화면이 멈추는 현상 발생.</p>
-        <p class="ts-solution"><strong>해결:</strong> 통신 패킷 전송 방식을 효율화하고 MIT App Inventor의 타이머 클럭 주기를 ESP32 폴링 주기와 동기화(100ms)하여 버퍼 오버플로우를 해결함.</p>
+        <div class="ts-title"><i class="fa fa-users mr-2"></i>Issue 1: 팀원과의 협업 및 역할 분담</div>
+        <p class="ts-problem"><strong>상황:</strong> 4명의 팀원이 센서 데이터 수집, ESP32 제어, BLE 통신 및 모바일 앱 구현 등의 기능을 분담하여 개발을 진행했습니다.</p>
+        <p class="ts-solution"><strong>해결:</strong> 각 기능의 진행 상황과 동작 결과를 주기적으로 공유하면서 전체 시스템을 통합했습니다. 기능 간 인터페이스를 사전에 정의하여 통합 과정에서의 충돌을 최소화했습니다.</p>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title"><i class="fa fa-bolt mr-2"></i>Issue 2: 리튬 배터리 정격 전압과 승압 최적화</div>
-        <p class="ts-problem"><strong>문제:</strong> 18650 배터리(3.7V) 구동 시 가속도 센서와 고휘도 LED가 요구하는 안정적인 전압 유지가 불가능하여 오작동 발생.</p>
-        <p class="ts-solution"><strong>해결:</strong> MT3608 DC-DC 승압 부스터 컨버터를 추가 배치하여 5V 전원을 안정적으로 유지하고, TP4056 모듈을 연동해 휴대성과 충전 안정성을 동시 확보함.</p>
+        <div class="ts-title"><i class="fa fa-signal mr-2"></i>Issue 2: BLE 신호 세기 변동 및 감지 안정성 문제</div>
+        <p class="ts-problem"><strong>문제:</strong> 주변 환경과 장치 간 거리에 따라 RSSI 값이 불규칙하게 달라져 신호 상태를 안정적으로 판단하기 어려웠습니다.</p>
+        <p class="ts-solution"><strong>해결:</strong> BLE 신호를 10회 측정한 후 평균 RSSI를 계산하도록 구현했습니다. 평균값을 기준값 -55와 비교하여 신호 상태를 판단하도록 개선하여 안정성을 확보했습니다.</p>
       </div>
 
       <div class="ts-card">
-        <div class="ts-title"><i class="fa fa-wave-square mr-2"></i>Issue 3: 압력 센서 아날로그 전압 노이즈</div>
-        <p class="ts-problem"><strong>문제:</strong> 안전모를 착용했음에도 신호 기준값이 흔들려 오작동 경보음이 무작위로 발생함 (Float 상태).</p>
-        <p class="ts-solution"><strong>해결:</strong> 하드웨어 회로 내에 10kΩ 풀다운 저항을 결선해 전압 분배 회로를 확립, 완벽한 디지털 로직 레벨 변환을 유도함.</p>
+        <div class="ts-title"><i class="fa fa-tachometer mr-2"></i>Issue 3: 작업자 움직임 감지 및 착용 상태 판별 문제</div>
+        <p class="ts-problem"><strong>문제:</strong> 초기 센서값과 일시적인 움직임 변화로 인한 오판정이 발생하여 착용 상태를 정확히 판별하기 어려웠습니다.</p>
+        <p class="ts-solution"><strong>해결:</strong> 시스템 시작 후 3초간 판정을 유예하고 초기 가속도값을 기준으로 변화량을 비교하도록 구성했습니다. 변화량 0.3 초과 시 움직임으로 판단하고 1분 이상 움직임이 없으면 착용불량 상태로 처리했습니다.</p>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-title"><i class="fa fa-exchange mr-2"></i>Issue 4: 작업자별 데이터 구분 및 모바일 앱 연동 문제</div>
+        <p class="ts-problem"><strong>문제:</strong> 여러 작업자의 센서 데이터를 구분하지 못해 개별 작업자의 안전 상태를 정확하게 파악할 수 없었습니다.</p>
+        <p class="ts-solution"><strong>해결:</strong> 작업자별 MAC 주소를 등록하고 수신 장치의 MAC 주소를 비교하여 데이터를 구분했습니다. 이후 작업자별 상태 메시지를 생성하고 Bluetooth Serial 통신으로 모바일 앱에 전달하도록 구성했습니다.</p>
       </div>
     </div>
 
-    <!-- 5. 완제품 패키징 -->
+    <!-- 6. 담당 역할 -->
+    <div class="premium-section animate-fade-in-up delay-550" id="section-role">
+      <h2 class="section-title">
+        <div class="icon-box" style="background: rgba(99, 102, 241, 0.1); color: #818cf8;"><i class="fa fa-user"></i></div>
+        6. 담당 역할
+      </h2>
+      
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="overview-card">
+            <h5><i class="fa fa-mobile mr-2"></i>모바일 앱 개발</h5>
+            <p>MIT App Inventor를 활용하여 모바일 앱의 UI를 설계하고 블루투스 장치 검색 및 연결 기능을 구현했습니다.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="overview-card">
+            <h5><i class="fa fa-database mr-2"></i>수신 데이터 처리</h5>
+            <p>ESP32로부터 Bluetooth Serial 통신을 통해 수신한 데이터를 처리하고 작업자별 안전 상태 표시 화면을 구현했습니다.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-3 p-4 rounded" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <h5 style="color: #818cf8;" class="mb-3"><i class="fa fa-tasks mr-2"></i>세부 담당 내역</h5>
+        <ul class="list-unstyled mb-0" style="color: var(--text-body); line-height: 1.8;">
+          <li><i class="fa fa-angle-right mr-2" style="color: #818cf8;"></i>MIT App Inventor를 활용한 모바일 앱 UI 및 기능 개발</li>
+          <li><i class="fa fa-angle-right mr-2" style="color: #818cf8;"></i>블루투스 장치 검색 및 연결 기능 구현</li>
+          <li><i class="fa fa-angle-right mr-2" style="color: #818cf8;"></i>수신 데이터 처리 및 파싱</li>
+          <li><i class="fa fa-angle-right mr-2" style="color: #818cf8;"></i>작업자별 안전 상태 표시 화면 구현</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. 완제품 패키징 -->
     <div class="premium-section animate-fade-in-up delay-600" id="section-hardware">
       <h2 class="section-title">
         <div class="icon-box" style="background: rgba(251, 113, 133, 0.1); color: #fb7185;"><i class="fa fa-camera"></i></div>
-        5. 최종 완제품 및 패키징
+        7. 최종 완제품 및 패키징
       </h2>
       
       <div class="row">
@@ -314,35 +399,44 @@ void loop() {
           </div>
         </div>
         <div class="col-lg-6 mb-4 d-flex flex-column justify-content-center">
-          <h4 class="text-light mb-3" style="font-size: 1.2rem;">컴팩트 패키징 및 내장화 설계</h4>
+          <h4 class="text-light mb-3" style="font-size: 1.2rem;">IoT 안전 시스템 하드웨어 구성</h4>
           <p class="text-muted" style="line-height: 1.8;">
-            실제 작업용 안전모 내부에 부품이 노출될 경우 <strong>작업자의 이물감 유발 및 두피 부상 위험</strong>이 존재했습니다. 이를 방지하기 위해 회로를 전용 소형 기판(FR-4)에 납땜 고정하고 점퍼 라인을 일체화했습니다. 최종적으로 헬멧 외부에 마운팅 가능한 <span class="highlight-text">보호 인클로저 구조</span>로 마감하여 실용성을 극대화했습니다.
+            ESP32와 MPU6050 가속도 센서, BLE 통신 모듈을 활용하여 작업자의 안전 상태를 실시간으로 감지하는 하드웨어 시스템을 구성했습니다. 센서 데이터는 <span class="highlight-text">Bluetooth Serial 통신</span>을 통해 MIT App Inventor 모바일 앱으로 전달되어 작업자별 안전 상태를 확인할 수 있습니다.
           </p>
           
           <div class="mt-3 p-3 rounded" style="background: rgba(255,255,255,0.02); border-left: 3px solid #fb7185;">
             <strong class="d-block text-light mb-2">핵심 파트 리스트 (BOM)</strong>
             <p class="small text-muted mb-0" style="line-height: 1.6;">
-              ESP32 Wi-Fi+BLE 보드, MPU-6050 6축 센서, FSR RA12P 압력 센서, TP4056 충전 모듈, MT3608 승압 컨버터, 18650 리튬배터리, 고휘도 3색 LED 및 액티브 능동 부저. (총 17만원 규모 예산)
+              ESP32 Wi-Fi+BLE 보드, MPU6050 6축 가속도 센서, BLE 통신 모듈, Bluetooth Serial 통신, 액티브 능동 부저, MIT App Inventor 모바일 앱
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 6. 결과 분석 및 기대효과 -->
+    <!-- 8. 결과 분석 및 기대효과 -->
     <div class="premium-section animate-fade-in-up delay-700 mb-0" id="section-results">
       <h2 class="section-title">
         <div class="icon-box" style="background: rgba(244, 114, 182, 0.1); color: #f472b6;"><i class="fa fa-rocket"></i></div>
-        6. 결과 검증 및 향후 기대효과
+        8. 결과 검증 및 향후 기대효과
       </h2>
+
+      <!-- 시현 영상 -->
+      <div class="mb-4">
+        <h5 class="text-light mb-3"><i class="fa fa-play-circle mr-2 text-danger"></i>프로젝트 시현 영상</h5>
+        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gf-O3V0Eyr0" allowfullscreen></iframe>
+        </div>
+      </div>
       
       <div class="row mt-4">
         <div class="col-md-6 mb-4">
           <div class="p-4 h-100 rounded" style="background: linear-gradient(145deg, var(--bg-card), var(--bg-glass)); border: 1px solid rgba(56, 189, 248, 0.2);">
             <h5 class="text-info mb-3"><i class="fa fa-bar-chart mr-2"></i>테스트 최종 검증</h5>
             <ul class="text-muted small pl-3 mb-0" style="line-height: 2;">
-              <li class="mb-2">안전모 미착용 시 1초 이내 앱 화면에 <strong><span class="text-danger">UNWORN</span></strong> 적색 경고 팝업 활성화 및 로컬 부저 작동 성공.</li>
-              <li>강한 충격과 측면 기울임(낙상 모사) 인가 시 가속도 합성 벡터 연산을 통해 관리자에게 <strong><span class="text-danger">FALL</span></strong> 긴급 SOS 알림 전송 검증 완료.</li>
+              <li class="mb-2">BLE 신호 10회 측정 후 평균 RSSI 계산을 통한 <strong>신호 상태 판별 정상 동작</strong> 확인.</li>
+              <li class="mb-2">MPU6050 가속도 변화량 기반 <strong>움직임 감지 및 착용불량 판별</strong> 알고리즘 정상 동작 검증 완료.</li>
+              <li>작업자별 MAC 주소 구분 및 Bluetooth Serial 통신을 통한 <strong>모바일 앱 실시간 상태 확인</strong> 성공.</li>
             </ul>
           </div>
         </div>
