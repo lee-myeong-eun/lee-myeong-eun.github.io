@@ -106,6 +106,44 @@ permalink: /projects/ble-safety/
     border-radius: 4px;
     font-weight: 600;
   }
+
+  /* Notebook Code Block Styling */
+  .notebook-code-window {
+    background: #161b22;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-top: 1.2rem;
+  }
+  .notebook-code-header {
+    background: #0d1117;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .notebook-code-body {
+    max-height: 460px;
+    overflow-y: auto;
+    background: #161b22;
+  }
+  .notebook-code-body pre, 
+  .notebook-code-body code, 
+  .notebook-code-body .highlight pre, 
+  .notebook-code-body .highlight code {
+    color: #bae6fd !important;
+    background-color: #161b22 !important;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace !important;
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+  }
+  .notebook-code-body .highlight {
+    background-color: #161b22 !important;
+    margin: 0 !important;
+    padding: 16px 20px !important;
+  }
 </style>
 
 <div class="row">
@@ -256,8 +294,19 @@ permalink: /projects/ble-safety/
         <strong class="text-light">센서 데이터 수집 및 상태 판별 제어 로직:</strong> ESP32 하드웨어 모듈로부터 전송되는 BLE 서비스 및 MPU6050 센서 데이터를 실시간 처리하고, 착용 상태 및 낙상 위험을 판별하여 Bluetooth 통신으로 전송하는 코어 알고리즘 코드입니다.
       </p>
       
-      <div style="max-height: 400px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border-medium);">
-```cpp
+      <!-- Notebook-style Code Window -->
+      <div class="notebook-code-window">
+        <div class="notebook-code-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #ff5f56;"></span>
+            <span style="display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #ffbd2e;"></span>
+            <span style="display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #27c93f;"></span>
+            <span style="color: #8b949e; font-size: 0.84rem; font-family: monospace; margin-left: 8px;"><i class="fa fa-code mr-1"></i>EZ_Safe_Core_Logic.ino</span>
+          </div>
+          <span style="color: #58a6ff; font-size: 0.78rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); padding: 2px 10px; border-radius: 12px; font-weight: 600;">C++ / ESP32</span>
+        </div>
+        <div class="notebook-code-body">
+{% highlight cpp %}
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
@@ -315,7 +364,8 @@ void loop() {
   }
   delay(100);
 }
-```
+{% endhighlight %}
+        </div>
       </div>
     </div>
 
