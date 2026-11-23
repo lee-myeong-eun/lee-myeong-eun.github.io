@@ -471,11 +471,11 @@ void loop() {
         8. 결과 검증 및 향후 기대효과
       </h2>
 
-      <!-- 시현 영상 -->
-      <div class="mb-4">
-        <h5 class="text-light mb-3"><i class="fa fa-play-circle mr-2 text-danger"></i>프로젝트 시현 영상</h5>
-        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gf-O3V0Eyr0" allowfullscreen></iframe>
+      <!-- 프로젝트 시연 영상 -->
+      <div class="mt-4 p-4 rounded mb-4" style="background: var(--bg-terminal-header); border: 1px solid var(--border-subtle);">
+        <h5 class="text-light mb-3"><i class="fa fa-play-circle mr-2" style="color: #10b981;"></i>BLE 기반 공사장 안전장비 실시간 감지 시스템 시연 영상</h5>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-subtle); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+          <iframe src="https://www.youtube.com/embed/Gf-O3V0Eyr0" title="BLE 기반 공사장 안전장비 실시간 감지 시스템 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
         </div>
       </div>
       
